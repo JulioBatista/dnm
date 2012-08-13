@@ -1,0 +1,28 @@
+dnm
+===========
+
+
+SECTION 1. META
+===============
+- This is the README for the svn repository for dnm
+
+- This gives you a basic idea of the directory structure that this repo uses
+
++---frontend
+|   +---iOSApp
+|   +---androidApp
+|   +---frameworks
++---backend
+|   +---fullweb
+|   +---mobileweb
+|   +---RESTAPICalls
+|   +---DBschema
++---docs
+|   \---MINUTES
+|   \---SETUP
+|   \---LINKSTOGOOGLEDOCS
+\README
+
+
+SECTION 2. 
+==============

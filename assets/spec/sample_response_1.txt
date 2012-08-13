@@ -1,0 +1,42 @@
+{
+"paging":
+  {
+  "page":1,
+  "total":30,
+  "page_size":10,
+  "pages":12
+  },  
+"deals":[
+  {
+  "id":454361,
+  "name":"Max Lager’s Grill & Brewery",
+  "description":
+  {"languages":["es","en"]},
+  "status":"active",
+  "deal_amount":0,
+  "discount_amount":0,
+  "image":{"id":1151823,"template_id":1},
+  "activity":"Bar",
+  "address":"320 Peachtree Street Northewest, Atlanta, GA, United States",
+  "sector":"Entertainment",
+  "use":"Restaurant week begins THIS Sunday, 3-course meal for only $25 all week long!",
+  "location":{"country_code":"US","country":"USA","town":"Atlanta",
+  "geo":{"level":
+  "country",
+  "pairs":"4 -72",
+  "lat":"38.898717",
+  "lng":"77.035974",
+  "type":"point",
+  	
+}}
+  ,"partnerdeal_id":154,
+  "posted_date":"2012-07-29T19:40:05Z",
+  "planned_expiration_date":
+  "2012-08-28T19:40:05Z",
+  "deal_amount":10,
+  "facebook_likes":10,
+  "twitter_retweets":10,
+  "view_count":1}
+
+  ]
+}
