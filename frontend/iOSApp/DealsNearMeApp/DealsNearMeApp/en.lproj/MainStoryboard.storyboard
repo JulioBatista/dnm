@@ -218,7 +218,11 @@
                                     <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <items>
                                         <navigationItem id="eQN-BO-S3c">
-                                            <barButtonItem key="rightBarButtonItem" image="07-map-marker-white.png" id="2Pc-ZI-XLU"/>
+                                            <barButtonItem key="rightBarButtonItem" image="07-map-marker-white.png" id="2Pc-ZI-XLU">
+                                                <connections>
+                                                    <action selector="buttonMapPressed:" destination="l2c-gA-dhF" id="U7b-qw-xM6"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </navigationItem>
                                     </items>
                                 </navigationBar>
@@ -1032,6 +1036,9 @@
         </class>
         <class className="DealsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonMapPressed:"/>
+            </relationships>
         </class>
         <class className="FavoritesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoritesViewController.h"/>

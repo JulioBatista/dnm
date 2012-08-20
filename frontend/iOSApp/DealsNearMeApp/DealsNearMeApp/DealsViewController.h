@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *deals;
 
+- (IBAction)buttonMapPressed:(id)sender;
+
+
 @end

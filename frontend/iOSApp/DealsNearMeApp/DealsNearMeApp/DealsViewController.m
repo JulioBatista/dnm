@@ -164,4 +164,8 @@
      */
 }
 
+- (IBAction)buttonMapPressed:(id)sender 
+{
+		self.tabBarController.selectedIndex = 0;
+}
 @end
