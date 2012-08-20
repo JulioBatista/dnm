@@ -23,7 +23,7 @@
                                     <navigationItem id="ck0-LS-L6f">
                                         <barButtonItem key="rightBarButtonItem" image="259-list-white.png" id="Amj-jU-gT6">
                                             <connections>
-                                                <action selector="refresh:" destination="SpU-em-5yu" id="HNL-Qi-keE"/>
+                                                <action selector="buttonListPressed:" destination="SpU-em-5yu" id="TWV-ZQ-9rG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1054,8 +1054,9 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonListPressed:"/>
+                <relationship kind="action" name="doListView:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="action" name="refresh:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>

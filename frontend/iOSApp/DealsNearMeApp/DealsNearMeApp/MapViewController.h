@@ -22,9 +22,11 @@
 
 - (IBAction)doLocateMeButton:(id)sender;
 
+- (IBAction)buttonListPressed:(id)sender;
 
 
-- (IBAction)refresh:(id)sender;
+
+- (IBAction)doListView:(id)sender;
 
 
 

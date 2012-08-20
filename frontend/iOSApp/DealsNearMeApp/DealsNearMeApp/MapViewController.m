@@ -127,6 +127,7 @@
 	 [images addObject:[UIImage imageNamed:@"299-ticket-white.png"]];
 	 */
 	
+	/* 
 	CGFloat scrollWidth = 0 + 0.f;
 	NSInteger buttoncount= 1;
 	for (UIImage *someImage in images) 
@@ -135,9 +136,7 @@
         frame.origin.x = scrollWidth;
         frame.origin.y = 0;
         frame.size = someImage.size;
-		
-		/* UIImageView *subview = [[UIImageView alloc] initWithFrame:
-		 frame]; */
+	
 		
 		UIButton *subview = [[UIButton alloc] initWithFrame:frame];
 		
@@ -145,14 +144,40 @@
 		
 		[subview setTag:buttoncount];
 		
-		/* [subview setBackgroundColor:[UIColor whiteColor]]; */
-		
 		[subview addTarget:self action:@selector(categoryPressed:) forControlEvents:UIControlEventTouchUpInside];
 		[self.scrollView addSubview:subview];
 		
 		scrollWidth += 88.0f;
 		buttoncount++;
 	}
+	*/
+	CGFloat scrollWidth = 0 + 0.f;
+	CGRect frame;
+	frame.origin.x = scrollWidth;
+	frame.origin.y = 0;
+	frame.size = [[UIImage imageNamed:@"category_icon_001_seeall.png"] size];	
+	UIButton *button001 = [[UIButton alloc] initWithFrame:frame];
+	[button001 setImage:[images objectAtIndex:0] forState:UIControlStateNormal];
+	[button001 setTag:1];
+	[button001 addTarget:self action:@selector(categorySeeAllPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:button001];
+	
+	
+	
+	scrollWidth += 88.0f;
+	frame.origin.x = scrollWidth;
+	frame.origin.y = 0;
+	frame.size = [[UIImage imageNamed:@"category_icon_001_seeall.png"] size];
+	UIButton *button002 = [[UIButton alloc] initWithFrame:frame];
+	[button002 setImage:[images objectAtIndex:1] forState:UIControlStateNormal];
+	[button002 setTag:2];
+	[button002 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:button002];
+	
+	
+	
+	
+	
 	[self.scrollView setBackgroundColor:[UIColor whiteColor]]; 
 	self.scrollView.pagingEnabled = NO;
 	self.scrollView.contentSize = CGSizeMake(scrollWidth, 72.0f);
@@ -306,6 +331,11 @@
 	[[[UIAlertView alloc] initWithTitle:@"Deals Near Me" message:@"Updating Location" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
 }
 
+- (IBAction)buttonListPressed:(id)sender 
+{
+	[[[UIAlertView alloc] initWithTitle:@"Deals Near Me" message:@"List Button" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+}
+
 
 
 - (IBAction)refresh:(id)sender 
@@ -339,6 +369,16 @@
 	
 }
 
+
+- (void)categorySeeAllPressed:(id)sender
+{
+	[[[UIAlertView alloc] initWithTitle:@"Deals Near Me" message:@"Category button" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+}
+
+- (void)categoryBarsPressed:(id)sender
+{
+	[[[UIAlertView alloc] initWithTitle:@"Deals Near Me" message:@"Bars Button Pressed" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+}
 
 @end
 
