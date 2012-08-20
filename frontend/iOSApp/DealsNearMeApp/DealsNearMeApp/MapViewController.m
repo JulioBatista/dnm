@@ -97,17 +97,37 @@
 	 [locationManager startUpdatingLocation];
 	 */
 	
-
+	
 	
 	NSMutableArray *images = [NSMutableArray new];
-	[images addObject:[UIImage imageNamed:@"14-tag@2x-white.png"]];
-	[images addObject:[UIImage imageNamed:@"179-notepad@2x-white.png"]];
-	[images addObject:[UIImage imageNamed:@"103-map@2x-white.png"]];
-	[images addObject:[UIImage imageNamed:@"178-city@2x-white.png"]];
-	[images addObject:[UIImage imageNamed:@"236-shoppingbag@2x-white.png"]];
-	[images addObject:[UIImage imageNamed:@"299-ticket@2x-white.png"]];
+	[images addObject:[UIImage imageNamed:@"category_icon_001_seeall.png"]];
 	
-	CGFloat scrollWidth = 0.f;
+	[images addObject:[UIImage imageNamed:@"category_icon_002_bars.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"category_icon_003_dining.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"category_icon_004_family.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"category_icon_005_fun.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"category_icon_006_services.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"category_icon_007_shopping.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"category_icon_008_travel.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"category_icon_009_wellness.png"]];
+	
+	
+	/*
+	 [images addObject:[UIImage imageNamed:@"179-notepad-white.png"]];
+	 [images addObject:[UIImage imageNamed:@"103-map-white.png"]];
+	 [images addObject:[UIImage imageNamed:@"178-city-white.png"]];
+	 [images addObject:[UIImage imageNamed:@"236-shoppingbag-white.png"]];
+	 [images addObject:[UIImage imageNamed:@"299-ticket-white.png"]];
+	 */
+	
+	CGFloat scrollWidth = 0 + 0.f;
 	NSInteger buttoncount= 1;
 	for (UIImage *someImage in images) 
 	{
@@ -117,7 +137,7 @@
         frame.size = someImage.size;
 		
 		/* UIImageView *subview = [[UIImageView alloc] initWithFrame:
-								frame]; */
+		 frame]; */
 		
 		UIButton *subview = [[UIButton alloc] initWithFrame:frame];
 		
@@ -133,16 +153,16 @@
 		scrollWidth += 88.0f;
 		buttoncount++;
 	}
-	/* [self.scrollView setBackgroundColor:[UIColor whiteColor]]; */
-	self.scrollView.pagingEnabled = YES;
-	self.scrollView.contentSize = CGSizeMake(scrollWidth, 44.0f);
+	[self.scrollView setBackgroundColor:[UIColor whiteColor]]; 
+	self.scrollView.pagingEnabled = NO;
+	self.scrollView.contentSize = CGSizeMake(scrollWidth, 72.0f);
 	
 	
 }
 - (void)categoryPressed:(UIButton*)sender 
 {
 	NSLog(@"HI : %d", [sender tag] );
-		[locationManager stopUpdatingLocation];
+	[locationManager stopUpdatingLocation];
 }
 - (void)viewDidUnload
 {
@@ -189,7 +209,7 @@
 	/* MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
 	 */
 	
-		MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, 750, 750);
+	MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, 750, 750);
 	
 	MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];
 	
@@ -202,40 +222,41 @@
 	self.locationLabel.text = @"Getting deals";
 	CLGeocoder *gc = [[CLGeocoder alloc] init];
 	//2
-	[gc geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) {
-		//3
-		if ([placemarks count]>0)
-		{
-			//4
-			CLPlacemark *mark = (CLPlacemark *) [placemarks objectAtIndex:0];
-			double lat = mark.location.coordinate.latitude;
-			
-			double lng = mark.location.coordinate.longitude;
-			
-			//5
-			self.locationLabel.text = [NSString stringWithFormat:@"Coordinate\n lat:%@, long:%@", 
-									   [NSNumber numberWithDouble:lat],
-									   [NSNumber numberWithDouble:lng]];
-			
-			// show on the map
-			//1
-			CLLocationCoordinate2D coordinate;
-			coordinate.latitude = lat;
-			coordinate.longitude = lng;
-			
-			//2
-			[self.map addAnnotation:(id)[[MyAnnotation alloc] initWithCoordinate:coordinate]];
-			
-			//3 
-			MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
-			
-			MKCoordinateRegion adjustedRegion = [self.map  regionThatFits:viewRegion];
-			
-			[self.map setRegion:adjustedRegion animated:YES];
-			
-			
-		}
-	}];
+	[gc geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) 
+	 {
+		 //3
+		 if ([placemarks count]>0)
+		 {
+			 //4
+			 CLPlacemark *mark = (CLPlacemark *) [placemarks objectAtIndex:0];
+			 double lat = mark.location.coordinate.latitude;
+			 
+			 double lng = mark.location.coordinate.longitude;
+			 
+			 //5
+			 self.locationLabel.text = [NSString stringWithFormat:@"Coordinate\n lat:%@, long:%@", 
+										[NSNumber numberWithDouble:lat],
+										[NSNumber numberWithDouble:lng]];
+			 
+			 // show on the map
+			 //1
+			 CLLocationCoordinate2D coordinate;
+			 coordinate.latitude = lat;
+			 coordinate.longitude = lng;
+			 
+			 //2
+			 [self.map addAnnotation:(id)[[MyAnnotation alloc] initWithCoordinate:coordinate]];
+			 
+			 //3 
+			 MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
+			 
+			 MKCoordinateRegion adjustedRegion = [self.map  regionThatFits:viewRegion];
+			 
+			 [self.map setRegion:adjustedRegion animated:YES];
+			 
+			 
+		 }
+	 }];
 }
 
 -(void) doMapStuff:(CLLocation *)c
@@ -277,13 +298,15 @@
 - (IBAction)doLocateMeButton:(id)sender 
 {
 	/* if (self.map.annotations) [self.map removeAnnotations:self.map.annotations]; */
-		
+	
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	[locationManager startUpdatingLocation];
 	
 	[[[UIAlertView alloc] initWithTitle:@"Deals Near Me" message:@"Updating Location" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
 }
+
+
 
 - (IBAction)refresh:(id)sender 
 {
@@ -300,7 +323,9 @@
 		NSLog(@"About to fetch deals from the network");
 		/* NSArray *deals = [NetworkFetcher recentDeals]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNearSpoke];
+		NSArray *deals = [NetworkFetcher recentDealsNearLevia];
+		
+		/* NSArray *deals = [NetworkFetcher recentDealsNearSpoke]; */
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;

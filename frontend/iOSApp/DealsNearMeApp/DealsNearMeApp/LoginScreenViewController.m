@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-	[_fldUsername becomeFirstResponder];
+	/* [_fldUsername becomeFirstResponder]; */
 	
 }
 
@@ -47,7 +47,7 @@
 #pragma mark ClickHandlers
 - (IBAction)btnCancelTapped:(id)sender 
 {
-	[self performSegueWithIdentifier:@"CancelLoginScreen" sender:nil]; 
+	[self dismissViewControllerAnimated:YES completion:nil];
 	NSLog(@"The cancel button was pressed by %@", sender);
 	 
 		  
