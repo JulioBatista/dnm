@@ -1,14 +1,14 @@
 //
-//  Deals.m
+//  NewDeal.m
 //  DealsNearMeApp
 //
 //  Created by  on 7/26/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Deal.h"
+#import "NewDeal.h"
 
-@implementation Deal
+@implementation NewDeal
 
 @synthesize dealname = _dealname;
 @synthesize dealdistance = _dealdistance;

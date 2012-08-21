@@ -11,7 +11,7 @@
 #import "MapKit/MapKit.h"
 #import "NetworkFetcher.h"
 #import "NetworkDealAnnotation.h"
-#import "Deal.h"
+#import "NewDeal.h"
 #import "DealCell.h"
 
 @interface MapViewController ()
@@ -45,6 +45,7 @@
 	{
 		_deals = deals;
 		[self updateMapViewMap];
+		 [self.dealsTableView reloadData]; 
 	}
 }
 
@@ -97,9 +98,17 @@
 {
     [super viewDidLoad];
 	
+
+	
+	[self arrangeButtons];
+	
 	self.isMapVisible = YES;
 	
 	[self.dealsTableView setHidden:YES];
+	
+	
+	
+	
 	
 	// Do any additional setup after loading the view.
 	/* 
@@ -152,21 +161,21 @@
 	
 	myTableViewController.tableView = dealsTableView;
 	
-	[self arrangeButtons];
+
 	
-	[self getDealsFromNetwork];
+	
 	
 	self.newdeals = [NSMutableArray arrayWithCapacity:20];
 	
-	Deal *deal = [[Deal alloc] init];
-	deal.dealname = @"Max Lagers";
-	deal.dealdescription = @"If you would like to relax and have a nice beer with friends.";
-	[self.newdeals addObject:deal];
+	NewDeal *newdeal = [[NewDeal alloc] init];
+	newdeal.dealname = @"Max Lagers";
+	newdeal.dealdescription = @"If you would like to relax and have a nice beer with friends.";
+	[self.newdeals addObject:newdeal];
 	
-	deal = [[Deal alloc] init];
-	deal.dealname = @"Second Cup";
-	deal.dealdescription = @"Our coffee is probably the best coffee you have ever had.";
-	[self.newdeals addObject:deal];
+	newdeal = [[NewDeal alloc] init];
+	newdeal.dealname = @"Second Cup";
+	newdeal.dealdescription = @"Our coffee is probably the best coffee you have ever had.";
+	[self.newdeals addObject:newdeal];
 	
 	NSLog(@"The Number of newdeals is %d", [self.newdeals count]);
 	
@@ -317,7 +326,7 @@
 	locationManager.delegate = self;
 	[locationManager startUpdatingLocation];
 	
-	[[[UIAlertView alloc] initWithTitle:@"Deals Near Me" message:@"Updating Location" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+	[self getDealsFromNetwork];
 }
 
 - (IBAction)buttonListPressed:(id)sender 
@@ -417,6 +426,9 @@
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
 			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
+
+			
 			
 		});
 	});
@@ -572,7 +584,9 @@
 {
 	
     // Return the number of rows in the section.
-    return [self.newdeals count];
+    /* return [self.newdeals count]; */
+	
+	return [self.deals count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -584,9 +598,38 @@
     
 	if ( [self.deals count] == 0)
 	{
-		Deal *deal = [self.newdeals objectAtIndex:indexPath.row];
-		cell.nameLabel.text = deal.dealname;	
+		NSLog(@"The count of number of deals is %d", [self.deals count]);
+		
+		NewDeal *newdeal = [self.newdeals objectAtIndex:indexPath.row];
+		cell.nameLabel.text = newdeal.dealname;	
+		cell.descriptionLabel.text = newdeal.dealdescription;
+		
+	}
+	else 
+	{
+		NSLog(@"The count of number of deals ========= is %d", [self.deals count]);
+		
+		
+		
+		/* 
+		Deal *deal = [self.deals objectAtIndex:indexPath.row];
+		cell.nameLabel.text = deal.dealname;
 		cell.descriptionLabel.text = deal.dealdescription;
+		 */
+		
+		NSDictionary *onedeal = [self.deals objectAtIndex:indexPath.row];
+		
+		cell.nameLabel.text = [onedeal objectForKey:@"title"];
+		
+		
+		cell.descriptionLabel.text = [[onedeal objectForKey:@"description"] objectForKey:@"_content"];
+		
+		
+		NSLog(@"Let's try to print the deals array here ----------%@", [self.deals objectAtIndex:indexPath.row]);
+			  
+		
+		
+
 		
 	}
 	

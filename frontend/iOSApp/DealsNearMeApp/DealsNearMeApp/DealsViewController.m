@@ -7,7 +7,7 @@
 //
 
 #import "DealsViewController.h"
-#import "Deal.h"
+#import "NewDeal.h"
 #import "DealCell.h"
 
 @interface DealsViewController ()
@@ -38,15 +38,15 @@
 	
 	self.deals = [NSMutableArray arrayWithCapacity:20];
 	
-	Deal *deal = [[Deal alloc] init];
-	deal.dealname = @"Max Lagers";
-	deal.dealdescription = @"If you would like to relax and have a nice beer with friends.";
-	[self.deals addObject:deal];
+	NewDeal *newdeal = [[NewDeal alloc] init];
+	newdeal.dealname = @"Max Lagers";
+	newdeal.dealdescription = @"If you would like to relax and have a nice beer with friends.";
+	[self.deals addObject:newdeal];
 	
-	deal = [[Deal alloc] init];
-	deal.dealname = @"Second Cup";
-	deal.dealdescription = @"Our coffee is probably the best coffee you have ever had.";
-	[self.deals addObject:deal];
+	newdeal = [[NewDeal alloc] init];
+	newdeal.dealname = @"Second Cup";
+	newdeal.dealdescription = @"Our coffee is probably the best coffee you have ever had.";
+	[self.deals addObject:newdeal];
 
 	
 
@@ -90,12 +90,12 @@
     
 	
 	
-	Deal *deal = [self.deals objectAtIndex:indexPath.row];
+	NewDeal *newdeal = [self.deals objectAtIndex:indexPath.row];
 	UILabel *nameLabel = (UILabel *)[cell viewWithTag:200];
-	nameLabel.text = deal.dealname;
+	nameLabel.text = newdeal.dealname;
 	
 	UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:201];
-	descriptionLabel.text = deal.dealdescription;
+	descriptionLabel.text = newdeal.dealdescription;
 	
 	
 	

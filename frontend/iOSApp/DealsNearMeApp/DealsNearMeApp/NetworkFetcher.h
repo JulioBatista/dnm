@@ -6,6 +6,8 @@
 #import <Foundation/Foundation.h>
 
 #define NETWORK_DEAL_TITLE @"title"
+#define NETWORK_DEAL_DEALNAME @"dealname"
+#define NETWORK_DEAL_DEALDESCRIPTION @"dealdescription"
 #define NETWORK_DEAL_DESCRIPTION @"description._content"
 #define NETWORK_PLACE_NAME @"_content"
 #define NETWORK_DEAL_ID @"id"

@@ -10,13 +10,12 @@
 
 #import "AppDelegate.h"
 
-#import "Deal.h"
 
 
 
 @implementation AppDelegate
 
-NSMutableArray *deals;
+
 
 @synthesize window = _window;
 
@@ -24,32 +23,7 @@ NSMutableArray *deals;
 {
     // Override point for customization after application launch.
 	
-	deals = [NSMutableArray arrayWithCapacity:20];
-	
-	Deal *deal = [[Deal alloc] init];
-	
-	deal.dealname = @"Vickery's";
-	deal.dealdistance = @"2 miles";
-	deal.dealtimeinfo = @"9h 13m ago";
-	deal.dealdescription = @"Vickery's Wednesday night special is a crab leg dinner with corn on the cob.";
-	deal.dealstats = 10;
-	[deals addObject:deal];
-	
-	deal.dealname = @"DBA Barbeque";
-	deal.dealdistance = @"16 miles";
-	deal.dealtimeinfo = @"10h 13m ago";
-	deal.dealdescription = @"Go ahead and loosen your belts. Today, we have all you can eat ribs.";
-	deal.dealstats = 10;
-	[deals addObject:deal];
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
     return YES;

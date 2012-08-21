@@ -36,6 +36,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, strong) NSArray *deals; // of Deal dictionaries
+
 @property (nonatomic, strong) NSMutableArray *newdeals;
 
 @property (nonatomic, weak) IBOutlet UITableView *dealsTableView;
