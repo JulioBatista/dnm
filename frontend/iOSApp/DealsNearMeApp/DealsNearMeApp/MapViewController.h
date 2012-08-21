@@ -27,11 +27,16 @@
 
 
 - (IBAction)doListView:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonListButton;
 
 
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, strong) NSArray *deals; // of Deal dictionaries
+@property (strong, nonatomic) IBOutlet UITableView *dealsTableView;
+
+@property(nonatomic) BOOL isMapVisible;
+
 
 @end

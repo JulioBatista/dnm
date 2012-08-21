@@ -19,6 +19,9 @@
 		4B367DB815E27B430039AFB5 /* category_icon_001_seeall.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DAE15E27B420039AFB5 /* category_icon_001_seeall.png */; };
 		4B367DBA15E280A50039AFB5 /* divider_645x8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DB915E280A40039AFB5 /* divider_645x8.png */; };
 		4B367DBC15E284B10039AFB5 /* divider_320x4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DBB15E284B10039AFB5 /* divider_320x4.png */; };
+		4B367E5215E32EDA0039AFB5 /* black_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367E5115E32ECF0039AFB5 /* black_bar.png */; };
+		4B367E5515E3366D0039AFB5 /* NewDealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B367E5415E336670039AFB5 /* NewDealsViewController.m */; };
+		4B367E5715E337BF0039AFB5 /* 15-tags@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367E5615E337BE0039AFB5 /* 15-tags@2x.png */; };
 		4B44262B15C61D3100E46BD9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261715C61D3100E46BD9 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B44262C15C61D3100E46BD9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261915C61D3100E46BD9 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B44262D15C61D3100E46BD9 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261B15C61D3100E46BD9 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -164,6 +167,10 @@
 		4B367DAE15E27B420039AFB5 /* category_icon_001_seeall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_001_seeall.png; sourceTree = "<group>"; };
 		4B367DB915E280A40039AFB5 /* divider_645x8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divider_645x8.png; sourceTree = "<group>"; };
 		4B367DBB15E284B10039AFB5 /* divider_320x4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divider_320x4.png; sourceTree = "<group>"; };
+		4B367E5115E32ECF0039AFB5 /* black_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_bar.png; sourceTree = "<group>"; };
+		4B367E5315E336650039AFB5 /* NewDealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDealsViewController.h; sourceTree = "<group>"; };
+		4B367E5415E336670039AFB5 /* NewDealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDealsViewController.m; sourceTree = "<group>"; };
+		4B367E5615E337BE0039AFB5 /* 15-tags@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "15-tags@2x.png"; sourceTree = "<group>"; };
 		4B44261615C61D3100E46BD9 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		4B44261715C61D3100E46BD9 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		4B44261815C61D3100E46BD9 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -419,23 +426,14 @@
 		4B6BA4F615C0F0890095F35E /* DealsNearMeApp */ = {
 			isa = PBXGroup;
 			children = (
-				4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */,
-				4BC5044215CCD46600E535A2 /* NetworkFetcher.h */,
-				4BC5044315CCD46600E535A2 /* NetworkFetcher.m */,
-				4BB9A12315C9FAEA009263A1 /* FlickrAPIKey.h */,
-				4BB9A12415C9FAEA009263A1 /* FlickrFetcher.h */,
-				4BB9A12515C9FAEA009263A1 /* FlickrFetcher.m */,
-				4B8D0F6815C8DCC7002CB264 /* Resources */,
-				4B6BA50215C0F0890095F35E /* MainStoryboard.storyboard */,
-				4B6BA50515C0F0890095F35E /* FirstViewController.h */,
-				4B6BA50615C0F0890095F35E /* FirstViewController.m */,
-				4B6BA50C15C0F0890095F35E /* FavoritesViewController.h */,
-				4B6BA50D15C0F0890095F35E /* FavoritesViewController.m */,
-				4B6BA4F715C0F0890095F35E /* Supporting Files */,
 				4B6BA53115C117450095F35E /* Deal.h */,
 				4B6BA53215C117450095F35E /* Deal.m */,
 				4B6BA62415C60F530095F35E /* API.h */,
 				4B6BA62515C60F530095F35E /* API.m */,
+				4B6BA50515C0F0890095F35E /* FirstViewController.h */,
+				4B6BA50615C0F0890095F35E /* FirstViewController.m */,
+				4B6BA50C15C0F0890095F35E /* FavoritesViewController.h */,
+				4B6BA50D15C0F0890095F35E /* FavoritesViewController.m */,
 				4B44263A15C6250900E46BD9 /* LoginScreenViewController.h */,
 				4B44263B15C6250900E46BD9 /* LoginScreenViewController.m */,
 				4BC5CBE815C6399000EAB199 /* MyAccountScreenViewController.h */,
@@ -458,6 +456,17 @@
 				4BB5AA2115D0DC8D003E5F97 /* NetworkDealAnnotation.m */,
 				4BF8BCB615DA0710002EECD6 /* SplashViewController.h */,
 				4BF8BCB715DA0710002EECD6 /* SplashViewController.m */,
+				4B367E5315E336650039AFB5 /* NewDealsViewController.h */,
+				4B367E5415E336670039AFB5 /* NewDealsViewController.m */,
+				4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */,
+				4BC5044215CCD46600E535A2 /* NetworkFetcher.h */,
+				4BC5044315CCD46600E535A2 /* NetworkFetcher.m */,
+				4BB9A12315C9FAEA009263A1 /* FlickrAPIKey.h */,
+				4BB9A12415C9FAEA009263A1 /* FlickrFetcher.h */,
+				4BB9A12515C9FAEA009263A1 /* FlickrFetcher.m */,
+				4B8D0F6815C8DCC7002CB264 /* Resources */,
+				4B6BA50215C0F0890095F35E /* MainStoryboard.storyboard */,
+				4B6BA4F715C0F0890095F35E /* Supporting Files */,
 			);
 			path = DealsNearMeApp;
 			sourceTree = "<group>";
@@ -465,6 +474,8 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B367E5615E337BE0039AFB5 /* 15-tags@2x.png */,
+				4B367E5115E32ECF0039AFB5 /* black_bar.png */,
 				4B367DB915E280A40039AFB5 /* divider_645x8.png */,
 				4B367DBB15E284B10039AFB5 /* divider_320x4.png */,
 				4B367DA515E27B3D0039AFB5 /* category_icon_003_dining.png */,
@@ -750,6 +761,8 @@
 				4B367DB815E27B430039AFB5 /* category_icon_001_seeall.png in Resources */,
 				4B367DBA15E280A50039AFB5 /* divider_645x8.png in Resources */,
 				4B367DBC15E284B10039AFB5 /* divider_320x4.png in Resources */,
+				4B367E5215E32EDA0039AFB5 /* black_bar.png in Resources */,
+				4B367E5715E337BF0039AFB5 /* 15-tags@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,6 +804,7 @@
 				4BB5AA2215D0DC8D003E5F97 /* NetworkDealAnnotation.m in Sources */,
 				4BF8BCB815DA0710002EECD6 /* SplashViewController.m in Sources */,
 				4BF8BCD815DA8961002EECD6 /* DealDetailViewController.m in Sources */,
+				4B367E5515E3366D0039AFB5 /* NewDealsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

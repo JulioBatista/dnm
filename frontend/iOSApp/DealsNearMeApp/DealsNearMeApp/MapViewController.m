@@ -24,12 +24,15 @@
 @end
 
 @implementation MapViewController
+@synthesize dealsTableView = _dealsTableView;
 @synthesize annotations = _annotations;
+@synthesize buttonListButton = _buttonListButton;
 @synthesize scrollView = _scrollView;
 @synthesize map = _map;
 @synthesize locationLabel = _locationLabel;
 @synthesize addressLabel = _addressLabel;
 @synthesize deals = _deals;
+@synthesize isMapVisible = _isMapVisible;
 
 #pragma mark setters
 
@@ -90,6 +93,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	self.isMapVisible = YES;
+	
+	[self.dealsTableView setHidden:YES];
+	
 	// Do any additional setup after loading the view.
 	/* 
 	 locationManager = [[CLLocationManager alloc] init];
@@ -111,34 +119,34 @@
 	 */
 	
 	/* 
-	CGFloat scrollWidth = 0 + 0.f;
-	NSInteger buttoncount= 1;
-	for (UIImage *someImage in images) 
-	{
-		CGRect frame;
-        frame.origin.x = scrollWidth;
-        frame.origin.y = 0;
-        frame.size = someImage.size;
-	
-		
-		UIButton *subview = [[UIButton alloc] initWithFrame:frame];
-		
-		[subview setImage:someImage forState:UIControlStateNormal];
-		
-		[subview setTag:buttoncount];
-		
-		[subview addTarget:self action:@selector(categoryPressed:) forControlEvents:UIControlEventTouchUpInside];
-		[self.scrollView addSubview:subview];
-		
-		scrollWidth += 88.0f;
-		buttoncount++;
-	}
-	*/
+	 CGFloat scrollWidth = 0 + 0.f;
+	 NSInteger buttoncount= 1;
+	 for (UIImage *someImage in images) 
+	 {
+	 CGRect frame;
+	 frame.origin.x = scrollWidth;
+	 frame.origin.y = 0;
+	 frame.size = someImage.size;
+	 
+	 
+	 UIButton *subview = [[UIButton alloc] initWithFrame:frame];
+	 
+	 [subview setImage:someImage forState:UIControlStateNormal];
+	 
+	 [subview setTag:buttoncount];
+	 
+	 [subview addTarget:self action:@selector(categoryPressed:) forControlEvents:UIControlEventTouchUpInside];
+	 [self.scrollView addSubview:subview];
+	 
+	 scrollWidth += 88.0f;
+	 buttoncount++;
+	 }
+	 */
 	
 	[self arrangeButtons];
 	
 	
-
+	
 	
 	
 }
@@ -154,6 +162,8 @@
 	[self setLocationLabel:nil];
 	[self setAddressLabel:nil];
 	[self setScrollView:nil];
+	[self setDealsTableView:nil];
+	[self setButtonListButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
@@ -291,11 +301,35 @@
 
 - (IBAction)buttonListPressed:(id)sender 
 {
-
-
-	self.tabBarController.selectedIndex = 1;
+	
+	
+	/* self.tabBarController.selectedIndex = 1; */
 	
 	/* [tabBarController setSelectedViewController:(UIViewController *)[tabBarController.viewControllers objectAtIndex: 2]]; */
+	
+	if (self.isMapVisible)
+	{
+		
+		self.isMapVisible = NO;
+		
+		[self.map setHidden:YES];
+		
+		[self.dealsTableView setHidden:NO];
+		
+		
+		[self.buttonListButton setImage:[UIImage imageNamed:@"07-map-marker-white.png"]];
+	}
+	else 
+	{
+		self.isMapVisible = YES;
+		
+		[self.map setHidden:NO];
+		
+		[self.dealsTableView setHidden:YES];
+		
+		[self.buttonListButton setImage:[UIImage imageNamed:@"259-list-white.png"]];
+	}
+	
 }
 
 

@@ -6,7 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller - Map-->
+        <!--Map View Controller - Deals-->
         <scene sceneID="bPC-si-slh">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDN-vs-btl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,16 +72,34 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="divider_320x4.png" id="UoY-ih-1bp">
-                                <rect key="frame" x="0.0" y="114" width="320" height="4"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EPJ-pC-2js">
+                                <rect key="frame" x="0.0" y="120" width="320" height="317"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="V0p-JC-RpG">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="07-map-marker.png" id="jbY-2o-waD"/>
+                    <tabBarItem key="tabBarItem" title="Deals" image="15-tags.png" id="jbY-2o-waD"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addressLabel" destination="EwK-DG-5wB" id="VDf-u5-Bg6"/>
+                        <outlet property="buttonListButton" destination="Amj-jU-gT6" id="Odd-qh-Lft"/>
+                        <outlet property="dealsTableView" destination="EPJ-pC-2js" id="25G-Ni-MAR"/>
                         <outlet property="locationLabel" destination="kGO-Wi-EeK" id="laB-UP-9FG"/>
                         <outlet property="map" destination="1Sd-yk-4AT" id="z7Q-we-f4e"/>
                         <outlet property="scrollView" destination="Jbg-zK-dbq" id="OCv-38-TQO"/>
@@ -129,7 +147,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNO-SF-2YT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="mA5-Lr-MZs" customClass="FavoritesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lez-AZ-PHg">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="sPx-CL-cKk">
@@ -195,6 +213,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Favorites" image="29-heart.png" id="toe-Ov-139"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="440" y="-638"/>
@@ -205,7 +224,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sF-rB-co6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="l2c-gA-dhF" customClass="DealsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fsA-cB-sb3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="U1g-mn-eZj">
@@ -266,7 +285,6 @@
                                     <outlet property="dealImageView" destination="fju-3Y-73J" id="n3c-sY-Eqp"/>
                                     <outlet property="descriptionLabel" destination="9NK-9h-Tb0" id="D3N-53-Bd9"/>
                                     <outlet property="nameLabel" destination="iV5-AD-5TG" id="f9m-Sz-SJ8"/>
-                                    <segue destination="f6u-iz-Qwf" kind="push" id="ohM-i3-4dy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -278,7 +296,7 @@
                     <navigationItem key="navigationItem" id="PoR-4W-UX0"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="745" y="-67"/>
+            <point key="canvasLocation" x="328" y="22"/>
         </scene>
         <!--Deal Detail View Controller-->
         <scene sceneID="sNe-K8-Udq">
@@ -286,16 +304,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aO8-b7-sj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="f6u-iz-Qwf" customClass="DealDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D08-S0-OfJ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Deal Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="N2j-Zr-846">
-                                <rect key="frame" x="113" y="252" width="92" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" id="itI-vf-Eqv">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -310,13 +321,50 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bar.png" id="x5X-Wo-6xL">
+                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kGZ-IN-TV4">
+                                <rect key="frame" x="139" y="53" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="15-tags@2x.png" id="Oeu-w0-QSd">
+                                <rect key="frame" x="11" y="104" width="72" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Restaurant week begins THIS Sunday. 3-course meal for only $25 all week long!" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" id="va9-XL-oeS">
+                                <rect key="frame" x="92" y="90" width="219" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                                <color key="textColor" red="0.80102040819999998" green="0.52897489139999998" blue="0.34073599020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="DjM-Ld-ePL">
+                                <rect key="frame" x="11" y="226" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bar.png" id="oIe-K1-K4A">
+                                <rect key="frame" x="0.0" y="286" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Check out these other deals!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8TM-XT-6Fd">
+                                <rect key="frame" x="11" y="297" width="248" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="xq4-gY-2qU"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1179" y="-59"/>
+            <point key="canvasLocation" x="1414" y="-329"/>
         </scene>
         <!--My Account Screen View Controller - Item-->
         <scene sceneID="rMj-ev-RPn">
@@ -712,7 +760,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="SpU-em-5yu" kind="relationship" relationship="viewControllers" id="yga-sS-G8e"/>
-                        <segue destination="4lN-a9-ZXS" kind="relationship" relationship="viewControllers" id="eRB-wS-STe"/>
                         <segue destination="mA5-Lr-MZs" kind="relationship" relationship="viewControllers" id="NJz-0z-TXu"/>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="UaB-fC-urX"/>
                         <segue destination="Eaw-1k-LcR" kind="relationship" relationship="viewControllers" id="JS4-CM-uVd"/>
@@ -975,36 +1022,17 @@
             </objects>
             <point key="canvasLocation" x="519" y="1427"/>
         </scene>
-        <!--Navigation Controller - Deals-->
-        <scene sceneID="R2p-iI-SxC">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="25O-K0-c9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController navigationBarHidden="YES" id="4lN-a9-ZXS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Deals" image="15-tags.png" id="QGr-Mt-Tr9"/>
-                    <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Qw5-fX-SN1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="l2c-gA-dhF" kind="relationship" relationship="rootViewController" id="VGD-vN-aP2"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="219" y="-67"/>
-        </scene>
     </scenes>
     <resources>
         <image name="06-magnify-white.png" width="24" height="24"/>
         <image name="07-map-marker-white.png" width="16" height="26"/>
-        <image name="07-map-marker.png" width="16" height="26"/>
         <image name="15-tags.png" width="24" height="25"/>
+        <image name="15-tags@2x.png" width="48" height="50"/>
         <image name="165-glasses-3.png" width="32" height="12"/>
         <image name="24-gift.png" width="22" height="26"/>
         <image name="259-list-white.png" width="20" height="14"/>
         <image name="29-heart.png" width="24" height="21"/>
+        <image name="black_bar.png" width="645" height="62"/>
         <image name="deals_header_logo.png" width="192" height="33"/>
         <image name="divider_320x4.png" width="72" height="4"/>
         <image name="locate_me_icon.png" width="80" height="80"/>
@@ -1065,6 +1093,8 @@
                 <relationship kind="action" name="doListView:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="dealsTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
