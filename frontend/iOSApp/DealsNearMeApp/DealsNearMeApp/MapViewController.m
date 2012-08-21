@@ -11,6 +11,8 @@
 #import "MapKit/MapKit.h"
 #import "NetworkFetcher.h"
 #import "NetworkDealAnnotation.h"
+#import "Deal.h"
+#import "DealCell.h"
 
 @interface MapViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *map;
@@ -32,8 +34,9 @@
 @synthesize locationLabel = _locationLabel;
 @synthesize addressLabel = _addressLabel;
 @synthesize deals = _deals;
+@synthesize newdeals = _newdeals;
 @synthesize isMapVisible = _isMapVisible;
-
+@synthesize myTableViewController = _myTableViewController;
 #pragma mark setters
 
 -(void) setDeals:(NSArray *)deals
@@ -143,11 +146,29 @@
 	 }
 	 */
 	
+	myTableViewController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+	
+	myTableViewController.tableView.delegate = self;
+	
+	myTableViewController.tableView = dealsTableView;
+	
 	[self arrangeButtons];
 	
+	[self getDealsFromNetwork];
 	
+	self.newdeals = [NSMutableArray arrayWithCapacity:20];
 	
+	Deal *deal = [[Deal alloc] init];
+	deal.dealname = @"Max Lagers";
+	deal.dealdescription = @"If you would like to relax and have a nice beer with friends.";
+	[self.newdeals addObject:deal];
 	
+	deal = [[Deal alloc] init];
+	deal.dealname = @"Second Cup";
+	deal.dealdescription = @"Our coffee is probably the best coffee you have ever had.";
+	[self.newdeals addObject:deal];
+	
+	NSLog(@"The Number of newdeals is %d", [self.newdeals count]);
 	
 }
 - (void)categoryPressed:(UIButton*)sender 
@@ -368,7 +389,38 @@
 
 - (void)categorySeeAllPressed:(id)sender
 {
-	[[[UIAlertView alloc] initWithTitle:@"Deals Near Me" message:@"Category button" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+	NSLog(@"refresh was pressed");
+	
+	/* 
+	UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	[spinner startAnimating];
+	
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+	*/
+	
+	[self getDealsFromNetwork];
+}
+
+- (void) getDealsFromNetwork 
+{
+	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
+	dispatch_async(downloadQueue, ^{
+		NSLog(@"About to fetch deals from the network");
+		/* NSArray *deals = [NetworkFetcher recentDeals]; */
+		
+		NSArray *deals = [NetworkFetcher recentDealsNearLevia];
+		
+		/* NSArray *deals = [NetworkFetcher recentDealsNearSpoke]; */
+		
+		dispatch_async(dispatch_get_main_queue(), ^{
+			self.deals = deals;
+			// spinner goes away
+			/* self.navigationItem.rightBarButtonItem = sender; */
+			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			
+		});
+	});
+	dispatch_release(downloadQueue);
 }
 
 - (void)categoryBarsPressed:(id)sender
@@ -396,6 +448,8 @@
 	[images addObject:[UIImage imageNamed:@"category_icon_008_travel.png"]];
 	
 	[images addObject:[UIImage imageNamed:@"category_icon_009_wellness.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"category_icon_010_blank.png"]];
 	
 	CGFloat scrollWidth = 0 + 0.f;
 	CGRect frame;
@@ -490,11 +544,72 @@
 	[button009 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:button009];
 	
+	scrollWidth += 88.0f;
+	frame.origin.x = scrollWidth;
+	frame.origin.y = 0;
+	frame.size = [[UIImage imageNamed:@"category_icon_010_blank.png"] size];
+	UIButton *button010 = [[UIButton alloc] initWithFrame:frame];
+	[button010 setImage:[images objectAtIndex:9] forState:UIControlStateNormal];
+	[button010 setTag:9];
+	[button010 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:button010];
+	
 	[self.scrollView setBackgroundColor:[UIColor whiteColor]]; 
 	self.scrollView.pagingEnabled = NO;
 	self.scrollView.contentSize = CGSizeMake(scrollWidth, 72.0f);
 }
+#pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	
+    // Return the number of sections.
+	
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	
+    // Return the number of rows in the section.
+    return [self.newdeals count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"DealCell";
+    DealCell *cell = (DealCell *)[self.dealsTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    // Configure the cell...
+    
+	if ( [self.deals count] == 0)
+	{
+		Deal *deal = [self.newdeals objectAtIndex:indexPath.row];
+		cell.nameLabel.text = deal.dealname;	
+		cell.descriptionLabel.text = deal.dealdescription;
+		
+	}
+	
+	
+
+	
+	
+	
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+}
 @end
 
 

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MapKit/MapKit.h"
-@interface MapViewController : UIViewController<CLLocationManagerDelegate>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
+	UITableViewController *myTableViewController;
+	UITableView *dealsTableView;
 	CLLocationManager *locationManager;
 	UIScrollView *scrollView;
 }
@@ -26,7 +28,7 @@
 
 
 
-- (IBAction)doListView:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonListButton;
 
 
@@ -34,9 +36,12 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, strong) NSArray *deals; // of Deal dictionaries
-@property (strong, nonatomic) IBOutlet UITableView *dealsTableView;
+@property (nonatomic, strong) NSMutableArray *newdeals;
+
+@property (nonatomic, weak) IBOutlet UITableView *dealsTableView;
 
 @property(nonatomic) BOOL isMapVisible;
 
+@property (nonatomic, assign) UITableViewController *myTableViewController;
 
 @end
