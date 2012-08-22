@@ -465,6 +465,8 @@
 				4BC503CD15CC50DF00E535A2 /* MoreViewController.m */,
 				4B5A365F15CDF75600552ECF /* DealsViewController.h */,
 				4B5A366015CDF75600552ECF /* DealsViewController.m */,
+				4BF8BCD615DA8960002EECD6 /* DealDetailViewController.h */,
+				4BF8BCD715DA8961002EECD6 /* DealDetailViewController.m */,
 				4BB5A9F815D034B6003E5F97 /* MapViewController.h */,
 				4BB5A9F915D034B6003E5F97 /* MapViewController.m */,
 				4BB5A9FD15D05816003E5F97 /* MyAnnotation.h */,
@@ -577,8 +579,6 @@
 				4B6BA4F915C0F0890095F35E /* InfoPlist.strings */,
 				4B6BA4FC15C0F0890095F35E /* main.m */,
 				4B6BA4FE15C0F0890095F35E /* DealsNearMeApp-Prefix.pch */,
-				4BF8BCD615DA8960002EECD6 /* DealDetailViewController.h */,
-				4BF8BCD715DA8961002EECD6 /* DealDetailViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

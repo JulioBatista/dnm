@@ -13,6 +13,7 @@
 #import "NetworkDealAnnotation.h"
 #import "NewDeal.h"
 #import "DealCell.h"
+#import "DealDetailViewController.h"
 
 @interface MapViewController ()
 @property (strong, nonatomic) IBOutlet MKMapView *map;
@@ -101,6 +102,12 @@
 
 	
 	[self arrangeButtons];
+	
+	[[[UIAlertView alloc] initWithTitle:@"Welcome to Deals Near Me" 
+								message:@"Please press the blue button to get started" 
+							   delegate:nil 
+					  cancelButtonTitle:@"Close" 
+					  otherButtonTitles:nil] show];
 	
 	self.isMapVisible = YES;
 	
@@ -645,13 +652,26 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSLog(@"it should segue %@", indexPath);
+	
+
+	
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"DealDetailSegue"])
+	{
+		NSLog(@"Wonder if the prepareForSegue is getting called %@", segue.destinationViewController);
+		
+		UINavigationController *navigationController = segue.destinationViewController;
+		
+		
+	
+		
+	}
 }
 @end
 
