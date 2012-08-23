@@ -13,7 +13,7 @@
 @end
 
 @implementation DealDetailViewController
-
+@synthesize mapDeal = _mapDeal;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

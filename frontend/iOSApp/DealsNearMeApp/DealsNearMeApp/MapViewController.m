@@ -27,8 +27,10 @@
 @end
 
 @implementation MapViewController
+@synthesize buttonToggle = _buttonToggle;
 @synthesize dealsTableView = _dealsTableView;
 @synthesize annotations = _annotations;
+@synthesize buttonToggleScrollView = _buttonToggleScrollView;
 @synthesize buttonListButton = _buttonListButton;
 @synthesize scrollView = _scrollView;
 @synthesize map = _map;
@@ -37,7 +39,12 @@
 @synthesize deals = _deals;
 @synthesize newdeals = _newdeals;
 @synthesize isMapVisible = _isMapVisible;
+@synthesize isScrollViewVisible = _isScrollViewVisible;
 @synthesize myTableViewController = _myTableViewController;
+@synthesize locationTimer = _locationTimer;
+
+
+
 #pragma mark setters
 
 -(void) setDeals:(NSArray *)deals
@@ -102,6 +109,8 @@
 
 	
 	[self arrangeButtons];
+	
+	self.isScrollViewVisible = YES;
 	
 	[[[UIAlertView alloc] initWithTitle:@"Welcome to Deals Near Me" 
 								message:@"Please press the blue button to get started" 
@@ -201,9 +210,12 @@
 	[self setScrollView:nil];
 	[self setDealsTableView:nil];
 	[self setButtonListButton:nil];
+	[self setButtonToggleScrollView:nil];
+	[self setButtonToggle:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
+	[self.locationTimer invalidate];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -333,41 +345,15 @@
 	locationManager.delegate = self;
 	[locationManager startUpdatingLocation];
 	
+	self.locationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(stopUpdatingLocations) userInfo:nil repeats:NO];
+	
+	
+	
 	[self getDealsFromNetwork];
 }
 
-- (IBAction)buttonListPressed:(id)sender 
-{
-	
-	
-	/* self.tabBarController.selectedIndex = 1; */
-	
-	/* [tabBarController setSelectedViewController:(UIViewController *)[tabBarController.viewControllers objectAtIndex: 2]]; */
-	
-	if (self.isMapVisible)
-	{
-		
-		self.isMapVisible = NO;
-		
-		[self.map setHidden:YES];
-		
-		[self.dealsTableView setHidden:NO];
-		
-		
-		[self.buttonListButton setImage:[UIImage imageNamed:@"07-map-marker-white.png"]];
-	}
-	else 
-	{
-		self.isMapVisible = YES;
-		
-		[self.map setHidden:NO];
-		
-		[self.dealsTableView setHidden:YES];
-		
-		[self.buttonListButton setImage:[UIImage imageNamed:@"259-list-white.png"]];
-	}
-	
-}
+
+
 
 
 
@@ -632,18 +618,10 @@
 		cell.descriptionLabel.text = [[onedeal objectForKey:@"description"] objectForKey:@"_content"];
 		
 		
-		NSLog(@"Let's try to print the deals array here ----------%@", [self.deals objectAtIndex:indexPath.row]);
-			  
-		
-		
-
 		
 	}
 	
-	
 
-	
-	
 	
     return cell;
 }
@@ -652,7 +630,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"it should segue %@", indexPath);
+    NSLog(@"it should segue %@=====================", indexPath);
+	
+	
+	/* [self performSegueWithIdentifier:@"DealDetailSegue" sender:indexPath]; */
 	
 
 	
@@ -666,11 +647,74 @@
 	{
 		NSLog(@"Wonder if the prepareForSegue is getting called %@", segue.destinationViewController);
 		
-		UINavigationController *navigationController = segue.destinationViewController;
 		
+		if ([segue.destinationViewController respondsToSelector:@selector(setMapDeal:)]) 
+		{
+			[segue.destinationViewController performSelector:@selector(setMapDeal:) 
+												  withObject:sender];
+		}
 		
+	}
+}
+
+- (void)stopUpdatingLocations
+{
+	[locationManager stopUpdatingLocation];
 	
+	[self.locationTimer invalidate];
+}
+
+
+#pragma mark IBActions
+- (IBAction)buttonListPressed:(id)sender 
+{
+	
+	
+	/* self.tabBarController.selectedIndex = 1; */
+	
+	/* [tabBarController setSelectedViewController:(UIViewController *)[tabBarController.viewControllers objectAtIndex: 2]]; */
+	
+	if (self.isMapVisible)
+	{
 		
+		self.isMapVisible = NO;
+		
+		[self.map setHidden:YES];
+		
+		[self.dealsTableView setHidden:NO];
+		
+		
+		[self.buttonListButton setImage:[UIImage imageNamed:@"07-map-marker-white.png"]];
+	}
+	else 
+	{
+		self.isMapVisible = YES;
+		
+		[self.map setHidden:NO];
+		
+		[self.dealsTableView setHidden:YES];
+		
+		[self.buttonListButton setImage:[UIImage imageNamed:@"259-list-white.png"]];
+	}
+	
+}
+
+- (IBAction)buttonToggleScrollViewPressed:(id)sender 
+{
+	if (self.isScrollViewVisible == YES)
+	{
+	
+	[self.buttonToggle setImage:[UIImage imageNamed:@"57-download-white.png"]];
+		
+		self.isScrollViewVisible = NO;	
+	}
+	else 
+	{
+		[self.buttonToggle setImage:[UIImage imageNamed:@"57-download-reversed-white.png"]];
+		
+
+		
+		self.isScrollViewVisible = YES;
 	}
 }
 @end

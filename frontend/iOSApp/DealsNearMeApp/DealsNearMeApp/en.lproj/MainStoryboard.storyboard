@@ -21,6 +21,11 @@
                                 <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="ck0-LS-L6f">
+                                        <barButtonItem key="leftBarButtonItem" image="57-download-reversed-white.png" id="6UV-Uc-IO7">
+                                            <connections>
+                                                <action selector="buttonToggleScrollViewPressed:" destination="SpU-em-5yu" id="3t5-vs-tJr"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="259-list-white.png" id="Amj-jU-gT6">
                                             <connections>
                                                 <action selector="buttonListPressed:" destination="SpU-em-5yu" id="TWV-ZQ-9rG"/>
@@ -30,11 +35,11 @@
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="deals_header_logo.png" id="YMV-iT-Il0">
-                                <rect key="frame" x="0.0" y="0.0" width="195" height="44"/>
+                                <rect key="frame" x="63" y="0.0" width="195" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="1Sd-yk-4AT">
-                                <rect key="frame" x="0.0" y="114" width="328" height="304"/>
+                                <rect key="frame" x="0.0" y="44" width="328" height="422"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="Jbg-zK-dbq">
@@ -88,21 +93,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="200" contentMode="center" image="15-tags.png" id="smu-8n-8XE">
-                                                    <rect key="frame" x="20" y="4" width="35" height="35"/>
+                                                    <rect key="frame" x="20" y="7" width="35" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="201" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="6DY-lx-omI">
-                                                    <rect key="frame" x="70" y="4" width="210" height="21"/>
+                                                    <rect key="frame" x="70" y="7" width="115" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <color key="textColor" red="1" green="0.56565433310000002" blue="0.2489401889" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="202" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="CIp-eo-BRp">
-                                                    <rect key="frame" x="70" y="19" width="210" height="21"/>
+                                                    <rect key="frame" x="70" y="24" width="210" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Uh5-Yh-H28">
+                                                    <rect key="frame" x="215" y="7" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                    <color key="textColor" red="0.14932834447959667" green="0.65728635204081631" blue="0.65015356962735482" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
@@ -112,7 +124,7 @@
                                             <outlet property="dealImageView" destination="smu-8n-8XE" id="uci-Su-Epd"/>
                                             <outlet property="descriptionLabel" destination="CIp-eo-BRp" id="f37-6A-K8l"/>
                                             <outlet property="nameLabel" destination="6DY-lx-omI" id="2k2-Qa-dva"/>
-                                            <segue destination="f6u-iz-Qwf" kind="push" id="LjC-dZ-3da"/>
+                                            <segue destination="f6u-iz-Qwf" kind="push" identifier="DealDetailSegue" id="LjC-dZ-3da"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -129,6 +141,8 @@
                     <connections>
                         <outlet property="addressLabel" destination="EwK-DG-5wB" id="VDf-u5-Bg6"/>
                         <outlet property="buttonListButton" destination="Amj-jU-gT6" id="Odd-qh-Lft"/>
+                        <outlet property="buttonToggle" destination="6UV-Uc-IO7" id="83S-SL-it4"/>
+                        <outlet property="buttonToggleScrollView" destination="6UV-Uc-IO7" id="gGl-AC-GQv"/>
                         <outlet property="dealsTableView" destination="EPJ-pC-2js" id="25G-Ni-MAR"/>
                         <outlet property="locationLabel" destination="kGO-Wi-EeK" id="laB-UP-9FG"/>
                         <outlet property="map" destination="1Sd-yk-4AT" id="z7Q-we-f4e"/>
@@ -355,6 +369,10 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bar.png" id="IF7-Oj-LHi">
+                                <rect key="frame" x="0.0" y="223" width="320" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kGZ-IN-TV4">
                                 <rect key="frame" x="139" y="53" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -362,32 +380,99 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="15-tags@2x.png" id="Oeu-w0-QSd">
-                                <rect key="frame" x="11" y="104" width="72" height="72"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="15-tags@2x.png" id="Oeu-w0-QSd">
+                                <rect key="frame" x="10" y="87" width="72" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Restaurant week begins THIS Sunday. 3-course meal for only $25 all week long!" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" id="va9-XL-oeS">
-                                <rect key="frame" x="92" y="90" width="219" height="101"/>
+                                <rect key="frame" x="20" y="146" width="219" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
-                                <color key="textColor" red="0.80102040819999998" green="0.52897489139999998" blue="0.34073599020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.56565433310000002" blue="0.2489401889" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="DjM-Ld-ePL">
-                                <rect key="frame" x="11" y="226" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bar.png" id="oIe-K1-K4A">
-                                <rect key="frame" x="0.0" y="286" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="286" width="320" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Check out these other deals!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8TM-XT-6Fd">
-                                <rect key="frame" x="11" y="297" width="248" height="21"/>
+                                <rect key="frame" x="10" y="291" width="290" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bar.png" id="9G5-ap-ihd">
+                                <rect key="frame" x="0.0" y="44" width="320" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Deal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="i1H-01-NRZ">
+                                <rect key="frame" x="10" y="49" width="290" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hsg-dE-N6X">
+                                <rect key="frame" x="15" y="232" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="redheart_icon_60x60.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t6T-JH-t3O">
+                                <rect key="frame" x="76" y="232" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="telephone_icon_60x60.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Rmc-6z-2fM">
+                                <rect key="frame" x="138" y="232" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="facebook_icon_60x60.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fEf-aB-Kfx">
+                                <rect key="frame" x="195" y="232" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="twitter_icon_60x60.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qJv-rc-MxE">
+                                <rect key="frame" x="256" y="232" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="smsnote_icon_60x60.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -419,24 +504,24 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="new_loginscreen_background.png" id="tQf-t5-cDv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="DealsNear_App_Registration.png" id="tQf-t5-cDv">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="bNy-69-e2b">
-                                <rect key="frame" x="80" y="246" width="166" height="31"/>
+                                <rect key="frame" x="81" y="26" width="166" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="cEr-ot-Rfl">
-                                <rect key="frame" x="80" y="290" width="166" height="31"/>
+                                <rect key="frame" x="81" y="65" width="166" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hjP-an-tBD">
-                                <rect key="frame" x="81" y="328.5" width="165" height="37"/>
+                                <rect key="frame" x="82" y="106" width="165" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Login">
@@ -451,7 +536,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ojd-Fh-D3f">
-                                <rect key="frame" x="80" y="373" width="166" height="37"/>
+                                <rect key="frame" x="81" y="153" width="166" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Register">
@@ -466,7 +551,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="W2J-vs-SCf">
-                                <rect key="frame" x="81" y="418" width="165" height="37"/>
+                                <rect key="frame" x="82" y="198" width="165" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Cancel">
@@ -483,6 +568,7 @@
                         </subviews>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TeQ-CO-z5d"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1082,91 +1168,21 @@
         <image name="24-gift.png" width="22" height="26"/>
         <image name="259-list-white.png" width="20" height="14"/>
         <image name="29-heart.png" width="24" height="21"/>
+        <image name="57-download-reversed-white.png" width="19" height="24"/>
+        <image name="DealsNear_App_Registration.png" width="320" height="480"/>
         <image name="black_bar.png" width="645" height="62"/>
         <image name="deals_header_logo.png" width="192" height="33"/>
         <image name="divider_320x4.png" width="72" height="4"/>
+        <image name="facebook_icon_60x60.png" width="60" height="60"/>
         <image name="locate_me_icon.png" width="80" height="80"/>
-        <image name="new_loginscreen_background.png" width="320" height="480"/>
         <image name="no_splash_button.png" width="580" height="95"/>
+        <image name="redheart_icon_60x60.png" width="60" height="60"/>
+        <image name="smsnote_icon_60x60.png" width="60" height="60"/>
         <image name="splash_background_minus_buttons_320_480.png" width="320" height="480"/>
+        <image name="telephone_icon_60x60.png" width="60" height="60"/>
+        <image name="twitter_icon_60x60.png" width="60" height="60"/>
         <image name="yes_splash_button.png" width="580" height="95"/>
     </resources>
-    <classes>
-        <class className="AboutScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutScreenViewController.h"/>
-        </class>
-        <class className="BarsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
-        </class>
-        <class className="DealCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dealImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DealDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonBackTapped:"/>
-            </relationships>
-        </class>
-        <class className="DealsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonMapPressed:"/>
-            </relationships>
-        </class>
-        <class className="FavoritesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoritesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doRefresh:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-        </class>
-        <class className="LoginScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnCancelTapped:"/>
-                <relationship kind="action" name="btnLoginRegisterTapped:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fldPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fldUsername" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonListPressed:"/>
-                <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="dealsTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="MoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doChangePage:"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="MyAccountScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyAccountScreenViewController.h"/>
-        </class>
-        <class className="PostADealViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostADealViewController.h"/>
-        </class>
-        <class className="SplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

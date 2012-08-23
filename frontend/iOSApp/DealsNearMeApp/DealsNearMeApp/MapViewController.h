@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MapKit/MapKit.h"
+
+
+
 @interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
 	UITableViewController *myTableViewController;
@@ -24,9 +27,15 @@
 
 - (IBAction)doLocateMeButton:(id)sender;
 
-- (IBAction)buttonListPressed:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonToggle;
+
+@property (nonatomic) BOOL isScrollViewVisible;
 
 
+- (IBAction)buttonToggleScrollViewPressed:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonToggleScrollView;
 
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonListButton;
@@ -44,5 +53,7 @@
 @property(nonatomic) BOOL isMapVisible;
 
 @property (nonatomic, assign) UITableViewController *myTableViewController;
+
+@property (nonatomic, strong) NSTimer *locationTimer;
 
 @end
