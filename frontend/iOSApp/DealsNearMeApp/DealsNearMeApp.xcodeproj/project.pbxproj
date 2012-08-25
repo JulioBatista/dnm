@@ -94,6 +94,10 @@
 		4B9009E115E5CB0600045CF9 /* 57-download-reversed-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9009DF15E5CB0600045CF9 /* 57-download-reversed-white.png */; };
 		4B9009E215E5CB0600045CF9 /* 57-download-reversed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B9009E015E5CB0600045CF9 /* 57-download-reversed.png */; };
 		4B900A1315E67B2200045CF9 /* DealsNear_App_Registration.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900A1215E67B2200045CF9 /* DealsNear_App_Registration.png */; };
+		4B900A1515E6867500045CF9 /* new_category_icon_001_seeall.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900A1415E6867500045CF9 /* new_category_icon_001_seeall.png */; };
+		4B900A1B15E68C8800045CF9 /* new_category_icon_002_bars.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900A1A15E68C8800045CF9 /* new_category_icon_002_bars.png */; };
+		4B900A1F15E690D200045CF9 /* new_category_icon_003_travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900A1E15E690D200045CF9 /* new_category_icon_003_travel.png */; };
+		4B900A2715E69DE900045CF9 /* new_category_icon_005_services.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900A2615E69DE900045CF9 /* new_category_icon_005_services.png */; };
 		4BB5A9EB15D00A8F003E5F97 /* locate_me_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */; };
 		4BB5A9FA15D034B6003E5F97 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB5A9F915D034B6003E5F97 /* MapViewController.m */; };
 		4BB5A9FC15D052B6003E5F97 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB5A9FB15D052B6003E5F97 /* CoreLocation.framework */; };
@@ -288,6 +292,10 @@
 		4B9009DF15E5CB0600045CF9 /* 57-download-reversed-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57-download-reversed-white.png"; sourceTree = "<group>"; };
 		4B9009E015E5CB0600045CF9 /* 57-download-reversed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57-download-reversed.png"; sourceTree = "<group>"; };
 		4B900A1215E67B2200045CF9 /* DealsNear_App_Registration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DealsNear_App_Registration.png; sourceTree = "<group>"; };
+		4B900A1415E6867500045CF9 /* new_category_icon_001_seeall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_category_icon_001_seeall.png; sourceTree = "<group>"; };
+		4B900A1A15E68C8800045CF9 /* new_category_icon_002_bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_category_icon_002_bars.png; sourceTree = "<group>"; };
+		4B900A1E15E690D200045CF9 /* new_category_icon_003_travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_category_icon_003_travel.png; sourceTree = "<group>"; };
+		4B900A2615E69DE900045CF9 /* new_category_icon_005_services.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_category_icon_005_services.png; sourceTree = "<group>"; };
 		4BA9ED2415D572BA0005BF8F /* spoke-toronto.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "spoke-toronto.gpx"; sourceTree = "<group>"; };
 		4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate_me_icon.png; sourceTree = "<group>"; };
 		4BB5A9F815D034B6003E5F97 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -523,6 +531,10 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B900A2615E69DE900045CF9 /* new_category_icon_005_services.png */,
+				4B900A1E15E690D200045CF9 /* new_category_icon_003_travel.png */,
+				4B900A1415E6867500045CF9 /* new_category_icon_001_seeall.png */,
+				4B900A1A15E68C8800045CF9 /* new_category_icon_002_bars.png */,
 				4B900A1215E67B2200045CF9 /* DealsNear_App_Registration.png */,
 				4B9009DF15E5CB0600045CF9 /* 57-download-reversed-white.png */,
 				4B9009E015E5CB0600045CF9 /* 57-download-reversed.png */,
@@ -842,6 +854,10 @@
 				4B9009E115E5CB0600045CF9 /* 57-download-reversed-white.png in Resources */,
 				4B9009E215E5CB0600045CF9 /* 57-download-reversed.png in Resources */,
 				4B900A1315E67B2200045CF9 /* DealsNear_App_Registration.png in Resources */,
+				4B900A1515E6867500045CF9 /* new_category_icon_001_seeall.png in Resources */,
+				4B900A1B15E68C8800045CF9 /* new_category_icon_002_bars.png in Resources */,
+				4B900A1F15E690D200045CF9 /* new_category_icon_003_travel.png in Resources */,
+				4B900A2715E69DE900045CF9 /* new_category_icon_005_services.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
