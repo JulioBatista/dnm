@@ -98,6 +98,15 @@
 		4B900A1B15E68C8800045CF9 /* new_category_icon_002_bars.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900A1A15E68C8800045CF9 /* new_category_icon_002_bars.png */; };
 		4B900A1F15E690D200045CF9 /* new_category_icon_003_travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900A1E15E690D200045CF9 /* new_category_icon_003_travel.png */; };
 		4B900A2715E69DE900045CF9 /* new_category_icon_005_services.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900A2615E69DE900045CF9 /* new_category_icon_005_services.png */; };
+		4B900BD315EAE6DB00045CF9 /* guides_new_category_icon_009_wellness.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BCA15EAE6D500045CF9 /* guides_new_category_icon_009_wellness.png */; };
+		4B900BD415EAE6DB00045CF9 /* guides_new_category_icon_008_shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BCB15EAE6D600045CF9 /* guides_new_category_icon_008_shopping.png */; };
+		4B900BD515EAE6DB00045CF9 /* guides_new_category_icon_007_family.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BCC15EAE6D600045CF9 /* guides_new_category_icon_007_family.png */; };
+		4B900BD615EAE6DB00045CF9 /* guides_new_category_icon_006_dining.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BCD15EAE6D800045CF9 /* guides_new_category_icon_006_dining.png */; };
+		4B900BD715EAE6DB00045CF9 /* guides_new_category_icon_003_travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BCE15EAE6D900045CF9 /* guides_new_category_icon_003_travel.png */; };
+		4B900BD815EAE6DB00045CF9 /* guides_new_category_icon_001_seeall.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BCF15EAE6DA00045CF9 /* guides_new_category_icon_001_seeall.png */; };
+		4B900BD915EAE6DB00045CF9 /* guides_new_category_icon_004_fun.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BD015EAE6DA00045CF9 /* guides_new_category_icon_004_fun.png */; };
+		4B900BDA15EAE6DB00045CF9 /* guides_new_category_icon_002_bars.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BD115EAE6DA00045CF9 /* guides_new_category_icon_002_bars.png */; };
+		4B900BDB15EAE6DB00045CF9 /* guides_new_category_icon_005_services.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BD215EAE6DB00045CF9 /* guides_new_category_icon_005_services.png */; };
 		4BB5A9EB15D00A8F003E5F97 /* locate_me_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */; };
 		4BB5A9FA15D034B6003E5F97 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB5A9F915D034B6003E5F97 /* MapViewController.m */; };
 		4BB5A9FC15D052B6003E5F97 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB5A9FB15D052B6003E5F97 /* CoreLocation.framework */; };
@@ -296,6 +305,15 @@
 		4B900A1A15E68C8800045CF9 /* new_category_icon_002_bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_category_icon_002_bars.png; sourceTree = "<group>"; };
 		4B900A1E15E690D200045CF9 /* new_category_icon_003_travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_category_icon_003_travel.png; sourceTree = "<group>"; };
 		4B900A2615E69DE900045CF9 /* new_category_icon_005_services.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_category_icon_005_services.png; sourceTree = "<group>"; };
+		4B900BCA15EAE6D500045CF9 /* guides_new_category_icon_009_wellness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides_new_category_icon_009_wellness.png; sourceTree = "<group>"; };
+		4B900BCB15EAE6D600045CF9 /* guides_new_category_icon_008_shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides_new_category_icon_008_shopping.png; sourceTree = "<group>"; };
+		4B900BCC15EAE6D600045CF9 /* guides_new_category_icon_007_family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides_new_category_icon_007_family.png; sourceTree = "<group>"; };
+		4B900BCD15EAE6D800045CF9 /* guides_new_category_icon_006_dining.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides_new_category_icon_006_dining.png; sourceTree = "<group>"; };
+		4B900BCE15EAE6D900045CF9 /* guides_new_category_icon_003_travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides_new_category_icon_003_travel.png; sourceTree = "<group>"; };
+		4B900BCF15EAE6DA00045CF9 /* guides_new_category_icon_001_seeall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides_new_category_icon_001_seeall.png; sourceTree = "<group>"; };
+		4B900BD015EAE6DA00045CF9 /* guides_new_category_icon_004_fun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides_new_category_icon_004_fun.png; sourceTree = "<group>"; };
+		4B900BD115EAE6DA00045CF9 /* guides_new_category_icon_002_bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides_new_category_icon_002_bars.png; sourceTree = "<group>"; };
+		4B900BD215EAE6DB00045CF9 /* guides_new_category_icon_005_services.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guides_new_category_icon_005_services.png; sourceTree = "<group>"; };
 		4BA9ED2415D572BA0005BF8F /* spoke-toronto.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "spoke-toronto.gpx"; sourceTree = "<group>"; };
 		4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate_me_icon.png; sourceTree = "<group>"; };
 		4BB5A9F815D034B6003E5F97 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -531,6 +549,15 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B900BCA15EAE6D500045CF9 /* guides_new_category_icon_009_wellness.png */,
+				4B900BCB15EAE6D600045CF9 /* guides_new_category_icon_008_shopping.png */,
+				4B900BCC15EAE6D600045CF9 /* guides_new_category_icon_007_family.png */,
+				4B900BCD15EAE6D800045CF9 /* guides_new_category_icon_006_dining.png */,
+				4B900BCE15EAE6D900045CF9 /* guides_new_category_icon_003_travel.png */,
+				4B900BCF15EAE6DA00045CF9 /* guides_new_category_icon_001_seeall.png */,
+				4B900BD015EAE6DA00045CF9 /* guides_new_category_icon_004_fun.png */,
+				4B900BD115EAE6DA00045CF9 /* guides_new_category_icon_002_bars.png */,
+				4B900BD215EAE6DB00045CF9 /* guides_new_category_icon_005_services.png */,
 				4B900A2615E69DE900045CF9 /* new_category_icon_005_services.png */,
 				4B900A1E15E690D200045CF9 /* new_category_icon_003_travel.png */,
 				4B900A1415E6867500045CF9 /* new_category_icon_001_seeall.png */,
@@ -858,6 +885,15 @@
 				4B900A1B15E68C8800045CF9 /* new_category_icon_002_bars.png in Resources */,
 				4B900A1F15E690D200045CF9 /* new_category_icon_003_travel.png in Resources */,
 				4B900A2715E69DE900045CF9 /* new_category_icon_005_services.png in Resources */,
+				4B900BD315EAE6DB00045CF9 /* guides_new_category_icon_009_wellness.png in Resources */,
+				4B900BD415EAE6DB00045CF9 /* guides_new_category_icon_008_shopping.png in Resources */,
+				4B900BD515EAE6DB00045CF9 /* guides_new_category_icon_007_family.png in Resources */,
+				4B900BD615EAE6DB00045CF9 /* guides_new_category_icon_006_dining.png in Resources */,
+				4B900BD715EAE6DB00045CF9 /* guides_new_category_icon_003_travel.png in Resources */,
+				4B900BD815EAE6DB00045CF9 /* guides_new_category_icon_001_seeall.png in Resources */,
+				4B900BD915EAE6DB00045CF9 /* guides_new_category_icon_004_fun.png in Resources */,
+				4B900BDA15EAE6DB00045CF9 /* guides_new_category_icon_002_bars.png in Resources */,
+				4B900BDB15EAE6DB00045CF9 /* guides_new_category_icon_005_services.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

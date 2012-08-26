@@ -436,23 +436,23 @@
 - (void)arrangeButtons
 {
 	NSMutableArray *images = [NSMutableArray new];
-	[images addObject:[UIImage imageNamed:@"new_category_icon_001_seeall.png"]];
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_001_seeall.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"new_category_icon_002_bars.png"]];
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_002_bars.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"new_category_icon_003_travel.png"]];
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_003_travel.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"new_category_icon_004_fun.png"]];
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_004_fun.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"new_category_icon_005_services.png"]];
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_005_services.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"category_icon_003_dining.png"]];
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_006_dining.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"category_icon_004_family.png"]];	
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_007_family.png"]];	
 	
-	[images addObject:[UIImage imageNamed:@"category_icon_007_shopping.png"]];
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_008_shopping.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"category_icon_009_wellness.png"]];
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_009_wellness.png"]];
 	
 	[images addObject:[UIImage imageNamed:@"category_icon_010_blank.png"]];
 	
@@ -460,7 +460,7 @@
 	CGRect frame;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"new_category_icon_001_seeall.png"] size];	
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_001_seeall.png"] size];	
 	UIButton *button001 = [[UIButton alloc] initWithFrame:frame];
 	[button001 setImage:[images objectAtIndex:0] forState:UIControlStateNormal];
 	[button001 setTag:0];
@@ -472,7 +472,7 @@
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"new_category_icon_002_bars.png"] size];
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_002_bars.png"] size];
 	UIButton *button002 = [[UIButton alloc] initWithFrame:frame];
 	[button002 setImage:[images objectAtIndex:1] forState:UIControlStateNormal];
 	[button002 setTag:1];
@@ -482,7 +482,7 @@
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"new_category_icon_003_travel.png"] size];
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_003_travel.png"] size];
 	UIButton *button008 = [[UIButton alloc] initWithFrame:frame];
 	[button008 setImage:[images objectAtIndex:2] forState:UIControlStateNormal];
 	[button008 setTag:2];
@@ -493,7 +493,7 @@
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"new_category_icon_004_fun.png"] size];
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_004_fun.png"] size];
 	UIButton *button005 = [[UIButton alloc] initWithFrame:frame];
 	[button005 setImage:[images objectAtIndex:3] forState:UIControlStateNormal];
 	[button005 setTag:3];
@@ -503,7 +503,7 @@
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"new_category_icon_005_services.png"] size];
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_005_services.png"] size];
 	UIButton *button006 = [[UIButton alloc] initWithFrame:frame];
 	[button006 setImage:[images objectAtIndex:4] forState:UIControlStateNormal];
 	[button006 setTag:4];
@@ -515,7 +515,7 @@
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"category_icon_003_dining.png"] size];
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_006_dining.png"] size];
 	UIButton *button003 = [[UIButton alloc] initWithFrame:frame];
 	[button003 setImage:[images objectAtIndex:5] forState:UIControlStateNormal];
 	[button003 setTag:5];
@@ -525,7 +525,7 @@
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"category_icon_004_family.png"] size];
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_007_family.png"] size];
 	UIButton *button004 = [[UIButton alloc] initWithFrame:frame];
 	[button004 setImage:[images objectAtIndex:6] forState:UIControlStateNormal];
 	[button004 setTag:6];
@@ -536,7 +536,7 @@
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"category_icon_007_shopping.png"] size];
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_008_shopping.png"] size];
 	UIButton *button007 = [[UIButton alloc] initWithFrame:frame];
 	[button007 setImage:[images objectAtIndex:7] forState:UIControlStateNormal];
 	[button007 setTag:7];
@@ -548,7 +548,7 @@
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"category_icon_009_wellness.png"] size];
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_009_wellness.png"] size];
 	UIButton *button009 = [[UIButton alloc] initWithFrame:frame];
 	[button009 setImage:[images objectAtIndex:8] forState:UIControlStateNormal];
 	[button009 setTag:8];
