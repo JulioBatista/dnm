@@ -293,7 +293,7 @@
 	MyAnnotation *myAnnotation = [[MyAnnotation alloc] initWithCoordinate:coordinate];
 	
 	
-	[self.map addAnnotation:(id)myAnnotation];
+	/* [self.map addAnnotation:(id)myAnnotation]; */
 	
 	//--3
 	/* MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
@@ -351,7 +351,7 @@
 
 -(void) doMapStuff:(CLLocation *)c
 {
-	[self revGeocode:c];
+	/* [self revGeocode:c]; */
 	
 	[self locateMeOnMap:c];
 }
