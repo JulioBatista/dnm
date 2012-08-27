@@ -33,6 +33,7 @@
 @synthesize buttonToggleScrollView = _buttonToggleScrollView;
 @synthesize buttonListButton = _buttonListButton;
 @synthesize scrollView = _scrollView;
+@synthesize scrollDividerView = _scrollDividerView;
 @synthesize map = _map;
 @synthesize locationLabel = _locationLabel;
 @synthesize addressLabel = _addressLabel;
@@ -53,7 +54,7 @@
 	{
 		_deals = deals;
 		[self updateMapViewMap];
-		 [self.dealsTableView reloadData]; 
+		[self.dealsTableView reloadData]; 
 	}
 }
 
@@ -106,7 +107,7 @@
 {
     [super viewDidLoad];
 	
-
+	
 	
 	[self arrangeButtons];
 	
@@ -177,7 +178,7 @@
 	
 	myTableViewController.tableView = dealsTableView;
 	
-
+	
 	
 	
 	
@@ -212,6 +213,7 @@
 	[self setButtonListButton:nil];
 	[self setButtonToggleScrollView:nil];
 	[self setButtonToggle:nil];
+	[self setScrollDividerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
@@ -394,11 +396,11 @@
 	NSLog(@"refresh was pressed");
 	
 	/* 
-	UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-	[spinner startAnimating];
-	
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
-	*/
+	 UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	 [spinner startAnimating];
+	 
+	 self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+	 */
 	
 	[self getDealsFromNetwork];
 }
@@ -420,7 +422,7 @@
 			/* self.navigationItem.rightBarButtonItem = sender; */
 			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-
+			
 			
 			
 		});
@@ -543,7 +545,7 @@
 	[button007 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:button007];
 	
-
+	
 	
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
@@ -611,9 +613,9 @@
 		
 		
 		/* 
-		Deal *deal = [self.deals objectAtIndex:indexPath.row];
-		cell.nameLabel.text = deal.dealname;
-		cell.descriptionLabel.text = deal.dealdescription;
+		 Deal *deal = [self.deals objectAtIndex:indexPath.row];
+		 cell.nameLabel.text = deal.dealname;
+		 cell.descriptionLabel.text = deal.dealdescription;
 		 */
 		
 		NSDictionary *onedeal = [self.deals objectAtIndex:indexPath.row];
@@ -627,7 +629,7 @@
 		
 	}
 	
-
+	
 	
     return cell;
 }
@@ -641,7 +643,7 @@
 	
 	/* [self performSegueWithIdentifier:@"DealDetailSegue" sender:indexPath]; */
 	
-
+	
 	
 }
 
@@ -709,18 +711,59 @@
 {
 	if (self.isScrollViewVisible == YES)
 	{
-	
-	[self.buttonToggle setImage:[UIImage imageNamed:@"57-download-white.png"]];
+		
+		[self.buttonToggle setImage:[UIImage imageNamed:@"57-download-white.png"]];
 		
 		self.isScrollViewVisible = NO;	
+		
+		[UIView beginAnimations:@"animateViewOff" context:NULL];
+		
+		[self.scrollView setFrame:CGRectOffset([self.scrollView frame], 0, -(2 *self.scrollView.frame.size.height))]; 
+		
+		[self.scrollDividerView setFrame:CGRectOffset([self.scrollDividerView frame], 0, -(self.scrollView.frame.size.height))];
+		
+
+		CGRect navframe = [[self.navigationController navigationBar] frame];
+		
+		CGRect l_RectFrame = CGRectMake(0,  navframe.size.height, self.view.frame.size.width, self.view.frame.size.height);
+		
+		[self.dealsTableView setFrame:l_RectFrame];
+		
+		[self.map setFrame:l_RectFrame];
+		
+		[UIView commitAnimations];
+		
+		
 	}
 	else 
 	{
 		[self.buttonToggle setImage:[UIImage imageNamed:@"57-download-reversed-white.png"]];
 		
-
+		
 		
 		self.isScrollViewVisible = YES;
+		
+		[UIView beginAnimations:@"animateImageOn" context:NULL];
+		
+		[self.scrollView setFrame:CGRectOffset([self.scrollView	frame], 0, ( 2 * self.scrollView.frame.size.height))];
+		
+		CGRect navframe = [[self.navigationController navigationBar] frame];
+	
+		
+		
+		CGRect lDividerFrame = CGRectMake(0, navframe.size.height + self.scrollView.frame.size.height, self.scrollDividerView.frame.size.width, 
+										  self.scrollDividerView.frame.size.height);
+
+		[self.scrollDividerView setFrame:lDividerFrame];
+		
+		
+		[self.dealsTableView setFrame:CGRectOffset([self.dealsTableView frame], 0, (1 * self.scrollView.frame.size.height))];
+		
+		[self.map setFrame:CGRectOffset([self.map frame], 0, (1 * self.scrollView.frame.size.height))];
+		
+		[UIView commitAnimations];
+		
+		
 	}
 }
 @end
