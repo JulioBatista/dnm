@@ -112,6 +112,15 @@
 		4B900BE115EB21A300045CF9 /* default_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BE015EB21A300045CF9 /* default_thumb.png */; };
 		4B900BE415EB2CB200045CF9 /* next_arrow_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BE215EB2CB200045CF9 /* next_arrow_orange.png */; };
 		4B900BE515EB2CB200045CF9 /* previous_arrow_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BE315EB2CB200045CF9 /* previous_arrow_orange.png */; };
+		4B900BEE15EB3C0B00045CF9 /* map_pin_wellness.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BE615EB3BFD00045CF9 /* map_pin_wellness.png */; };
+		4B900BEF15EB3C0B00045CF9 /* map_pin_shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BE715EB3BFE00045CF9 /* map_pin_shopping.png */; };
+		4B900BF015EB3C0B00045CF9 /* map_pin_family.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BE815EB3BFF00045CF9 /* map_pin_family.png */; };
+		4B900BF115EB3C0B00045CF9 /* map_pin_dining.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BE915EB3C0000045CF9 /* map_pin_dining.png */; };
+		4B900BF215EB3C0C00045CF9 /* map_pin_services.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BEA15EB3C0300045CF9 /* map_pin_services.png */; };
+		4B900BF315EB3C0C00045CF9 /* map_pin_fun.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BEB15EB3C0400045CF9 /* map_pin_fun.png */; };
+		4B900BF415EB3C0C00045CF9 /* map_pin_travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BEC15EB3C0600045CF9 /* map_pin_travel.png */; };
+		4B900BF515EB3C0C00045CF9 /* map_pin_bars.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BED15EB3C0800045CF9 /* map_pin_bars.png */; };
+		4B900BF715EBAD6500045CF9 /* map_pin_self.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B900BF615EBAD6500045CF9 /* map_pin_self.png */; };
 		4BB5A9EB15D00A8F003E5F97 /* locate_me_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */; };
 		4BB5A9FA15D034B6003E5F97 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB5A9F915D034B6003E5F97 /* MapViewController.m */; };
 		4BB5A9FC15D052B6003E5F97 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB5A9FB15D052B6003E5F97 /* CoreLocation.framework */; };
@@ -324,6 +333,15 @@
 		4B900BE015EB21A300045CF9 /* default_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_thumb.png; sourceTree = "<group>"; };
 		4B900BE215EB2CB200045CF9 /* next_arrow_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_arrow_orange.png; sourceTree = "<group>"; };
 		4B900BE315EB2CB200045CF9 /* previous_arrow_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previous_arrow_orange.png; sourceTree = "<group>"; };
+		4B900BE615EB3BFD00045CF9 /* map_pin_wellness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_wellness.png; sourceTree = "<group>"; };
+		4B900BE715EB3BFE00045CF9 /* map_pin_shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shopping.png; sourceTree = "<group>"; };
+		4B900BE815EB3BFF00045CF9 /* map_pin_family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_family.png; sourceTree = "<group>"; };
+		4B900BE915EB3C0000045CF9 /* map_pin_dining.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_dining.png; sourceTree = "<group>"; };
+		4B900BEA15EB3C0300045CF9 /* map_pin_services.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_services.png; sourceTree = "<group>"; };
+		4B900BEB15EB3C0400045CF9 /* map_pin_fun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_fun.png; sourceTree = "<group>"; };
+		4B900BEC15EB3C0600045CF9 /* map_pin_travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_travel.png; sourceTree = "<group>"; };
+		4B900BED15EB3C0800045CF9 /* map_pin_bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_bars.png; sourceTree = "<group>"; };
+		4B900BF615EBAD6500045CF9 /* map_pin_self.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_self.png; sourceTree = "<group>"; };
 		4BA9ED2415D572BA0005BF8F /* spoke-toronto.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "spoke-toronto.gpx"; sourceTree = "<group>"; };
 		4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate_me_icon.png; sourceTree = "<group>"; };
 		4BB5A9F815D034B6003E5F97 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -559,6 +577,15 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B900BF615EBAD6500045CF9 /* map_pin_self.png */,
+				4B900BE615EB3BFD00045CF9 /* map_pin_wellness.png */,
+				4B900BE715EB3BFE00045CF9 /* map_pin_shopping.png */,
+				4B900BE815EB3BFF00045CF9 /* map_pin_family.png */,
+				4B900BE915EB3C0000045CF9 /* map_pin_dining.png */,
+				4B900BEA15EB3C0300045CF9 /* map_pin_services.png */,
+				4B900BEB15EB3C0400045CF9 /* map_pin_fun.png */,
+				4B900BEC15EB3C0600045CF9 /* map_pin_travel.png */,
+				4B900BED15EB3C0800045CF9 /* map_pin_bars.png */,
 				4B900BE215EB2CB200045CF9 /* next_arrow_orange.png */,
 				4B900BE315EB2CB200045CF9 /* previous_arrow_orange.png */,
 				4B900BE015EB21A300045CF9 /* default_thumb.png */,
@@ -914,6 +941,15 @@
 				4B900BE115EB21A300045CF9 /* default_thumb.png in Resources */,
 				4B900BE415EB2CB200045CF9 /* next_arrow_orange.png in Resources */,
 				4B900BE515EB2CB200045CF9 /* previous_arrow_orange.png in Resources */,
+				4B900BEE15EB3C0B00045CF9 /* map_pin_wellness.png in Resources */,
+				4B900BEF15EB3C0B00045CF9 /* map_pin_shopping.png in Resources */,
+				4B900BF015EB3C0B00045CF9 /* map_pin_family.png in Resources */,
+				4B900BF115EB3C0B00045CF9 /* map_pin_dining.png in Resources */,
+				4B900BF215EB3C0C00045CF9 /* map_pin_services.png in Resources */,
+				4B900BF315EB3C0C00045CF9 /* map_pin_fun.png in Resources */,
+				4B900BF415EB3C0C00045CF9 /* map_pin_travel.png in Resources */,
+				4B900BF515EB3C0C00045CF9 /* map_pin_bars.png in Resources */,
+				4B900BF715EBAD6500045CF9 /* map_pin_self.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

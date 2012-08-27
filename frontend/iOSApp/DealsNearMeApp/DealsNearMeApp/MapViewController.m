@@ -15,7 +15,7 @@
 #import "DealCell.h"
 #import "DealDetailViewController.h"
 
-@interface MapViewController ()
+@interface MapViewController ()<MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 
 
@@ -46,6 +46,7 @@
 
 
 
+
 #pragma mark setters
 
 -(void) setDeals:(NSArray *)deals
@@ -68,8 +69,19 @@
 	return annotations;
 }
 
+- (NSArray *) mapAnnotationsWithPins
+{
+	NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.deals count]];
+	for (NSDictionary *deal in self.deals)
+	{
+		[annotations addObject:[NetworkDealAnnotation annotationForDeal:deal]];
+	}
+	return annotations;
+}
+
 - (void) updateMapViewMap
 {
+	/* self.annotations = [self mapAnnotations]; */
 	self.annotations = [self mapAnnotations];
 }
 
@@ -91,7 +103,37 @@
 	[self updateMapView];
 }
 
+#pragma mark MapViewDelegate methods
 
+- (MKAnnotationView *) mapView:(MKMapView *)map viewForAnnotation:(id<MKAnnotation>)annotation
+{
+	MKAnnotationView *pinView = nil; 
+    if(annotation != map.userLocation) 
+    {
+        static NSString *defaultPinID = @"mypin";
+        pinView = (MKAnnotationView *)[map dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        if ( pinView == nil ) 
+            pinView = [[MKAnnotationView alloc]
+					   initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+		
+        //pinView.pinColor = MKPinAnnotationColorGreen; 
+        pinView.canShowCallout = YES;
+        //pinView.animatesDrop = YES;
+        pinView.image = [UIImage imageNamed:@"map_pin_self.png"];   
+    } 
+    else {
+        [map.userLocation setTitle:@"I am here"];
+    }
+    return pinView;
+}
+
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)aView
+{
+	UIImage *image = [UIImage imageNamed:@"default_thumb.png"];
+	
+	
+	[(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
+}
 
 #pragma mark Lifecycle
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -103,6 +145,8 @@
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -110,6 +154,8 @@
 	
 	
 	[self arrangeButtons];
+	
+	self.map.delegate = self;
 	
 	self.isScrollViewVisible = YES;
 	

@@ -10,7 +10,6 @@
 #import "MapKit/MapKit.h"
 
 
-
 @interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
 	UITableViewController *myTableViewController;
@@ -18,6 +17,8 @@
 	CLLocationManager *locationManager;
 	UIScrollView *scrollView;
 }
+
+
 
 @property (nonatomic, strong) NSArray *annotations; // of id <MKAnnotation>
 
