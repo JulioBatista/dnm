@@ -24,6 +24,19 @@
 -(void) geocode:(NSString *) address;
 -(void) locateMeOnMap:(CLLocation *) c;
 - (void)categoryPressed:(UIButton*)sender;
+
+@property (nonatomic, strong) UIButton *button001;
+@property (nonatomic, strong) UIButton *button002;
+@property (nonatomic, strong) UIButton *button003;
+@property (nonatomic, strong) UIButton *button004;
+@property (nonatomic, strong) UIButton *button005;
+@property (nonatomic, strong) UIButton *button006;
+@property (nonatomic, strong) UIButton *button007;
+@property (nonatomic, strong) UIButton *button008;
+@property (nonatomic, strong) UIButton *button009;
+@property (nonatomic, strong) UIButton *button010;
+
+
 @end
 
 @implementation MapViewController
@@ -43,7 +56,16 @@
 @synthesize isScrollViewVisible = _isScrollViewVisible;
 @synthesize myTableViewController = _myTableViewController;
 @synthesize locationTimer = _locationTimer;
-
+@synthesize button001 = _button001;
+@synthesize button002 = _button002;
+@synthesize button003 = _button003;
+@synthesize button004 = _button004;
+@synthesize button005 = _button005;
+@synthesize button006 = _button006;
+@synthesize button007 = _button007;
+@synthesize button008 = _button008;
+@synthesize button009 = _button009;
+@synthesize button010 = _button010;
 
 
 
@@ -155,6 +177,10 @@
 	
 	[self arrangeButtons];
 	
+	[self.button001 setSelected:YES];
+	
+	[self.button001 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_001_seeall.png"] forState:UIControlStateSelected];
+	
 	self.map.delegate = self;
 	
 	self.isScrollViewVisible = YES;
@@ -260,6 +286,17 @@
 	[self setButtonToggleScrollView:nil];
 	[self setButtonToggle:nil];
 	[self setScrollDividerView:nil];
+	self.button001 = nil;
+	self.button002 = nil;
+	self.button003 = nil;
+	self.button004 = nil;
+	self.button005 = nil;
+	self.button006 = nil;
+	self.button007 = nil;
+	self.button008 = nil;
+	self.button009 = nil;
+	self.button010 = nil;
+	
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
@@ -437,19 +474,7 @@
 }
 
 
-- (void)categorySeeAllPressed:(id)sender
-{
-	NSLog(@"refresh was pressed");
-	
-	/* 
-	 UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-	 [spinner startAnimating];
-	 
-	 self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
-	 */
-	
-	[self getDealsFromNetwork];
-}
+
 
 - (void) getDealsFromNetwork 
 {
@@ -476,9 +501,133 @@
 	dispatch_release(downloadQueue);
 }
 
+- (void)categorySeeAllPressed:(id)sender
+{
+	NSLog(@"refresh was pressed");
+	
+	/* 
+	 UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	 [spinner startAnimating];
+	 
+	 self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+	 */
+	
+	[self.button001 setSelected:YES];
+	[self.button002 setSelected:NO];
+	[self.button003 setSelected:NO];
+	[self.button004 setSelected:NO];
+	[self.button005 setSelected:NO];
+	[self.button006 setSelected:NO];
+	[self.button007 setSelected:NO];
+	[self.button008 setSelected:NO];
+	[self.button009 setSelected:NO];
+	
+	
+	[self getDealsFromNetwork];
+}
+
 - (void)categoryBarsPressed:(id)sender
 {
-	[[[UIAlertView alloc] initWithTitle:@"Deals Near Me" message:@"Bars Button Pressed" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+	
+	
+	[self.button001 setSelected:NO];
+	[self.button002 setSelected:YES];
+	[self.button003 setSelected:NO];
+	[self.button004 setSelected:NO];
+	[self.button005 setSelected:NO];
+	[self.button006 setSelected:NO];
+	[self.button007 setSelected:NO];
+	[self.button008 setSelected:NO];
+	[self.button009 setSelected:NO];
+	
+}
+
+- (void) categoryTravelPressed:(id) sender
+{
+	[self.button001 setSelected:NO];
+	[self.button002 setSelected:NO];
+	[self.button003 setSelected:YES];
+	[self.button004 setSelected:NO];
+	[self.button005 setSelected:NO];
+	[self.button006 setSelected:NO];
+	[self.button007 setSelected:NO];
+	[self.button008 setSelected:NO];
+	[self.button009 setSelected:NO];
+}
+
+- (void) categoryFunPressed:(id) sender
+{
+	[self.button001 setSelected:NO];
+	[self.button002 setSelected:NO];
+	[self.button003 setSelected:NO];
+	[self.button004 setSelected:YES];
+	[self.button005 setSelected:NO];
+	[self.button006 setSelected:NO];
+	[self.button007 setSelected:NO];
+	[self.button008 setSelected:NO];
+}
+
+- (void) categoryServicesPressed:(id) sender
+{
+	[self.button001 setSelected:NO];
+	[self.button002 setSelected:NO];
+	[self.button003 setSelected:NO];
+	[self.button004 setSelected:NO];
+	[self.button005 setSelected:YES];
+	[self.button006 setSelected:NO];
+	[self.button007 setSelected:NO];
+	[self.button008 setSelected:NO];
+	[self.button009 setSelected:NO];
+}
+
+- (void) categoryDiningPressed:(id) sender
+{
+	[self.button001 setSelected:NO];
+	[self.button002 setSelected:NO];
+	[self.button003 setSelected:NO];
+	[self.button004 setSelected:NO];
+	[self.button005 setSelected:NO];
+	[self.button006 setSelected:YES];
+	[self.button007 setSelected:NO];
+	[self.button008 setSelected:NO];
+	[self.button009 setSelected:NO];
+}
+- (void) categoryFamilyPressed:(id) sender
+{
+	[self.button001 setSelected:NO];
+	[self.button002 setSelected:NO];
+	[self.button003 setSelected:NO];
+	[self.button004 setSelected:NO];
+	[self.button005 setSelected:NO];
+	[self.button006 setSelected:NO];
+	[self.button007 setSelected:YES];
+	[self.button008 setSelected:NO];
+	[self.button009 setSelected:NO];
+}
+- (void) categoryShoppingPressed:(id) sender
+{
+	[self.button001 setSelected:NO];
+	[self.button002 setSelected:NO];
+	[self.button003 setSelected:NO];
+	[self.button004 setSelected:NO];
+	[self.button005 setSelected:NO];
+	[self.button006 setSelected:NO];
+	[self.button007 setSelected:NO];
+	[self.button008 setSelected:YES];
+	[self.button009 setSelected:NO];
+}
+
+- (void) categoryWellnessPressed:(id) sender
+{
+	[self.button001 setSelected:NO];
+	[self.button002 setSelected:NO];
+	[self.button003 setSelected:NO];
+	[self.button004 setSelected:NO];
+	[self.button005 setSelected:NO];
+	[self.button006 setSelected:NO];
+	[self.button007 setSelected:NO];
+	[self.button008 setSelected:NO];
+	[self.button009 setSelected:YES];
 }
 
 - (void)arrangeButtons
@@ -509,11 +658,13 @@
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_001_seeall.png"] size];	
-	UIButton *button001 = [[UIButton alloc] initWithFrame:frame];
-	[button001 setImage:[images objectAtIndex:0] forState:UIControlStateNormal];
-	[button001 setTag:0];
-	[button001 addTarget:self action:@selector(categorySeeAllPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button001];
+	self.button001 = [[UIButton alloc] initWithFrame:frame];
+	[self.button001 setImage:[images objectAtIndex:0] forState:UIControlStateNormal];
+	[self.button001 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_001_seeall.png"] forState:UIControlStateSelected];
+	[self.button001 setTag:0];
+	[self.button001 addTarget:self action:@selector(categorySeeAllPressed:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.scrollView addSubview:self.button001];
 	
 	
 	
@@ -521,42 +672,46 @@
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_002_bars.png"] size];
-	UIButton *button002 = [[UIButton alloc] initWithFrame:frame];
-	[button002 setImage:[images objectAtIndex:1] forState:UIControlStateNormal];
-	[button002 setTag:1];
-	[button002 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button002];
+	self.button002 = [[UIButton alloc] initWithFrame:frame];
+	[self.button002 setImage:[images objectAtIndex:1] forState:UIControlStateNormal];
+	[self.button002 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_002_bars.png"] forState:UIControlStateSelected];
+	[self.button002 setTag:1];
+	[self.button002 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:self.button002];
 	
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_003_travel.png"] size];
-	UIButton *button008 = [[UIButton alloc] initWithFrame:frame];
-	[button008 setImage:[images objectAtIndex:2] forState:UIControlStateNormal];
-	[button008 setTag:2];
-	[button008 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button008];
+	self.button003 = [[UIButton alloc] initWithFrame:frame];
+	[self.button003 setImage:[images objectAtIndex:2] forState:UIControlStateNormal];
+	[self.button003 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_003_travel.png"] forState:UIControlStateSelected];
+	[self.button003 setTag:2];
+	[self.button003 addTarget:self action:@selector(categoryTravelPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:self.button003];
 	
 	
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_004_fun.png"] size];
-	UIButton *button005 = [[UIButton alloc] initWithFrame:frame];
-	[button005 setImage:[images objectAtIndex:3] forState:UIControlStateNormal];
-	[button005 setTag:3];
-	[button005 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button005];
+	self.button004 = [[UIButton alloc] initWithFrame:frame];
+	[self.button004 setImage:[images objectAtIndex:3] forState:UIControlStateNormal];
+	[self.button004 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_004_fun.png"] forState:UIControlStateSelected];
+	[self.button004 setTag:3];
+	[self.button004 addTarget:self action:@selector(categoryFunPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:self.button004];
 	
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_005_services.png"] size];
-	UIButton *button006 = [[UIButton alloc] initWithFrame:frame];
-	[button006 setImage:[images objectAtIndex:4] forState:UIControlStateNormal];
-	[button006 setTag:4];
-	[button006 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button006];
+	self.button005 = [[UIButton alloc] initWithFrame:frame];
+	[self.button005 setImage:[images objectAtIndex:4] forState:UIControlStateNormal];
+	[self.button005 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_005_services.png"] forState:UIControlStateSelected];
+	[self.button005 setTag:4];
+	[self.button005 addTarget:self action:@selector(categoryServicesPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:self.button005];
 	
 	
 	
@@ -564,32 +719,35 @@
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_006_dining.png"] size];
-	UIButton *button003 = [[UIButton alloc] initWithFrame:frame];
-	[button003 setImage:[images objectAtIndex:5] forState:UIControlStateNormal];
-	[button003 setTag:5];
-	[button003 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button003];
+	self.button006 = [[UIButton alloc] initWithFrame:frame];
+	[self.button006 setImage:[images objectAtIndex:5] forState:UIControlStateNormal];
+	[self.button006 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_006_dining.png"] forState:UIControlStateSelected];
+	[self.button006 setTag:5];
+	[self.button006 addTarget:self action:@selector(categoryDiningPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:self.button006];
 	
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_007_family.png"] size];
-	UIButton *button004 = [[UIButton alloc] initWithFrame:frame];
-	[button004 setImage:[images objectAtIndex:6] forState:UIControlStateNormal];
-	[button004 setTag:6];
-	[button004 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button004];
+	self.button007 = [[UIButton alloc] initWithFrame:frame];
+	[self.button007 setImage:[images objectAtIndex:6] forState:UIControlStateNormal];
+	[self.button007 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_007_family.png"] forState:UIControlStateSelected];
+	[self.button007 setTag:6];
+	[self.button007 addTarget:self action:@selector(categoryFamilyPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:self.button007];
 	
 	
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_008_shopping.png"] size];
-	UIButton *button007 = [[UIButton alloc] initWithFrame:frame];
-	[button007 setImage:[images objectAtIndex:7] forState:UIControlStateNormal];
-	[button007 setTag:7];
-	[button007 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button007];
+	self.button008 = [[UIButton alloc] initWithFrame:frame];
+	[self.button008 setImage:[images objectAtIndex:7] forState:UIControlStateNormal];
+	[self.button008 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_008_shopping.png"] forState:UIControlStateSelected];
+	[self.button008 setTag:7];
+	[self.button008 addTarget:self action:@selector(categoryShoppingPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:self.button008];
 	
 	
 	
@@ -597,21 +755,22 @@
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_009_wellness.png"] size];
-	UIButton *button009 = [[UIButton alloc] initWithFrame:frame];
-	[button009 setImage:[images objectAtIndex:8] forState:UIControlStateNormal];
-	[button009 setTag:8];
-	[button009 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button009];
+	self.button009 = [[UIButton alloc] initWithFrame:frame];
+	[self.button009 setImage:[images objectAtIndex:8] forState:UIControlStateNormal];
+	[self.button009 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_009_wellness.png"] forState:UIControlStateSelected];
+	[self.button009 setTag:8];
+	[self.button009 addTarget:self action:@selector(categoryWellnessPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[self.scrollView addSubview:self.button009];
 	
 	scrollWidth += 88.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"category_icon_010_blank.png"] size];
-	UIButton *button010 = [[UIButton alloc] initWithFrame:frame];
-	[button010 setImage:[images objectAtIndex:9] forState:UIControlStateNormal];
-	[button010 setTag:9];
-	[button010 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:button010];
+	self.button010 = [[UIButton alloc] initWithFrame:frame];
+	[self.button010 setImage:[images objectAtIndex:9] forState:UIControlStateNormal];
+	[self.button010 setTag:9];
+	/* [self.button010 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside]; */
+	[self.scrollView addSubview:self.button010];
 	
 	[self.scrollView setBackgroundColor:[UIColor whiteColor]]; 
 	self.scrollView.pagingEnabled = NO;
@@ -777,7 +936,7 @@
 		
 		[self.scrollDividerView setFrame:CGRectOffset([self.scrollDividerView frame], 0, -(self.scrollView.frame.size.height))];
 		
-
+		
 		CGRect navframe = [[self.navigationController navigationBar] frame];
 		
 		CGRect l_RectFrame = CGRectMake(0,  navframe.size.height, self.view.frame.size.width, self.view.frame.size.height);
@@ -803,12 +962,12 @@
 		[self.scrollView setFrame:CGRectOffset([self.scrollView	frame], 0, ( 2 * self.scrollView.frame.size.height))];
 		
 		CGRect navframe = [[self.navigationController navigationBar] frame];
-	
 		
 		
-		CGRect lDividerFrame = CGRectMake(0, navframe.size.height + self.scrollView.frame.size.height, self.scrollDividerView.frame.size.width, 
-										  self.scrollDividerView.frame.size.height);
-
+		
+		CGRect lDividerFrame = CGRectMake(0, navframe.size.height + self.scrollView.frame.size.height, 
+										  self.scrollDividerView.frame.size.width, self.scrollDividerView.frame.size.height);
+		
 		[self.scrollDividerView setFrame:lDividerFrame];
 		
 		
