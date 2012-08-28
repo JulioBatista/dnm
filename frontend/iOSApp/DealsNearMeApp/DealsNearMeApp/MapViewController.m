@@ -312,7 +312,7 @@
 -(void) locateMeOnMap:(CLLocation *)c
 {
 	
-	
+	NSLog(@"Start of locateMeOnMap %@", c);
 	//--1
 	
 	double lat = c.coordinate.latitude;
@@ -330,7 +330,7 @@
 	MyAnnotation *myAnnotation = [[MyAnnotation alloc] initWithCoordinate:coordinate];
 	
 	
-	/* [self.map addAnnotation:(id)myAnnotation]; */
+	[self.map addAnnotation:(id)myAnnotation];
 	
 	//--3
 	/* MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
@@ -341,6 +341,8 @@
 	MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];
 	
 	[self.map setRegion:adjustedRegion animated:YES];
+    
+    NSLog(@"End of locateMeOnMap");
 }
 
 -(void) geocode:(NSString *)address
@@ -388,9 +390,12 @@
 
 -(void) doMapStuff:(CLLocation *)c
 {
-	/* [self revGeocode:c]; */
+
 	
+    
 	[self locateMeOnMap:c];
+    
+    	[self revGeocode:c];
 }
 
 -(void) revGeocode:(CLLocation *)c
@@ -426,6 +431,8 @@
 {
 	/* if (self.map.annotations) [self.map removeAnnotations:self.map.annotations]; */
 	
+
+    
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	[locationManager startUpdatingLocation];
