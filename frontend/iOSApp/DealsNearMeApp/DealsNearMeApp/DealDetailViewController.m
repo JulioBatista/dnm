@@ -14,6 +14,7 @@
 
 @implementation DealDetailViewController
 @synthesize mapDeal = _mapDeal;
+@synthesize dealnum = _dealnum;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +29,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    NSLog(@"trying to retrieve indexPath %@", self.dealnum);
+    
+    
 }
 
 - (void)viewDidUnload
@@ -46,4 +51,7 @@
 {
 	[self.navigationController popViewControllerAnimated:YES];
 }
+
+
+
 @end

@@ -18,4 +18,6 @@
 
 @property (nonatomic, strong) MapDeal *mapDeal;
 
+@property (nonatomic, strong) NSNumber *dealnum;
+
 @end

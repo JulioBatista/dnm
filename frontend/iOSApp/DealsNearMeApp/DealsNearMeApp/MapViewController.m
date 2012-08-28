@@ -393,9 +393,9 @@
 
 	
     
-	[self locateMeOnMap:c];
+	/* [self locateMeOnMap:c]; */
     
-    	[self revGeocode:c];
+    /* 	[self revGeocode:c]; */
 }
 
 -(void) revGeocode:(CLLocation *)c
@@ -422,8 +422,8 @@
 {
 	if (newLocation.coordinate.latitude != oldLocation.coordinate.latitude)
 	{
-		/* [self revGeocode: newLocation]; */
-		[self doMapStuff:newLocation];
+		[self revGeocode: newLocation];
+		[self doMapStuff:newLocation]; 
 	}
 }
 
@@ -875,13 +875,29 @@
 	if ([segue.identifier isEqualToString:@"DealDetailSegue"])
 	{
 		NSLog(@"Wonder if the prepareForSegue is getting called %@", segue.destinationViewController);
+        
+        UITableViewCell *cell = (UITableViewCell *) sender;
+        
+        NSIndexPath *indexPath = [self.dealsTableView indexPathForCell:cell];
+        
+        
+        
+        DealDetailViewController *dest = [segue destinationViewController];
+        
+        dest.dealnum = [[NSNumber alloc] initWithInteger:indexPath.row];
+        
+        
 		
+        NSLog(@"---------------DealDetailSegue " );
+        
 		
 		if ([segue.destinationViewController respondsToSelector:@selector(setMapDeal:)]) 
 		{
 			[segue.destinationViewController performSelector:@selector(setMapDeal:) 
 												  withObject:sender];
 		}
+        
+        
 		
 	}
 }
