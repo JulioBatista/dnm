@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MapKit/MapKit.h"
+#import "LocationPickerViewController.h"
 
-
-@interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource,LocationPickerViewControllerDelegate>
 {
 	UITableViewController *myTableViewController;
 	UITableView *dealsTableView;
@@ -27,6 +27,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 
 - (IBAction)doLocateMeButton:(id)sender;
+
+- (IBAction)buttonLocationPicker:(id)sender;
+
 
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonToggle;
