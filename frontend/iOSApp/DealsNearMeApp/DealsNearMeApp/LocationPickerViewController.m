@@ -178,6 +178,22 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (selectedIndex != NSNotFound)
+    {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    selectedIndex = indexPath.row;
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    NSString *theCity = [cities objectAtIndex:indexPath.row];
+    
+    [self.delegate locationPickerViewController:self didSelectCity:theCity];
     
     
 }
@@ -197,6 +213,8 @@
 
 
 #pragma mark UISearchDisplayDelegate methods
+
+
 
 
 @end

@@ -15,6 +15,9 @@
 
 - (void)  locationPickerViewControllerDidCancel:(LocationPickerViewController *) controller;
 
+- (void) locationPickerViewController:(LocationPickerViewController *)controller
+                        didSelectCity:(NSString *) theCity;
+
 @end
 
 @interface LocationPickerViewController : UITableViewController
