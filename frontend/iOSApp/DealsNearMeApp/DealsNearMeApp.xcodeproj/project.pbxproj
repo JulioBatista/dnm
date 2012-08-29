@@ -26,6 +26,7 @@
 		4B367E5E15E41D460039AFB5 /* PostADealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B367E5D15E41D440039AFB5 /* PostADealViewController.m */; };
 		4B367E6115E426FD0039AFB5 /* MapDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B367E6015E426FB0039AFB5 /* MapDeal.m */; };
 		4B367E6415E43DAF0039AFB5 /* DealsNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B367E6315E43DAD0039AFB5 /* DealsNetworkFetcher.m */; };
+		4B37624815EDB03300BC2730 /* PreSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B37624715EDB03300BC2730 /* PreSplashViewController.m */; };
 		4B44262B15C61D3100E46BD9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261715C61D3100E46BD9 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B44262C15C61D3100E46BD9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261915C61D3100E46BD9 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B44262D15C61D3100E46BD9 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261B15C61D3100E46BD9 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -233,6 +234,8 @@
 		4B367E6015E426FB0039AFB5 /* MapDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDeal.m; sourceTree = "<group>"; };
 		4B367E6215E43DAB0039AFB5 /* DealsNetworkFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsNetworkFetcher.h; sourceTree = "<group>"; };
 		4B367E6315E43DAD0039AFB5 /* DealsNetworkFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsNetworkFetcher.m; sourceTree = "<group>"; };
+		4B37624615EDB03300BC2730 /* PreSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreSplashViewController.h; sourceTree = "<group>"; };
+		4B37624715EDB03300BC2730 /* PreSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreSplashViewController.m; sourceTree = "<group>"; };
 		4B44261615C61D3100E46BD9 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		4B44261715C61D3100E46BD9 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		4B44261815C61D3100E46BD9 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -575,6 +578,8 @@
 				4BB5A9FE15D05816003E5F97 /* MyAnnotation.m */,
 				4BB5AA2015D0DC8D003E5F97 /* NetworkDealAnnotation.h */,
 				4BB5AA2115D0DC8D003E5F97 /* NetworkDealAnnotation.m */,
+				4B37624615EDB03300BC2730 /* PreSplashViewController.h */,
+				4B37624715EDB03300BC2730 /* PreSplashViewController.m */,
 				4BF8BCB615DA0710002EECD6 /* SplashViewController.h */,
 				4BF8BCB715DA0710002EECD6 /* SplashViewController.m */,
 				4B367E5315E336650039AFB5 /* NewDealsViewController.h */,
@@ -1031,6 +1036,7 @@
 				4B367E5E15E41D460039AFB5 /* PostADealViewController.m in Sources */,
 				4B367E6115E426FD0039AFB5 /* MapDeal.m in Sources */,
 				4B367E6415E43DAF0039AFB5 /* DealsNetworkFetcher.m in Sources */,
+				4B37624815EDB03300BC2730 /* PreSplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
