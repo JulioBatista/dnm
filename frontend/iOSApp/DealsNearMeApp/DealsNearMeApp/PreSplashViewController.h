@@ -10,4 +10,9 @@
 
 @interface PreSplashViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewPreSplashLogo;
+
+
+- (IBAction)buttonStart:(id)sender;
+
 @end

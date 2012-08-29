@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--Map View Controller-->
@@ -966,11 +966,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="presplash_without_glow.png" id="8hG-V5-Q8P">
+                                <rect key="frame" x="64" y="179" width="192" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="erx-Q1-xsw"/>
                     <connections>
+                        <outlet property="imageViewPreSplashLogo" destination="8hG-V5-Q8P" id="zkd-zD-bhV"/>
                         <segue destination="kag-E6-ZH9" kind="push" identifier="PreSplashToSplashSegue" id="OXC-VP-feq"/>
                     </connections>
                 </viewController>
@@ -1293,6 +1298,7 @@
         <image name="next_arrow_orange.png" width="72" height="72"/>
         <image name="no_splash_button.png" width="580" height="95"/>
         <image name="orange_map_icon_114x114.png" width="114" height="114"/>
+        <image name="presplash_without_glow.png" width="535" height="261"/>
         <image name="previous_arrow_orange.png" width="72" height="72"/>
         <image name="redheart_icon_60x60.png" width="60" height="60"/>
         <image name="smsnote_icon_60x60.png" width="60" height="60"/>
@@ -1307,6 +1313,9 @@
         </class>
         <class className="BarsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
         </class>
         <class className="DealCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
@@ -1351,8 +1360,10 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="buttonToggle" candidateClass="UIBarButtonItem"/>
@@ -1380,6 +1391,10 @@
         </class>
         <class className="PreSplashViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PreSplashViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonStart:"/>
+                <relationship kind="outlet" name="imageViewPreSplashLogo" candidateClass="UIImageView"/>
+            </relationships>
         </class>
         <class className="SplashViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
