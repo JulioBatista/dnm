@@ -119,7 +119,7 @@
 
 -(void) updateMapView
 {
-	if (self.map.annotations) [self.map removeAnnotations:self.map.annotations];
+	/* if (self.map.annotations) [self.map removeAnnotations:self.map.annotations]; */
 	if (self.annotations) [self.map addAnnotations:self.annotations];
 }
 
@@ -400,7 +400,7 @@
 
 	
     
-	/* [self locateMeOnMap:c]; */
+	[self locateMeOnMap:c]; 
     
     /* 	[self revGeocode:c]; */
 }
@@ -437,18 +437,26 @@
 - (IBAction)doLocateMeButton:(id)sender 
 {
 	/* if (self.map.annotations) [self.map removeAnnotations:self.map.annotations]; */
-	
-
+	/* 
+	NSLog(@"doLocateMeButton pressed");
     
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	[locationManager startUpdatingLocation];
 	
+	 
 	self.locationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(stopUpdatingLocations) userInfo:nil repeats:NO];
 	
 	
 	
-	[self getDealsFromNetwork];
+	 [self getDealsFromNetwork]; 
+	 
+	 */
+	
+	self.map.showsUserLocation = YES;
+	
+	[self.map setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+
 }
 
 - (IBAction)buttonLocationPicker:(id)sender
