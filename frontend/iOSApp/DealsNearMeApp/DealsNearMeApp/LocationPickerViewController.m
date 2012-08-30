@@ -50,6 +50,7 @@
               @"Philadelphia, PA",
               @"Seattle, Washington",
               @"Washington, D.C.",
+			  @"Toronto, ON",
               nil];
     
     

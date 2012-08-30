@@ -38,10 +38,15 @@
 @property (nonatomic, strong) UIButton *button009;
 @property (nonatomic, strong) UIButton *button010;
 
+@property (nonatomic, strong) CLGeocoder *geocoder;
+
 
 @end
 
 @implementation MapViewController
+{
+	NSString *city;
+}
 
 @synthesize buttonToggle = _buttonToggle;
 @synthesize dealsTableView = _dealsTableView;
@@ -71,6 +76,7 @@
 @synthesize button009 = _button009;
 @synthesize button010 = _button010;
 
+@synthesize geocoder = _geocoder;
 
 
 #pragma mark setters
@@ -656,7 +662,7 @@
 	
 	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_004_fun.png"]];
     
-    [images addObject:[UIImage imageNamed:@"right_arrow_category_evensmaller.png"]];
+    [images addObject:[UIImage imageNamed:@"right_arrow_left_arrow_category.png"]];
 	
 	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_005_services.png"]];
 	
@@ -722,10 +728,10 @@
     scrollWidth += 72.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"right_arrow_category_evensmaller.png"] size];
+	frame.size = [[UIImage imageNamed:@"right_arrow_left_arrow_category.png"] size];
 	self.button004x = [[UIButton alloc] initWithFrame:frame];
 	[self.button004x setImage:[images objectAtIndex:4] forState:UIControlStateNormal];
-	[self.button004x setImage:[UIImage imageNamed:@"right_arrow_category_evensmaller.png"] forState:UIControlStateSelected];
+	[self.button004x setImage:[UIImage imageNamed:@"right_arrow_left_arrow_category.png"] forState:UIControlStateSelected];
 	[self.button004x setTag:4];
 	[self.button004x addTarget:self action:@selector(categoryFunPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button004x];
@@ -1060,6 +1066,77 @@
         //do map stuff here
     }];
     
+}
+
+#define METERS_PER_MILE 1689.344
+
+- (void) locationPickerViewController:(LocationPickerViewController *)controller
+                        didSelectCity:(NSString *) theCity
+{
+	city = theCity;
+
+	self.addressLabel.text = city;
+	NSLog(@"The value of city is %@", theCity);
+	[self dismissViewControllerAnimated:YES completion:^{
+        //do map stuff here
+		__block CLLocationCoordinate2D zoomLocation;
+		// 0 
+		
+		if (!self.geocoder) {
+			self.geocoder = [[CLGeocoder alloc] init];
+		}
+		
+		[self.geocoder geocodeAddressString:theCity	completionHandler:^(NSArray *placemarks, NSError *error) 
+		{
+			if ([placemarks count] > 0) {
+				CLPlacemark *placemark = [placemarks objectAtIndex:0];
+				CLLocation *location = placemark.location;
+				
+				if ([theCity isEqualToString:@"Toronto, ON"])
+				{
+									NSLog(@"------------zooming to levia--------- %@", theCity);
+					zoomLocation.latitude = 43.700934;
+					zoomLocation.longitude= -79.426240;
+				}
+				else {
+					zoomLocation = location.coordinate;
+				}
+	
+				// 2
+				MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+				// 3
+				MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];                
+				// 4
+				[self.map setRegion:adjustedRegion animated:YES];  
+				
+
+				
+				/* 
+				 self.addressLabel.text = [NSString stringWithFormat:@"%f, %f", zoomLocation.latitude, zoomLocation.longitude];
+				 */
+				
+				if ([placemark.areasOfInterest count] > 0) 
+				{
+					NSString *areaOfInterest = [placemark.areasOfInterest objectAtIndex:0];
+					NSLog(@"Areas of Interest: %@", areaOfInterest);
+				} else {
+					NSLog(@"No Area of Interest Was Found");
+				}
+				
+				
+				
+			}
+		}];
+		
+		// 1
+		/* 
+		 CLLocationCoordinate2D zoomLocation;
+		zoomLocation.latitude = 39.281516;
+		zoomLocation.longitude= -76.580806;
+		 */
+		 
+    }];
+	
 }
 @end
 
