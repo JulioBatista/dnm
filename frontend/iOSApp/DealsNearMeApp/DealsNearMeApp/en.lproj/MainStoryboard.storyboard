@@ -170,6 +170,7 @@
                         <outlet property="map" destination="1Sd-yk-4AT" id="z7Q-we-f4e"/>
                         <outlet property="scrollDividerView" destination="UoY-ih-1bp" id="AwH-ri-aZi"/>
                         <outlet property="scrollView" destination="Jbg-zK-dbq" id="OCv-38-TQO"/>
+                        <segue destination="KvL-wI-8Ow" kind="push" identifier="FromMapDealDetailSegue" id="4Sc-dY-pY2"/>
                     </connections>
                 </viewController>
             </objects>
@@ -1789,4 +1790,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="4Sc-dY-pY2"/>
+    </inferredMetricsTieBreakers>
 </document>

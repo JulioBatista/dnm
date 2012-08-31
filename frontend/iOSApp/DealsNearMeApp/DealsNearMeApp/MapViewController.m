@@ -15,6 +15,7 @@
 #import "DealCell.h"
 #import "DealDetailViewController.h"
 #import "LocationPickerViewController.h"
+#import "NewDealDetailViewController.h"
 
 @interface MapViewController ()<MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet MKMapView *map;
@@ -78,6 +79,7 @@
 
 @synthesize geocoder = _geocoder;
 
+@synthesize mapIndexPath = _mapIndexPath;
 
 #pragma mark setters
 
@@ -142,6 +144,8 @@
 }
 
 #pragma mark MapViewDelegate methods
+
+
 
 - (MKAnnotationView *) mapView:(MKMapView *)map viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -223,6 +227,7 @@
 		pinView.canShowCallout = YES;
 		
 		UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+	
 		
 		pinView.rightCalloutAccessoryView = rightButton;
 		
@@ -234,6 +239,17 @@
     }
     return pinView;
 }
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+
+
+	self.mapIndexPath = [self.map.annotations indexOfObject:view];
+						
+	
+	[self performSegueWithIdentifier:@"FromMapDealDetailSegue" sender:self];
+}
+
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)aView
 {
@@ -1041,6 +1057,14 @@
 		NSLog(@"---------------end of prepareForSegue " );
 		
 	}
+	else if ([segue.identifier isEqualToString:@"FromMapDealDetailSegue"])
+	{
+		NewDealDetailViewController *dest = [segue destinationViewController];
+		
+		dest.dealIndex = self.mapIndexPath;
+		
+	}
+	
     else if ([segue.identifier isEqualToString:@"LocationPickerSegue"])
     {
         UINavigationController *navigationController = segue.destinationViewController;

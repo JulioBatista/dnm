@@ -65,4 +65,6 @@
 
 @property (nonatomic, strong) NSTimer *locationTimer;
 
+@property (nonatomic) NSUInteger mapIndexPath;
+
 @end

@@ -16,6 +16,7 @@
 @synthesize labelDealTitle;
 @synthesize labelDealDescription;
 @synthesize dealnum = _dealnum;
+@synthesize dealIndex = _dealIndex;
 @synthesize currentDeal = _currentDeal;
 @synthesize currentDealNum = _currentDealNum;
 @synthesize archivedDeals = _archivedDeals;
@@ -61,7 +62,16 @@
 	
 	self.currentDealNum = [self.dealnum integerValue];
 	
+	if (self.dealnum == nil)
+	{
+		self.dealnum = 0;
+		NSLog(@"dealnum was nil");
+	}
+	
 	NSLog(@"currentDealNum %d", self.currentDealNum);
+	
+	
+	NSLog(@"self.dealIndex : %d", self.dealIndex);
 	
 	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:[self.dealnum integerValue]];
 	
@@ -109,15 +119,13 @@
 		
 		NSLog(@"Current Deal Num: %d", self.currentDealNum);
 		
-		
-		
 		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
 		
 		self.labelDealTitle.text = [self.currentDeal objectForKey:NETWORK_DEAL_OWNER];
 		
 		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_TITLE];
 		
-			[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
+		[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 		
 		self.labelAddress.text = [self.currentDeal objectForKey:NETWORK_DEAL_ADDRESS];
 	}
@@ -125,7 +133,7 @@
 
 - (IBAction)buttonPrev:(id)sender 
 {
-			NSLog(@"buttonPrev Pressed %d", self.currentDealNum);
+	NSLog(@"buttonPrev Pressed %d", self.currentDealNum);
 	
 	if (self.currentDealNum > 0)
 	{
@@ -141,7 +149,7 @@
 		
 		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_TITLE];
 		
-			[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
+		[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 		
 		self.labelAddress.text = [self.currentDeal objectForKey:NETWORK_DEAL_ADDRESS];
 		

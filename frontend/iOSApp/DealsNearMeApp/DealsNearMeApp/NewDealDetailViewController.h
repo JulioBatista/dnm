@@ -17,6 +17,8 @@
 
 @property (nonatomic, strong) NSNumber *dealnum;
 
+@property (nonatomic) NSUInteger dealIndex;
+
 @property (nonatomic) NSInteger currentDealNum;
 
 @property (nonatomic, strong) NSDictionary *currentDeal;
