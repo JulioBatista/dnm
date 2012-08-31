@@ -17,6 +17,8 @@
 #import "LocationPickerViewController.h"
 #import "NewDealDetailViewController.h"
 
+#define METERS_PER_MILE 1689.344
+
 @interface MapViewController ()<MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 
@@ -296,7 +298,7 @@
 	self.isScrollViewVisible = YES;
 	
 	[[[UIAlertView alloc] initWithTitle:@"Welcome to Deals Near Me" 
-								message:@"Please press the blue button to get started" 
+								message:@"Tap on See All to get started" 
 							   delegate:nil 
 					  cancelButtonTitle:@"Close" 
 					  otherButtonTitles:nil] show];
@@ -639,6 +641,29 @@
 	
 }
 
+- (void) gotoHardCodedLocation
+{
+    CLLocationCoordinate2D hardcodedLocation;
+    
+    
+    // for 60610
+    hardcodedLocation.latitude = 41.902837;
+    hardcodedLocation.longitude = -87.635913;
+    
+    // for Levia
+    // hardcodedLocation.latitude = 43.700934;
+    // hardcodedLocation.longitude= -79.426240;
+    
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(hardcodedLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    // 3
+    MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];
+    // 4
+    [self.map setRegion:adjustedRegion animated:YES];
+    
+    
+}
+
 - (void)categorySeeAllPressed:(id)sender
 {
 	NSLog(@"refresh was pressed");
@@ -660,9 +685,11 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
+
 	
 	[self getDealsFromNetwork];
-	
+
+    /* [self gotoHardCodedLocation]; */
 	
 }
 
@@ -1115,7 +1142,7 @@
 		
 		[self.buttonListButton setImage:[UIImage imageNamed:@"07-map-marker-white.png"]];
 	}
-	else 
+	else
 	{
 		self.isMapVisible = YES;
 		
@@ -1199,7 +1226,7 @@
     
 }
 
-#define METERS_PER_MILE 1689.344
+
 
 - (void) locationPickerViewController:(LocationPickerViewController *)controller
                         didSelectCity:(NSString *) theCity
@@ -1229,6 +1256,13 @@
 					 zoomLocation.latitude = 43.700934;
 					 zoomLocation.longitude= -79.426240;
 				 }
+                 else if ([theCity isEqualToString:@"Chicago, IL"])
+				 {
+					 NSLog(@"------------zooming to 60610--------- %@", theCity);
+					 zoomLocation.latitude = 41.902837;
+					 zoomLocation.longitude= -87.635913;
+				 }
+                 
 				 else {
 					 zoomLocation = location.coordinate;
 				 }
