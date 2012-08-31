@@ -157,14 +157,22 @@
 	
 		/* [self doNetworkFetch]; */
     
+
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
     NSData *favoriteDealsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"favoritedealsarchive"];
 	
 	self.favoriteDeals = [NSKeyedUnarchiver unarchiveObjectWithData:favoriteDealsData];
     
 	if ([self.favoriteDeals count] > 0)
 	{
-		NSLog(@"Favorite deals were found");
+		NSLog(@"Favorite deals were found : %d", [self.favoriteDeals count]);
 	}
+    
+    [self.tableView reloadData];
 }
 //==============================================================================================
 
@@ -188,7 +196,7 @@
 {
 	
     // Return the number of rows in the section.
-    return [self.photos count];
+    return [self.favoriteDeals count];
 }
 
 -(UIImage *) imageForRating:(int)rating
@@ -211,22 +219,24 @@
     
     // Configure the cell...
 	
-	NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
+	NSDictionary *favoriteDeal = [self.favoriteDeals objectAtIndex:indexPath.row];
 	
 	
 	UILabel *titleLabel = (UILabel *) [cell viewWithTag:100];
 	/* 	cell.textLabel.text = [photo objectForKey:FLICKR_PHOTO_TITLE]; */
-	titleLabel.text = [photo objectForKey:NETWORK_DEAL_TITLE];
+	titleLabel.text = [favoriteDeal objectForKey:NETWORK_DEAL_TITLE];
 	
 	UILabel *ownerLabel = (UILabel *) [cell viewWithTag:101];
-	cell.detailTextLabel.text = [photo objectForKey:NETWORK_DEAL_OWNER];
-	ownerLabel.text = [photo objectForKey:NETWORK_DEAL_OWNER];
+	cell.detailTextLabel.text = [favoriteDeal objectForKey:NETWORK_DEAL_OWNER];
+	ownerLabel.text = [favoriteDeal objectForKey:NETWORK_DEAL_OWNER];
 	
-
+    
 	UIImageView *ratingImageView = (UIImageView *) [cell viewWithTag:102];
 
-	ratingImageView.image = [self imageForRating:[[photo objectForKey:NETWORK_DEAL_RATING] intValue]]
-	;
+	ratingImageView.image  = [UIImage imageNamed:@"default_thumb.png"];
+    
+    
+
 	
 	
     
@@ -234,33 +244,50 @@
 	
     return cell;
 }
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+	{
+        
+        @try {
+                    [self.favoriteDeals removeObjectAtIndex:indexPath.row];
+        }
+        @catch (NSException *exception)
+        {
+            NSLog(@"------------%@", exception);
+        }
+        @finally
+        {
+            NSLog(@"------------finally------------");
+            
+            [self.tableView reloadData];
+
+        }
+
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.favoriteDeals];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"favoritedealsarchive"];
+        
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+	{
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+
+    
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 55;
+}
+
+
 //==============================================================================================
 
-- (void) fetchedData:(NSData *)responseData
-{
-	// parse out the json data
-	NSError *error;
-	NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData
-														 options:kNilOptions
-														   error:&error];
-	
-	NSArray *latestDeals = [json objectForKey:@"loans"];
-	
-	NSLog(@"loans: %@", latestDeals);
-	
-	// 1) Get the latest loan
-	NSDictionary* deal = [latestDeals objectAtIndex:0];
-	
-	// 2) Get the funded amount and loan amount
-	NSNumber* fundedAmount = [deal objectForKey:@"funded_amount"];
-	NSNumber* loanAmount = [deal objectForKey:@"loan_amount"];
-	float outstandingAmount = [loanAmount floatValue] - 
-	[fundedAmount floatValue];
-	
-
-		  
-		  
-}
 //==============================================================================================
 
 @end
