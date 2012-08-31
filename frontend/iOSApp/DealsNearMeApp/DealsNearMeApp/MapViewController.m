@@ -154,6 +154,13 @@
     {
         static NSString *defaultPinID = @"mypin";
         pinView = (MKAnnotationView *)[map dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        
+        
+		if (pinView == nil)
+		{
+			pinView = [[MKAnnotationView alloc]
+					   initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+		}
 		
 		NSString *iconFilename = @"";
 		NSString *pinViewFilename = @"";
@@ -211,17 +218,13 @@
 			iconFilename = @"map_pin_fun_23px.png";
 			pinViewFilename = @"map_pin_fun_23px.png";
 		}
-		
-		if (pinView == nil)
-		{
-			pinView = [[MKAnnotationView alloc]
-					   initWithAnnotation:annotation reuseIdentifier:defaultPinID];
-		}
+
 		UIImageView *leftIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:iconFilename]];
 		
 		UIImage *pinImage = [UIImage imageNamed:pinViewFilename];
 		
 		pinView.leftCalloutAccessoryView = leftIconView;
+        
 		[pinView setImage:pinImage];
 		
 		pinView.canShowCallout = YES;
@@ -230,12 +233,15 @@
 	
 		
 		pinView.rightCalloutAccessoryView = rightButton;
-		
+        
+        
+    
 		
 		
     } 
     else {
         [map.userLocation setTitle:@"I am here"];
+        map.userLocation.subtitle = @"Hello";
     }
     return pinView;
 }

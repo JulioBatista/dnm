@@ -35,9 +35,9 @@
 #define NETWORK_DEAL_TITLE @"title"
 #define NETWORK_DEAL_DEALNAME @"dealname"
 #define NETWORK_DEAL_DEALDESCRIPTION @"dealdescription"
-#define NETWORK_DEAL_DESCRIPTION @"description._content"
+#define NETWORK_DEAL_DESCRIPTION @"description"
 #define NETWORK_DEAL_SECTOR @"sector"
-#define NETWORK_PLACE_NAME @"_content"
+#define NETWORK_DEAL_CONTENT @"_content"
 #define NETWORK_DEAL_ID @"id"
 #define NETWORK_LATITUDE @"latitude"
 #define NETWORK_LONGITUDE @"longitude"
@@ -78,6 +78,9 @@
 	self.labelDealTitle.text = [onedeal objectForKey:NETWORK_DEAL_OWNER];
 	
 	self.labelDealDescription.text = [onedeal objectForKey:NETWORK_DEAL_TITLE];
+
+    
+    self.labelDealDescription.text = [[onedeal objectForKey:NETWORK_DEAL_DEALDESCRIPTION] objectForKey:NETWORK_DEAL_CONTENT];
 	
 	[self.buttonCategory setTitle:[onedeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 	
