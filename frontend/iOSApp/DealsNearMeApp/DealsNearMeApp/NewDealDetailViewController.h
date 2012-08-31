@@ -25,6 +25,8 @@
 
 @property (nonatomic, strong) NSMutableArray *archivedDeals;
 
+@property (nonatomic, strong) NSMutableArray *favoriteDeals;
+
 @property (strong, nonatomic) IBOutlet UIButton *buttonCategory;
 
 @property (strong, nonatomic) IBOutlet UILabel *labelAddress;
@@ -32,5 +34,7 @@
 - (IBAction)buttonNext:(id)sender;
 
 - (IBAction)buttonPrev:(id)sender;
+
+- (IBAction)buttonFavoritesPressed:(id)sender;
 
 @end

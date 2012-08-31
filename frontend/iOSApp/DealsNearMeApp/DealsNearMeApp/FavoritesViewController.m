@@ -19,6 +19,7 @@
 
 @implementation FavoritesViewController
 @synthesize photos = _photos;
+@synthesize favoriteDeals = _favoriteDeals;
 //==============================================================================================
 - (void) setPhotos:(NSArray *) photos
 {
@@ -154,7 +155,16 @@
 	dispatch_release(downloadQueue);
 	 */
 	
-		[self doNetworkFetch];
+		/* [self doNetworkFetch]; */
+    
+    NSData *favoriteDealsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"favoritedealsarchive"];
+	
+	self.favoriteDeals = [NSKeyedUnarchiver unarchiveObjectWithData:favoriteDealsData];
+    
+	if ([self.favoriteDeals count] > 0)
+	{
+		NSLog(@"Favorite deals were found");
+	}
 }
 //==============================================================================================
 

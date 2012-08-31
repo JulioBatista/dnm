@@ -13,4 +13,7 @@
 
 
 - (IBAction)doRefresh:(UIBarButtonItem *)sender;
+
+@property (nonatomic, strong) NSMutableArray *favoriteDeals;
+
 @end

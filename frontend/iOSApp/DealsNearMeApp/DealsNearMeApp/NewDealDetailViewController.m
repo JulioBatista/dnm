@@ -7,6 +7,7 @@
 //
 
 #import "NewDealDetailViewController.h"
+#import "FavoritesViewController.h"
 
 @interface NewDealDetailViewController ()
 
@@ -22,7 +23,7 @@
 @synthesize archivedDeals = _archivedDeals;
 @synthesize buttonCategory;
 @synthesize labelAddress;
-
+@synthesize favoriteDeals = _favoriteDeals;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,8 +42,8 @@
 #define NETWORK_DEAL_ID @"id"
 #define NETWORK_LATITUDE @"latitude"
 #define NETWORK_LONGITUDE @"longitude"
-#define NETWORK_DEAL_OWNER @"businessname"
-#define NETWORK_DEAL_ADDRESS @"businessaddress"
+#define NETWORK_DEAL_OWNER @"business_name"
+#define NETWORK_DEAL_ADDRESS @"business_address"
 #define NETWORK_DEAL_PLACE_NAME @"derived_place"
 #define NETWORK_DEAL_RATING @"rating"
 #define NETWORK_TAGS @"tags"
@@ -50,6 +51,22 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    // favorites
+    
+
+    
+    
+    NSData *favoriteDealsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"favoritedealsarchive"];
+	
+	self.favoriteDeals = [NSKeyedUnarchiver unarchiveObjectWithData:favoriteDealsData];
+    
+    if ([self.favoriteDeals count] == 0)
+    {
+            self.favoriteDeals = [[NSMutableArray alloc] init];
+    }
+    
+    
 	NSLog(@"Echo the dealnum....%@", self.dealnum);
 	NSData *dealsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"dealsarchive"];
 	
@@ -78,9 +95,11 @@
 	self.labelDealTitle.text = [onedeal objectForKey:NETWORK_DEAL_OWNER];
 	
 	self.labelDealDescription.text = [onedeal objectForKey:NETWORK_DEAL_TITLE];
-
     
-    self.labelDealDescription.text = [[onedeal objectForKey:NETWORK_DEAL_DEALDESCRIPTION] objectForKey:NETWORK_DEAL_CONTENT];
+    
+    /*
+     self.labelDealDescription.text = [[onedeal objectForKey:NETWORK_DEAL_DEALDESCRIPTION] objectForKey:NETWORK_DEAL_CONTENT];
+     */
 	
 	[self.buttonCategory setTitle:[onedeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 	
@@ -105,11 +124,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)buttonBackTapped:(id)sender 
+- (IBAction)buttonBackTapped:(id)sender
 {
 	[self.navigationController popViewControllerAnimated:YES];
 }
-- (IBAction)buttonNext:(id)sender 
+- (IBAction)buttonNext:(id)sender
 {
 	NSLog(@"buttonNext Pressed %d", self.currentDealNum);
 	
@@ -134,7 +153,7 @@
 	}
 }
 
-- (IBAction)buttonPrev:(id)sender 
+- (IBAction)buttonPrev:(id)sender
 {
 	NSLog(@"buttonPrev Pressed %d", self.currentDealNum);
 	
@@ -158,5 +177,33 @@
 		
 	}
 	
+}
+
+- (IBAction)buttonFavoritesPressed:(id)sender
+{
+    
+
+    
+	NSLog(@"How many deals in Favorites view Controller %d", [self.favoriteDeals count]);
+    
+    self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
+    
+    NSDictionary *theDeal = self.currentDeal;
+    
+    NSLog(@"What is the value of the current deal : %@", self.currentDeal);
+    
+    
+    [self.favoriteDeals addObject:theDeal];
+    
+    NSLog(@"How many deals in Favorites view Controller %d", [self.favoriteDeals count]);
+    
+    // archive before unload
+    
+    NSData *favoriteDealsDataStorage = [NSKeyedArchiver archivedDataWithRootObject:self.favoriteDeals];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:favoriteDealsDataStorage forKey:@"favoritedealsarchive"];
+    
+    
+    
 }
 @end

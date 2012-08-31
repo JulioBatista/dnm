@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--Map View Controller-->
@@ -437,6 +437,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonFavoritesPressed:" destination="f6u-iz-Qwf" eventType="touchUpInside" id="JUT-NM-nLI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t6T-JH-t3O">
                                 <rect key="frame" x="193" y="341" width="44" height="44"/>
@@ -661,6 +664,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonFavoritesPressed:" destination="KvL-wI-8Ow" eventType="touchUpInside" id="NfK-rt-nlM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x71-AD-0XO">
                                 <rect key="frame" x="197" y="347" width="44" height="44"/>
@@ -1672,6 +1678,9 @@
         </class>
         <class className="BarsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
         </class>
         <class className="DealCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
@@ -1685,6 +1694,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonBackTapped:"/>
+                <relationship kind="action" name="buttonFavoritesPressed:"/>
                 <relationship kind="action" name="buttonNextDeal:"/>
                 <relationship kind="action" name="buttonPrevDeal:"/>
                 <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
@@ -1725,9 +1735,11 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonLocationPicker:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="buttonToggle" candidateClass="UIBarButtonItem"/>
@@ -1754,6 +1766,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewDealDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonBackTapped:"/>
+                <relationship kind="action" name="buttonFavoritesPressed:"/>
                 <relationship kind="action" name="buttonNext:"/>
                 <relationship kind="action" name="buttonPrev:"/>
                 <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>

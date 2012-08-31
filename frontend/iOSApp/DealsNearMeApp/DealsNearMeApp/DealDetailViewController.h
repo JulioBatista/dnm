@@ -33,6 +33,7 @@
 
 - (IBAction)buttonPrevDeal:(id)sender;
 
+- (IBAction)buttonFavoritesPressed:(id)sender;
 
 
 

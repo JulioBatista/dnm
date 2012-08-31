@@ -7,6 +7,7 @@
 //
 
 #import "DealDetailViewController.h"
+#import "FavoritesViewController.h"
 
 @interface DealDetailViewController ()
 
@@ -108,6 +109,24 @@
 - (IBAction)buttonPrevDeal:(id)sender
 {
 	
+}
+
+- (IBAction)buttonFavoritesPressed:(id)sender
+{
+    // archive before unload
+    
+    FavoritesViewController *fvc = [[FavoritesViewController alloc] init];
+    
+
+    
+	NSLog(@"How many deals in Favorites view Controller %d", [fvc.favoriteDeals count]);
+    
+    /*
+    
+	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.products];
+	[[NSUserDefaults standardUserDefaults] setObject:data forKey:@"products"];
+     
+     */
 }
 
 

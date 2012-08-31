@@ -45,6 +45,7 @@
               @"New York City, NY",
               @"Austin, TX",
               @"Boston, MA",
+              @"Chicago, IL",
               @"Los Angeles, CA",
               @"Miami, FL",
               @"Philadelphia, PA",
@@ -213,7 +214,7 @@
 }
 
 
-#pragma mark UISearchDisplayDelegate methods
+#pragma mark UISearchBarDelegate methods
 
 
 
