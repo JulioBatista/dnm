@@ -26,9 +26,14 @@
 	return [self.deal objectForKey:NETWORK_DEAL_TITLE];
 }
 
--(NSString *) subtitle
+-(NSString *) description
 {
 	return [self.deal valueForKeyPath:NETWORK_DEAL_DESCRIPTION];
+}
+
+- (NSString *) sector
+{
+	return [self.deal valueForKeyPath:NETWORK_DEAL_SECTOR];
 }
 
 -(CLLocationCoordinate2D) coordinate

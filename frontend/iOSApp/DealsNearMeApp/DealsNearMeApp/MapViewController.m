@@ -119,8 +119,10 @@
 
 -(void) updateMapView
 {
-	/* if (self.map.annotations) [self.map removeAnnotations:self.map.annotations]; */
+	if (self.map.annotations) [self.map removeAnnotations:self.map.annotations];
 	if (self.annotations) [self.map addAnnotations:self.annotations];
+	self.map.showsUserLocation = YES;	
+	[self.map setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
 }
 
 -(void) setMap:(MKMapView *)map
@@ -144,14 +146,84 @@
     {
         static NSString *defaultPinID = @"mypin";
         pinView = (MKAnnotationView *)[map dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-        if ( pinView == nil ) 
-            pinView = [[MKAnnotationView alloc]
-					   initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+
+		NSString *iconFilename = @"";
+		NSString *pinViewFilename = @"";
 		
-        //pinView.pinColor = MKPinAnnotationColorGreen; 
-        pinView.canShowCallout = YES;
-        //pinView.animatesDrop = YES;
-        pinView.image = [UIImage imageNamed:@"map_pin_self.png"];   
+		NetworkDealAnnotation *networkDealAnnotation = (NetworkDealAnnotation *)annotation;
+		
+		NSLog(@"----------echo networkDealAnnotation : %@", [networkDealAnnotation.deal objectForKey:@"sector"] );
+		
+	
+		if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Bars & Clubs"])
+		{
+			iconFilename = @"map_pin_bars_23px.png";
+			pinViewFilename = @"map_pin_bars_23px.png";
+		}
+		
+		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Travel"])
+		{
+			iconFilename = @"map_pin_travel_23px.png";
+			pinViewFilename = @"map_pin_travel_23px.png";
+		}
+		
+		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Fun"])
+		{
+			iconFilename = @"map_pin_fun_23px.png";
+			pinViewFilename = @"map_pin_fun_23px.png";
+		}
+		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Services"])
+		{
+			iconFilename = @"map_pin_services_23px.png";
+			pinViewFilename = @"map_pin_services_23px.png";
+		}
+		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Dining"])
+		{
+			iconFilename = @"map_pin_dining_23px.png";
+			pinViewFilename = @"map_pin_dining_23px.png";
+		}
+		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Family"])
+		{
+			iconFilename = @"map_pin_family_23px.png";
+			pinViewFilename = @"map_pin_family_23px.png";
+		}
+		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Shopping"])
+		{
+			iconFilename = @"map_pin_shopping_23px.png";
+			pinViewFilename = @"map_pin_shopping_23px.png";
+		}
+		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Wellness"])
+		{
+			iconFilename = @"map_pin_wellness_23px.png";
+			pinViewFilename = @"map_pin_wellness_23px.png";
+		}
+		
+		else 
+		{
+			iconFilename = @"map_pin_fun_23px.png";
+			pinViewFilename = @"map_pin_fun_23px.png";
+		}
+		
+		if (pinView == nil)
+		{
+		pinView = [[MKAnnotationView alloc]
+				   initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+		}
+		UIImageView *leftIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:iconFilename]];
+		
+		UIImage *pinImage = [UIImage imageNamed:pinViewFilename];
+		
+		pinView.leftCalloutAccessoryView = leftIconView;
+		[pinView setImage:pinImage];
+		
+		pinView.canShowCallout = YES;
+		
+		UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+		
+		pinView.rightCalloutAccessoryView = rightButton;
+		
+		
+
     } 
     else {
         [map.userLocation setTitle:@"I am here"];
@@ -161,10 +233,12 @@
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)aView
 {
-	UIImage *image = [UIImage imageNamed:@"default_thumb.png"];
+	/* 
+	 UIImage *image = [UIImage imageNamed:@"default_thumb.png"];
 	
 	
 	[(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
+	 */
 }
 
 #pragma mark Lifecycle
