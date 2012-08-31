@@ -1,19 +1,21 @@
 //
-//  SplashViewController.m
+//  SocialLoginViewController.m
 //  DealsNearMeApp
 //
-//  Created by  on 8/14/12.
+//  Created by  on 8/30/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SplashViewController.h"
+#import "SocialLoginViewController.h"
 
-@interface SplashViewController ()
+@interface SocialLoginViewController ()
+- (IBAction)buttonCancel:(id)sender;
 
-- (IBAction)buttonYesPressed:(id)sender;
 @end
 
-@implementation SplashViewController
+@implementation SocialLoginViewController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +30,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
 }
 
 - (void)viewDidUnload
@@ -42,8 +43,10 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)buttonYesPressed:(id)sender 
+- (IBAction)buttonCancel:(id)sender 
 {
-	[self performSegueWithIdentifier:@"SocialLoginSegue" sender:self];
+	[self dismissViewControllerAnimated:YES completion:^{
+		// nothing
+	}];
 }
 @end

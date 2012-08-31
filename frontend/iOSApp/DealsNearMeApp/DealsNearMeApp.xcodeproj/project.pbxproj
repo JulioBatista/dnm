@@ -97,6 +97,7 @@
 		4B764D6715F064A100D6863E /* selected_guides_new_category_icon_007_family.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B764D6615F064A100D6863E /* selected_guides_new_category_icon_007_family.png */; };
 		4B764D6915F064E300D6863E /* selected_guides_new_category_icon_009_wellness.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B764D6815F064E300D6863E /* selected_guides_new_category_icon_009_wellness.png */; };
 		4B764D6B15F0650E00D6863E /* selected_guides_new_category_icon_005_services.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B764D6A15F0650E00D6863E /* selected_guides_new_category_icon_005_services.png */; };
+		4B764D6E15F065DE00D6863E /* SocialLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B764D6D15F065DE00D6863E /* SocialLoginViewController.m */; };
 		4B8D0F6315C8D7E4002CB264 /* search_bar_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D0F6215C8D7E4002CB264 /* search_bar_2x.png */; };
 		4B8D0F6515C8D8D0002CB264 /* search_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D0F6415C8D8D0002CB264 /* search_bar.png */; };
 		4B8D0F6715C8D988002CB264 /* header_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D0F6615C8D988002CB264 /* header_1.png */; };
@@ -361,6 +362,8 @@
 		4B764D6615F064A100D6863E /* selected_guides_new_category_icon_007_family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_guides_new_category_icon_007_family.png; sourceTree = "<group>"; };
 		4B764D6815F064E300D6863E /* selected_guides_new_category_icon_009_wellness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_guides_new_category_icon_009_wellness.png; sourceTree = "<group>"; };
 		4B764D6A15F0650E00D6863E /* selected_guides_new_category_icon_005_services.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_guides_new_category_icon_005_services.png; sourceTree = "<group>"; };
+		4B764D6C15F065DE00D6863E /* SocialLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialLoginViewController.h; sourceTree = "<group>"; };
+		4B764D6D15F065DE00D6863E /* SocialLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialLoginViewController.m; sourceTree = "<group>"; };
 		4B8D0F6215C8D7E4002CB264 /* search_bar_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bar_2x.png; sourceTree = "<group>"; };
 		4B8D0F6415C8D8D0002CB264 /* search_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bar.png; sourceTree = "<group>"; };
 		4B8D0F6615C8D988002CB264 /* header_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_1.png; sourceTree = "<group>"; };
@@ -665,6 +668,8 @@
 				4B6BA4F715C0F0890095F35E /* Supporting Files */,
 				4B9B425715EEAD02005AC5D3 /* LocationPickerCell.h */,
 				4B9B425815EEAD02005AC5D3 /* LocationPickerCell.m */,
+				4B764D6C15F065DE00D6863E /* SocialLoginViewController.h */,
+				4B764D6D15F065DE00D6863E /* SocialLoginViewController.m */,
 			);
 			path = DealsNearMeApp;
 			sourceTree = "<group>";
@@ -1169,6 +1174,7 @@
 				4B37624815EDB03300BC2730 /* PreSplashViewController.m in Sources */,
 				4BF992D615EE92E600E2D80E /* LocationPickerViewController.m in Sources */,
 				4B9B425915EEAD02005AC5D3 /* LocationPickerCell.m in Sources */,
+				4B764D6E15F065DE00D6863E /* SocialLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
