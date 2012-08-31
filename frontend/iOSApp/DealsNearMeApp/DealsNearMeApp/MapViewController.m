@@ -602,7 +602,14 @@
 			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
-			
+			if ([self.deals count] == 0)
+			{
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
+											message:@"Please check your network connection" 
+										   delegate:nil 
+								  cancelButtonTitle:@"Ok" 
+								  otherButtonTitles:nil] show];
+			}
 			
 		});
 	});
@@ -978,9 +985,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"it should segue %@=====================", indexPath);
-	
-	
-	/* [self performSegueWithIdentifier:@"DealDetailSegue" sender:indexPath]; */
+	/* 
+	@try 
+	{
+			[self performSegueWithIdentifier:@"DealDetailSegue" sender:self]; 
+	}
+	@catch (NSException *exception) 
+	{
+		NSLog(@"%@", exception);
+	}
+	@finally {
+		NSLog(@"finally");
+	}
+	*/
+
 	
 	
 	
@@ -1002,19 +1020,25 @@
         
         DealDetailViewController *dest = [segue destinationViewController];
         
-        dest.dealnum = [[NSNumber alloc] initWithInteger:indexPath.row];
+		
+		
+       
+		dest.dealnum = [[NSNumber alloc] initWithInteger:indexPath.row];
         
         
 		
-        NSLog(@"---------------DealDetailSegue " );
-        
+        NSLog(@"---------------DealDetailSegue %@", dest.dealnum );
 		
+		
+        
+		/* 
 		if ([segue.destinationViewController respondsToSelector:@selector(setMapDeal:)]) 
 		{
 			[segue.destinationViewController performSelector:@selector(setMapDeal:) 
 												  withObject:sender];
 		}
-		
+		*/
+		NSLog(@"---------------end of prepareForSegue " );
 		
 	}
     else if ([segue.identifier isEqualToString:@"LocationPickerSegue"])
@@ -1027,19 +1051,6 @@
         locationPickerViewController.delegate = self;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

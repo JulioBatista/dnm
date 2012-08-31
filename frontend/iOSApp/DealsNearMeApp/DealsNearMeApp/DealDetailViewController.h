@@ -20,14 +20,21 @@
 
 @property (nonatomic, strong) NSNumber *dealnum;
 
-@property (nonatomic, strong) NSString *textdealdescription;
-
-@property (nonatomic, strong) NSString *textdealtitle;
 
 
 @property (strong, nonatomic) IBOutlet UILabel *labelDealDescription;
 
 
 @property (strong, nonatomic) IBOutlet UILabel *labelDealTitle;
+
+@property (strong, nonatomic) IBOutlet UIButton *buttonCategory;
+
+- (IBAction)buttonNextDeal:(id)sender;
+
+- (IBAction)buttonPrevDeal:(id)sender;
+
+
+
+
 
 @end
