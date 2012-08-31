@@ -35,8 +35,21 @@
 	// Do any additional setup after loading the view.
     
     NSLog(@"trying to retrieve indexPath %@", self.dealnum);
+	
+	NSData *dealsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"dealsarchive"];
+	
+	NSMutableArray *archivedDeals = [NSKeyedUnarchiver unarchiveObjectWithData:dealsData];
     
+	if ([archivedDeals count] > 0)
+	{
+		NSLog(@"Archived deals were found");
+	}
     
+	NSDictionary *onedeal = [archivedDeals objectAtIndex:[self.dealnum integerValue]];
+	
+	self.labelDealTitle.text = [onedeal objectForKey:@"title"];
+	
+	
 }
 
 - (void)viewDidUnload

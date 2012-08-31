@@ -88,6 +88,10 @@
 		_deals = deals;
 		[self updateMapViewMap];
 		[self.dealsTableView reloadData]; 
+		NSLog(@"-------------------------------------------about to archive deals");
+		NSData *dealsdata = [NSKeyedArchiver archivedDataWithRootObject:self.deals];
+		[[NSUserDefaults standardUserDefaults] setObject:dealsdata forKey:@"dealsarchive"];
+		NSLog(@"-------------------------------------------about to archive deals");
 	}
 }
 
@@ -146,7 +150,7 @@
     {
         static NSString *defaultPinID = @"mypin";
         pinView = (MKAnnotationView *)[map dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-
+		
 		NSString *iconFilename = @"";
 		NSString *pinViewFilename = @"";
 		
@@ -154,7 +158,7 @@
 		
 		NSLog(@"----------echo networkDealAnnotation : %@", [networkDealAnnotation.deal objectForKey:@"sector"] );
 		
-	
+		
 		if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Bars & Clubs"])
 		{
 			iconFilename = @"map_pin_bars_23px.png";
@@ -206,8 +210,8 @@
 		
 		if (pinView == nil)
 		{
-		pinView = [[MKAnnotationView alloc]
-				   initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+			pinView = [[MKAnnotationView alloc]
+					   initWithAnnotation:annotation reuseIdentifier:defaultPinID];
 		}
 		UIImageView *leftIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:iconFilename]];
 		
@@ -223,7 +227,7 @@
 		pinView.rightCalloutAccessoryView = rightButton;
 		
 		
-
+		
     } 
     else {
         [map.userLocation setTitle:@"I am here"];
@@ -235,9 +239,9 @@
 {
 	/* 
 	 UIImage *image = [UIImage imageNamed:@"default_thumb.png"];
-	
-	
-	[(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
+	 
+	 
+	 [(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
 	 */
 }
 
@@ -471,7 +475,7 @@
 
 -(void) doMapStuff:(CLLocation *)c
 {
-
+	
 	
     
 	[self locateMeOnMap:c]; 
@@ -512,17 +516,17 @@
 {
 	/* if (self.map.annotations) [self.map removeAnnotations:self.map.annotations]; */
 	/* 
-	NSLog(@"doLocateMeButton pressed");
-    
-	locationManager = [[CLLocationManager alloc] init];
-	locationManager.delegate = self;
-	[locationManager startUpdatingLocation];
-	
+	 NSLog(@"doLocateMeButton pressed");
 	 
-	self.locationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(stopUpdatingLocations) userInfo:nil repeats:NO];
-	
-	
-	
+	 locationManager = [[CLLocationManager alloc] init];
+	 locationManager.delegate = self;
+	 [locationManager startUpdatingLocation];
+	 
+	 
+	 self.locationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(stopUpdatingLocations) userInfo:nil repeats:NO];
+	 
+	 
+	 
 	 [self getDealsFromNetwork]; 
 	 
 	 */
@@ -530,12 +534,12 @@
 	self.map.showsUserLocation = YES;
 	
 	[self.map setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
-
+	
 }
 
 - (IBAction)buttonLocationPicker:(id)sender
 {
-        [self performSegueWithIdentifier:@"LocationPickerSegue" sender:self];
+	[self performSegueWithIdentifier:@"LocationPickerSegue" sender:self];
 }
 
 #pragma mark LocationPickerSegue
@@ -566,6 +570,7 @@
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
+			
 			// spinner goes away
 			self.navigationItem.rightBarButtonItem = sender;
 			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
@@ -602,6 +607,7 @@
 		});
 	});
 	dispatch_release(downloadQueue);
+	
 }
 
 - (void)categorySeeAllPressed:(id)sender
@@ -627,6 +633,8 @@
 	
 	
 	[self getDealsFromNetwork];
+	
+	
 }
 
 - (void)categoryBarsPressed:(id)sender
@@ -1006,7 +1014,7 @@
 			[segue.destinationViewController performSelector:@selector(setMapDeal:) 
 												  withObject:sender];
 		}
-   
+		
 		
 	}
     else if ([segue.identifier isEqualToString:@"LocationPickerSegue"])
@@ -1156,7 +1164,7 @@
                         didSelectCity:(NSString *) theCity
 {
 	city = theCity;
-
+	
 	self.addressLabel.text = city;
 	NSLog(@"The value of city is %@", theCity);
 	[self dismissViewControllerAnimated:YES completion:^{
@@ -1169,54 +1177,54 @@
 		}
 		
 		[self.geocoder geocodeAddressString:theCity	completionHandler:^(NSArray *placemarks, NSError *error) 
-		{
-			if ([placemarks count] > 0) {
-				CLPlacemark *placemark = [placemarks objectAtIndex:0];
-				CLLocation *location = placemark.location;
-				
-				if ([theCity isEqualToString:@"Toronto, ON"])
-				{
-									NSLog(@"------------zooming to levia--------- %@", theCity);
-					zoomLocation.latitude = 43.700934;
-					zoomLocation.longitude= -79.426240;
-				}
-				else {
-					zoomLocation = location.coordinate;
-				}
-	
-				// 2
-				MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-				// 3
-				MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];                
-				// 4
-				[self.map setRegion:adjustedRegion animated:YES];  
-				
-
-				
-				/* 
-				 self.addressLabel.text = [NSString stringWithFormat:@"%f, %f", zoomLocation.latitude, zoomLocation.longitude];
-				 */
-				
-				if ([placemark.areasOfInterest count] > 0) 
-				{
-					NSString *areaOfInterest = [placemark.areasOfInterest objectAtIndex:0];
-					NSLog(@"Areas of Interest: %@", areaOfInterest);
-				} else {
-					NSLog(@"No Area of Interest Was Found");
-				}
-				
-				
-				
-			}
-		}];
+		 {
+			 if ([placemarks count] > 0) {
+				 CLPlacemark *placemark = [placemarks objectAtIndex:0];
+				 CLLocation *location = placemark.location;
+				 
+				 if ([theCity isEqualToString:@"Toronto, ON"])
+				 {
+					 NSLog(@"------------zooming to levia--------- %@", theCity);
+					 zoomLocation.latitude = 43.700934;
+					 zoomLocation.longitude= -79.426240;
+				 }
+				 else {
+					 zoomLocation = location.coordinate;
+				 }
+				 
+				 // 2
+				 MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+				 // 3
+				 MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];                
+				 // 4
+				 [self.map setRegion:adjustedRegion animated:YES];  
+				 
+				 
+				 
+				 /* 
+				  self.addressLabel.text = [NSString stringWithFormat:@"%f, %f", zoomLocation.latitude, zoomLocation.longitude];
+				  */
+				 
+				 if ([placemark.areasOfInterest count] > 0) 
+				 {
+					 NSString *areaOfInterest = [placemark.areasOfInterest objectAtIndex:0];
+					 NSLog(@"Areas of Interest: %@", areaOfInterest);
+				 } else {
+					 NSLog(@"No Area of Interest Was Found");
+				 }
+				 
+				 
+				 
+			 }
+		 }];
 		
 		// 1
 		/* 
 		 CLLocationCoordinate2D zoomLocation;
-		zoomLocation.latitude = 39.281516;
-		zoomLocation.longitude= -76.580806;
+		 zoomLocation.latitude = 39.281516;
+		 zoomLocation.longitude= -76.580806;
 		 */
-		 
+		
     }];
 	
 }
