@@ -8,7 +8,7 @@
 #define NETWORK_DEAL_TITLE @"title"
 #define NETWORK_DEAL_DEALNAME @"dealname"
 #define NETWORK_DEAL_DEALDESCRIPTION @"dealdescription"
-#define NETWORK_DEAL_DESCRIPTION @"description._content"
+#define NETWORK_DEAL_DESCRIPTION @"description"
 #define NETWORK_DEAL_SECTOR @"sector"
 #define NETWORK_PLACE_NAME @"_content"
 #define NETWORK_DEAL_ID @"id"
@@ -36,5 +36,14 @@ typedef enum {
 + (NSArray *)recentDeals;
 + (NSArray *) recentDealsNearLevia;
 + (NSArray *)recentDealsNearSpoke;
++ (NSArray *)recentDealsNear60610;
++ (NSArray *)recentDealsNear60610_filter0_bars;
++ (NSArray *)recentDealsNear60610_filter0_travel;
++ (NSArray *)recentDealsNear60610_filter0_fun;
++ (NSArray *)recentDealsNear60610_filter0_services;
++ (NSArray *)recentDealsNear60610_filter0_dining;
++ (NSArray *)recentDealsNear60610_filter0_family;
++ (NSArray *)recentDealsNear60610_filter0_shopping;
++ (NSArray *)recentDealsNear60610_filter0_wellness;
 
 @end

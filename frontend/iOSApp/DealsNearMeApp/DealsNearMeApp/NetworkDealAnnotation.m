@@ -31,7 +31,10 @@
 	return [self.deal valueForKeyPath:NETWORK_DEAL_DESCRIPTION];
 }
 
-
+- (NSString *) sector
+{
+	return [self.deal valueForKeyPath:NETWORK_DEAL_SECTOR];
+}
 
 -(CLLocationCoordinate2D) coordinate
 {

@@ -26,14 +26,15 @@
 {
     /* query = [NSString stringWithFormat:@"%@&format=json&nojsoncallback=1&api_key=%@", query, FlickrAPIKey]; */
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query);
+    /* NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query); */
+	
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
     NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
 	
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
 	
-    NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    /* NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results); */
     
 	return results;
 }
@@ -100,6 +101,55 @@
     return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
 }
 
++ (NSArray *)recentDealsNear60610
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
+
++ (NSArray *)recentDealsNear60610_filter0_bars
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_bars.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
+
++ (NSArray *)recentDealsNear60610_filter0_travel
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_travel.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
+
++ (NSArray *)recentDealsNear60610_filter0_fun
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_fun.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
++ (NSArray *)recentDealsNear60610_filter0_services
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_services.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
++ (NSArray *)recentDealsNear60610_filter0_dining
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_dining.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
+
++ (NSArray *)recentDealsNear60610_filter0_family
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_family.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
++ (NSArray *)recentDealsNear60610_filter0_shopping
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_shopping.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
++ (NSArray *)recentDealsNear60610_filter0_wellness
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_wellness.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
 + (NSArray *)recentDealsNearHome
 {
     NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnearhome.json"];
