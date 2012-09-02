@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppStoreFileSize</key>
+	<integer>4639592</integer>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/DealsNearMeApp.app</string>
+		<key>CFBundleIdentifier</key>
+		<string>com.leviait.mobile.DealsNearMeApp</string>
+		<key>CFBundleShortVersionString</key>
+		<string>1.0</string>
+		<key>IconPaths</key>
+		<array>
+			<string>Applications/DealsNearMeApp.app/new_app_logo_57x57.png</string>
+			<string>Applications/DealsNearMeApp.app/new_app_logo_114x114.png</string>
+		</array>
+		<key>SigningIdentity</key>
+		<string>iPhone Developer: Arunabh Das (H9FPA29GV4)</string>
+	</dict>
+	<key>ArchiveVersion</key>
+	<integer>2</integer>
+	<key>CreationDate</key>
+	<date>2012-09-01T22:01:31Z</date>
+	<key>Name</key>
+	<string>DealsNearMeApp_AdHoc_Archive</string>
+	<key>SchemeName</key>
+	<string>DealsNearMeApp</string>
+</dict>
+</plist>

@@ -56,13 +56,6 @@
             ReferencedContainer = "container:DealsNearMeApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "NSZombieEnabled"
-            value = "YES"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -86,7 +79,8 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Ad-Hoc"
+      customArchiveName = "DealsNearMeApp_AdHoc_Archive_2"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

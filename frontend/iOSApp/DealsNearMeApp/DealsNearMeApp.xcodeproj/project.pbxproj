@@ -80,6 +80,8 @@
 		4B6BA62315C600970095F35E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA62215C600970095F35E /* SystemConfiguration.framework */; };
 		4B6BA62615C60F530095F35E /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6BA62515C60F530095F35E /* API.m */; };
 		4B6BF9E615F08E0000011BCE /* NewDealDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6BF9E515F08E0000011BCE /* NewDealDetailViewController.m */; };
+		4B6BF9EC15F2BA0900011BCE /* new_app_logo_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B6BF9EB15F2BA0900011BCE /* new_app_logo_57x57.png */; };
+		4B6BF9EF15F2BA1000011BCE /* new_app_logo_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B6BF9EE15F2BA1000011BCE /* new_app_logo_114x114.png */; };
 		4B764D4F15F00EC200D6863E /* right_arrow_left_arrow_category.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B764D4E15F00EC200D6863E /* right_arrow_left_arrow_category.png */; };
 		4B764D5915F03A5200D6863E /* map_pin_travel_23px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B764D5115F03A5000D6863E /* map_pin_travel_23px.png */; };
 		4B764D5A15F03A5200D6863E /* map_pin_wellness_23px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B764D5215F03A5000D6863E /* map_pin_wellness_23px.png */; };
@@ -343,6 +345,8 @@
 		4B6BA62515C60F530095F35E /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		4B6BF9E415F08E0000011BCE /* NewDealDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDealDetailViewController.h; sourceTree = "<group>"; };
 		4B6BF9E515F08E0000011BCE /* NewDealDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDealDetailViewController.m; sourceTree = "<group>"; };
+		4B6BF9EB15F2BA0900011BCE /* new_app_logo_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_app_logo_57x57.png; sourceTree = "<group>"; };
+		4B6BF9EE15F2BA1000011BCE /* new_app_logo_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_app_logo_114x114.png; sourceTree = "<group>"; };
 		4B764D4E15F00EC200D6863E /* right_arrow_left_arrow_category.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow_left_arrow_category.png; sourceTree = "<group>"; };
 		4B764D5115F03A5000D6863E /* map_pin_travel_23px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_travel_23px.png; sourceTree = "<group>"; };
 		4B764D5215F03A5000D6863E /* map_pin_wellness_23px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_wellness_23px.png; sourceTree = "<group>"; };
@@ -571,6 +575,8 @@
 		4B6BA4E115C0F0890095F35E = {
 			isa = PBXGroup;
 			children = (
+				4B6BF9EE15F2BA1000011BCE /* new_app_logo_114x114.png */,
+				4B6BF9EB15F2BA0900011BCE /* new_app_logo_57x57.png */,
 				4B94FDAC15F13D9800EE0DBA /* 60610.gpx */,
 				4B37625015EDD32D00BC2730 /* Default@2x.png */,
 				4B37624E15EDD2A000BC2730 /* Default.png */,
@@ -1117,6 +1123,8 @@
 				4B764D6015F03A5200D6863E /* map_pin_bars_23px.png in Resources */,
 				4B764D7215F08C5400D6863E /* selected_guides_new_category_icon_004_fun.png in Resources */,
 				4B94FDAD15F13D9800EE0DBA /* 60610.gpx in Resources */,
+				4B6BF9EC15F2BA0900011BCE /* new_app_logo_57x57.png in Resources */,
+				4B6BF9EF15F2BA1000011BCE /* new_app_logo_114x114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1198,6 +1206,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1213,6 +1222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "08E31BAF-1F36-4077-9507-4F51EFAE9DB8";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1223,6 +1233,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1232,6 +1243,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "08E31BAF-1F36-4077-9507-4F51EFAE9DB8";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1259,6 +1271,43 @@
 			};
 			name = Release;
 		};
+		4B6BF9F015F2BAC600011BCE /* Ad-Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "08E31BAF-1F36-4077-9507-4F51EFAE9DB8";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad-Hoc";
+		};
+		4B6BF9F115F2BAC600011BCE /* Ad-Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: LeviaIT Corp.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: LeviaIT Corp.";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
+				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad-Hoc";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1267,6 +1316,7 @@
 			buildConfigurations = (
 				4B6BA51315C0F0890095F35E /* Debug */,
 				4B6BA51415C0F0890095F35E /* Release */,
+				4B6BF9F015F2BAC600011BCE /* Ad-Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1276,6 +1326,7 @@
 			buildConfigurations = (
 				4B6BA51615C0F0890095F35E /* Debug */,
 				4B6BA51715C0F0890095F35E /* Release */,
+				4B6BF9F115F2BAC600011BCE /* Ad-Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

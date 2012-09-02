@@ -14,8 +14,8 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>deals_near_me_logo_57X57.png</string>
-				<string>deals_near_me_logo_114X114.png</string>
+				<string>new_app_logo_57x57.png</string>
+				<string>new_app_logo_114x114.png</string>
 				<string>Default.png</string>
 				<string>Default@2x.png</string>
 			</array>
