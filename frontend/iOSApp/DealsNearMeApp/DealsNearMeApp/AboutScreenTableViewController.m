@@ -1,18 +1,18 @@
 //
-//  AboutScreenViewController.m
+//  AboutScreenTableViewController.m
 //  DealsNearMeApp
 //
 //  Created by Das on 2012-09-03.
 //
 //
 
-#import "AboutScreenViewController.h"
+#import "AboutScreenTableViewController.h"
 
-@interface AboutScreenViewController ()
+@interface AboutScreenTableViewController ()
 
 @end
 
-@implementation AboutScreenViewController
+@implementation AboutScreenTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -50,26 +50,95 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+    
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    
+    NSLog(@"delegate methods are getting fired");
+    
+    
+    static NSString *CellIdentifier = @"AboutCellOne";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    NSString *codeline = @"";
     
+    NSString *buildString = @"";
+    
+    if (indexPath.row == 0)
+    {
+       
+        
+        UILabel *labelVersionInfoLabel = (UILabel *)[cell viewWithTag:101];
+        
+        NSLog(@"labelVersionInfoLabel : %@", labelVersionInfoLabel);
+        
+        labelVersionInfoLabel.text = @"Codeline";
+        
+        UILabel *labelVersionInfoValue = (UILabel *)[cell viewWithTag:102];
+        
+        codeline = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        
+        
+        labelVersionInfoValue.text = codeline;
+        
+    }
+    
+    else if (indexPath.row == 1)
+    {
+        
+        
+        UILabel *labelVersionInfoLabel = (UILabel *)[cell viewWithTag:101];
+        
+
+        labelVersionInfoLabel.text = @"Build";
+        
+        UILabel *labelVersionInfoValue = (UILabel *)[cell viewWithTag:102];
+        
+        
+        NSNumber *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleInfoDictionaryVersion"];
+        
+        buildString = [NSString stringWithFormat:@"%d", [build intValue]];
+        
+        
+        labelVersionInfoValue.text = buildString;
+        
+        
+    }
+    
+    else if (indexPath.row == 2)
+    {
+        
+        
+        UILabel *labelVersionInfoLabel = (UILabel *)[cell viewWithTag:101];
+        
+        
+        labelVersionInfoLabel.text = @"Version";
+        
+        UILabel *labelVersionInfoValue = (UILabel *)[cell viewWithTag:102];
+        
+        NSString *version = codeline;
+        
+                    
+        
+        labelVersionInfoValue.text = version;
+        
+        
+        
+    }
     return cell;
+    
 }
 
 /*

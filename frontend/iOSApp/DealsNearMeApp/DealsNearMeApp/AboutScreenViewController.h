@@ -2,12 +2,12 @@
 //  AboutScreenViewController.h
 //  DealsNearMeApp
 //
-//  Created by  on 7/31/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Das on 2012-09-03.
+//
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AboutScreenViewController : UIViewController
+@interface AboutScreenViewController : UITableViewController
 
 @end

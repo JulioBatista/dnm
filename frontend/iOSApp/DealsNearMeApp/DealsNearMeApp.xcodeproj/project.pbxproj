@@ -45,6 +45,7 @@
 		4B44263415C61D3100E46BD9 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44262A15C61D3100E46BD9 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B44263C15C6250900E46BD9 /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44263B15C6250900E46BD9 /* LoginScreenViewController.m */; };
 		4B4CC2BD15CE08AA00B5530C /* DealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CC2BC15CE08AA00B5530C /* DealCell.m */; };
+		4B4D015515F53D3B0094816C /* AboutScreenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D015415F53D3B0094816C /* AboutScreenTableViewController.m */; };
 		4B5A366115CDF75600552ECF /* DealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5A366015CDF75600552ECF /* DealsViewController.m */; };
 		4B6BA4F115C0F0890095F35E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F015C0F0890095F35E /* UIKit.framework */; };
 		4B6BA4F315C0F0890095F35E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F215C0F0890095F35E /* Foundation.framework */; };
@@ -209,7 +210,6 @@
 		4BC5047515CCD7D600E535A2 /* Players@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5045D15CCD7D600E535A2 /* Players@2x.png */; };
 		4BC5048615CD833B00E535A2 /* deals_header_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5048515CD833B00E535A2 /* deals_header_logo.png */; };
 		4BC5CBEA15C6399000EAB199 /* MyAccountScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5CBE915C6399000EAB199 /* MyAccountScreenViewController.m */; };
-		4BC5CBF215C8BC0100EAB199 /* AboutScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC5CBF115C8BC0100EAB199 /* AboutScreenViewController.m */; };
 		4BC5CBF415C8C45C00EAB199 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5CBF315C8C45C00EAB199 /* 145-persondot.png */; };
 		4BC5CBF615C8C49100EAB199 /* 177-building.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5CBF515C8C49100EAB199 /* 177-building.png */; };
 		4BC5CBF815C8C4BD00EAB199 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5CBF715C8C4BD00EAB199 /* 83-calendar.png */; };
@@ -300,6 +300,8 @@
 		4B44263B15C6250900E46BD9 /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
 		4B4CC2BB15CE08AA00B5530C /* DealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealCell.h; sourceTree = "<group>"; };
 		4B4CC2BC15CE08AA00B5530C /* DealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealCell.m; sourceTree = "<group>"; };
+		4B4D015315F53D3B0094816C /* AboutScreenTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutScreenTableViewController.h; sourceTree = "<group>"; };
+		4B4D015415F53D3B0094816C /* AboutScreenTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutScreenTableViewController.m; sourceTree = "<group>"; };
 		4B5A365F15CDF75600552ECF /* DealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsViewController.h; sourceTree = "<group>"; };
 		4B5A366015CDF75600552ECF /* DealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsViewController.m; sourceTree = "<group>"; };
 		4B6BA4EC15C0F0890095F35E /* DealsNearMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsNearMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -495,8 +497,6 @@
 		4BC5048515CD833B00E535A2 /* deals_header_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deals_header_logo.png; sourceTree = "<group>"; };
 		4BC5CBE815C6399000EAB199 /* MyAccountScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountScreenViewController.h; sourceTree = "<group>"; };
 		4BC5CBE915C6399000EAB199 /* MyAccountScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountScreenViewController.m; sourceTree = "<group>"; };
-		4BC5CBF015C8BC0100EAB199 /* AboutScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutScreenViewController.h; sourceTree = "<group>"; };
-		4BC5CBF115C8BC0100EAB199 /* AboutScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutScreenViewController.m; sourceTree = "<group>"; };
 		4BC5CBF315C8C45C00EAB199 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		4BC5CBF515C8C49100EAB199 /* 177-building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "177-building.png"; sourceTree = "<group>"; };
 		4BC5CBF715C8C4BD00EAB199 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
@@ -636,8 +636,6 @@
 				4B44263B15C6250900E46BD9 /* LoginScreenViewController.m */,
 				4BC5CBE815C6399000EAB199 /* MyAccountScreenViewController.h */,
 				4BC5CBE915C6399000EAB199 /* MyAccountScreenViewController.m */,
-				4BC5CBF015C8BC0100EAB199 /* AboutScreenViewController.h */,
-				4BC5CBF115C8BC0100EAB199 /* AboutScreenViewController.m */,
 				4BB9A12015C9F835009263A1 /* BarsTableViewController.h */,
 				4BB9A12115C9F835009263A1 /* BarsTableViewController.m */,
 				4BC503CC15CC50DF00E535A2 /* MoreViewController.h */,
@@ -648,6 +646,8 @@
 				4BF8BCD715DA8961002EECD6 /* DealDetailViewController.m */,
 				4BB5A9F815D034B6003E5F97 /* MapViewController.h */,
 				4BB5A9F915D034B6003E5F97 /* MapViewController.m */,
+				4B4D015315F53D3B0094816C /* AboutScreenTableViewController.h */,
+				4B4D015415F53D3B0094816C /* AboutScreenTableViewController.m */,
 				4BB5A9FD15D05816003E5F97 /* MyAnnotation.h */,
 				4BB5A9FE15D05816003E5F97 /* MyAnnotation.m */,
 				4BB5AA2015D0DC8D003E5F97 /* NetworkDealAnnotation.h */,
@@ -1153,7 +1153,6 @@
 				4B44263415C61D3100E46BD9 /* UIImageView+AFNetworking.m in Sources */,
 				4B44263C15C6250900E46BD9 /* LoginScreenViewController.m in Sources */,
 				4BC5CBEA15C6399000EAB199 /* MyAccountScreenViewController.m in Sources */,
-				4BC5CBF215C8BC0100EAB199 /* AboutScreenViewController.m in Sources */,
 				4B8D0F7615C8DF59002CB264 /* MKHorizMenu.m in Sources */,
 				4BB9A12215C9F835009263A1 /* BarsTableViewController.m in Sources */,
 				4BB9A12A15CA05B2009263A1 /* FlickrFetcher.m in Sources */,
@@ -1175,6 +1174,7 @@
 				4B9B425915EEAD02005AC5D3 /* LocationPickerCell.m in Sources */,
 				4B764D6E15F065DE00D6863E /* SocialLoginViewController.m in Sources */,
 				4B6BF9E615F08E0000011BCE /* NewDealDetailViewController.m in Sources */,
+				4B4D015515F53D3B0094816C /* AboutScreenTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1252,10 +1252,12 @@
 		4B6BA51615C0F0890095F35E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "205A9FB9-9794-446B-872B-6FDDA4298575";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1263,10 +1265,12 @@
 		4B6BA51715C0F0890095F35E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "205A9FB9-9794-446B-872B-6FDDA4298575";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

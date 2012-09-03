@@ -91,7 +91,7 @@
 	{
 		_deals = deals;
 		[self updateMapViewMap];
-		[self.dealsTableView reloadData]; 
+		[self.dealsTableView reloadData];
 		NSLog(@"-------------------------------------------about to archive deals");
 		NSData *dealsdata = [NSKeyedArchiver archivedDataWithRootObject:self.deals];
 		[[NSUserDefaults standardUserDefaults] setObject:dealsdata forKey:@"dealsarchive"];
@@ -129,12 +129,13 @@
 
 -(void) updateMapView
 {
-	NSLog(@"------------updateMapView");	
+	NSLog(@"------------updateMapView");
 	if (self.map.annotations) [self.map removeAnnotations:self.map.annotations];
 	if (self.annotations) [self.map addAnnotations:self.annotations];
 	
-	self.map.showsUserLocation = YES;	
-	[self.map setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+	
+    
+	/* [self.map setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES]; */
 	
 }
 
@@ -156,8 +157,8 @@
 
 - (MKAnnotationView *) mapView:(MKMapView *)map viewForAnnotation:(id<MKAnnotation>)annotation
 {
-	MKAnnotationView *pinView = nil; 
-    if(annotation != map.userLocation) 
+	MKAnnotationView *pinView = nil;
+    if(annotation != map.userLocation)
     {
         static NSString *defaultPinID = @"mypin";
         pinView = (MKAnnotationView *)[map dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
@@ -219,7 +220,7 @@
 			pinViewFilename = @"map_pin_wellness_23px.png";
 		}
 		
-		else 
+		else
 		{
 			iconFilename = @"map_pin_fun_23px.png";
 			pinViewFilename = @"map_pin_fun_23px.png";
@@ -244,7 +245,7 @@
 		
 		
 		
-    } 
+    }
     else {
         [map.userLocation setTitle:@"I am here"];
         map.userLocation.subtitle = @"Hello";
@@ -265,7 +266,7 @@
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)aView
 {
-	/* 
+	/*
 	 UIImage *image = [UIImage imageNamed:@"default_thumb.png"];
 	 
 	 
@@ -301,10 +302,10 @@
 	
 	self.isScrollViewVisible = YES;
 	
-	[[[UIAlertView alloc] initWithTitle:@"Welcome to Deals Near Me" 
-								message:@"Tap on See All to get started" 
-							   delegate:nil 
-					  cancelButtonTitle:@"Close" 
+	[[[UIAlertView alloc] initWithTitle:@"Welcome to Deals Near Me"
+								message:@"Tap on See All to get started"
+							   delegate:nil
+					  cancelButtonTitle:@"Close"
 					  otherButtonTitles:nil] show];
 	
 	self.isMapVisible = YES;
@@ -316,7 +317,7 @@
 	
 	
 	// Do any additional setup after loading the view.
-	/* 
+	/*
 	 locationManager = [[CLLocationManager alloc] init];
 	 locationManager.delegate = self;
 	 [locationManager startUpdatingLocation];
@@ -335,10 +336,10 @@
 	 [images addObject:[UIImage imageNamed:@"299-ticket-white.png"]];
 	 */
 	
-	/* 
+	/*
 	 CGFloat scrollWidth = 0 + 0.f;
 	 NSInteger buttoncount= 1;
-	 for (UIImage *someImage in images) 
+	 for (UIImage *someImage in images)
 	 {
 	 CGRect frame;
 	 frame.origin.x = scrollWidth;
@@ -381,7 +382,7 @@
 	NSLog(@"The Number of newdeals is %d", [self.newdeals count]);
 	
 }
-- (void)categoryPressed:(UIButton*)sender 
+- (void)categoryPressed:(UIButton*)sender
 {
 	NSLog(@"HI : %d", [sender tag] );
 	[locationManager stopUpdatingLocation];
@@ -464,7 +465,7 @@
 	self.locationLabel.text = @"Getting deals";
 	CLGeocoder *gc = [[CLGeocoder alloc] init];
 	//2
-	[gc geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) 
+	[gc geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error)
 	 {
 		 //3
 		 if ([placemarks count]>0)
@@ -476,7 +477,7 @@
 			 double lng = mark.location.coordinate.longitude;
 			 
 			 //5
-			 self.locationLabel.text = [NSString stringWithFormat:@"Coordinate\n lat:%@, long:%@", 
+			 self.locationLabel.text = [NSString stringWithFormat:@"Coordinate\n lat:%@, long:%@",
 										[NSNumber numberWithDouble:lat],
 										[NSNumber numberWithDouble:lng]];
 			 
@@ -489,7 +490,7 @@
 			 //2
 			 [self.map addAnnotation:(id)[[MyAnnotation alloc] initWithCoordinate:coordinate]];
 			 
-			 //3 
+			 //3
 			 MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, 20 * METERS_PER_MILE, 20 * METERS_PER_MILE);
 			 
 			 MKCoordinateRegion adjustedRegion = [self.map  regionThatFits:viewRegion];
@@ -536,7 +537,7 @@
 	if (newLocation.coordinate.latitude != oldLocation.coordinate.latitude)
 	{
 		[self revGeocode: newLocation];
-		[self doMapStuff:newLocation]; 
+		[self doMapStuff:newLocation];
 		NSLog(@"-----------------------didUpdateToLocation fired---------------------");
 		MKUserLocation *userLocation = self.map.userLocation;
 		MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(
@@ -545,16 +546,21 @@
 	}
 }
 
-- (IBAction)doLocateMeButton:(id)sender 
+- (IBAction)doLocateMeButton:(id)sender
 {
 	
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	[locationManager startUpdatingLocation];
 	
+    self.locationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(stopUpdatingLocations) userInfo:nil repeats:NO];
+    
+    self.map.showsUserLocation = YES;
+    
+    [self.map setUserTrackingMode:MKUserTrackingModeFollow];
 	
 	/* if (self.map.annotations) [self.map removeAnnotations:self.map.annotations]; */
-	/* 
+	/*
 	 NSLog(@"doLocateMeButton pressed");
 	 
 	 locationManager = [[CLLocationManager alloc] init];
@@ -566,7 +572,7 @@
 	 
 	 
 	 
-	 [self getDealsFromNetwork]; 
+	 [self getDealsFromNetwork];
 	 
 	 */
 	
@@ -589,7 +595,7 @@
 
 
 
-- (IBAction)refresh:(id)sender 
+- (IBAction)refresh:(id)sender
 {
 	NSLog(@"refresh was pressed");
 	
@@ -624,7 +630,7 @@
 
 
 
-- (void) getDealsFromNetwork 
+- (void) getDealsFromNetwork
 {
 	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
 	dispatch_async(downloadQueue, ^{
@@ -633,7 +639,7 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610]; 
+		NSArray *deals = [NetworkFetcher recentDealsNear60610];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -644,10 +650,10 @@
 			
 			if ([self.deals count] == 0)
 			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
-											message:@"Please check your network connection" 
-										   delegate:nil 
-								  cancelButtonTitle:@"Ok" 
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+											message:@"Please check your network connection"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -657,7 +663,7 @@
 	
 }
 
-- (void) getDealsFromNetwork_filter0_bars 
+- (void) getDealsFromNetwork_filter0_bars
 {
 	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
 	dispatch_async(downloadQueue, ^{
@@ -666,7 +672,7 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_bars]; 
+		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_bars];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -677,10 +683,10 @@
 			
 			if ([self.deals count] == 0)
 			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
-											message:@"Please check your network connection" 
-										   delegate:nil 
-								  cancelButtonTitle:@"Ok" 
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+											message:@"Please check your network connection"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -690,7 +696,7 @@
 	
 }
 
-- (void) getDealsFromNetwork_filter0_travel 
+- (void) getDealsFromNetwork_filter0_travel
 {
 	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
 	dispatch_async(downloadQueue, ^{
@@ -699,7 +705,7 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_travel]; 
+		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_travel];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -710,10 +716,10 @@
 			
 			if ([self.deals count] == 0)
 			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
-											message:@"Please check your network connection" 
-										   delegate:nil 
-								  cancelButtonTitle:@"Ok" 
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+											message:@"Please check your network connection"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -722,7 +728,7 @@
 	dispatch_release(downloadQueue);
 	
 }
-- (void) getDealsFromNetwork_filter0_fun 
+- (void) getDealsFromNetwork_filter0_fun
 {
 	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
 	dispatch_async(downloadQueue, ^{
@@ -731,7 +737,7 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_fun]; 
+		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_fun];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -742,10 +748,10 @@
 			
 			if ([self.deals count] == 0)
 			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
-											message:@"Please check your network connection" 
-										   delegate:nil 
-								  cancelButtonTitle:@"Ok" 
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+											message:@"Please check your network connection"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -754,7 +760,7 @@
 	dispatch_release(downloadQueue);
 	
 }
-- (void) getDealsFromNetwork_filter0_services 
+- (void) getDealsFromNetwork_filter0_services
 {
 	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
 	dispatch_async(downloadQueue, ^{
@@ -763,7 +769,7 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_services]; 
+		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_services];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -774,10 +780,10 @@
 			
 			if ([self.deals count] == 0)
 			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
-											message:@"Please check your network connection" 
-										   delegate:nil 
-								  cancelButtonTitle:@"Ok" 
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+											message:@"Please check your network connection"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -795,7 +801,7 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_dining]; 
+		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_dining];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -806,10 +812,10 @@
 			
 			if ([self.deals count] == 0)
 			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
-											message:@"Please check your network connection" 
-										   delegate:nil 
-								  cancelButtonTitle:@"Ok" 
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+											message:@"Please check your network connection"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -828,7 +834,7 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_family]; 
+		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_family];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -839,10 +845,10 @@
 			
 			if ([self.deals count] == 0)
 			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
-											message:@"Please check your network connection" 
-										   delegate:nil 
-								  cancelButtonTitle:@"Ok" 
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+											message:@"Please check your network connection"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -860,7 +866,7 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_shopping]; 
+		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_shopping];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -871,10 +877,10 @@
 			
 			if ([self.deals count] == 0)
 			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
-											message:@"Please check your network connection" 
-										   delegate:nil 
-								  cancelButtonTitle:@"Ok" 
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+											message:@"Please check your network connection"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -893,7 +899,7 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_wellness]; 
+		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_wellness];
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -904,10 +910,10 @@
 			
 			if ([self.deals count] == 0)
 			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found" 
-											message:@"Please check your network connection" 
-										   delegate:nil 
-								  cancelButtonTitle:@"Ok" 
+				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+											message:@"Please check your network connection"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -946,12 +952,16 @@
 	
 	NSLog(@"categorySeeAllPressed was pressed");
 	
-	/* 
+	/*
 	 UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 	 [spinner startAnimating];
 	 
 	 self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
 	 */
+    
+    self.map.showsUserLocation = YES;
+    
+    [self.map setUserTrackingMode:MKUserTrackingModeNone];
 	
 	[self.button001 setSelected:YES];
 	[self.button002 setSelected:NO];
@@ -1001,7 +1011,7 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-		[self getDealsFromNetwork_filter0_travel];
+    [self getDealsFromNetwork_filter0_travel];
 }
 
 - (void) categoryFunPressed:(id) sender
@@ -1059,7 +1069,7 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-		[self getDealsFromNetwork_filter0_family];
+    [self getDealsFromNetwork_filter0_family];
 }
 - (void) categoryShoppingPressed:(id) sender
 {
@@ -1108,7 +1118,7 @@
 	
 	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_006_dining.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_007_family.png"]];	
+	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_007_family.png"]];
 	
 	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_008_shopping.png"]];
 	
@@ -1120,7 +1130,7 @@
 	CGRect frame;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_001_seeall.png"] size];	
+	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_001_seeall.png"] size];
 	self.button001 = [[UIButton alloc] initWithFrame:frame];
 	[self.button001 setImage:[images objectAtIndex:0] forState:UIControlStateNormal];
 	[self.button001 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_001_seeall.png"] forState:UIControlStateSelected];
@@ -1247,7 +1257,7 @@
 	/* [self.button010 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside]; */
 	[self.scrollView addSubview:self.button010];
 	
-	[self.scrollView setBackgroundColor:[UIColor whiteColor]]; 
+	[self.scrollView setBackgroundColor:[UIColor whiteColor]];
 	self.scrollView.pagingEnabled = YES;
 	self.scrollView.contentSize = CGSizeMake(scrollWidth, 72.0f);
 }
@@ -1291,17 +1301,17 @@
 		
 		
 		NewDeal *newdeal = [self.newdeals objectAtIndex:indexPath.row];
-		cell.nameLabel.text = newdeal.dealname;	
+		cell.nameLabel.text = newdeal.dealname;
 		cell.descriptionLabel.text = newdeal.dealdescription;
 		
 	}
-	else 
+	else
 	{
 		
 		
 		
 		
-		/* 
+		/*
 		 Deal *deal = [self.deals objectAtIndex:indexPath.row];
 		 cell.nameLabel.text = deal.dealname;
 		 cell.descriptionLabel.text = deal.dealdescription;
@@ -1330,12 +1340,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"it should segue %@=====================", indexPath);
-	/* 
-	 @try 
+	/*
+	 @try
 	 {
-	 [self performSegueWithIdentifier:@"DealDetailSegue" sender:self]; 
+	 [self performSegueWithIdentifier:@"DealDetailSegue" sender:self];
 	 }
-	 @catch (NSException *exception) 
+	 @catch (NSException *exception)
 	 {
 	 NSLog(@"%@", exception);
 	 }
@@ -1376,10 +1386,10 @@
 		
 		
         
-		/* 
-		 if ([segue.destinationViewController respondsToSelector:@selector(setMapDeal:)]) 
+		/*
+		 if ([segue.destinationViewController respondsToSelector:@selector(setMapDeal:)])
 		 {
-		 [segue.destinationViewController performSelector:@selector(setMapDeal:) 
+		 [segue.destinationViewController performSelector:@selector(setMapDeal:)
 		 withObject:sender];
 		 }
 		 */
@@ -1418,7 +1428,7 @@
 
 
 #pragma mark IBActions
-- (IBAction)buttonListPressed:(id)sender 
+- (IBAction)buttonListPressed:(id)sender
 {
 	
 	
@@ -1451,18 +1461,18 @@
 	
 }
 
-- (IBAction)buttonToggleScrollViewPressed:(id)sender 
+- (IBAction)buttonToggleScrollViewPressed:(id)sender
 {
 	if (self.isScrollViewVisible == YES)
 	{
 		
 		[self.buttonToggle setImage:[UIImage imageNamed:@"57-download-white.png"]];
 		
-		self.isScrollViewVisible = NO;	
+		self.isScrollViewVisible = NO;
 		
 		[UIView beginAnimations:@"animateViewOff" context:NULL];
 		
-		[self.scrollView setFrame:CGRectOffset([self.scrollView frame], 0, -(2 *self.scrollView.frame.size.height))]; 
+		[self.scrollView setFrame:CGRectOffset([self.scrollView frame], 0, -(2 *self.scrollView.frame.size.height))];
 		
 		[self.scrollDividerView setFrame:CGRectOffset([self.scrollDividerView frame], 0, -(self.scrollView.frame.size.height))];
 		
@@ -1479,7 +1489,7 @@
 		
 		
 	}
-	else 
+	else
 	{
 		[self.buttonToggle setImage:[UIImage imageNamed:@"57-download-reversed-white.png"]];
 		
@@ -1495,7 +1505,7 @@
 		
 		
 		
-		CGRect lDividerFrame = CGRectMake(0, navframe.size.height + self.scrollView.frame.size.height, 
+		CGRect lDividerFrame = CGRectMake(0, navframe.size.height + self.scrollView.frame.size.height,
 										  self.scrollDividerView.frame.size.width, self.scrollDividerView.frame.size.height);
 		
 		[self.scrollDividerView setFrame:lDividerFrame];
@@ -1534,13 +1544,13 @@
 	[self dismissViewControllerAnimated:YES completion:^{
         //do map stuff here
 		__block CLLocationCoordinate2D zoomLocation;
-		// 0 
+		// 0
 		
 		if (!self.geocoder) {
 			self.geocoder = [[CLGeocoder alloc] init];
 		}
 		
-		[self.geocoder geocodeAddressString:theCity	completionHandler:^(NSArray *placemarks, NSError *error) 
+		[self.geocoder geocodeAddressString:theCity	completionHandler:^(NSArray *placemarks, NSError *error)
 		 {
 			 if ([placemarks count] > 0) {
 				 CLPlacemark *placemark = [placemarks objectAtIndex:0];
@@ -1566,17 +1576,17 @@
 				 // 2
 				 MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 20 * METERS_PER_MILE, 20 * METERS_PER_MILE);
 				 // 3
-				 MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];                
+				 MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];
 				 // 4
-				 [self.map setRegion:adjustedRegion animated:YES];  
+				 [self.map setRegion:adjustedRegion animated:YES];
 				 
 				 
 				 
-				 /* 
+				 /*
 				  self.addressLabel.text = [NSString stringWithFormat:@"%f, %f", zoomLocation.latitude, zoomLocation.longitude];
 				  */
 				 
-				 if ([placemark.areasOfInterest count] > 0) 
+				 if ([placemark.areasOfInterest count] > 0)
 				 {
 					 NSString *areaOfInterest = [placemark.areasOfInterest objectAtIndex:0];
 					 NSLog(@"Areas of Interest: %@", areaOfInterest);
@@ -1590,7 +1600,7 @@
 		 }];
 		
 		// 1
-		/* 
+		/*
 		 CLLocationCoordinate2D zoomLocation;
 		 zoomLocation.latitude = 39.281516;
 		 zoomLocation.longitude= -76.580806;
