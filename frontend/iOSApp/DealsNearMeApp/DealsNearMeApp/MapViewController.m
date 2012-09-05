@@ -515,14 +515,17 @@
 -(void) revGeocode:(CLLocation *)c
 {
 	// reverse geocoding coordinates to an address
-	self.addressLabel.text = @"reverse geocoding...";
+	/* self.addressLabel.text = @"reverse geocoding..."; */
+	
 	CLGeocoder *gcrev = [[CLGeocoder alloc] init];
 	[gcrev reverseGeocodeLocation:c completionHandler:^(NSArray *placemarks, NSError *error) {
 		CLPlacemark	*revMark = [placemarks objectAtIndex:0];
 		// turn placemark to address text
 		NSArray *addressLines = [revMark.addressDictionary objectForKey:@"FormattedAddressLines"];
 		NSString *revAddress = [addressLines componentsJoinedByString:@"\n"];
-		self.addressLabel.text = [NSString stringWithFormat:@"You are at : \n%@", revAddress];
+		/* self.addressLabel.text = [NSString stringWithFormat:@"You are at : \n%@", revAddress]; */
+		NSLog(@"---The address is--------------%@", revAddress);
+		
 		// now turn the address to coordinates
 		
 		/* [self geocode: revAddress]; */
@@ -1539,7 +1542,7 @@
 {
 	city = theCity;
 	
-	self.addressLabel.text = city;
+	/* self.addressLabel.text = city; */
 	NSLog(@"The value of city is %@", theCity);
 	[self dismissViewControllerAnimated:YES completion:^{
         //do map stuff here

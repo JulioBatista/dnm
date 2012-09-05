@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
         <!--Map View Controller-->
@@ -84,7 +84,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Address Unknown" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="EwK-DG-5wB">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="EwK-DG-5wB">
                                 <rect key="frame" x="10" y="140" width="156" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
@@ -1694,130 +1694,6 @@
         <image name="telephone_icon_60x60.png" width="60" height="60"/>
         <image name="twitter_icon_60x60.png" width="60" height="60"/>
     </resources>
-    <classes>
-        <class className="AboutScreenTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutScreenTableViewController.h"/>
-        </class>
-        <class className="BarsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
-        </class>
-        <class className="DealCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dealImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DealDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonBackTapped:"/>
-                <relationship kind="action" name="buttonFavoritesPressed:"/>
-                <relationship kind="action" name="buttonNextDeal:"/>
-                <relationship kind="action" name="buttonPrevDeal:"/>
-                <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DealsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonMapPressed:"/>
-            </relationships>
-        </class>
-        <class className="FavoritesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoritesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doRefresh:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-        </class>
-        <class className="LocationPickerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationPickerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-            </relationships>
-        </class>
-        <class className="LoginScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnCancelTapped:"/>
-                <relationship kind="action" name="btnLoginRegisterTapped:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fldPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fldUsername" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonLocationPicker:"/>
-                <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
-                <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="buttonToggle" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="buttonToggleScrollView" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="dealsTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="scrollDividerView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="MoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doChangePage:"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="MyAccountScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyAccountScreenViewController.h"/>
-        </class>
-        <class className="NewDealDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewDealDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonBackTapped:"/>
-                <relationship kind="action" name="buttonFavoritesPressed:"/>
-                <relationship kind="action" name="buttonNext:"/>
-                <relationship kind="action" name="buttonPrev:"/>
-                <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PostADealViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostADealViewController.h"/>
-        </class>
-        <class className="PreSplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PreSplashViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonStart:"/>
-                <relationship kind="outlet" name="imageViewPreSplashLogo" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SocialLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonCancel:"/>
-            </relationships>
-        </class>
-        <class className="SplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonYesPressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

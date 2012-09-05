@@ -75,6 +75,12 @@
     NSString *codeline = @"";
     
     NSString *buildString = @"";
+	
+	        codeline = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+	
+	        NSNumber *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleInfoDictionaryVersion"];
+	
+	        buildString = [NSString stringWithFormat:@"%d", [build intValue]];
     
     if (indexPath.row == 0)
     {
@@ -88,7 +94,7 @@
         
         UILabel *labelVersionInfoValue = (UILabel *)[cell viewWithTag:102];
         
-        codeline = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+
         
         
         labelVersionInfoValue.text = codeline;
@@ -107,9 +113,8 @@
         UILabel *labelVersionInfoValue = (UILabel *)[cell viewWithTag:102];
         
         
-        NSNumber *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleInfoDictionaryVersion"];
-        
-        buildString = [NSString stringWithFormat:@"%d", [build intValue]];
+
+	
         
         
         labelVersionInfoValue.text = buildString;
@@ -128,7 +133,10 @@
         
         UILabel *labelVersionInfoValue = (UILabel *)[cell viewWithTag:102];
         
-        NSString *version = codeline;
+        NSString *version = @"";
+		
+		version = [[[version stringByAppendingString:codeline] stringByAppendingString:@"."] stringByAppendingString:buildString];
+		
         
                     
         

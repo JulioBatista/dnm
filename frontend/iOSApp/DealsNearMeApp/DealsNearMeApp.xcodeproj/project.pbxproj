@@ -1252,12 +1252,12 @@
 		4B6BA51615C0F0890095F35E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "205A9FB9-9794-446B-872B-6FDDA4298575";
+				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1265,12 +1265,12 @@
 		4B6BA51715C0F0890095F35E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "205A9FB9-9794-446B-872B-6FDDA4298575";
+				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
