@@ -51,6 +51,7 @@
 	NSString *city;
 }
 
+@synthesize viewFilterByView = _viewFilterByView;
 @synthesize buttonToggle = _buttonToggle;
 @synthesize dealsTableView = _dealsTableView;
 @synthesize annotations = _annotations;
@@ -413,6 +414,7 @@
 	self.button010 = nil;
 	
     [self setSegmentedControlMapList:nil];
+    [self setViewFilterByView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
@@ -1446,6 +1448,7 @@
 		
 		[UIView commitAnimations];
 		
+
 		
 	}
 	else
@@ -1597,6 +1600,7 @@
             [self.map setHidden:NO];
             
             [self.dealsTableView setHidden:YES];
+            
             
             /* [self.buttonListButton setImage:[UIImage imageNamed:@"259-list-white.png"]];
             */

@@ -177,6 +177,7 @@
                         <outlet property="scrollDividerView" destination="UoY-ih-1bp" id="AwH-ri-aZi"/>
                         <outlet property="scrollView" destination="Jbg-zK-dbq" id="OCv-38-TQO"/>
                         <outlet property="segmentedControlMapList" destination="taZ-0T-4ff" id="qyk-lP-wgv"/>
+                        <outlet property="viewFilterByView" destination="yFp-kl-eRQ" id="oXc-8K-2Ek"/>
                         <segue destination="KvL-wI-8Ow" kind="push" identifier="FromMapDealDetailSegue" id="4Sc-dY-pY2"/>
                         <segue destination="CZa-pA-fh1" kind="modal" identifier="LocationPickerSegue" id="guJ-df-yqv"/>
                     </connections>
@@ -1761,8 +1762,10 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedCotnrolIndexChanged:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
@@ -1774,6 +1777,7 @@
                 <relationship kind="outlet" name="scrollDividerView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="segmentedControlMapList" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="viewFilterByView" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="MoreViewController" superclassName="UIViewController">

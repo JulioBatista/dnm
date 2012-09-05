@@ -30,6 +30,7 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UIView *viewFilterByView;
 
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonToggle;
