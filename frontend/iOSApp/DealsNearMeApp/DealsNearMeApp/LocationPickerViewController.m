@@ -41,7 +41,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    cities = [NSArray arrayWithObjects:@"Atlanta, GA",
+    cities = [NSArray arrayWithObjects:
+              @"Use Current Location",
+              @"Atlanta, GA",
               @"New York City, NY",
               @"Austin, TX",
               @"Boston, MA",
@@ -52,6 +54,7 @@
               @"Seattle, Washington",
               @"Washington, D.C.",
 			  @"Toronto, ON",
+              @"I Don't See My City",
               nil];
     
     

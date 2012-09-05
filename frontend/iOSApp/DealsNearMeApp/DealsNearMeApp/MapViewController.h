@@ -28,7 +28,7 @@
 
 - (IBAction)doLocateMeButton:(id)sender;
 
-- (IBAction)buttonLocationPicker:(id)sender;
+
 
 
 
@@ -66,5 +66,8 @@
 @property (nonatomic, strong) NSTimer *locationTimer;
 
 @property (nonatomic) NSUInteger mapIndexPath;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlMapList;
+
+- (IBAction)segmentedCotnrolIndexChanged:(id)sender;
 
 @end

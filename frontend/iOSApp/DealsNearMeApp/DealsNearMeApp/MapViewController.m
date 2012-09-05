@@ -82,6 +82,7 @@
 @synthesize geocoder = _geocoder;
 
 @synthesize mapIndexPath = _mapIndexPath;
+@synthesize segmentedControlMapList = _segmentedControlMapList;
 
 #pragma mark setters
 
@@ -411,6 +412,7 @@
 	self.button009 = nil;
 	self.button010 = nil;
 	
+    [self setSegmentedControlMapList:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
@@ -562,34 +564,10 @@
     
     [self.map setUserTrackingMode:MKUserTrackingModeFollow];
 	
-	/* if (self.map.annotations) [self.map removeAnnotations:self.map.annotations]; */
-	/*
-	 NSLog(@"doLocateMeButton pressed");
-	 
-	 locationManager = [[CLLocationManager alloc] init];
-	 locationManager.delegate = self;
-	 [locationManager startUpdatingLocation];
-	 
-	 
-	 self.locationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(stopUpdatingLocations) userInfo:nil repeats:NO];
-	 
-	 
-	 
-	 [self getDealsFromNetwork];
-	 
-	 */
-	
-	/* self.map.showsUserLocation = YES;
-	 
-	 [self.map setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
-	 */
+
 	
 }
 
-- (IBAction)buttonLocationPicker:(id)sender
-{
-	[self performSegueWithIdentifier:@"LocationPickerSegue" sender:self];
-}
 
 #pragma mark LocationPickerSegue
 
@@ -1115,7 +1093,7 @@
 	
 	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_004_fun.png"]];
     
-    [images addObject:[UIImage imageNamed:@"right_arrow_left_arrow_category.png"]];
+    /* [images addObject:[UIImage imageNamed:@"right_arrow_left_arrow_category.png"]]; */
 	
 	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_005_services.png"]];
 	
@@ -1178,6 +1156,7 @@
 	[self.button004 addTarget:self action:@selector(categoryFunPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button004];
     
+    /*
     scrollWidth += 72.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
@@ -1188,16 +1167,16 @@
 	[self.button004x setTag:4];
 	[self.button004x addTarget:self action:@selector(categoryFunPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button004x];
-    
+     */
 	
 	scrollWidth += 72.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_005_services.png"] size];
 	self.button005 = [[UIButton alloc] initWithFrame:frame];
-	[self.button005 setImage:[images objectAtIndex:5] forState:UIControlStateNormal];
+	[self.button005 setImage:[images objectAtIndex:4] forState:UIControlStateNormal];
 	[self.button005 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_005_services.png"] forState:UIControlStateSelected];
-	[self.button005 setTag:5];
+	[self.button005 setTag:4];
 	[self.button005 addTarget:self action:@selector(categoryServicesPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button005];
 	
@@ -1208,9 +1187,9 @@
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_006_dining.png"] size];
 	self.button006 = [[UIButton alloc] initWithFrame:frame];
-	[self.button006 setImage:[images objectAtIndex:6] forState:UIControlStateNormal];
+	[self.button006 setImage:[images objectAtIndex:5] forState:UIControlStateNormal];
 	[self.button006 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_006_dining.png"] forState:UIControlStateSelected];
-	[self.button006 setTag:6];
+	[self.button006 setTag:5];
 	[self.button006 addTarget:self action:@selector(categoryDiningPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button006];
 	
@@ -1219,9 +1198,9 @@
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_007_family.png"] size];
 	self.button007 = [[UIButton alloc] initWithFrame:frame];
-	[self.button007 setImage:[images objectAtIndex:7] forState:UIControlStateNormal];
+	[self.button007 setImage:[images objectAtIndex:6] forState:UIControlStateNormal];
 	[self.button007 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_007_family.png"] forState:UIControlStateSelected];
-	[self.button007 setTag:7];
+	[self.button007 setTag:6];
 	[self.button007 addTarget:self action:@selector(categoryFamilyPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button007];
 	
@@ -1231,9 +1210,9 @@
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_008_shopping.png"] size];
 	self.button008 = [[UIButton alloc] initWithFrame:frame];
-	[self.button008 setImage:[images objectAtIndex:8] forState:UIControlStateNormal];
+	[self.button008 setImage:[images objectAtIndex:7] forState:UIControlStateNormal];
 	[self.button008 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_008_shopping.png"] forState:UIControlStateSelected];
-	[self.button008 setTag:8];
+	[self.button008 setTag:7];
 	[self.button008 addTarget:self action:@selector(categoryShoppingPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button008];
 	
@@ -1244,9 +1223,9 @@
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_009_wellness.png"] size];
 	self.button009 = [[UIButton alloc] initWithFrame:frame];
-	[self.button009 setImage:[images objectAtIndex:9] forState:UIControlStateNormal];
+	[self.button009 setImage:[images objectAtIndex:8] forState:UIControlStateNormal];
 	[self.button009 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_009_wellness.png"] forState:UIControlStateSelected];
-	[self.button009 setTag:9];
+	[self.button009 setTag:8];
 	[self.button009 addTarget:self action:@selector(categoryWellnessPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button009];
 	
@@ -1255,8 +1234,8 @@
 	frame.origin.y = 0;
 	frame.size = [[UIImage imageNamed:@"category_icon_010_blank.png"] size];
 	self.button010 = [[UIButton alloc] initWithFrame:frame];
-	[self.button010 setImage:[images objectAtIndex:10] forState:UIControlStateNormal];
-	[self.button010 setTag:10];
+	[self.button010 setImage:[images objectAtIndex:9] forState:UIControlStateNormal];
+	[self.button010 setTag:9];
 	/* [self.button010 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside]; */
 	[self.scrollView addSubview:self.button010];
 	
@@ -1435,33 +1414,10 @@
 {
 	
 	
-	/* self.tabBarController.selectedIndex = 1; */
+	[self performSegueWithIdentifier:@"LocationPickerSegue" sender:self];
 	
-	/* [tabBarController setSelectedViewController:(UIViewController *)[tabBarController.viewControllers objectAtIndex: 2]]; */
-	
-	if (self.isMapVisible)
-	{
-		
-		self.isMapVisible = NO;
-		
-		[self.map setHidden:YES];
-		
-		[self.dealsTableView setHidden:NO];
-		
-		
-		[self.buttonListButton setImage:[UIImage imageNamed:@"07-map-marker-white.png"]];
-	}
-	else
-	{
-		self.isMapVisible = YES;
-		
-		[self.map setHidden:NO];
-		
-		[self.dealsTableView setHidden:YES];
-		
-		[self.buttonListButton setImage:[UIImage imageNamed:@"259-list-white.png"]];
-	}
-	
+    
+    NSLog(@"Button List Pressed");
 }
 
 - (IBAction)buttonToggleScrollViewPressed:(id)sender
@@ -1544,6 +1500,23 @@
 	
 	/* self.addressLabel.text = city; */
 	NSLog(@"The value of city is %@", theCity);
+    
+    if ([theCity isEqualToString:@"Use Current Location"])
+    {
+        /* below is what used to happen when you clicked the blue locateMe Button */
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        [locationManager startUpdatingLocation];
+        
+        self.locationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(stopUpdatingLocations) userInfo:nil repeats:NO];
+        
+        self.map.showsUserLocation = YES;
+        
+        [self.map setUserTrackingMode:MKUserTrackingModeFollow];
+        
+        /* above is what used to happen when you clicked the blue locateMe Button */
+    }
+    
 	[self dismissViewControllerAnimated:YES completion:^{
         //do map stuff here
 		__block CLLocationCoordinate2D zoomLocation;
@@ -1611,6 +1584,41 @@
 		
     }];
 	
+}
+- (IBAction)segmentedCotnrolIndexChanged:(id)sender
+{
+    switch (self.segmentedControlMapList.selectedSegmentIndex)
+    {
+        case 0:
+            NSLog(@"Map seleected");
+            
+            self.isMapVisible = YES;
+            
+            [self.map setHidden:NO];
+            
+            [self.dealsTableView setHidden:YES];
+            
+            /* [self.buttonListButton setImage:[UIImage imageNamed:@"259-list-white.png"]];
+            */
+            break;
+            
+        case 1:
+            NSLog(@"List selected");
+            self.isMapVisible = NO;
+            
+            [self.map setHidden:YES];
+            
+            [self.dealsTableView setHidden:NO];
+            
+            /*
+            [self.buttonListButton setImage:[UIImage imageNamed:@"07-map-marker-white.png"]];
+             */
+            break;
+            
+        default:
+            break;
+            
+    }
 }
 @end
 
