@@ -1240,7 +1240,7 @@
 	[self.scrollView addSubview:self.button010];
 	
 	[self.scrollView setBackgroundColor:[UIColor whiteColor]];
-	self.scrollView.pagingEnabled = YES;
+	self.scrollView.pagingEnabled = NO;
 	self.scrollView.contentSize = CGSizeMake(scrollWidth, 72.0f);
 }
 #pragma mark - Table view data source
@@ -1431,14 +1431,14 @@
 		
 		[UIView beginAnimations:@"animateViewOff" context:NULL];
 		
-		[self.scrollView setFrame:CGRectOffset([self.scrollView frame], 0, -(2 *self.scrollView.frame.size.height))];
+		[self.scrollView setFrame:CGRectOffset([self.scrollView frame], 0, -((2 *self.scrollView.frame.size.height) + 44))];
 		
 		[self.scrollDividerView setFrame:CGRectOffset([self.scrollDividerView frame], 0, -(self.scrollView.frame.size.height))];
 		
 		
 		CGRect navframe = [[self.navigationController navigationBar] frame];
 		
-		CGRect l_RectFrame = CGRectMake(0,  navframe.size.height, self.view.frame.size.width, self.view.frame.size.height);
+		CGRect l_RectFrame = CGRectMake(0,  navframe.size.height + 44, self.view.frame.size.width, self.view.frame.size.height);
 		
 		[self.dealsTableView setFrame:l_RectFrame];
 		
@@ -1458,13 +1458,13 @@
 		
 		[UIView beginAnimations:@"animateImageOn" context:NULL];
 		
-		[self.scrollView setFrame:CGRectOffset([self.scrollView	frame], 0, ( 2 * self.scrollView.frame.size.height))];
+		[self.scrollView setFrame:CGRectOffset([self.scrollView	frame], 0, ( 2 * self.scrollView.frame.size.height + 44))];
 		
 		CGRect navframe = [[self.navigationController navigationBar] frame];
 		
 		
 		
-		CGRect lDividerFrame = CGRectMake(0, navframe.size.height + self.scrollView.frame.size.height,
+		CGRect lDividerFrame = CGRectMake(0, navframe.size.height + self.scrollView.frame.size.height + 44,
 										  self.scrollDividerView.frame.size.width, self.scrollDividerView.frame.size.height);
 		
 		[self.scrollDividerView setFrame:lDividerFrame];
