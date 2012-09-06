@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B2DFB0315F9404F00A245CF /* background_dnm_detail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2DFB0215F9404F00A245CF /* background_dnm_detail.jpg */; };
+		4B2DFB0615F949F100A245CF /* dnm_detail_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2DFB0515F949F100A245CF /* dnm_detail_background.jpg */; };
+		4B2DFB0815F94CB900A245CF /* favorite-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B2DFB0715F94CB900A245CF /* favorite-icon.png */; };
 		4B367DAF15E27B430039AFB5 /* category_icon_003_dining.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DA515E27B3D0039AFB5 /* category_icon_003_dining.png */; };
 		4B367DB015E27B430039AFB5 /* category_icon_007_shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DA615E27B3D0039AFB5 /* category_icon_007_shopping.png */; };
 		4B367DB115E27B430039AFB5 /* category_icon_009_wellness.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DA715E27B3E0039AFB5 /* category_icon_009_wellness.png */; };
@@ -94,6 +97,7 @@
 		4B764D6015F03A5200D6863E /* map_pin_bars_23px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B764D5815F03A5200D6863E /* map_pin_bars_23px.png */; };
 		4B764D6E15F065DE00D6863E /* SocialLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B764D6D15F065DE00D6863E /* SocialLoginViewController.m */; };
 		4B764D7215F08C5400D6863E /* selected_guides_new_category_icon_004_fun.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B764D7115F08C5400D6863E /* selected_guides_new_category_icon_004_fun.png */; };
+		4B81CB8315F9214B00DB7FAA /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B81CB8215F9214B00DB7FAA /* Twitter.framework */; };
 		4B8D0F6315C8D7E4002CB264 /* search_bar_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D0F6215C8D7E4002CB264 /* search_bar_2x.png */; };
 		4B8D0F6515C8D8D0002CB264 /* search_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D0F6415C8D8D0002CB264 /* search_bar.png */; };
 		4B8D0F6715C8D988002CB264 /* header_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D0F6615C8D988002CB264 /* header_1.png */; };
@@ -238,6 +242,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B2DFB0215F9404F00A245CF /* background_dnm_detail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_dnm_detail.jpg; sourceTree = "<group>"; };
+		4B2DFB0515F949F100A245CF /* dnm_detail_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dnm_detail_background.jpg; sourceTree = "<group>"; };
+		4B2DFB0715F94CB900A245CF /* favorite-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite-icon.png"; sourceTree = "<group>"; };
 		4B367DA515E27B3D0039AFB5 /* category_icon_003_dining.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_003_dining.png; sourceTree = "<group>"; };
 		4B367DA615E27B3D0039AFB5 /* category_icon_007_shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_007_shopping.png; sourceTree = "<group>"; };
 		4B367DA715E27B3E0039AFB5 /* category_icon_009_wellness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_009_wellness.png; sourceTree = "<group>"; };
@@ -366,6 +373,7 @@
 		4B764D6F15F0810900D6863E /* selected_guides_new_category_icon_002_bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_guides_new_category_icon_002_bars.png; sourceTree = "<group>"; };
 		4B764D7115F08C5400D6863E /* selected_guides_new_category_icon_004_fun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_guides_new_category_icon_004_fun.png; sourceTree = "<group>"; };
 		4B764D7315F08C6F00D6863E /* selected_guides_new_category_icon_004_fun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_guides_new_category_icon_004_fun.png; sourceTree = "<group>"; };
+		4B81CB8215F9214B00DB7FAA /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		4B8D0F6215C8D7E4002CB264 /* search_bar_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bar_2x.png; sourceTree = "<group>"; };
 		4B8D0F6415C8D8D0002CB264 /* search_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bar.png; sourceTree = "<group>"; };
 		4B8D0F6615C8D988002CB264 /* header_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_1.png; sourceTree = "<group>"; };
@@ -532,6 +540,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B81CB8315F9214B00DB7FAA /* Twitter.framework in Frameworks */,
 				4BB9A13515CA4F50009263A1 /* MapKit.framework in Frameworks */,
 				4B6BA4F115C0F0890095F35E /* UIKit.framework in Frameworks */,
 				4B6BA4F315C0F0890095F35E /* Foundation.framework in Frameworks */,
@@ -575,6 +584,7 @@
 		4B6BA4E115C0F0890095F35E = {
 			isa = PBXGroup;
 			children = (
+				4B81CB8215F9214B00DB7FAA /* Twitter.framework */,
 				4B6BF9EE15F2BA1000011BCE /* new_app_logo_114x114.png */,
 				4B6BF9EB15F2BA0900011BCE /* new_app_logo_57x57.png */,
 				4B94FDAC15F13D9800EE0DBA /* 60610.gpx */,
@@ -682,6 +692,9 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B2DFB0715F94CB900A245CF /* favorite-icon.png */,
+				4B2DFB0515F949F100A245CF /* dnm_detail_background.jpg */,
+				4B2DFB0215F9404F00A245CF /* background_dnm_detail.jpg */,
 				4B764D7315F08C6F00D6863E /* selected_guides_new_category_icon_004_fun.png */,
 				4B764D5115F03A5000D6863E /* map_pin_travel_23px.png */,
 				4B764D5215F03A5000D6863E /* map_pin_wellness_23px.png */,
@@ -1125,6 +1138,9 @@
 				4B94FDAD15F13D9800EE0DBA /* 60610.gpx in Resources */,
 				4B6BF9EC15F2BA0900011BCE /* new_app_logo_57x57.png in Resources */,
 				4B6BF9EF15F2BA1000011BCE /* new_app_logo_114x114.png in Resources */,
+				4B2DFB0315F9404F00A245CF /* background_dnm_detail.jpg in Resources */,
+				4B2DFB0615F949F100A245CF /* dnm_detail_background.jpg in Resources */,
+				4B2DFB0815F94CB900A245CF /* favorite-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

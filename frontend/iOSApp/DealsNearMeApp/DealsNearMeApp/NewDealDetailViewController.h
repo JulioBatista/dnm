@@ -42,4 +42,7 @@
 
 - (IBAction)buttonShareButtonPressed:(id)sender;
 
+@property (nonatomic) BOOL canTweet;
+
+
 @end

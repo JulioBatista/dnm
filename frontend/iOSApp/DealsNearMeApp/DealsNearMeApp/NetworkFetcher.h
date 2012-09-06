@@ -20,6 +20,7 @@
 #define NETWORK_DEAL_RATING @"rating"
 #define NETWORK_TAGS @"tags"
 
+
 typedef enum {
 	FlickrPhotoFormatSquare = 1,
 	FlickrPhotoFormatLarge = 2,

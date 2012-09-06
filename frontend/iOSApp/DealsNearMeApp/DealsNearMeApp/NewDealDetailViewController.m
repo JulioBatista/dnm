@@ -8,6 +8,10 @@
 
 #import "NewDealDetailViewController.h"
 #import "FavoritesViewController.h"
+#import "Twitter/Twitter.h"
+#import "NetworkFetcher.h"
+
+#define letOSHandleLogin FALSE
 
 @interface NewDealDetailViewController ()
 
@@ -25,6 +29,7 @@
 @synthesize labelAddress;
 @synthesize favoriteDeals = _favoriteDeals;
 @synthesize actionSheet = _actionSheet;
+@synthesize canTweet = _canTweet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +39,7 @@
     }
     return self;
 }
+/*
 #define NETWORK_DEAL_TITLE @"title"
 #define NETWORK_DEAL_DEALNAME @"dealname"
 #define NETWORK_DEAL_DEALDESCRIPTION @"dealdescription"
@@ -48,6 +54,7 @@
 #define NETWORK_DEAL_PLACE_NAME @"derived_place"
 #define NETWORK_DEAL_RATING @"rating"
 #define NETWORK_TAGS @"tags"
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -95,7 +102,7 @@
 	
 	self.labelDealTitle.text = [onedeal objectForKey:NETWORK_DEAL_OWNER];
 	
-	self.labelDealDescription.text = [onedeal objectForKey:NETWORK_DEAL_TITLE];
+	self.labelDealDescription.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION];
     
     
     /*
@@ -146,7 +153,7 @@
 		
 		self.labelDealTitle.text = [self.currentDeal objectForKey:NETWORK_DEAL_OWNER];
 		
-		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_TITLE];
+		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
 		[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 		
@@ -170,7 +177,7 @@
 		
 		self.labelDealTitle.text = [self.currentDeal objectForKey:NETWORK_DEAL_OWNER];
 		
-		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_TITLE];
+		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
 		[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 		
@@ -235,6 +242,55 @@
     else if ([choice isEqualToString:@"Twitter"])
     {
         NSLog(@"Twitter");
+        
+        if ([TWTweetComposeViewController canSendTweet])
+        {
+            self.canTweet = YES;
+        }
+        
+        if (letOSHandleLogin)
+        {
+            NSLog(@"error label hidden");
+        }
+        else
+        {
+            NSLog(@"_________________");
+        }
+        
+		
+		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
+		
+		NSLog(@"--------------deal info : %@", [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION]);
+        
+        // Create the tweet sheet
+        TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
+        
+        // Customize the tweet sheet here
+        // Add a tweet message
+        
+        [tweetSheet setInitialText:[self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION]];
+        
+        // Add an image
+        
+        [tweetSheet addImage:[UIImage imageNamed:@"default_thumb.png"]];
+        
+        // Add a link
+        
+        [tweetSheet addURL:[NSURL URLWithString:@"http://leviait.com"]];
+        
+        // Set a blocking handler for the tweet sheet
+        
+        tweetSheet.completionHandler = ^(TWTweetComposeViewControllerResult result)
+        {
+            [self dismissModalViewControllerAnimated:YES];
+        };
+        
+        // Show the tweet sheet
+        
+        [self presentModalViewController:tweetSheet animated:YES];
+        
+        
+        
     }
     else if ([choice isEqualToString:@"Facebook"])
     {
