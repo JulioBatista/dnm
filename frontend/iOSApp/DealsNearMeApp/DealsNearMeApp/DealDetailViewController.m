@@ -14,13 +14,14 @@
 @end
 
 @implementation DealDetailViewController
-@synthesize buttonShareButtonPressed = _buttonShareButtonPressed;
 @synthesize mapDeal = _mapDeal;
 @synthesize dealnum = _dealnum;
 
 @synthesize labelDealDescription = _labelDealDescription;
 @synthesize labelDealTitle = _labelDealTitle;
 @synthesize buttonCategory = _buttonCategory;
+
+@synthesize actionSheet = _actionSheet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -88,7 +89,6 @@
 	[self setLabelDealTitle:nil];
 	[self setButtonCategory:nil];
 
-    [self setButtonShareButtonPressed:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -129,6 +129,40 @@
 	[[NSUserDefaults standardUserDefaults] setObject:data forKey:@"products"];
      
      */
+}
+
+- (IBAction)buttonShareButtonPressed:(id)sender
+{
+    if (self.actionSheet)
+    {
+        // do nothing
+    }
+    else
+    {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Action sheet demo" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Twitter" otherButtonTitles:@"Facebook", nil];
+        
+        [actionSheet showFromBarButtonItem:sender animated:YES];
+        
+    }
+}
+
+- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *choice = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if (buttonIndex == [actionSheet destructiveButtonIndex])
+    {
+        NSLog(@"Destroy");
+        
+    }
+    else if ([choice isEqualToString:@"Twitter"])
+    {
+        NSLog(@"Twitter");
+    }
+    else
+    {
+        NSLog(@"Default");
+    }
 }
 
 

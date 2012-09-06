@@ -12,7 +12,7 @@
 @class DealDetailViewController;
 
 
-@interface DealDetailViewController : UIViewController
+@interface DealDetailViewController : UIViewController<UIActionSheetDelegate>
 
 - (IBAction)buttonBackTapped:(id)sender;
 
@@ -29,6 +29,8 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonCategory;
 
+@property (nonatomic, weak) UIActionSheet *actionSheet;
+
 - (IBAction)buttonNextDeal:(id)sender;
 
 - (IBAction)buttonPrevDeal:(id)sender;
@@ -36,7 +38,7 @@
 - (IBAction)buttonFavoritesPressed:(id)sender;
 
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonShareButtonPressed;
 
+- (IBAction)buttonShareButtonPressed:(id)sender;
 
 @end

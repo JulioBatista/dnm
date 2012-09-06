@@ -389,7 +389,11 @@
                                                 <action selector="buttonBackTapped:" destination="f6u-iz-Qwf" id="ltq-pn-JMU"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Share" id="xha-i2-YBH"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Share" id="xha-i2-YBH">
+                                            <connections>
+                                                <action selector="buttonShareButtonPressed:" destination="f6u-iz-Qwf" id="E2i-q7-Zxm"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -604,6 +608,11 @@
                                                 <action selector="buttonBackTapped:" destination="KvL-wI-8Ow" id="WX7-nX-Bjv"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Share" id="efB-aW-MIA">
+                                            <connections>
+                                                <action selector="buttonShareButtonPressed:" destination="KvL-wI-8Ow" id="gkV-I1-0UW"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -611,55 +620,22 @@
                                 <rect key="frame" x="14" y="103" width="72" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bar.png" id="tEa-R5-jmd">
-                                <rect key="frame" x="127" y="103" width="184" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XpA-Ic-ynh">
-                                <rect key="frame" x="140" y="115" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="facebook_icon_60x60.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="12K-t3-IOf">
-                                <rect key="frame" x="199" y="115" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="twitter_icon_60x60.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C75-VK-3kn">
-                                <rect key="frame" x="258" y="115" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="smsnote_icon_60x60.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Restaurant week begins THIS Sunday. 3-course meal for only $25 all week long!" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dSq-uN-4Am">
-                                <rect key="frame" x="14" y="183" width="293" height="88"/>
+                                <rect key="frame" x="101" y="131" width="180" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.56565433310000002" blue="0.2489401889" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mac's Warehouse Bar &amp; Tavern" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="rDA-at-X1S">
+                                <rect key="frame" x="101" y="98" width="229" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.56565433310000002" blue="0.2489401889" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D4m-1a-ir8">
-                                <rect key="frame" x="138" y="347" width="44" height="44"/>
+                                <rect key="frame" x="130" y="211" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="redheart_icon_60x60.png">
@@ -674,7 +650,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x71-AD-0XO">
-                                <rect key="frame" x="197" y="347" width="44" height="44"/>
+                                <rect key="frame" x="182" y="211" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="telephone_icon_60x60.png">
@@ -686,14 +662,14 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number, Street, City, State, Zipcode" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9Af-w5-Coc">
-                                <rect key="frame" x="14" y="255" width="293" height="54"/>
+                                <rect key="frame" x="14" y="182" width="264" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nX0-x2-2o1">
-                                <rect key="frame" x="80" y="347" width="44" height="44"/>
+                                <rect key="frame" x="78" y="211" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="orange_map_icon_114x114.png">
@@ -705,14 +681,14 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="t2M-0A-fDe">
-                                <rect key="frame" x="14" y="317" width="56" height="21"/>
+                                <rect key="frame" x="14" y="211" width="56" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="0.14932834449999999" green="0.65728635199999996" blue="0.65015356960000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 views" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sPZ-gk-6QX">
-                                <rect key="frame" x="251" y="317" width="56" height="21"/>
+                                <rect key="frame" x="258" y="211" width="56" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.64457268209999996" blue="0.1963088768" alpha="1" colorSpace="calibratedRGB"/>
@@ -773,6 +749,10 @@
                                     <action selector="buttonNextDeal:" destination="f6u-iz-Qwf" eventType="touchUpInside" id="ChK-yU-Xgq"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="SPg-aC-aZl">
+                                <rect key="frame" x="-2" y="283" width="325" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1726,8 +1706,8 @@
                 <relationship kind="action" name="buttonFavoritesPressed:"/>
                 <relationship kind="action" name="buttonNextDeal:"/>
                 <relationship kind="action" name="buttonPrevDeal:"/>
+                <relationship kind="action" name="buttonShareButtonPressed:"/>
                 <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonShareButtonPressed" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelDealTitle" candidateClass="UILabel"/>
             </relationships>
@@ -1799,6 +1779,7 @@
                 <relationship kind="action" name="buttonFavoritesPressed:"/>
                 <relationship kind="action" name="buttonNext:"/>
                 <relationship kind="action" name="buttonPrev:"/>
+                <relationship kind="action" name="buttonShareButtonPressed:"/>
                 <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelAddress" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>

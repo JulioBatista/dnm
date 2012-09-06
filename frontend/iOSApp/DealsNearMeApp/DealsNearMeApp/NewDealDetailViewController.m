@@ -24,6 +24,7 @@
 @synthesize buttonCategory;
 @synthesize labelAddress;
 @synthesize favoriteDeals = _favoriteDeals;
+@synthesize actionSheet = _actionSheet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -206,4 +207,51 @@
     
     
 }
+
+- (IBAction)buttonShareButtonPressed:(id)sender
+{
+    if (self.actionSheet)
+    {
+        // do nothing
+    }
+    else
+    {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share Deals" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Twitter", @"Facebook", @"Email", nil];
+        
+        [actionSheet showFromBarButtonItem:sender animated:YES];
+        
+    }
+}
+
+- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *choice = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if (buttonIndex == [actionSheet destructiveButtonIndex])
+    {
+        NSLog(@"Destroy");
+        
+    }
+    else if ([choice isEqualToString:@"Twitter"])
+    {
+        NSLog(@"Twitter");
+    }
+    else if ([choice isEqualToString:@"Facebook"])
+    {
+        NSLog(@"Facebook");
+    }
+    
+    else if ([choice isEqualToString:@"Email"])
+    {
+        NSLog(@"Email");
+    }
+    
+    else
+    {
+        NSLog(@"Default");
+    }
+
+    
+}
+
 @end

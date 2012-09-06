@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewDealDetailViewController : UIViewController
+@interface NewDealDetailViewController : UIViewController<UIActionSheetDelegate>
 - (IBAction)buttonBackTapped:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *labelDealTitle;
@@ -31,10 +31,15 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *labelAddress;
 
+@property (nonatomic, weak) UIActionSheet *actionSheet;
+
+
 - (IBAction)buttonNext:(id)sender;
 
 - (IBAction)buttonPrev:(id)sender;
 
 - (IBAction)buttonFavoritesPressed:(id)sender;
+
+- (IBAction)buttonShareButtonPressed:(id)sender;
 
 @end
