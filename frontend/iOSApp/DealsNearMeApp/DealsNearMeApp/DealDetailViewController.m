@@ -14,6 +14,7 @@
 @end
 
 @implementation DealDetailViewController
+@synthesize buttonShareButtonPressed = _buttonShareButtonPressed;
 @synthesize mapDeal = _mapDeal;
 @synthesize dealnum = _dealnum;
 
@@ -87,6 +88,7 @@
 	[self setLabelDealTitle:nil];
 	[self setButtonCategory:nil];
 
+    [self setButtonShareButtonPressed:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

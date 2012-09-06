@@ -36,6 +36,7 @@
 - (IBAction)buttonFavoritesPressed:(id)sender;
 
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonShareButtonPressed;
 
 
 @end

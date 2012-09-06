@@ -389,6 +389,7 @@
                                                 <action selector="buttonBackTapped:" destination="f6u-iz-Qwf" id="ltq-pn-JMU"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Share" id="xha-i2-YBH"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -575,6 +576,7 @@
                         <outlet property="buttonCategory" destination="Cb6-OF-oJm" id="XQl-zb-P4h"/>
                         <outlet property="buttonNextDeal" destination="otg-YQ-whI" id="CUg-Jf-H3I"/>
                         <outlet property="buttonPrevDeal" destination="sb9-77-ijj" id="Lqx-Cw-Wuf"/>
+                        <outlet property="buttonShareButtonPressed" destination="xha-i2-YBH" id="8Wg-4L-Co3"/>
                         <outlet property="labelDealDescription" destination="va9-XL-oeS" id="bn9-wt-OUp"/>
                         <outlet property="labelDealTitle" destination="i1H-01-NRZ" id="ELS-a1-NhO"/>
                     </connections>
@@ -1725,6 +1727,7 @@
                 <relationship kind="action" name="buttonNextDeal:"/>
                 <relationship kind="action" name="buttonPrevDeal:"/>
                 <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonShareButtonPressed" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelDealTitle" candidateClass="UILabel"/>
             </relationships>
@@ -1762,10 +1765,8 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedCotnrolIndexChanged:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
