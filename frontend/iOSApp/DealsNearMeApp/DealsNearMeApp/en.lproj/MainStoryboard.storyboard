@@ -1734,8 +1734,10 @@
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedCotnrolIndexChanged:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
