@@ -268,9 +268,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Favorites" id="w6P-Ol-wz6"/>
+                                    <navigationItem id="w6P-Ol-wz6"/>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="new_deals_header_logo.png" id="UWo-79-p6B">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1728,6 +1732,7 @@
         <image name="facebook_icon_60x60.png" width="60" height="60"/>
         <image name="launch_background.jpg" width="640" height="960"/>
         <image name="lior_heart_icon.png" width="42" height="42"/>
+        <image name="new_deals_header_logo.png" width="320" height="44"/>
         <image name="next_arrow_orange.png" width="72" height="72"/>
         <image name="no_splash_button.png" width="580" height="95"/>
         <image name="orange_map_icon_114x114.png" width="114" height="114"/>
