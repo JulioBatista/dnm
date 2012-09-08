@@ -90,7 +90,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	NSLog(@"numberOfRowsInSection");
 	
 	return [self.favoriteDeals count];
 }
@@ -99,7 +98,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	
-	NSLog(@"is cellforRowAtIndexPath firing");
 	
 	static NSString *CellIdentifier = @"FavoritesCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
