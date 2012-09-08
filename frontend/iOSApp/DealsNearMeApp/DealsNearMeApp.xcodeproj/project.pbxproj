@@ -217,6 +217,7 @@
 		4BC5CBF415C8C45C00EAB199 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5CBF315C8C45C00EAB199 /* 145-persondot.png */; };
 		4BC5CBF615C8C49100EAB199 /* 177-building.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5CBF515C8C49100EAB199 /* 177-building.png */; };
 		4BC5CBF815C8C4BD00EAB199 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5CBF715C8C4BD00EAB199 /* 83-calendar.png */; };
+		4BD9EDFF15FAEE92001D1DA6 /* splash_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BD9EDFE15FAEE92001D1DA6 /* splash_background.jpg */; };
 		4BF8BCB815DA0710002EECD6 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF8BCB715DA0710002EECD6 /* SplashViewController.m */; };
 		4BF8BCBD15DA0E8A002EECD6 /* no_splash_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF8BCBA15DA0E8A002EECD6 /* no_splash_button.png */; };
 		4BF8BCBE15DA0E8A002EECD6 /* yes_splash_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF8BCBB15DA0E8A002EECD6 /* yes_splash_button.png */; };
@@ -508,6 +509,7 @@
 		4BC5CBF315C8C45C00EAB199 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		4BC5CBF515C8C49100EAB199 /* 177-building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "177-building.png"; sourceTree = "<group>"; };
 		4BC5CBF715C8C4BD00EAB199 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
+		4BD9EDFE15FAEE92001D1DA6 /* splash_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash_background.jpg; sourceTree = "<group>"; };
 		4BF8BCB615DA0710002EECD6 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		4BF8BCB715DA0710002EECD6 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		4BF8BCBA15DA0E8A002EECD6 /* no_splash_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_splash_button.png; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4BD9EDFE15FAEE92001D1DA6 /* splash_background.jpg */,
 				4B2DFB0715F94CB900A245CF /* favorite-icon.png */,
 				4B2DFB0515F949F100A245CF /* dnm_detail_background.jpg */,
 				4B2DFB0215F9404F00A245CF /* background_dnm_detail.jpg */,
@@ -1141,6 +1144,7 @@
 				4B2DFB0315F9404F00A245CF /* background_dnm_detail.jpg in Resources */,
 				4B2DFB0615F949F100A245CF /* dnm_detail_background.jpg in Resources */,
 				4B2DFB0815F94CB900A245CF /* favorite-icon.png in Resources */,
+				4BD9EDFF15FAEE92001D1DA6 /* splash_background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1270,12 +1274,14 @@
 		4B6BA51615C0F0890095F35E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "407D3C28-5490-4753-87FD-2853668F3579";
+				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "08E31BAF-1F36-4077-9507-4F51EFAE9DB8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1283,12 +1289,14 @@
 		4B6BA51715C0F0890095F35E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "205A9FB9-9794-446B-872B-6FDDA4298575";
+				PROVISIONING_PROFILE = "08E31BAF-1F36-4077-9507-4F51EFAE9DB8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
