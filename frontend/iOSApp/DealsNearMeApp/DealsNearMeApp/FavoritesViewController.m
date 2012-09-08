@@ -188,30 +188,8 @@
 	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 //==============================================================================================
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	
-    // Return the number of rows in the section.
-    return [self.favoriteDeals count];
-}
-
--(UIImage *) imageForRating:(int)rating
-{
-	switch(rating)
-	{
-		case 1: return [UIImage imageNamed:@"1StarSmall.png"];
-		case 2: return [UIImage imageNamed:@"2StarsSmall.png"];
-		case 3: return [UIImage imageNamed:@"3StarsSmall.png"];
-		case 4: return [UIImage imageNamed:@"4StarsSmall.png"];
-		case 5: return [UIImage imageNamed:@"5StarsSmall.png"];
-	}
-	return nil;
-}
-//==============================================================================================
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"MyFavoritesData";
@@ -232,11 +210,11 @@
 	
     
 	UIImageView *ratingImageView = (UIImageView *) [cell viewWithTag:102];
-
+	
 	ratingImageView.image  = [UIImage imageNamed:@"default_thumb.png"];
     
     
-
+	
 	
 	
     
@@ -244,6 +222,32 @@
 	
     return cell;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	
+    // Return the number of rows in the section.
+    return [self.favoriteDeals count];
+}
+
+
+
+-(UIImage *) imageForRating:(int)rating
+{
+	switch(rating)
+	{
+		case 1: return [UIImage imageNamed:@"1StarSmall.png"];
+		case 2: return [UIImage imageNamed:@"2StarsSmall.png"];
+		case 3: return [UIImage imageNamed:@"3StarsSmall.png"];
+		case 4: return [UIImage imageNamed:@"4StarsSmall.png"];
+		case 5: return [UIImage imageNamed:@"5StarsSmall.png"];
+	}
+	return nil;
+}
+//==============================================================================================
+
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -279,6 +283,7 @@
     
 }
 
+#pragma mark UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

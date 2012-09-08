@@ -224,6 +224,7 @@
 		4BD9EE0B15FB9423001D1DA6 /* photo_container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BD9EE0A15FB9423001D1DA6 /* photo_container.jpg */; };
 		4BD9EE0D15FB949B001D1DA6 /* deal_details_divider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BD9EE0C15FB949B001D1DA6 /* deal_details_divider.jpg */; };
 		4BD9EE0F15FB9630001D1DA6 /* deal_detail_background_only_gradient.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BD9EE0E15FB9630001D1DA6 /* deal_detail_background_only_gradient.jpg */; };
+		4BD9EE1615FBD8A2001D1DA6 /* NewFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD9EE1515FBD8A2001D1DA6 /* NewFavoritesViewController.m */; };
 		4BF8BCB815DA0710002EECD6 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF8BCB715DA0710002EECD6 /* SplashViewController.m */; };
 		4BF8BCBD15DA0E8A002EECD6 /* no_splash_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF8BCBA15DA0E8A002EECD6 /* no_splash_button.png */; };
 		4BF8BCBE15DA0E8A002EECD6 /* yes_splash_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF8BCBB15DA0E8A002EECD6 /* yes_splash_button.png */; };
@@ -522,6 +523,8 @@
 		4BD9EE0A15FB9423001D1DA6 /* photo_container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo_container.jpg; sourceTree = "<group>"; };
 		4BD9EE0C15FB949B001D1DA6 /* deal_details_divider.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deal_details_divider.jpg; sourceTree = "<group>"; };
 		4BD9EE0E15FB9630001D1DA6 /* deal_detail_background_only_gradient.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deal_detail_background_only_gradient.jpg; sourceTree = "<group>"; };
+		4BD9EE1415FBD8A2001D1DA6 /* NewFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFavoritesViewController.h; sourceTree = "<group>"; };
+		4BD9EE1515FBD8A2001D1DA6 /* NewFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFavoritesViewController.m; sourceTree = "<group>"; };
 		4BF8BCB615DA0710002EECD6 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		4BF8BCB715DA0710002EECD6 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		4BF8BCBA15DA0E8A002EECD6 /* no_splash_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_splash_button.png; sourceTree = "<group>"; };
@@ -654,8 +657,6 @@
 				4B367E5D15E41D440039AFB5 /* PostADealViewController.m */,
 				4B6BA50515C0F0890095F35E /* FirstViewController.h */,
 				4B6BA50615C0F0890095F35E /* FirstViewController.m */,
-				4B6BA50C15C0F0890095F35E /* FavoritesViewController.h */,
-				4B6BA50D15C0F0890095F35E /* FavoritesViewController.m */,
 				4B44263A15C6250900E46BD9 /* LoginScreenViewController.h */,
 				4B44263B15C6250900E46BD9 /* LoginScreenViewController.m */,
 				4BC5CBE815C6399000EAB199 /* MyAccountScreenViewController.h */,
@@ -670,6 +671,10 @@
 				4BF8BCD715DA8961002EECD6 /* DealDetailViewController.m */,
 				4BB5A9F815D034B6003E5F97 /* MapViewController.h */,
 				4BB5A9F915D034B6003E5F97 /* MapViewController.m */,
+				4BD9EE1415FBD8A2001D1DA6 /* NewFavoritesViewController.h */,
+				4BD9EE1515FBD8A2001D1DA6 /* NewFavoritesViewController.m */,
+				4B6BA50C15C0F0890095F35E /* FavoritesViewController.h */,
+				4B6BA50D15C0F0890095F35E /* FavoritesViewController.m */,
 				4B4D015315F53D3B0094816C /* AboutScreenTableViewController.h */,
 				4B4D015415F53D3B0094816C /* AboutScreenTableViewController.m */,
 				4BB5A9FD15D05816003E5F97 /* MyAnnotation.h */,
@@ -1219,6 +1224,7 @@
 				4B764D6E15F065DE00D6863E /* SocialLoginViewController.m in Sources */,
 				4B6BF9E615F08E0000011BCE /* NewDealDetailViewController.m in Sources */,
 				4B4D015515F53D3B0094816C /* AboutScreenTableViewController.m in Sources */,
+				4BD9EE1615FBD8A2001D1DA6 /* NewFavoritesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

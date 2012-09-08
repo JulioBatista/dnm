@@ -1245,7 +1245,7 @@
 	self.scrollView.pagingEnabled = NO;
 	self.scrollView.contentSize = CGSizeMake(scrollWidth, 72.0f);
 }
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
