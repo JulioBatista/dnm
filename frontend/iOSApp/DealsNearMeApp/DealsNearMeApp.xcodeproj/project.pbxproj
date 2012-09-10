@@ -289,6 +289,9 @@
 		4BD9EE1615FBD8A2001D1DA6 /* NewFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD9EE1515FBD8A2001D1DA6 /* NewFavoritesViewController.m */; };
 		4BD9EE1915FBEFB4001D1DA6 /* deals_header_logo_better.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD9EE1815FBEFB4001D1DA6 /* deals_header_logo_better.png */; };
 		4BD9EE1B15FBF0A1001D1DA6 /* new_deals_header_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BD9EE1A15FBF0A1001D1DA6 /* new_deals_header_logo.png */; };
+		4BE60B6A15FE8C0200EAD2A2 /* action-people.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE60B6915FE8C0200EAD2A2 /* action-people.png */; };
+		4BE60B6C15FE8C2C00EAD2A2 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE60B6B15FE8C2C00EAD2A2 /* Icon-72@2x.png */; };
+		4BE60B6E15FE909500EAD2A2 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BE60B6D15FE909500EAD2A2 /* FacebookSDKResources.bundle */; };
 		4BF8BCB815DA0710002EECD6 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF8BCB715DA0710002EECD6 /* SplashViewController.m */; };
 		4BF8BCBD15DA0E8A002EECD6 /* no_splash_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF8BCBA15DA0E8A002EECD6 /* no_splash_button.png */; };
 		4BF8BCBE15DA0E8A002EECD6 /* yes_splash_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF8BCBB15DA0E8A002EECD6 /* yes_splash_button.png */; };
@@ -740,6 +743,9 @@
 		4BD9EE1515FBD8A2001D1DA6 /* NewFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFavoritesViewController.m; sourceTree = "<group>"; };
 		4BD9EE1815FBEFB4001D1DA6 /* deals_header_logo_better.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deals_header_logo_better.png; sourceTree = "<group>"; };
 		4BD9EE1A15FBF0A1001D1DA6 /* new_deals_header_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_deals_header_logo.png; sourceTree = "<group>"; };
+		4BE60B6915FE8C0200EAD2A2 /* action-people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-people.png"; sourceTree = "<group>"; };
+		4BE60B6B15FE8C2C00EAD2A2 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		4BE60B6D15FE909500EAD2A2 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		4BF8BCB615DA0710002EECD6 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		4BF8BCB715DA0710002EECD6 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		4BF8BCBA15DA0E8A002EECD6 /* no_splash_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_splash_button.png; sourceTree = "<group>"; };
@@ -1222,6 +1228,7 @@
 		4B6BA4EF15C0F0890095F35E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BE60B6D15FE909500EAD2A2 /* FacebookSDKResources.bundle */,
 				4B4E0E3815FD886300A0CF97 /* SenTestingKit.framework */,
 				4B81CB8215F9214B00DB7FAA /* Twitter.framework */,
 				4BB5A9FB15D052B6003E5F97 /* CoreLocation.framework */,
@@ -1310,6 +1317,7 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4BE60B6815FE8BF200EAD2A2 /* fb-assets */,
 				4BD9EE1A15FBF0A1001D1DA6 /* new_deals_header_logo.png */,
 				4BD9EE1815FBEFB4001D1DA6 /* deals_header_logo_better.png */,
 				4BE60B5C15FE873600EAD2A2 /* new_deal_detail_assets */,
@@ -1489,6 +1497,15 @@
 				4BD9EE0615FB908F001D1DA6 /* lior_heart_icon.png */,
 			);
 			name = new_deal_detail_assets;
+			sourceTree = "<group>";
+		};
+		4BE60B6815FE8BF200EAD2A2 /* fb-assets */ = {
+			isa = PBXGroup;
+			children = (
+				4BE60B6B15FE8C2C00EAD2A2 /* Icon-72@2x.png */,
+				4BE60B6915FE8C0200EAD2A2 /* action-people.png */,
+			);
+			name = "fb-assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1768,6 +1785,9 @@
 				4B4E0E2615FD861D00A0CF97 /* FacebookSDKTests-Info.plist in Resources */,
 				4B53420D15FE7ABF00C7356E /* screen_gradient_logo_only.png in Resources */,
 				4B53420E15FE7ABF00C7356E /* screen_gradient_only.jpg in Resources */,
+				4BE60B6A15FE8C0200EAD2A2 /* action-people.png in Resources */,
+				4BE60B6C15FE8C2C00EAD2A2 /* Icon-72@2x.png in Resources */,
+				4BE60B6E15FE909500EAD2A2 /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
