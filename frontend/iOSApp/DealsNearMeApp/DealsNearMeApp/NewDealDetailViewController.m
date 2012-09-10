@@ -10,6 +10,7 @@
 #import "FavoritesViewController.h"
 #import "Twitter/Twitter.h"
 #import "NetworkFetcher.h"
+#import "FacebookHelper.h"
 
 #define letOSHandleLogin FALSE
 
@@ -295,6 +296,7 @@
     else if ([choice isEqualToString:@"Facebook"])
     {
         NSLog(@"Facebook");
+		  [[FacebookHelper sharedInstance] postToWallWithDialogNewHighscore:99];
     }
     
     else if ([choice isEqualToString:@"Email"])

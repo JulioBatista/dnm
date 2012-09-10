@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "FacebookHelper.h"
 
-#import "AppDelegate.h"
 
 
 
@@ -55,5 +55,16 @@
 {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [[[FacebookHelper sharedInstance] facebook] handleOpenURL:url];
+}
+
+// For 4.2+ support
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[[FacebookHelper sharedInstance] facebook] handleOpenURL:url];
+}
+
 
 @end
