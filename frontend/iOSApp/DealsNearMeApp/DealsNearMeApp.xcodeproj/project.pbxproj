@@ -109,6 +109,8 @@
 		4B4E0E3015FD861D00A0CF97 /* FBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E0DF215FD861D00A0CF97 /* FBTests.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B4E0E3115FD861D00A0CF97 /* FBTestSessionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E0DF415FD861D00A0CF97 /* FBTestSessionTests.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B4E0E3915FD886300A0CF97 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4E0E3815FD886300A0CF97 /* SenTestingKit.framework */; };
+		4B53420D15FE7ABF00C7356E /* screen_gradient_logo_only.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B53420B15FE7ABF00C7356E /* screen_gradient_logo_only.png */; };
+		4B53420E15FE7ABF00C7356E /* screen_gradient_only.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B53420C15FE7ABF00C7356E /* screen_gradient_only.jpg */; };
 		4B5A366115CDF75600552ECF /* DealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5A366015CDF75600552ECF /* DealsViewController.m */; };
 		4B6BA4F115C0F0890095F35E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F015C0F0890095F35E /* UIKit.framework */; };
 		4B6BA4F315C0F0890095F35E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F215C0F0890095F35E /* Foundation.framework */; };
@@ -526,6 +528,8 @@
 		4B4E0DF315FD861D00A0CF97 /* FBTestSessionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTestSessionTests.h; sourceTree = "<group>"; };
 		4B4E0DF415FD861D00A0CF97 /* FBTestSessionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTestSessionTests.m; sourceTree = "<group>"; };
 		4B4E0E3815FD886300A0CF97 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		4B53420B15FE7ABF00C7356E /* screen_gradient_logo_only.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_gradient_logo_only.png; sourceTree = "<group>"; };
+		4B53420C15FE7ABF00C7356E /* screen_gradient_only.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screen_gradient_only.jpg; sourceTree = "<group>"; };
 		4B5A365F15CDF75600552ECF /* DealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsViewController.h; sourceTree = "<group>"; };
 		4B5A366015CDF75600552ECF /* DealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsViewController.m; sourceTree = "<group>"; };
 		4B6BA4EC15C0F0890095F35E /* DealsNearMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsNearMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1001,6 +1005,180 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
+		4B53420615FE79B400C7356E /* tinyicons */ = {
+			isa = PBXGroup;
+			children = (
+				4B9009DF15E5CB0600045CF9 /* 57-download-reversed-white.png */,
+				4B9009E015E5CB0600045CF9 /* 57-download-reversed.png */,
+				4B9009DD15E5CABE00045CF9 /* 57-download-white.png */,
+				4B9009DB15E5C89800045CF9 /* 57-download.png */,
+				4B367E5615E337BE0039AFB5 /* 15-tags@2x.png */,
+				4BF8BCD915DA8E61002EECD6 /* 06-magnify-white.png */,
+				4BF8BCDA15DA8E61002EECD6 /* 06-magnify@2x-white.png */,
+				4BF8BCD015DA8523002EECD6 /* 259-list.png */,
+				4BF8BCD215DA8726002EECD6 /* 259-list-white.png */,
+				4BF8BCD315DA8727002EECD6 /* 259-list@2x-white.png */,
+				4BF8BCCC15DA82C5002EECD6 /* 06-magnify.png */,
+				4BF8BCCD15DA82C5002EECD6 /* 06-magnify@2x.png */,
+				4BF8BCCA15DA2391002EECD6 /* 07-map-marker@2x-white.png */,
+				4BF8BCC815DA2387002EECD6 /* 07-map-marker-white.png */,
+				4BB5AA1615D0ABB9003E5F97 /* 179-notepad@2x-white.png */,
+				4BB5AA1415D0AB64003E5F97 /* 14-tag@2x-white.png */,
+				4BB5AA0A15D0A464003E5F97 /* 103-map@2x.png */,
+				4BB5AA0615D0A433003E5F97 /* 104-index-cards@2x.png */,
+				4BB5AA1815D0ABE8003E5F97 /* 103-map@2x-white.png */,
+				4BB5AA1E15D0ACB5003E5F97 /* 299-ticket@2x-white.png */,
+				4BB5AA0C15D0A64B003E5F97 /* 178-city@2x.png */,
+				4BB5AA0E15D0A680003E5F97 /* 236-shoppingbag@2x.png */,
+				4BB5AA0415D0964F003E5F97 /* 14-tag-white.png */,
+				4BB5AA0815D0A44A003E5F97 /* 179-notepad@2x.png */,
+				4BB5AA1215D0A776003E5F97 /* 299-ticket@2x.png */,
+				4BB5AA1C15D0AC8C003E5F97 /* 236-shoppingbag@2x-white.png */,
+				4BB5AA1015D0A6DA003E5F97 /* 259-list@2x.png */,
+				4BB5AA1A15D0AC59003E5F97 /* 178-city@2x-white.png */,
+				4BB5AA0015D0903A003E5F97 /* 14-tag.png */,
+				4BB5AA0115D0903A003E5F97 /* 14-tag@2x.png */,
+				4BB9A13915CB7276009263A1 /* 104-index-cards.png */,
+				4BB9A13715CB70E1009263A1 /* 179-notepad.png */,
+				4BB9A13B15CB72F8009263A1 /* 103-map.png */,
+			);
+			name = tinyicons;
+			sourceTree = "<group>";
+		};
+		4B53420715FE79F000C7356E /* buttonimages */ = {
+			isa = PBXGroup;
+			children = (
+				4BF8BCBA15DA0E8A002EECD6 /* no_splash_button.png */,
+				4BF8BCBB15DA0E8A002EECD6 /* yes_splash_button.png */,
+			);
+			name = buttonimages;
+			sourceTree = "<group>";
+		};
+		4B53420815FE7A0800C7356E /* starsimages */ = {
+			isa = PBXGroup;
+			children = (
+				4BC5044615CCD7D600E535A2 /* 1Star.png */,
+				4BC5044715CCD7D600E535A2 /* 1Star@2x.png */,
+				4BC5044815CCD7D600E535A2 /* 1StarSmall.png */,
+				4BC5044915CCD7D600E535A2 /* 1StarSmall@2x.png */,
+				4BC5044A15CCD7D600E535A2 /* 2Stars.png */,
+				4BC5044B15CCD7D600E535A2 /* 2Stars@2x.png */,
+				4BC5044C15CCD7D600E535A2 /* 2StarsSmall.png */,
+				4BC5044D15CCD7D600E535A2 /* 2StarsSmall@2x.png */,
+				4BC5044E15CCD7D600E535A2 /* 3Stars.png */,
+				4BC5044F15CCD7D600E535A2 /* 3Stars@2x.png */,
+				4BC5045015CCD7D600E535A2 /* 3StarsSmall.png */,
+				4BC5045115CCD7D600E535A2 /* 3StarsSmall@2x.png */,
+				4BC5045215CCD7D600E535A2 /* 4Stars.png */,
+				4BC5045315CCD7D600E535A2 /* 4Stars@2x.png */,
+				4BC5045415CCD7D600E535A2 /* 4StarsSmall.png */,
+				4BC5045515CCD7D600E535A2 /* 4StarsSmall@2x.png */,
+				4BC5045615CCD7D600E535A2 /* 5Stars.png */,
+				4BC5045715CCD7D600E535A2 /* 5Stars@2x.png */,
+				4BC5045815CCD7D600E535A2 /* 5StarsSmall.png */,
+				4BC5045915CCD7D600E535A2 /* 5StarsSmall@2x.png */,
+			);
+			name = starsimages;
+			sourceTree = "<group>";
+		};
+		4B53420915FE7A5700C7356E /* socialicons */ = {
+			isa = PBXGroup;
+			children = (
+				4B9009D915E5C80100045CF9 /* categories_icon_60x60.png */,
+				4B9009D015E4A9CA00045CF9 /* redheart_icon_60x60.png */,
+				4B9009CE15E4A76500045CF9 /* smsnote_icon_60x60.png */,
+				4B9009CC15E4A41B00045CF9 /* telephone_icon_60x60.png */,
+				4B9009CA15E4A05000045CF9 /* heart_icon_60x60.png */,
+				4B9009C815E49C3200045CF9 /* sms_icon_60x60.png */,
+				4B9009C615E49B3E00045CF9 /* twitter_icon_60x60.png */,
+				4B9009C415E4964600045CF9 /* facebook_icon_60x60.png */,
+				4B9009C015E4910A00045CF9 /* twitter_32.png */,
+				4B9009BD15E490D300045CF9 /* facebook_32.png */,
+			);
+			name = socialicons;
+			sourceTree = "<group>";
+		};
+		4B53420A15FE7A9D00C7356E /* highresbackgroundimages */ = {
+			isa = PBXGroup;
+			children = (
+				4B53420B15FE7ABF00C7356E /* screen_gradient_logo_only.png */,
+				4B53420C15FE7ABF00C7356E /* screen_gradient_only.jpg */,
+				4BD9EDFE15FAEE92001D1DA6 /* splash_background.jpg */,
+			);
+			name = highresbackgroundimages;
+			sourceTree = "<group>";
+		};
+		4B53420F15FE7AE300C7356E /* deprecatedicons */ = {
+			isa = PBXGroup;
+			children = (
+				4BC5045A15CCD7D600E535A2 /* Gestures.png */,
+				4BC5045B15CCD7D600E535A2 /* Gestures@2x.png */,
+				4BC5045C15CCD7D600E535A2 /* Players.png */,
+				4BC5045D15CCD7D600E535A2 /* Players@2x.png */,
+			);
+			name = deprecatedicons;
+			sourceTree = "<group>";
+		};
+		4B53421015FE7B3A00C7356E /* guides_new_category_icons */ = {
+			isa = PBXGroup;
+			children = (
+				4B900BCA15EAE6D500045CF9 /* guides_new_category_icon_009_wellness.png */,
+				4B900BCB15EAE6D600045CF9 /* guides_new_category_icon_008_shopping.png */,
+				4B900BCC15EAE6D600045CF9 /* guides_new_category_icon_007_family.png */,
+				4B900BCD15EAE6D800045CF9 /* guides_new_category_icon_006_dining.png */,
+				4B900BCE15EAE6D900045CF9 /* guides_new_category_icon_003_travel.png */,
+				4B900BCF15EAE6DA00045CF9 /* guides_new_category_icon_001_seeall.png */,
+				4B900BD015EAE6DA00045CF9 /* guides_new_category_icon_004_fun.png */,
+				4B900BD115EAE6DA00045CF9 /* guides_new_category_icon_002_bars.png */,
+				4B900BD215EAE6DB00045CF9 /* guides_new_category_icon_005_services.png */,
+			);
+			name = guides_new_category_icons;
+			sourceTree = "<group>";
+		};
+		4B53421115FE7B4F00C7356E /* selected_guides_new_category_icons */ = {
+			isa = PBXGroup;
+			children = (
+				4B37624A15EDCFD000BC2730 /* selected_guides_new_category_icon_001_seeall.png */,
+				4B900BFB15ECA15400045CF9 /* selected_guides_new_category_icon_008_shopping.png */,
+				4B900BFD15ECA15700045CF9 /* selected_guides_new_category_icon_006_dining.png */,
+				4B764D7115F08C5400D6863E /* selected_guides_new_category_icon_004_fun.png */,
+				4B900C0015ECA15800045CF9 /* selected_guides_new_category_icon_003_travel.png */,
+				4B900C0115ECA15900045CF9 /* selected_guides_new_category_icon_002_bars.png */,
+				4B900BF815EC911F00045CF9 /* selected_guides_new_category_icon_001_seeall.png */,
+			);
+			name = selected_guides_new_category_icons;
+			sourceTree = "<group>";
+		};
+		4B53421215FE7BC700C7356E /* map_pins_highres */ = {
+			isa = PBXGroup;
+			children = (
+				4B900BE615EB3BFD00045CF9 /* map_pin_wellness.png */,
+				4B900BE715EB3BFE00045CF9 /* map_pin_shopping.png */,
+				4B900BE815EB3BFF00045CF9 /* map_pin_family.png */,
+				4B900BE915EB3C0000045CF9 /* map_pin_dining.png */,
+				4B900BEA15EB3C0300045CF9 /* map_pin_services.png */,
+				4B900BEB15EB3C0400045CF9 /* map_pin_fun.png */,
+				4B900BEC15EB3C0600045CF9 /* map_pin_travel.png */,
+				4B900BED15EB3C0800045CF9 /* map_pin_bars.png */,
+			);
+			name = map_pins_highres;
+			sourceTree = "<group>";
+		};
+		4B53421315FE7D7200C7356E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				4B764D5115F03A5000D6863E /* map_pin_travel_23px.png */,
+				4B764D5215F03A5000D6863E /* map_pin_wellness_23px.png */,
+				4B764D5315F03A5100D6863E /* map_pin_fun_23px.png */,
+				4B764D5415F03A5100D6863E /* map_pin_family_23px.png */,
+				4B764D5515F03A5100D6863E /* map_pin_services_23px.png */,
+				4B764D5615F03A5100D6863E /* map_pin_shopping_23px.png */,
+				4B764D5715F03A5100D6863E /* map_pin_dining_23px.png */,
+				4B764D5815F03A5200D6863E /* map_pin_bars_23px.png */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		4B6BA4E115C0F0890095F35E = {
 			isa = PBXGroup;
 			children = (
@@ -1128,23 +1306,16 @@
 				4BD9EE0815FB9308001D1DA6 /* lior_deal_detail_background.png */,
 				4BD9EE0615FB908F001D1DA6 /* lior_heart_icon.png */,
 				4BD9EE0015FAF168001D1DA6 /* launch_background.jpg */,
-				4BD9EDFE15FAEE92001D1DA6 /* splash_background.jpg */,
+				4B53420A15FE7A9D00C7356E /* highresbackgroundimages */,
 				4B2DFB0715F94CB900A245CF /* favorite-icon.png */,
 				4B2DFB0515F949F100A245CF /* dnm_detail_background.jpg */,
 				4B2DFB0215F9404F00A245CF /* background_dnm_detail.jpg */,
 				4B764D7315F08C6F00D6863E /* selected_guides_new_category_icon_004_fun.png */,
-				4B764D5115F03A5000D6863E /* map_pin_travel_23px.png */,
-				4B764D5215F03A5000D6863E /* map_pin_wellness_23px.png */,
+				4B53421315FE7D7200C7356E /* New Group */,
 				4B764D6F15F0810900D6863E /* selected_guides_new_category_icon_002_bars.png */,
 				4B764D6A15F0650E00D6863E /* selected_guides_new_category_icon_005_services.png */,
-				4B764D5315F03A5100D6863E /* map_pin_fun_23px.png */,
-				4B764D5415F03A5100D6863E /* map_pin_family_23px.png */,
-				4B764D5515F03A5100D6863E /* map_pin_services_23px.png */,
 				4B764D6615F064A100D6863E /* selected_guides_new_category_icon_007_family.png */,
 				4B764D6815F064E300D6863E /* selected_guides_new_category_icon_009_wellness.png */,
-				4B764D5615F03A5100D6863E /* map_pin_shopping_23px.png */,
-				4B764D5715F03A5100D6863E /* map_pin_dining_23px.png */,
-				4B764D5815F03A5200D6863E /* map_pin_bars_23px.png */,
 				4B764D4E15F00EC200D6863E /* right_arrow_left_arrow_category.png */,
 				4B9B426115EECE88005AC5D3 /* right_arrow_category_evensmaller.png */,
 				4B9B425F15EECDE8005AC5D3 /* right_arrow_category_smaller_75alpha.png */,
@@ -1163,57 +1334,23 @@
 				4B37625815EDD52200BC2730 /* selected_guides_new_category_icon_003_travel.png */,
 				4B37625215EDD36800BC2730 /* launch_image_320x480.png */,
 				4B37625315EDD36800BC2730 /* launch_image_640x960.png */,
-				4B37624A15EDCFD000BC2730 /* selected_guides_new_category_icon_001_seeall.png */,
-				4B900BFB15ECA15400045CF9 /* selected_guides_new_category_icon_008_shopping.png */,
-				4B900BFD15ECA15700045CF9 /* selected_guides_new_category_icon_006_dining.png */,
-				4B764D7115F08C5400D6863E /* selected_guides_new_category_icon_004_fun.png */,
-				4B900C0015ECA15800045CF9 /* selected_guides_new_category_icon_003_travel.png */,
-				4B900C0115ECA15900045CF9 /* selected_guides_new_category_icon_002_bars.png */,
-				4B900BF815EC911F00045CF9 /* selected_guides_new_category_icon_001_seeall.png */,
+				4B53421115FE7B4F00C7356E /* selected_guides_new_category_icons */,
 				4B900BF615EBAD6500045CF9 /* map_pin_self.png */,
-				4B900BE615EB3BFD00045CF9 /* map_pin_wellness.png */,
-				4B900BE715EB3BFE00045CF9 /* map_pin_shopping.png */,
-				4B900BE815EB3BFF00045CF9 /* map_pin_family.png */,
-				4B900BE915EB3C0000045CF9 /* map_pin_dining.png */,
-				4B900BEA15EB3C0300045CF9 /* map_pin_services.png */,
-				4B900BEB15EB3C0400045CF9 /* map_pin_fun.png */,
-				4B900BEC15EB3C0600045CF9 /* map_pin_travel.png */,
-				4B900BED15EB3C0800045CF9 /* map_pin_bars.png */,
+				4B53421215FE7BC700C7356E /* map_pins_highres */,
 				4B900BE215EB2CB200045CF9 /* next_arrow_orange.png */,
 				4B900BE315EB2CB200045CF9 /* previous_arrow_orange.png */,
 				4B900BE015EB21A300045CF9 /* default_thumb.png */,
 				4B900BDE15EB1E8300045CF9 /* category_placeholder.png */,
 				4B900BDC15EB1D1A00045CF9 /* orange_map_icon_114x114.png */,
-				4B900BCA15EAE6D500045CF9 /* guides_new_category_icon_009_wellness.png */,
-				4B900BCB15EAE6D600045CF9 /* guides_new_category_icon_008_shopping.png */,
-				4B900BCC15EAE6D600045CF9 /* guides_new_category_icon_007_family.png */,
-				4B900BCD15EAE6D800045CF9 /* guides_new_category_icon_006_dining.png */,
-				4B900BCE15EAE6D900045CF9 /* guides_new_category_icon_003_travel.png */,
-				4B900BCF15EAE6DA00045CF9 /* guides_new_category_icon_001_seeall.png */,
-				4B900BD015EAE6DA00045CF9 /* guides_new_category_icon_004_fun.png */,
-				4B900BD115EAE6DA00045CF9 /* guides_new_category_icon_002_bars.png */,
-				4B900BD215EAE6DB00045CF9 /* guides_new_category_icon_005_services.png */,
+				4B53421015FE7B3A00C7356E /* guides_new_category_icons */,
 				4B900A2615E69DE900045CF9 /* new_category_icon_005_services.png */,
 				4B900A1E15E690D200045CF9 /* new_category_icon_003_travel.png */,
 				4B900A1415E6867500045CF9 /* new_category_icon_001_seeall.png */,
 				4B900A1A15E68C8800045CF9 /* new_category_icon_002_bars.png */,
 				4B900A1215E67B2200045CF9 /* DealsNear_App_Registration.png */,
-				4B9009DF15E5CB0600045CF9 /* 57-download-reversed-white.png */,
-				4B9009E015E5CB0600045CF9 /* 57-download-reversed.png */,
-				4B9009DD15E5CABE00045CF9 /* 57-download-white.png */,
-				4B9009DB15E5C89800045CF9 /* 57-download.png */,
-				4B9009D915E5C80100045CF9 /* categories_icon_60x60.png */,
-				4B9009D015E4A9CA00045CF9 /* redheart_icon_60x60.png */,
-				4B9009CE15E4A76500045CF9 /* smsnote_icon_60x60.png */,
-				4B9009CC15E4A41B00045CF9 /* telephone_icon_60x60.png */,
-				4B9009CA15E4A05000045CF9 /* heart_icon_60x60.png */,
-				4B9009C815E49C3200045CF9 /* sms_icon_60x60.png */,
-				4B9009C615E49B3E00045CF9 /* twitter_icon_60x60.png */,
-				4B9009C415E4964600045CF9 /* facebook_icon_60x60.png */,
-				4B9009C015E4910A00045CF9 /* twitter_32.png */,
-				4B9009BD15E490D300045CF9 /* facebook_32.png */,
+				4B53420615FE79B400C7356E /* tinyicons */,
+				4B53420915FE7A5700C7356E /* socialicons */,
 				4B367E5A15E4085E0039AFB5 /* category_icon_010_blank.png */,
-				4B367E5615E337BE0039AFB5 /* 15-tags@2x.png */,
 				4B367E5115E32ECF0039AFB5 /* black_bar.png */,
 				4B367DB915E280A40039AFB5 /* divider_645x8.png */,
 				4B367DBB15E284B10039AFB5 /* divider_320x4.png */,
@@ -1227,65 +1364,14 @@
 				4B367DAC15E27B410039AFB5 /* category_icon_008_travel.png */,
 				4B367DAD15E27B420039AFB5 /* category_icon_002_bars.png */,
 				4B367DAE15E27B420039AFB5 /* category_icon_001_seeall.png */,
-				4BF8BCD915DA8E61002EECD6 /* 06-magnify-white.png */,
-				4BF8BCDA15DA8E61002EECD6 /* 06-magnify@2x-white.png */,
-				4BF8BCD015DA8523002EECD6 /* 259-list.png */,
-				4BF8BCD215DA8726002EECD6 /* 259-list-white.png */,
-				4BF8BCD315DA8727002EECD6 /* 259-list@2x-white.png */,
-				4BF8BCCC15DA82C5002EECD6 /* 06-magnify.png */,
-				4BF8BCCD15DA82C5002EECD6 /* 06-magnify@2x.png */,
-				4BF8BCCA15DA2391002EECD6 /* 07-map-marker@2x-white.png */,
-				4BF8BCC815DA2387002EECD6 /* 07-map-marker-white.png */,
 				4BC5048515CD833B00E535A2 /* deals_header_logo.png */,
 				4BF8BCC415DA18DB002EECD6 /* new_loginscreen_background.png */,
 				4BF8BCC615DA1ECF002EECD6 /* new_dnm_header_logo.png */,
 				4BF8BCC215DA1856002EECD6 /* loginscreen_background_minus_buttons.png */,
 				4BF8BCC015DA1111002EECD6 /* splash_background_minus_buttons_320_480.png */,
-				4BF8BCBA15DA0E8A002EECD6 /* no_splash_button.png */,
-				4BF8BCBB15DA0E8A002EECD6 /* yes_splash_button.png */,
-				4BB5AA1615D0ABB9003E5F97 /* 179-notepad@2x-white.png */,
-				4BB5AA1415D0AB64003E5F97 /* 14-tag@2x-white.png */,
-				4BB5AA0A15D0A464003E5F97 /* 103-map@2x.png */,
-				4BB5AA0615D0A433003E5F97 /* 104-index-cards@2x.png */,
-				4BB5AA1815D0ABE8003E5F97 /* 103-map@2x-white.png */,
-				4BB5AA1E15D0ACB5003E5F97 /* 299-ticket@2x-white.png */,
-				4BB5AA0C15D0A64B003E5F97 /* 178-city@2x.png */,
-				4BB5AA0E15D0A680003E5F97 /* 236-shoppingbag@2x.png */,
-				4BB5AA0415D0964F003E5F97 /* 14-tag-white.png */,
-				4BB5AA0815D0A44A003E5F97 /* 179-notepad@2x.png */,
-				4BB5AA1215D0A776003E5F97 /* 299-ticket@2x.png */,
-				4BC5044615CCD7D600E535A2 /* 1Star.png */,
-				4BB5AA1C15D0AC8C003E5F97 /* 236-shoppingbag@2x-white.png */,
-				4BB5AA1015D0A6DA003E5F97 /* 259-list@2x.png */,
-				4BC5044715CCD7D600E535A2 /* 1Star@2x.png */,
-				4BB5AA1A15D0AC59003E5F97 /* 178-city@2x-white.png */,
-				4BC5044815CCD7D600E535A2 /* 1StarSmall.png */,
-				4BC5044915CCD7D600E535A2 /* 1StarSmall@2x.png */,
-				4BC5044A15CCD7D600E535A2 /* 2Stars.png */,
-				4BC5044B15CCD7D600E535A2 /* 2Stars@2x.png */,
-				4BC5044C15CCD7D600E535A2 /* 2StarsSmall.png */,
-				4BB5AA0015D0903A003E5F97 /* 14-tag.png */,
-				4BB5AA0115D0903A003E5F97 /* 14-tag@2x.png */,
-				4BC5044D15CCD7D600E535A2 /* 2StarsSmall@2x.png */,
-				4BC5044E15CCD7D600E535A2 /* 3Stars.png */,
-				4BC5044F15CCD7D600E535A2 /* 3Stars@2x.png */,
-				4BC5045015CCD7D600E535A2 /* 3StarsSmall.png */,
-				4BC5045115CCD7D600E535A2 /* 3StarsSmall@2x.png */,
-				4BC5045215CCD7D600E535A2 /* 4Stars.png */,
-				4BC5045315CCD7D600E535A2 /* 4Stars@2x.png */,
-				4BC5045415CCD7D600E535A2 /* 4StarsSmall.png */,
-				4BC5045515CCD7D600E535A2 /* 4StarsSmall@2x.png */,
-				4BC5045615CCD7D600E535A2 /* 5Stars.png */,
-				4BC5045715CCD7D600E535A2 /* 5Stars@2x.png */,
-				4BC5045815CCD7D600E535A2 /* 5StarsSmall.png */,
-				4BC5045915CCD7D600E535A2 /* 5StarsSmall@2x.png */,
-				4BC5045A15CCD7D600E535A2 /* Gestures.png */,
-				4BC5045B15CCD7D600E535A2 /* Gestures@2x.png */,
-				4BC5045C15CCD7D600E535A2 /* Players.png */,
-				4BC5045D15CCD7D600E535A2 /* Players@2x.png */,
-				4BB9A13915CB7276009263A1 /* 104-index-cards.png */,
-				4BB9A13715CB70E1009263A1 /* 179-notepad.png */,
-				4BB9A13B15CB72F8009263A1 /* 103-map.png */,
+				4B53420715FE79F000C7356E /* buttonimages */,
+				4B53420815FE7A0800C7356E /* starsimages */,
+				4B53420F15FE7AE300C7356E /* deprecatedicons */,
 				4B6BA54615C2B7170095F35E /* dnm_icon.png */,
 				4B6BA54715C2B7170095F35E /* dnm_icon_2x.png */,
 				4B6BA54815C2B7170095F35E /* dnm_present.png */,
@@ -1616,6 +1702,8 @@
 				4B4E0E2415FD861D00A0CF97 /* index.xml in Resources */,
 				4B4E0E2515FD861D00A0CF97 /* InfoPlist.strings in Resources */,
 				4B4E0E2615FD861D00A0CF97 /* FacebookSDKTests-Info.plist in Resources */,
+				4B53420D15FE7ABF00C7356E /* screen_gradient_logo_only.png in Resources */,
+				4B53420E15FE7ABF00C7356E /* screen_gradient_only.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
