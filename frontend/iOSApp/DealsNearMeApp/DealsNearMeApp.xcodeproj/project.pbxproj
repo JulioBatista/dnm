@@ -1367,7 +1367,7 @@
 		4B6BA4E315C0F0890095F35E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 4B6BA4E615C0F0890095F35E /* Build configuration list for PBXProject "DealsNearMeApp" */;
 			compatibilityVersion = "Xcode 3.2";

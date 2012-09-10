@@ -41,20 +41,20 @@
     return self;
 }
 /*
-#define NETWORK_DEAL_TITLE @"title"
-#define NETWORK_DEAL_DEALNAME @"dealname"
-#define NETWORK_DEAL_DEALDESCRIPTION @"dealdescription"
-#define NETWORK_DEAL_DESCRIPTION @"description"
-#define NETWORK_DEAL_SECTOR @"sector"
-#define NETWORK_DEAL_CONTENT @"_content"
-#define NETWORK_DEAL_ID @"id"
-#define NETWORK_LATITUDE @"latitude"
-#define NETWORK_LONGITUDE @"longitude"
-#define NETWORK_DEAL_OWNER @"business_name"
-#define NETWORK_DEAL_ADDRESS @"business_address"
-#define NETWORK_DEAL_PLACE_NAME @"derived_place"
-#define NETWORK_DEAL_RATING @"rating"
-#define NETWORK_TAGS @"tags"
+ #define NETWORK_DEAL_TITLE @"title"
+ #define NETWORK_DEAL_DEALNAME @"dealname"
+ #define NETWORK_DEAL_DEALDESCRIPTION @"dealdescription"
+ #define NETWORK_DEAL_DESCRIPTION @"description"
+ #define NETWORK_DEAL_SECTOR @"sector"
+ #define NETWORK_DEAL_CONTENT @"_content"
+ #define NETWORK_DEAL_ID @"id"
+ #define NETWORK_LATITUDE @"latitude"
+ #define NETWORK_LONGITUDE @"longitude"
+ #define NETWORK_DEAL_OWNER @"business_name"
+ #define NETWORK_DEAL_ADDRESS @"business_address"
+ #define NETWORK_DEAL_PLACE_NAME @"derived_place"
+ #define NETWORK_DEAL_RATING @"rating"
+ #define NETWORK_TAGS @"tags"
  */
 - (void)viewDidLoad
 {
@@ -63,7 +63,7 @@
     
     // favorites
     
-
+	
     
     
     NSData *favoriteDealsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"favoritedealsarchive"];
@@ -72,7 +72,7 @@
     
     if ([self.favoriteDeals count] == 0)
     {
-            self.favoriteDeals = [[NSMutableArray alloc] init];
+		self.favoriteDeals = [[NSMutableArray alloc] init];
     }
     
     
@@ -191,7 +191,7 @@
 - (IBAction)buttonFavoritesPressed:(id)sender
 {
     
-
+	
     
 	NSLog(@"How many deals in Favorites view Controller %d", [self.favoriteDeals count]);
     
@@ -230,6 +230,28 @@
         
     }
 }
+
+// UIAlertView helper for post buttons
+- (void)showAlert:(NSString *)message
+           result:(NSString *)result
+{
+	
+    NSString *alertMsg;
+    NSString *alertTitle;
+	
+	
+	alertMsg = [NSString stringWithFormat:@"Successfully posted '%@'.\nPost ID: %@",
+				message, result];
+	alertTitle = @"Success";
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                        message:alertMsg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
+
 
 - (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -283,7 +305,12 @@
         
         tweetSheet.completionHandler = ^(TWTweetComposeViewControllerResult result)
         {
+
+			
+		
+				
             [self dismissModalViewControllerAnimated:YES];
+			NSLog(@"-------Posted tweet");
         };
         
         // Show the tweet sheet
@@ -296,7 +323,7 @@
     else if ([choice isEqualToString:@"Facebook"])
     {
         NSLog(@"Facebook");
-		  [[FacebookHelper sharedInstance] postToWallWithDialogNewHighscore:99];
+		[[FacebookHelper sharedInstance] postToWallWithDialogNewHighscore:99];
     }
     
     else if ([choice isEqualToString:@"Email"])
@@ -308,7 +335,7 @@
     {
         NSLog(@"Default");
     }
-
+	
     
 }
 
