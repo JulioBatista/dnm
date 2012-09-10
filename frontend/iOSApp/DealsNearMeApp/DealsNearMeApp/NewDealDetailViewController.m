@@ -310,7 +310,7 @@
 		
 				
             [self dismissModalViewControllerAnimated:YES];
-			NSLog(@"-------Posted tweet");
+
         };
         
         // Show the tweet sheet
