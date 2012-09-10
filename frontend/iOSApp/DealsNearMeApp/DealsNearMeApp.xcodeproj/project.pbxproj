@@ -1045,13 +1045,14 @@
 			name = tinyicons;
 			sourceTree = "<group>";
 		};
-		4B53420715FE79F000C7356E /* buttonimages */ = {
+		4B53420715FE79F000C7356E /* button_assets */ = {
 			isa = PBXGroup;
 			children = (
+				4BF992D015EE873600E2D80E /* button_no_text.png */,
 				4BF8BCBA15DA0E8A002EECD6 /* no_splash_button.png */,
 				4BF8BCBB15DA0E8A002EECD6 /* yes_splash_button.png */,
 			);
-			name = buttonimages;
+			name = button_assets;
 			sourceTree = "<group>";
 		};
 		4B53420815FE7A0800C7356E /* starsimages */ = {
@@ -1138,6 +1139,17 @@
 		4B53421115FE7B4F00C7356E /* selected_guides_new_category_icons */ = {
 			isa = PBXGroup;
 			children = (
+				4B37625815EDD52200BC2730 /* selected_guides_new_category_icon_003_travel.png */,
+				4B39429415EEA96100EACBF4 /* selected_guides_new_category_icon_006_dining.png */,
+				4B764D7315F08C6F00D6863E /* selected_guides_new_category_icon_004_fun.png */,
+				4B764D6F15F0810900D6863E /* selected_guides_new_category_icon_002_bars.png */,
+				4B764D6A15F0650E00D6863E /* selected_guides_new_category_icon_005_services.png */,
+				4B764D6615F064A100D6863E /* selected_guides_new_category_icon_007_family.png */,
+				4B764D6815F064E300D6863E /* selected_guides_new_category_icon_009_wellness.png */,
+				4B37626415EDD9C800BC2730 /* selected_guides_new_category_icon_009_wellness.png */,
+				4B37626215EDD9BF00BC2730 /* selected_guides_new_category_icon_008_shopping.png */,
+				4B37626015EDD94900BC2730 /* selected_guides_new_category_icon_007_family.png */,
+				4B37625C15EDD72500BC2730 /* selected_guides_new_category_icon_005_services.png */,
 				4B37624A15EDCFD000BC2730 /* selected_guides_new_category_icon_001_seeall.png */,
 				4B900BFB15ECA15400045CF9 /* selected_guides_new_category_icon_008_shopping.png */,
 				4B900BFD15ECA15700045CF9 /* selected_guides_new_category_icon_006_dining.png */,
@@ -1164,7 +1176,7 @@
 			name = map_pins_highres;
 			sourceTree = "<group>";
 		};
-		4B53421315FE7D7200C7356E /* New Group */ = {
+		4B53421315FE7D7200C7356E /* map_pins_categories_23px */ = {
 			isa = PBXGroup;
 			children = (
 				4B764D5115F03A5000D6863E /* map_pin_travel_23px.png */,
@@ -1176,7 +1188,7 @@
 				4B764D5715F03A5100D6863E /* map_pin_dining_23px.png */,
 				4B764D5815F03A5200D6863E /* map_pin_bars_23px.png */,
 			);
-			name = "New Group";
+			name = map_pins_categories_23px;
 			sourceTree = "<group>";
 		};
 		4B6BA4E115C0F0890095F35E = {
@@ -1300,84 +1312,36 @@
 			children = (
 				4BD9EE1A15FBF0A1001D1DA6 /* new_deals_header_logo.png */,
 				4BD9EE1815FBEFB4001D1DA6 /* deals_header_logo_better.png */,
-				4BD9EE0E15FB9630001D1DA6 /* deal_detail_background_only_gradient.jpg */,
-				4BD9EE0C15FB949B001D1DA6 /* deal_details_divider.jpg */,
-				4BD9EE0A15FB9423001D1DA6 /* photo_container.jpg */,
-				4BD9EE0815FB9308001D1DA6 /* lior_deal_detail_background.png */,
-				4BD9EE0615FB908F001D1DA6 /* lior_heart_icon.png */,
-				4BD9EE0015FAF168001D1DA6 /* launch_background.jpg */,
+				4BE60B5C15FE873600EAD2A2 /* new_deal_detail_assets */,
 				4B53420A15FE7A9D00C7356E /* highresbackgroundimages */,
-				4B2DFB0715F94CB900A245CF /* favorite-icon.png */,
-				4B2DFB0515F949F100A245CF /* dnm_detail_background.jpg */,
-				4B2DFB0215F9404F00A245CF /* background_dnm_detail.jpg */,
-				4B764D7315F08C6F00D6863E /* selected_guides_new_category_icon_004_fun.png */,
-				4B53421315FE7D7200C7356E /* New Group */,
-				4B764D6F15F0810900D6863E /* selected_guides_new_category_icon_002_bars.png */,
-				4B764D6A15F0650E00D6863E /* selected_guides_new_category_icon_005_services.png */,
-				4B764D6615F064A100D6863E /* selected_guides_new_category_icon_007_family.png */,
-				4B764D6815F064E300D6863E /* selected_guides_new_category_icon_009_wellness.png */,
-				4B764D4E15F00EC200D6863E /* right_arrow_left_arrow_category.png */,
-				4B9B426115EECE88005AC5D3 /* right_arrow_category_evensmaller.png */,
-				4B9B425F15EECDE8005AC5D3 /* right_arrow_category_smaller_75alpha.png */,
-				4B9B425D15EECC84005AC5D3 /* right_arrow_category_smaller.png */,
-				4B9B425B15EEC973005AC5D3 /* right_arrow_category.png */,
+				4B53421315FE7D7200C7356E /* map_pins_categories_23px */,
+				4BE60B5B15FE86CD00EAD2A2 /* carousel_icons */,
 				4BF992D715EE9B9A00E2D80E /* location_picker_icon.png */,
-				4B39429415EEA96100EACBF4 /* selected_guides_new_category_icon_006_dining.png */,
 				4BF992D215EE880400E2D80E /* button_no_text_cropped.png */,
-				4BF992D015EE873600E2D80E /* button_no_text.png */,
-				4BF992CD15EE81C500E2D80E /* presplash_without_glow.png */,
-				4B37626415EDD9C800BC2730 /* selected_guides_new_category_icon_009_wellness.png */,
-				4B37626215EDD9BF00BC2730 /* selected_guides_new_category_icon_008_shopping.png */,
-				4B37626015EDD94900BC2730 /* selected_guides_new_category_icon_007_family.png */,
-				4B37625C15EDD72500BC2730 /* selected_guides_new_category_icon_005_services.png */,
 				4B37625615EDD47A00BC2730 /* my_location_pin.png */,
-				4B37625815EDD52200BC2730 /* selected_guides_new_category_icon_003_travel.png */,
-				4B37625215EDD36800BC2730 /* launch_image_320x480.png */,
-				4B37625315EDD36800BC2730 /* launch_image_640x960.png */,
+				4BE60B5915FE853200EAD2A2 /* launch_screen_assets */,
 				4B53421115FE7B4F00C7356E /* selected_guides_new_category_icons */,
 				4B900BF615EBAD6500045CF9 /* map_pin_self.png */,
 				4B53421215FE7BC700C7356E /* map_pins_highres */,
-				4B900BE215EB2CB200045CF9 /* next_arrow_orange.png */,
-				4B900BE315EB2CB200045CF9 /* previous_arrow_orange.png */,
-				4B900BE015EB21A300045CF9 /* default_thumb.png */,
-				4B900BDE15EB1E8300045CF9 /* category_placeholder.png */,
-				4B900BDC15EB1D1A00045CF9 /* orange_map_icon_114x114.png */,
+				4BE60B5815FE851500EAD2A2 /* deal_detail_assets */,
 				4B53421015FE7B3A00C7356E /* guides_new_category_icons */,
-				4B900A2615E69DE900045CF9 /* new_category_icon_005_services.png */,
-				4B900A1E15E690D200045CF9 /* new_category_icon_003_travel.png */,
-				4B900A1415E6867500045CF9 /* new_category_icon_001_seeall.png */,
-				4B900A1A15E68C8800045CF9 /* new_category_icon_002_bars.png */,
-				4B900A1215E67B2200045CF9 /* DealsNear_App_Registration.png */,
+				4BE60B5715FE849100EAD2A2 /* new_category_icons */,
 				4B53420615FE79B400C7356E /* tinyicons */,
 				4B53420915FE7A5700C7356E /* socialicons */,
-				4B367E5A15E4085E0039AFB5 /* category_icon_010_blank.png */,
+				4BE60B5615FE844600EAD2A2 /* category_icons */,
 				4B367E5115E32ECF0039AFB5 /* black_bar.png */,
 				4B367DB915E280A40039AFB5 /* divider_645x8.png */,
 				4B367DBB15E284B10039AFB5 /* divider_320x4.png */,
-				4B367DA515E27B3D0039AFB5 /* category_icon_003_dining.png */,
-				4B367DA615E27B3D0039AFB5 /* category_icon_007_shopping.png */,
-				4B367DA715E27B3E0039AFB5 /* category_icon_009_wellness.png */,
-				4B367DA815E27B3F0039AFB5 /* category_icon_004_family.png */,
 				4B367DA915E27B3F0039AFB5 /* right_arrow_icon.png */,
-				4B367DAA15E27B400039AFB5 /* category_icon_006_services.png */,
-				4B367DAB15E27B400039AFB5 /* category_icon_005_fun.png */,
-				4B367DAC15E27B410039AFB5 /* category_icon_008_travel.png */,
-				4B367DAD15E27B420039AFB5 /* category_icon_002_bars.png */,
-				4B367DAE15E27B420039AFB5 /* category_icon_001_seeall.png */,
 				4BC5048515CD833B00E535A2 /* deals_header_logo.png */,
-				4BF8BCC415DA18DB002EECD6 /* new_loginscreen_background.png */,
 				4BF8BCC615DA1ECF002EECD6 /* new_dnm_header_logo.png */,
-				4BF8BCC215DA1856002EECD6 /* loginscreen_background_minus_buttons.png */,
-				4BF8BCC015DA1111002EECD6 /* splash_background_minus_buttons_320_480.png */,
-				4B53420715FE79F000C7356E /* buttonimages */,
+				4BF8BCC415DA18DB002EECD6 /* new_loginscreen_background.png */,
+				4B900A1215E67B2200045CF9 /* DealsNear_App_Registration.png */,
+				4BE60B5A15FE85C000EAD2A2 /* login_screen_assets */,
+				4B53420715FE79F000C7356E /* button_assets */,
 				4B53420815FE7A0800C7356E /* starsimages */,
 				4B53420F15FE7AE300C7356E /* deprecatedicons */,
-				4B6BA54615C2B7170095F35E /* dnm_icon.png */,
-				4B6BA54715C2B7170095F35E /* dnm_icon_2x.png */,
-				4B6BA54815C2B7170095F35E /* dnm_present.png */,
-				4B6BA54915C2B7170095F35E /* present.png */,
-				4B6BA54215C2B6020095F35E /* dnm_default_2x.png */,
-				4B6BA54315C2B6020095F35E /* dnm_default.png */,
+				4BE60B5515FE842700EAD2A2 /* randomicons */,
 				4B6BA4F815C0F0890095F35E /* DealsNearMeApp-Info.plist */,
 				4B6BA4F915C0F0890095F35E /* InfoPlist.strings */,
 				4B6BA4FC15C0F0890095F35E /* main.m */,
@@ -1425,6 +1389,106 @@
 				4B8D0F7215C8DF59002CB264 /* MKHorizMenu.m */,
 			);
 			path = MKHorizMenu;
+			sourceTree = "<group>";
+		};
+		4BE60B5515FE842700EAD2A2 /* randomicons */ = {
+			isa = PBXGroup;
+			children = (
+				4B6BA54615C2B7170095F35E /* dnm_icon.png */,
+				4B6BA54715C2B7170095F35E /* dnm_icon_2x.png */,
+				4B6BA54815C2B7170095F35E /* dnm_present.png */,
+				4B6BA54915C2B7170095F35E /* present.png */,
+				4B6BA54215C2B6020095F35E /* dnm_default_2x.png */,
+				4B6BA54315C2B6020095F35E /* dnm_default.png */,
+			);
+			name = randomicons;
+			sourceTree = "<group>";
+		};
+		4BE60B5615FE844600EAD2A2 /* category_icons */ = {
+			isa = PBXGroup;
+			children = (
+				4B367DA515E27B3D0039AFB5 /* category_icon_003_dining.png */,
+				4B367DA615E27B3D0039AFB5 /* category_icon_007_shopping.png */,
+				4B367DA715E27B3E0039AFB5 /* category_icon_009_wellness.png */,
+				4B367DA815E27B3F0039AFB5 /* category_icon_004_family.png */,
+				4B367E5A15E4085E0039AFB5 /* category_icon_010_blank.png */,
+				4B367DAA15E27B400039AFB5 /* category_icon_006_services.png */,
+				4B367DAB15E27B400039AFB5 /* category_icon_005_fun.png */,
+				4B367DAC15E27B410039AFB5 /* category_icon_008_travel.png */,
+				4B367DAD15E27B420039AFB5 /* category_icon_002_bars.png */,
+				4B367DAE15E27B420039AFB5 /* category_icon_001_seeall.png */,
+			);
+			name = category_icons;
+			sourceTree = "<group>";
+		};
+		4BE60B5715FE849100EAD2A2 /* new_category_icons */ = {
+			isa = PBXGroup;
+			children = (
+				4B900A2615E69DE900045CF9 /* new_category_icon_005_services.png */,
+				4B900A1E15E690D200045CF9 /* new_category_icon_003_travel.png */,
+				4B900A1415E6867500045CF9 /* new_category_icon_001_seeall.png */,
+				4B900A1A15E68C8800045CF9 /* new_category_icon_002_bars.png */,
+			);
+			name = new_category_icons;
+			sourceTree = "<group>";
+		};
+		4BE60B5815FE851500EAD2A2 /* deal_detail_assets */ = {
+			isa = PBXGroup;
+			children = (
+				4B900BE215EB2CB200045CF9 /* next_arrow_orange.png */,
+				4B900BE315EB2CB200045CF9 /* previous_arrow_orange.png */,
+				4B900BE015EB21A300045CF9 /* default_thumb.png */,
+				4B900BDE15EB1E8300045CF9 /* category_placeholder.png */,
+				4B900BDC15EB1D1A00045CF9 /* orange_map_icon_114x114.png */,
+			);
+			name = deal_detail_assets;
+			sourceTree = "<group>";
+		};
+		4BE60B5915FE853200EAD2A2 /* launch_screen_assets */ = {
+			isa = PBXGroup;
+			children = (
+				4BF992CD15EE81C500E2D80E /* presplash_without_glow.png */,
+				4BD9EE0015FAF168001D1DA6 /* launch_background.jpg */,
+				4BF8BCC015DA1111002EECD6 /* splash_background_minus_buttons_320_480.png */,
+				4B37625215EDD36800BC2730 /* launch_image_320x480.png */,
+				4B37625315EDD36800BC2730 /* launch_image_640x960.png */,
+			);
+			name = launch_screen_assets;
+			sourceTree = "<group>";
+		};
+		4BE60B5A15FE85C000EAD2A2 /* login_screen_assets */ = {
+			isa = PBXGroup;
+			children = (
+				4BF8BCC215DA1856002EECD6 /* loginscreen_background_minus_buttons.png */,
+			);
+			name = login_screen_assets;
+			sourceTree = "<group>";
+		};
+		4BE60B5B15FE86CD00EAD2A2 /* carousel_icons */ = {
+			isa = PBXGroup;
+			children = (
+				4B764D4E15F00EC200D6863E /* right_arrow_left_arrow_category.png */,
+				4B9B426115EECE88005AC5D3 /* right_arrow_category_evensmaller.png */,
+				4B9B425F15EECDE8005AC5D3 /* right_arrow_category_smaller_75alpha.png */,
+				4B9B425D15EECC84005AC5D3 /* right_arrow_category_smaller.png */,
+				4B9B425B15EEC973005AC5D3 /* right_arrow_category.png */,
+			);
+			name = carousel_icons;
+			sourceTree = "<group>";
+		};
+		4BE60B5C15FE873600EAD2A2 /* new_deal_detail_assets */ = {
+			isa = PBXGroup;
+			children = (
+				4B2DFB0715F94CB900A245CF /* favorite-icon.png */,
+				4B2DFB0515F949F100A245CF /* dnm_detail_background.jpg */,
+				4B2DFB0215F9404F00A245CF /* background_dnm_detail.jpg */,
+				4BD9EE0E15FB9630001D1DA6 /* deal_detail_background_only_gradient.jpg */,
+				4BD9EE0C15FB949B001D1DA6 /* deal_details_divider.jpg */,
+				4BD9EE0A15FB9423001D1DA6 /* photo_container.jpg */,
+				4BD9EE0815FB9308001D1DA6 /* lior_deal_detail_background.png */,
+				4BD9EE0615FB908F001D1DA6 /* lior_heart_icon.png */,
+			);
+			name = new_deal_detail_assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
