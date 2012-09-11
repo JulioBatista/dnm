@@ -885,6 +885,21 @@
                                 <rect key="frame" x="64" y="93" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8az-B6-tI9">
+                                <rect key="frame" x="89" y="9" width="151" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="login-button-small-pressed.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonFacebookLogoutButtonPressed:" destination="UYJ-eB-zaU" eventType="touchUpInside" id="IqD-Jl-6OE"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HRA-5I-W4h">
                                 <rect key="frame" x="89" y="9" width="151" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -896,6 +911,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonFacebookButtonPressed:" destination="UYJ-eB-zaU" eventType="touchUpInside" id="UAJ-vm-lhf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LogIn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mNk-X6-m2v">
                                 <rect key="frame" x="136" y="19" width="99" height="21"/>
@@ -907,6 +925,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonFacebookLoginButton" destination="HRA-5I-W4h" id="kd0-tX-NNO"/>
+                        <outlet property="buttonFacebookLogoutButton" destination="8az-B6-tI9" id="LP5-Hy-hsb"/>
+                        <outlet property="labelLoginLabel" destination="mNk-X6-m2v" id="cGB-qv-GKS"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-966" y="541"/>
@@ -1759,6 +1782,7 @@
         <image name="facebook_icon_60x60.png" width="60" height="60"/>
         <image name="launch_background.jpg" width="640" height="960"/>
         <image name="lior_heart_icon.png" width="42" height="42"/>
+        <image name="login-button-small-pressed.png" width="151" height="43"/>
         <image name="login-button-small.png" width="151" height="43"/>
         <image name="new_deals_header_logo.png" width="320" height="44"/>
         <image name="next_arrow_orange.png" width="72" height="72"/>
@@ -1775,142 +1799,6 @@
         <image name="telephone_icon_60x60.png" width="60" height="60"/>
         <image name="twitter_icon_60x60.png" width="60" height="60"/>
     </resources>
-    <classes>
-        <class className="AboutScreenTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutScreenTableViewController.h"/>
-        </class>
-        <class className="BarsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
-        </class>
-        <class className="DealCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dealImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DealDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonBackTapped:"/>
-                <relationship kind="action" name="buttonFavoritesPressed:"/>
-                <relationship kind="action" name="buttonNextDeal:"/>
-                <relationship kind="action" name="buttonPrevDeal:"/>
-                <relationship kind="action" name="buttonShareButtonPressed:"/>
-                <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DealsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonMapPressed:"/>
-            </relationships>
-        </class>
-        <class className="FavoritesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoritesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doRefresh:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-        </class>
-        <class className="LocationPickerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationPickerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-            </relationships>
-        </class>
-        <class className="LoginScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnCancelTapped:"/>
-                <relationship kind="action" name="btnLoginRegisterTapped:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fldPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fldUsername" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonListPressed:"/>
-                <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
-                <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="action" name="refresh:"/>
-                <relationship kind="action" name="segmentedCotnrolIndexChanged:"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="buttonToggle" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="buttonToggleScrollView" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="dealsTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="scrollDividerView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="segmentedControlMapList" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="viewFilterByView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="MoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doChangePage:"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="MyAccountScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyAccountScreenViewController.h"/>
-        </class>
-        <class className="NewDealDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewDealDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonBackTapped:"/>
-                <relationship kind="action" name="buttonFavoritesPressed:"/>
-                <relationship kind="action" name="buttonNext:"/>
-                <relationship kind="action" name="buttonPrev:"/>
-                <relationship kind="action" name="buttonShareButtonPressed:"/>
-                <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NewFavoritesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewFavoritesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="favoritesTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="PostADealViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostADealViewController.h"/>
-        </class>
-        <class className="PreSplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PreSplashViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonStart:"/>
-                <relationship kind="outlet" name="imageViewPreSplashLogo" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SocialLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonCancel:"/>
-            </relationships>
-        </class>
-        <class className="SplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonYesPressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

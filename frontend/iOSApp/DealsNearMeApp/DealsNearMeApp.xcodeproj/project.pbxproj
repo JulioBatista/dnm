@@ -1284,8 +1284,14 @@
 				4BC503CD15CC50DF00E535A2 /* MoreViewController.m */,
 				4B5A365F15CDF75600552ECF /* DealsViewController.h */,
 				4B5A366015CDF75600552ECF /* DealsViewController.m */,
+				4B367E5315E336650039AFB5 /* NewDealsViewController.h */,
+				4B367E5415E336670039AFB5 /* NewDealsViewController.m */,
 				4BF8BCD615DA8960002EECD6 /* DealDetailViewController.h */,
 				4BF8BCD715DA8961002EECD6 /* DealDetailViewController.m */,
+				4B6BF9E415F08E0000011BCE /* NewDealDetailViewController.h */,
+				4B6BF9E515F08E0000011BCE /* NewDealDetailViewController.m */,
+				4B764D6C15F065DE00D6863E /* SocialLoginViewController.h */,
+				4B764D6D15F065DE00D6863E /* SocialLoginViewController.m */,
 				4BB5A9F815D034B6003E5F97 /* MapViewController.h */,
 				4BB5A9F915D034B6003E5F97 /* MapViewController.m */,
 				4BD9EE1415FBD8A2001D1DA6 /* NewFavoritesViewController.h */,
@@ -1304,22 +1310,10 @@
 				4BF992D515EE92E600E2D80E /* LocationPickerViewController.m */,
 				4BF8BCB615DA0710002EECD6 /* SplashViewController.h */,
 				4BF8BCB715DA0710002EECD6 /* SplashViewController.m */,
-				4B367E5315E336650039AFB5 /* NewDealsViewController.h */,
-				4B367E5415E336670039AFB5 /* NewDealsViewController.m */,
 				4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */,
-				4BC5044215CCD46600E535A2 /* NetworkFetcher.h */,
-				4BC5044315CCD46600E535A2 /* NetworkFetcher.m */,
-				4B4E0D6815FD854B00A0CF97 /* FacebookHelper.h */,
-				4B4E0D6915FD854B00A0CF97 /* FacebookHelper.m */,
-				4BB9A12315C9FAEA009263A1 /* FlickrAPIKey.h */,
-				4BB9A12415C9FAEA009263A1 /* FlickrFetcher.h */,
-				4BB9A12515C9FAEA009263A1 /* FlickrFetcher.m */,
+				4B8880D415FE9A5D003AB5F2 /* Helpers */,
 				4B9B425715EEAD02005AC5D3 /* LocationPickerCell.h */,
 				4B9B425815EEAD02005AC5D3 /* LocationPickerCell.m */,
-				4B764D6C15F065DE00D6863E /* SocialLoginViewController.h */,
-				4B764D6D15F065DE00D6863E /* SocialLoginViewController.m */,
-				4B6BF9E415F08E0000011BCE /* NewDealDetailViewController.h */,
-				4B6BF9E515F08E0000011BCE /* NewDealDetailViewController.m */,
 				4B6BA4FF15C0F0890095F35E /* AppDelegate.h */,
 				4B6BA50015C0F0890095F35E /* AppDelegate.m */,
 				4B8D0F6815C8DCC7002CB264 /* Resources */,
@@ -1371,6 +1365,20 @@
 				4B6BA4FE15C0F0890095F35E /* DealsNearMeApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B8880D415FE9A5D003AB5F2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4BC5044215CCD46600E535A2 /* NetworkFetcher.h */,
+				4BB9A12315C9FAEA009263A1 /* FlickrAPIKey.h */,
+				4BB9A12415C9FAEA009263A1 /* FlickrFetcher.h */,
+				4BB9A12515C9FAEA009263A1 /* FlickrFetcher.m */,
+				4BC5044315CCD46600E535A2 /* NetworkFetcher.m */,
+				4B4E0D6815FD854B00A0CF97 /* FacebookHelper.h */,
+				4B4E0D6915FD854B00A0CF97 /* FacebookHelper.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		4B8D0F6815C8DCC7002CB264 /* Resources */ = {

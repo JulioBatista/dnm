@@ -10,4 +10,15 @@
 
 @interface SocialLoginViewController : UIViewController
 
+
+- (IBAction)buttonFacebookButtonPressed:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *buttonFacebookLoginButton;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelLoginLabel;
+
+@property (strong, nonatomic) IBOutlet UIButton *buttonFacebookLogoutButton;
+
+- (IBAction)buttonFacebookLogoutButtonPressed:(id)sender;
+
 @end

@@ -16,6 +16,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 @implementation FacebookHelper
 
 @synthesize facebook = _facebook;
+@synthesize isLoggedIn = _isLoggedIn;
 
 #pragma mark -
 #pragma mark Singleton Variables
@@ -23,8 +24,10 @@ static FacebookHelper *singletonDelegate = nil;
 
 #pragma mark -
 #pragma mark Singleton Methods
-- (id)init {
-    if (!kAppId) {
+- (id)init
+{
+    if (!kAppId)
+	{
         NSLog(@"MISSING APP ID!!!");
         exit(1);
         return nil;
@@ -37,27 +40,32 @@ static FacebookHelper *singletonDelegate = nil;
         _facebook.expirationDate = (NSDate *) [[NSUserDefaults standardUserDefaults] objectForKey:@"ExpirationDate"];
         
         //_permissions =  [[NSArray arrayWithObjects: @"read_stream", @"publish_stream", @"offline_access",nil] retain];
-        //_permissions =  [[NSArray arrayWithObjects: @"read_stream", @"publish_stream", nil] retain];
+        _permissions =  [NSArray arrayWithObjects: @"read_stream", @"publish_stream", nil];
         
-        _permissions =  [NSArray arrayWithObjects:@"publish_stream", nil] ;
+        // _permissions =  [NSArray arrayWithObjects:@"publish_stream", nil] ;
         
     }
     
     return self;
 }
 
-+ (FacebookHelper *)sharedInstance {
++ (FacebookHelper *)sharedInstance
+{
 	@synchronized(self) {
-		if (singletonDelegate == nil) {
+		if (singletonDelegate == nil)
+		{
 			[[self alloc] init]; // assignment not done here
 		}
 	}
 	return singletonDelegate;
 }
 
-+ (id)allocWithZone:(NSZone *)zone {
-	@synchronized(self) {
-		if (singletonDelegate == nil) {
++ (id)allocWithZone:(NSZone *)zone
+{
+	@synchronized(self)
+	{
+		if (singletonDelegate == nil)
+		{
 			singletonDelegate = [super allocWithZone:zone];
 			// assignment and return on first allocation
 			return singletonDelegate;
@@ -67,14 +75,22 @@ static FacebookHelper *singletonDelegate = nil;
 	return nil;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
+- (id)copyWithZone:(NSZone *)zone
+{
 	return self;
 }
 
 
 #pragma mark - Private Methods
 
--(void) login {
+- (void)logout
+{
+    [_facebook logout];
+}
+
+
+-(void) login
+{
     // Check if there is a valid session
     if (![_facebook isSessionValid]) {
         [_facebook authorize:_permissions];
@@ -84,7 +100,8 @@ static FacebookHelper *singletonDelegate = nil;
     }
 }
 
--(NSMutableDictionary*) buildPostParamsWithHighscore:(int)highscore {
+-(NSMutableDictionary*) buildPostParamsWithHighscore:(int)highscore
+{
     NSString *customMessage = [NSString stringWithFormat:kCustomMessage, highscore, kAppName];
     NSString *postName = kAppName;
     NSString *serverLink = [NSString stringWithFormat:kServerLink];
@@ -103,7 +120,8 @@ static FacebookHelper *singletonDelegate = nil;
     return params;
 }
 
--(void) postToWallWithDialogNewHighscore {
+-(void) postToWallWithDialogNewHighscore
+{
     NSMutableDictionary* params = [self buildPostParamsWithHighscore:score];
     
     // Post on Facebook.
@@ -111,11 +129,34 @@ static FacebookHelper *singletonDelegate = nil;
 }
 
 #pragma mark - Public Methods
-
--(void) postToWallWithDialogNewHighscore:(int)highscore {
+- (void)authorize
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:kFBAccessTokenKey] && [defaults objectForKey:kFBExpirationDateKey])
+	{
+        _facebook.accessToken = [defaults objectForKey:kFBAccessTokenKey];
+		_facebook.expirationDate = [defaults objectForKey:kFBExpirationDateKey];
+    }
+	
+    if (![_facebook isSessionValid])
+	{
+        NSArray *permissions =  [NSArray arrayWithObjects:@"email", @"user_about_me", nil];
+		
+        [_facebook authorize:_permissions];
+		
+		NSLog(@"------------email : %@", [permissions objectAtIndex:0]);
+		
+		NSLog(@"------------user_about_me : %@", [permissions objectAtIndex:1]);
+		
+		
+    }
+}
+-(void) postToWallWithDialogNewHighscore:(int)highscore
+{
     score = highscore;
     
-    if (![_facebook isSessionValid]) {
+    if (![_facebook isSessionValid])
+	{
         [_facebook authorize:_permissions];
     }
     else {
@@ -125,7 +166,8 @@ static FacebookHelper *singletonDelegate = nil;
 
 #pragma mark - FBDelegate Methods
 
-- (void)fbDidLogin {
+- (void)fbDidLogin
+{
     NSLog(@"FB login OK");
     
     // Store session info.
@@ -133,7 +175,9 @@ static FacebookHelper *singletonDelegate = nil;
     [[NSUserDefaults standardUserDefaults] setObject:_facebook.expirationDate forKey:@"ExpirationDate"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [self postToWallWithDialogNewHighscore];
+    /* [self postToWallWithDialogNewHighscore]; */
+	
+	self.isLoggedIn = YES;
 }
 
 /**
@@ -142,18 +186,22 @@ static FacebookHelper *singletonDelegate = nil;
 -(void)fbDidNotLogin:(BOOL)cancelled
 {
     NSLog(@"FB did not login");
+	self.isLoggedIn = NO;
 }
 
 /**
  * Called when the request logout has succeeded.
  */
-- (void)fbDidLogout {
+- (void)fbDidLogout
+{
     NSLog(@"FB logout OK");
     
     // Release stored session.
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"AccessToken"];
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"ExpirationDate"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+	
+	self.isLoggedIn = NO;
 }
 
 /**
@@ -164,7 +212,8 @@ static FacebookHelper *singletonDelegate = nil;
  * See extendAccessToken for more details.
  */
 - (void)fbDidExtendToken:(NSString*)accessToken
-               expiresAt:(NSDate*)expiresAt {
+               expiresAt:(NSDate*)expiresAt
+{
     
 }
 
@@ -196,7 +245,8 @@ static FacebookHelper *singletonDelegate = nil;
  * Called when an error prevents the Facebook API request from completing
  * successfully.
  */
-- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error
+{
     NSLog(@"FB error: %@", [error localizedDescription]);
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "SocialLoginViewController.h"
+#import "FacebookHelper.h"
 
 @interface SocialLoginViewController ()
 - (IBAction)buttonCancel:(id)sender;
@@ -14,6 +15,9 @@
 @end
 
 @implementation SocialLoginViewController
+@synthesize buttonFacebookLoginButton;
+@synthesize labelLoginLabel;
+@synthesize buttonFacebookLogoutButton;
 
 
 
@@ -30,10 +34,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+	
+	
 }
 
 - (void)viewDidUnload
 {
+    [self setLabelLoginLabel:nil];
+	[self setButtonFacebookLoginButton:nil];
+	[self setButtonFacebookLogoutButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -48,5 +57,42 @@
 	[self dismissViewControllerAnimated:YES completion:^{
 		// nothing
 	}];
+}
+- (IBAction)buttonFacebookButtonPressed:(id)sender
+{
+	 [[FacebookHelper sharedInstance] login];
+	
+	if ([[FacebookHelper sharedInstance] isLoggedIn] == YES)
+	{
+		NSLog(@"-----------is logged in");
+		
+		[self.buttonFacebookLoginButton setHidden:YES];
+		
+		self.labelLoginLabel.text = @"LogOut";
+		
+		
+		
+	}
+	
+	/* [[FacebookHelper sharedInstance] postToWallWithDialogNewHighscore:99]; */
+}
+- (IBAction)buttonFacebookLogoutButtonPressed:(id)sender
+{
+		 [[FacebookHelper sharedInstance] logout];
+	
+	
+	if ([[FacebookHelper sharedInstance] isLoggedIn] == NO)
+	{
+		NSLog(@"-----------is logged out");
+		
+		[self.buttonFacebookLoginButton setHidden:NO];
+		
+		self.labelLoginLabel.text = @"LogIn";
+		
+		
+		
+	}
+	
+	
 }
 @end
