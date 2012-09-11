@@ -11,7 +11,7 @@
 @interface NewDealDetailViewController : UIViewController<UIActionSheetDelegate>
 - (IBAction)buttonBackTapped:(id)sender;
 
-@property (strong, nonatomic) IBOutlet UILabel *labelDealTitle_kill;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *labelDealDescription;
 

@@ -19,7 +19,7 @@
 @end
 
 @implementation NewDealDetailViewController
-@synthesize labelDealTitle;
+
 @synthesize labelDealDescription;
 @synthesize dealnum = _dealnum;
 @synthesize dealIndex = _dealIndex;
@@ -101,7 +101,7 @@
 	
 	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:[self.dealnum integerValue]];
 	
-	self.labelDealTitle.text = [onedeal objectForKey:NETWORK_DEAL_OWNER];
+
 	
 	self.labelDealDescription.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION];
     
@@ -120,7 +120,7 @@
 
 - (void)viewDidUnload
 {
-	[self setLabelDealTitle:nil];
+
 	[self setLabelDealDescription:nil];
 	[self setButtonCategory:nil];
 	[self setLabelAddress:nil];
@@ -152,7 +152,6 @@
 		
 		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
 		
-		self.labelDealTitle.text = [self.currentDeal objectForKey:NETWORK_DEAL_OWNER];
 		
 		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
@@ -175,8 +174,6 @@
 		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
 		
 		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
-		
-		self.labelDealTitle.text = [self.currentDeal objectForKey:NETWORK_DEAL_OWNER];
 		
 		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		

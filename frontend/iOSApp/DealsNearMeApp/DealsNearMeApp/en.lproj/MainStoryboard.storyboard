@@ -686,7 +686,7 @@
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" alpha="0.70000000000000007" contentMode="scaleToFill" id="1VL-JH-7Jo">
-                                <rect key="frame" x="0.0" y="95" width="320" height="145"/>
+                                <rect key="frame" x="0.0" y="95" width="320" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black_bar.png" id="R9D-LA-12p">
@@ -694,7 +694,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="photo_container.jpg" id="8hD-aO-4jI">
-                                <rect key="frame" x="12" y="104" width="85" height="85"/>
+                                <rect key="frame" x="10" y="106" width="85" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="SPg-aC-aZl">
@@ -702,46 +702,53 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="deal_details_divider.jpg" id="quN-cg-QCe">
-                                <rect key="frame" x="0.0" y="206" width="320" height="32"/>
+                                <rect key="frame" x="0.0" y="263" width="320" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Restaurant week begins THIS Sunday. 3-course meal for only $25 all week long!" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dSq-uN-4Am">
-                                <rect key="frame" x="12" y="240" width="291" height="56"/>
+                                <rect key="frame" x="14" y="203" width="291" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mac's Warehouse Bar" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="AD0-zR-Zio">
-                                <rect key="frame" x="103" y="103" width="200" height="20"/>
+                                <rect key="frame" x="105" y="103" width="200" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.56565433310000002" blue="0.2489401889" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="555-5555" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Kkd-lr-Tba">
-                                <rect key="frame" x="103" y="138" width="297" height="17"/>
+                                <rect key="frame" x="105" y="169" width="297" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 views" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sPZ-gk-6QX">
-                                <rect key="frame" x="244" y="211" width="56" height="21"/>
+                                <rect key="frame" x="244" y="268" width="56" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.64457268209999996" blue="0.1963088768" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number, Street, City, State, Zipcode" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9Af-w5-Coc">
-                                <rect key="frame" x="103" y="118" width="196" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number, Street" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9Af-w5-Coc">
+                                <rect key="frame" x="105" y="124" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City, State, Zipcode" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="xIi-Tg-BKl">
+                                <rect key="frame" x="105" y="147" width="196" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="t2M-0A-fDe">
-                                <rect key="frame" x="12" y="211" width="56" height="21"/>
+                                <rect key="frame" x="12" y="268" width="56" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1914,7 +1921,6 @@
                 <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelAddress" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealTitle" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="NewFavoritesViewController" superclassName="UIViewController">
