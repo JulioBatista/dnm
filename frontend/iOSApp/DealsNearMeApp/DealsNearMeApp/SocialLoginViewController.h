@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Accounts/Accounts.h>
 
 @interface SocialLoginViewController : UIViewController
+{
+     ACAccountStore  *account;
+     NSArray         *arrayOfAccounts;
+    NSInteger     numberOfTwitterAccounts;
 
+}
 
 - (IBAction)buttonFacebookButtonPressed:(id)sender;
 
@@ -21,4 +27,5 @@
 
 - (IBAction)buttonFacebookLogoutButtonPressed:(id)sender;
 
+- (IBAction)buttonTwitterButtonPressed:(id)sender;
 @end

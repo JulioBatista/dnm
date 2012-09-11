@@ -111,6 +111,8 @@
 		4B8880CF15FE97CB003AB5F2 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C815FE97CB003AB5F2 /* login-button-small@2x.png */; };
 		4B8880D215FE97E3003AB5F2 /* fb_blank_profile_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880D015FE97E3003AB5F2 /* fb_blank_profile_portrait.png */; };
 		4B8880D315FE97E3003AB5F2 /* fb_blank_profile_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880D115FE97E3003AB5F2 /* fb_blank_profile_square.png */; };
+		4B89C9B415FFA6F600FDE9E7 /* fb_profile-pic_144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B89C9B315FFA6F600FDE9E7 /* fb_profile-pic_144x144.png */; };
+		4B89C9B715FFAF0A00FDE9E7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B89C9B615FFAF0A00FDE9E7 /* Accounts.framework */; };
 		4B8D0F6315C8D7E4002CB264 /* search_bar_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D0F6215C8D7E4002CB264 /* search_bar_2x.png */; };
 		4B8D0F6515C8D8D0002CB264 /* search_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D0F6415C8D8D0002CB264 /* search_bar.png */; };
 		4B8D0F6715C8D988002CB264 /* header_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D0F6615C8D988002CB264 /* header_1.png */; };
@@ -425,6 +427,8 @@
 		4B8880C815FE97CB003AB5F2 /* login-button-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small@2x.png"; sourceTree = "<group>"; };
 		4B8880D015FE97E3003AB5F2 /* fb_blank_profile_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_blank_profile_portrait.png; sourceTree = "<group>"; };
 		4B8880D115FE97E3003AB5F2 /* fb_blank_profile_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_blank_profile_square.png; sourceTree = "<group>"; };
+		4B89C9B315FFA6F600FDE9E7 /* fb_profile-pic_144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb_profile-pic_144x144.png"; sourceTree = "<group>"; };
+		4B89C9B615FFAF0A00FDE9E7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		4B8D0F6215C8D7E4002CB264 /* search_bar_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bar_2x.png; sourceTree = "<group>"; };
 		4B8D0F6415C8D8D0002CB264 /* search_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_bar.png; sourceTree = "<group>"; };
 		4B8D0F6615C8D988002CB264 /* header_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_1.png; sourceTree = "<group>"; };
@@ -629,6 +633,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B89C9B715FFAF0A00FDE9E7 /* Accounts.framework in Frameworks */,
 				4B81CB8315F9214B00DB7FAA /* Twitter.framework in Frameworks */,
 				4BB9A13515CA4F50009263A1 /* MapKit.framework in Frameworks */,
 				4B6BA4F115C0F0890095F35E /* UIKit.framework in Frameworks */,
@@ -888,6 +893,7 @@
 		4B6BA4EF15C0F0890095F35E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B89C9B615FFAF0A00FDE9E7 /* Accounts.framework */,
 				4B4E0E3815FD886300A0CF97 /* SenTestingKit.framework */,
 				4B81CB8215F9214B00DB7FAA /* Twitter.framework */,
 				4BB5A9FB15D052B6003E5F97 /* CoreLocation.framework */,
@@ -970,6 +976,7 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B89C9B315FFA6F600FDE9E7 /* fb_profile-pic_144x144.png */,
 				4BE60B6815FE8BF200EAD2A2 /* fb-assets */,
 				4BD9EE1A15FBF0A1001D1DA6 /* new_deals_header_logo.png */,
 				4BD9EE1815FBEFB4001D1DA6 /* deals_header_logo_better.png */,
@@ -1482,6 +1489,7 @@
 				4B8880D215FE97E3003AB5F2 /* fb_blank_profile_portrait.png in Resources */,
 				4B8880D315FE97E3003AB5F2 /* fb_blank_profile_square.png in Resources */,
 				4BCBFC3915FEFA2800E14936 /* FBDialog.bundle in Resources */,
+				4B89C9B415FFA6F600FDE9E7 /* fb_profile-pic_144x144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1624,8 +1632,8 @@
 		4B6BA51615C0F0890095F35E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1635,8 +1643,8 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "08E31BAF-1F36-4077-9507-4F51EFAE9DB8";
+				PROVISIONING_PROFILE = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1644,8 +1652,8 @@
 		4B6BA51715C0F0890095F35E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1655,8 +1663,8 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "08E31BAF-1F36-4077-9507-4F51EFAE9DB8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				PROVISIONING_PROFILE = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1687,8 +1695,8 @@
 		4B6BF9F115F2BAC600011BCE /* Ad-Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: LeviaIT Corp.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: LeviaIT Corp.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1698,8 +1706,8 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
+				PROVISIONING_PROFILE = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "831CCEFB-9557-47B7-B3D8-07A618C34B19";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad-Hoc";

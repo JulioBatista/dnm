@@ -7,6 +7,7 @@
 //
 
 #import "SocialLoginViewController.h"
+#import "Twitter/Twitter.h"
 #import "FacebookHelper.h"
 
 @interface SocialLoginViewController ()
@@ -52,7 +53,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)buttonCancel:(id)sender 
+- (IBAction)buttonCancel:(id)sender
 {
 	[self dismissViewControllerAnimated:YES completion:^{
 		// nothing
@@ -60,7 +61,7 @@
 }
 - (IBAction)buttonFacebookButtonPressed:(id)sender
 {
-	 [[FacebookHelper sharedInstance] login];
+    [[FacebookHelper sharedInstance] login];
 	
 	if ([[FacebookHelper sharedInstance] isLoggedIn] == YES)
 	{
@@ -78,7 +79,7 @@
 }
 - (IBAction)buttonFacebookLogoutButtonPressed:(id)sender
 {
-		 [[FacebookHelper sharedInstance] logout];
+    [[FacebookHelper sharedInstance] logout];
 	
 	
 	if ([[FacebookHelper sharedInstance] isLoggedIn] == NO)
@@ -94,5 +95,73 @@
 	}
 	
 	
+}
+// UIAlertView helper for post buttons
+- (void)showAlert:(NSString *)message
+           withResult:(NSString *)result
+{
+	
+    NSString *alertMsg;
+    NSString *alertTitle;
+	
+	
+	alertMsg = [NSString stringWithFormat:@"Message : %@'.\nResult : %@",
+				message, result];
+	alertTitle = @"Success";
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                        message:alertMsg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
+
+
+- (IBAction)buttonTwitterButtonPressed:(id)sender
+{
+    // Is Twitter is accessible is there at least one account
+    // setup on the device
+    if ([TWTweetComposeViewController canSendTweet])
+    {
+        // Create account store, followed by a twitter account identifer
+        account = [[ACAccountStore alloc] init];
+        
+        ACAccountType *accountType = [account accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        
+        // Request access from the user to use their Twitter accounts.
+        [account requestAccessToAccountsWithType:accountType withCompletionHandler:^(BOOL granted, NSError *error)
+         {
+             // Did user allow us access?
+             if (granted == YES)
+             {
+                 // Populate array with all available Twitter accounts
+                 arrayOfAccounts = [account accountsWithAccountType:accountType];
+                 
+                 
+                 // Populate the tableview
+                 if ([arrayOfAccounts count] > 0)
+                 {
+                     // Update the row count used by tableview
+                     numberOfTwitterAccounts = [arrayOfAccounts count];
+                     
+                     NSLog(@"---------------%d", numberOfTwitterAccounts);
+                     
+                     [self showAlert:@"Logged In" withResult:@"Success"];
+                     
+                 }
+             }
+             
+             else
+             {
+                 [self showAlert:@"User did not grant access" withResult:@"Failure"];
+             }
+         }];
+    }
+    else
+    {
+        [self showAlert:@"Unable to login" withResult:@"Failure"];
+    }
+    
 }
 @end

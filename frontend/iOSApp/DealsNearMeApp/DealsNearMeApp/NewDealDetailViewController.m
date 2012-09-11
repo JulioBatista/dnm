@@ -252,6 +252,26 @@
     [alertView show];
 }
 
+// UIAlertView helper for post buttons
+- (void)showAlert:(NSString *)message
+       withResult:(NSString *)result
+{
+	
+    NSString *alertMsg;
+    NSString *alertTitle;
+	
+	
+	alertMsg = [NSString stringWithFormat:@"Message : %@'.\nResult : %@",
+				message, result];
+	alertTitle = @"Success";
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                        message:alertMsg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
 
 - (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -305,12 +325,14 @@
         
         tweetSheet.completionHandler = ^(TWTweetComposeViewControllerResult result)
         {
-
+            
 			
-		
-				
+            
+            
             [self dismissModalViewControllerAnimated:YES];
-
+            
+            [self showAlert:@"Posted to Twitter" withResult:@"Success"];
+            
         };
         
         // Show the tweet sheet
@@ -325,9 +347,9 @@
         NSLog(@"Facebook");
 		
 		/*
-		[[FacebookHelper sharedInstance] setIsForPostingScore:YES];
-		[[FacebookHelper sharedInstance] postToWallWithDialogNewHighscore:99];
-		*/
+         [[FacebookHelper sharedInstance] setIsForPostingScore:YES];
+         [[FacebookHelper sharedInstance] postToWallWithDialogNewHighscore:99];
+         */
 		
 		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
 		
