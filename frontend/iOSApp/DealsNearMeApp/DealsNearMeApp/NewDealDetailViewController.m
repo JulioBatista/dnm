@@ -323,7 +323,18 @@
     else if ([choice isEqualToString:@"Facebook"])
     {
         NSLog(@"Facebook");
+		
+		/*
+		[[FacebookHelper sharedInstance] setIsForPostingScore:YES];
 		[[FacebookHelper sharedInstance] postToWallWithDialogNewHighscore:99];
+		*/
+		
+		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
+		
+		NSLog(@"--------------deal info : %@", [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION]);
+		
+		[[FacebookHelper sharedInstance] setIsForPostingScore:YES];
+		[[FacebookHelper sharedInstance] postToWallWithDialogFeedMessage:[self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION]];
     }
     
     else if ([choice isEqualToString:@"Email"])

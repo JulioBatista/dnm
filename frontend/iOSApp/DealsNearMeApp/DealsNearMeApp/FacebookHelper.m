@@ -10,6 +10,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 
 #define kAppName        @"DealsNearMe"
 #define kCustomMessage  @"I just got a score of %d in %@, the best app on Facebook!"
+#define kDealMessage    @"%@ Posted via %@"
 #define kServerLink     @"http://dealsnear.me"
 #define kImageSrc       @"http://199.102.228.10/~deals/api/dnm_logo_44x44.png"
 
@@ -17,7 +18,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 
 @synthesize facebook = _facebook;
 @synthesize isLoggedIn = _isLoggedIn;
-
+@synthesize isForPostingScore = _isForPostingScore;
 #pragma mark -
 #pragma mark Singleton Variables
 static FacebookHelper *singletonDelegate = nil;
@@ -33,7 +34,8 @@ static FacebookHelper *singletonDelegate = nil;
         return nil;
     }
     
-    if ((self = [super init])) {
+    if ((self = [super init]))
+	{
         
         _facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:self];
         _facebook.accessToken    = [[NSUserDefaults standardUserDefaults] stringForKey:@"AccessToken"];
@@ -43,6 +45,9 @@ static FacebookHelper *singletonDelegate = nil;
         _permissions =  [NSArray arrayWithObjects: @"read_stream", @"publish_stream", nil];
         
         // _permissions =  [NSArray arrayWithObjects:@"publish_stream", nil] ;
+		
+		
+		self.isForPostingScore = NO;
         
     }
     
@@ -120,9 +125,39 @@ static FacebookHelper *singletonDelegate = nil;
     return params;
 }
 
+
+-(NSMutableDictionary*) buildPostParamsWithFeedMessage:(NSString *)feedmessage
+{
+    NSString *dealMessage = [NSString stringWithFormat:kDealMessage, feedmessage, kAppName];
+    NSString *postName = kAppName;
+    NSString *serverLink = [NSString stringWithFormat:kServerLink];
+    NSString *imageSrc = kImageSrc;
+    
+    // Final params build.
+    NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   // dealMessage, @"message",
+                                   imageSrc, @"picture",
+                                   serverLink, @"link",
+                                   postName, @"name",
+                                   dealMessage, @"caption",
+								   dealMessage, @"description",
+                                   nil];
+    
+    return params;
+}
+
+
 -(void) postToWallWithDialogNewHighscore
 {
     NSMutableDictionary* params = [self buildPostParamsWithHighscore:score];
+    
+    // Post on Facebook.
+    [_facebook dialog:@"feed" andParams:params andDelegate:self];
+}
+
+-(void) postToWallWithDialogFeedMessage
+{
+    NSMutableDictionary* params = [self buildPostParamsWithFeedMessage:themessage];
     
     // Post on Facebook.
     [_facebook dialog:@"feed" andParams:params andDelegate:self];
@@ -160,7 +195,30 @@ static FacebookHelper *singletonDelegate = nil;
         [_facebook authorize:_permissions];
     }
     else {
-        [self postToWallWithDialogNewHighscore];
+		if (self.isForPostingScore ==YES)
+		{
+         // [self postToWallWithDialogNewHighscore];
+					NSLog(@"=suppressing the dialog that was supposed to pop up here for debugging");
+			
+		}
+    }
+}
+
+-(void) postToWallWithDialogFeedMessage:(NSString *)feedmessage
+{
+    themessage = feedmessage;
+    
+    if (![_facebook isSessionValid])
+	{
+        [_facebook authorize:_permissions];
+    }
+    else {
+		if (self.isForPostingScore ==YES)
+		{
+			[self postToWallWithDialogFeedMessage];
+			NSLog(@"=suppressing the dialog that was supposed to pop up here for debugging");
+			
+		}
     }
 }
 
@@ -175,7 +233,13 @@ static FacebookHelper *singletonDelegate = nil;
     [[NSUserDefaults standardUserDefaults] setObject:_facebook.expirationDate forKey:@"ExpirationDate"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    /* [self postToWallWithDialogNewHighscore]; */
+	if (self.isForPostingScore ==YES)
+	{
+		// [self postToWallWithDialogNewHighscore];
+		//NSLog(@"-suppressing the dialog that was supposed to pop up here for debugging");
+			[self postToWallWithDialogFeedMessage];
+	}
+
 	
 	self.isLoggedIn = YES;
 }

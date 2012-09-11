@@ -14,11 +14,15 @@
     
     // Internal state
     int score;
+	
+	NSString *themessage;
 }
 
 @property(readonly) Facebook *facebook;
 
 @property (nonatomic) BOOL isLoggedIn;
+
+@property (nonatomic) BOOL isForPostingScore;
 
 + (FacebookHelper *) sharedInstance;
 
@@ -29,6 +33,8 @@
 - (void)authorize;
 
 -(void) postToWallWithDialogNewHighscore:(int)highscore;
+
+-(void) postToWallWithDialogFeedMessage:(NSString *)feedmessage;
 
 - (void) logout;
 

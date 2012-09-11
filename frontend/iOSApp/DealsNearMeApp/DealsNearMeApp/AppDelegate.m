@@ -58,12 +58,16 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
+	
+	NSLog(@"-----------------did something bad happen here url : %@", url);
+	
     return [[[FacebookHelper sharedInstance] facebook] handleOpenURL:url];
 }
 
 // For 4.2+ support
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
+		NSLog(@"-----------------did something bad happen here source : %@", sourceApplication);
     return [[[FacebookHelper sharedInstance] facebook] handleOpenURL:url];
 }
 
