@@ -226,7 +226,7 @@ static FacebookHelper *singletonDelegate = nil;
 
 - (void)fbDidLogin
 {
-    NSLog(@"FB login OK");
+    NSLog(@"FB login OK---------");
     
     // Store session info.
     [[NSUserDefaults standardUserDefaults] setObject:_facebook.accessToken forKey:@"AccessToken"];

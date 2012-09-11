@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Accounts/Accounts.h>
+#import "FBConnect/FBConnect.h"
 
-@interface SocialLoginViewController : UIViewController
+@interface SocialLoginViewController : UIViewController<FBRequestDelegate, FBDialogDelegate, FBSessionDelegate>
 {
      ACAccountStore  *account;
      NSArray         *arrayOfAccounts;
     NSInteger     numberOfTwitterAccounts;
+    
+       NSArray* _permissions;
 
 }
 
@@ -28,4 +31,9 @@
 - (IBAction)buttonFacebookLogoutButtonPressed:(id)sender;
 
 - (IBAction)buttonTwitterButtonPressed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorViewLarge;
+
+@property(readonly) Facebook *facebook;
+
 @end

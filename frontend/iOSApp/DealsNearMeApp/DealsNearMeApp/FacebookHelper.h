@@ -2,7 +2,7 @@
 //  FacebookHelper.h
 
 #import <Foundation/Foundation.h>
-#import "FBConnect.h"
+#import "FBConnect/FBConnect.h"
 
 #define kFBAccessTokenKey  @"AccessToken"
 #define kFBExpirationDateKey  @"ExpirationDate"
