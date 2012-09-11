@@ -93,8 +93,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     
     
     _facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:self];
-    _facebook.accessToken    = [[NSUserDefaults standardUserDefaults] stringForKey:@"AccessToken"];
-    _facebook.expirationDate = (NSDate *) [[NSUserDefaults standardUserDefaults] objectForKey:@"ExpirationDate"];
+    _facebook.accessToken    = [[NSUserDefaults standardUserDefaults] stringForKey:kFBAccessTokenKey];
+    _facebook.expirationDate = (NSDate *) [[NSUserDefaults standardUserDefaults] objectForKey:kFBExpirationDateKey];
     
     //_permissions =  [[NSArray arrayWithObjects: @"read_stream", @"publish_stream", @"offline_access",nil] retain];
     _permissions =  [NSArray arrayWithObjects: @"read_stream", @"publish_stream", nil];
@@ -212,8 +212,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     
     [self.labelLoginLabel setText:@"LogOut"];
     // Store session info.
-    [[NSUserDefaults standardUserDefaults] setObject:_facebook.accessToken forKey:@"AccessToken"];
-    [[NSUserDefaults standardUserDefaults] setObject:_facebook.expirationDate forKey:@"ExpirationDate"];
+    [[NSUserDefaults standardUserDefaults] setObject:_facebook.accessToken forKey:kFBAccessTokenKey];
+    [[NSUserDefaults standardUserDefaults] setObject:_facebook.expirationDate forKey:kFBExpirationDateKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self showAlert:@"LogIn Success" withResult:@"Welcome"];
@@ -239,8 +239,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     NSLog(@"FB logout OK");
     
     // Release stored session.
-    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"AccessToken"];
-    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"ExpirationDate"];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kFBAccessTokenKey];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kFBExpirationDateKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
         [self showAlert:@"LogOut Success" withResult:@"Success"];

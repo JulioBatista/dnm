@@ -10,6 +10,9 @@
 #import <Accounts/Accounts.h>
 #import "FBConnect/FBConnect.h"
 
+#define kFBAccessTokenKey  @"FBAccessTokenKey"
+#define kFBExpirationDateKey  @"FBExpirationDateKey"
+
 @interface SocialLoginViewController : UIViewController<FBRequestDelegate, FBDialogDelegate, FBSessionDelegate>
 {
      ACAccountStore  *account;
