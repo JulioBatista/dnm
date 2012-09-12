@@ -210,7 +210,13 @@
     
     [[NSUserDefaults standardUserDefaults] setObject:favoriteDealsDataStorage forKey:@"favoritedealsarchive"];
     
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Added"
+                                                        message:[self.currentDeal objectForKey:NETWORK_DEAL_TITLE]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
     
+    [alertView show];
     
 }
 

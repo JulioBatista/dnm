@@ -1991,11 +1991,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonFilterButtonPressed:"/>
-                <relationship kind="action" name="buttonFilterPressed:"/>
-                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedControlMapListIndexChanged:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buttonFilterButton" candidateClass="UIButton"/>
