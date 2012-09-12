@@ -73,7 +73,8 @@
 @property (nonatomic) NSUInteger theSelectedFilter;
 @property (weak, nonatomic) IBOutlet UIButton *buttonFilterButton;
 
-- (IBAction)segmentedControlIndexChanged:(id)sender;
+
+- (IBAction)segmentedControlMapListIndexChanged:(id)sender;
 
 - (IBAction)buttonFilterButtonPressed:(id)sender;
 

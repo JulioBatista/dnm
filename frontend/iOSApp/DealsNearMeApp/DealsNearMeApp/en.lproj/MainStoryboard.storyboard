@@ -155,7 +155,7 @@
                                         </segments>
                                         <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="segmentedCotnrolIndexChanged:" destination="SpU-em-5yu" eventType="valueChanged" id="hBs-fq-8Kz"/>
+                                            <action selector="segmentedControlMapListIndexChanged:" destination="SpU-em-5yu" eventType="valueChanged" id="rG1-dg-Ltf"/>
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
@@ -1898,6 +1898,9 @@
         </class>
         <class className="BarsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
         </class>
         <class className="DealCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
@@ -1962,9 +1965,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonFilterButtonPressed:"/>
+                <relationship kind="action" name="buttonFilterPressed:"/>
+                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedControlIndexChanged:"/>
+                <relationship kind="action" name="segmentedControlMapListIndexChanged:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="buttonFilterButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>

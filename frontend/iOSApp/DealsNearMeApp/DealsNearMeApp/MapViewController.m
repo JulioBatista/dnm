@@ -1611,7 +1611,7 @@
     }];
 	
 }
-- (IBAction)segmentedControlIndexChanged:(id)sender
+- (IBAction)segmentedControlMapListIndexChanged:(id)sender
 {
     switch (self.segmentedControlMapList.selectedSegmentIndex)
     {
@@ -1646,6 +1646,9 @@
             break;
             
     }
+}
+
+- (IBAction)segmentedControlMapListIndexChanged:(id)sender {
 }
 
 - (IBAction)buttonFilterButtonPressed:(id)sender
