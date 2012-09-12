@@ -35,18 +35,6 @@
                                                 <action selector="buttonToggleScrollViewPressed:" destination="SpU-em-5yu" id="3t5-vs-tJr"/>
                                             </connections>
                                         </barButtonItem>
-                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="taZ-0T-4ff">
-                                            <rect key="frame" x="96" y="7" width="128" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Map"/>
-                                                <segment title="List"/>
-                                            </segments>
-                                            <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="segmentedCotnrolIndexChanged:" destination="SpU-em-5yu" eventType="valueChanged" id="hBs-fq-8Kz"/>
-                                            </connections>
-                                        </segmentedControl>
                                         <barButtonItem key="rightBarButtonItem" image="07-map-marker-white.png" id="Amj-jU-gT6">
                                             <connections>
                                                 <action selector="buttonListPressed:" destination="SpU-em-5yu" id="TWV-ZQ-9rG"/>
@@ -142,25 +130,41 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FILTER BY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="3it-Rh-BlG">
-                                        <rect key="frame" x="10" y="7" width="64" height="25"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="INF-US-aO9">
+                                        <rect key="frame" x="11" y="0.0" width="150" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="nik-vW-X1l">
-                                        <rect key="frame" x="93" y="7" width="207" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" title="Filter : None" backgroundImage="black_bar.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonFilterButtonPressed:" destination="SpU-em-5yu" eventType="touchUpInside" id="bHv-vN-JQE"/>
+                                            <action selector="buttonFilterPressed:" destination="SpU-em-5yu" eventType="touchUpInside" id="U5T-oT-zxm"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="taZ-0T-4ff">
+                                        <rect key="frame" x="179" y="7" width="128" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
-                                            <segment title="Popular" width="88"/>
-                                            <segment title="Distance" width="88"/>
+                                            <segment title="Map"/>
+                                            <segment title="List"/>
                                         </segments>
                                         <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="segmentedCotnrolIndexChanged:" destination="SpU-em-5yu" eventType="valueChanged" id="hBs-fq-8Kz"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="deals_header_logo.png" id="ln8-6c-Ib8">
+                                <rect key="frame" x="64" y="5" width="192" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
@@ -180,6 +184,7 @@
                         <outlet property="viewFilterByView" destination="yFp-kl-eRQ" id="oXc-8K-2Ek"/>
                         <segue destination="KvL-wI-8Ow" kind="push" identifier="FromMapDealDetailSegue" id="4Sc-dY-pY2"/>
                         <segue destination="CZa-pA-fh1" kind="modal" identifier="LocationPickerSegue" id="guJ-df-yqv"/>
+                        <segue destination="mOU-QP-8YS" kind="modal" identifier="FilterPickerSegue" id="O2q-S5-qWQ"/>
                     </connections>
                 </viewController>
             </objects>
@@ -1355,6 +1360,55 @@
             </objects>
             <point key="canvasLocation" x="-342" y="-975"/>
         </scene>
+        <!--Filter Picker View Controller-->
+        <scene sceneID="lku-QR-b9X">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQ0-7f-Rat" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Dyy-4v-mH3" customClass="FilterPickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d0S-J3-J4A">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="LBo-PH-z3g">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Filter" id="6M7-q1-qiA">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mZT-IJ-Vef">
+                                            <connections>
+                                                <action selector="buttonCancelPressed:" destination="Dyy-4v-mH3" id="BrT-gq-X28"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="screen_gradient_only.jpg" id="k94-pg-v0J">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Ai0-kI-2BH">
+                                <rect key="frame" x="57" y="114" width="207" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Popularity"/>
+                                    <segment title="Distance"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="Dyy-4v-mH3" eventType="valueChanged" id="XfW-Cc-j4e"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="G3L-3I-H1x"/>
+                    <connections>
+                        <outlet property="segmentedControlFilterScreen" destination="Ai0-kI-2BH" id="f8M-2B-WaO"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1689" y="-2068"/>
+        </scene>
         <!--Location Picker View Controller-->
         <scene sceneID="HaE-cm-lIC">
             <objects>
@@ -1408,7 +1462,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedTopBarMetrics"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1697" y="-1510"/>
@@ -1780,6 +1833,25 @@
             </objects>
             <point key="canvasLocation" x="1135" y="-1500"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jnN-gH-ene">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpD-bB-u3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController navigationBarHidden="YES" id="mOU-QP-8YS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="r1L-l6-rMj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dyy-4v-mH3" kind="relationship" relationship="rootViewController" id="6ke-3H-cAP"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1135" y="-2068"/>
+        </scene>
     </scenes>
     <resources>
         <image name="06-magnify-white.png" width="24" height="24"/>
@@ -1819,146 +1891,6 @@
         <image name="telephone_icon_60x60.png" width="60" height="60"/>
         <image name="twitter_icon_60x60.png" width="60" height="60"/>
     </resources>
-    <classes>
-        <class className="AboutScreenTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutScreenTableViewController.h"/>
-        </class>
-        <class className="BarsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
-        </class>
-        <class className="DealCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dealImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DealDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonBackTapped:"/>
-                <relationship kind="action" name="buttonFavoritesPressed:"/>
-                <relationship kind="action" name="buttonNextDeal:"/>
-                <relationship kind="action" name="buttonPrevDeal:"/>
-                <relationship kind="action" name="buttonShareButtonPressed:"/>
-                <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DealsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DealsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonMapPressed:"/>
-            </relationships>
-        </class>
-        <class className="FavoritesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoritesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doRefresh:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-        </class>
-        <class className="LocationPickerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationPickerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-            </relationships>
-        </class>
-        <class className="LoginScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnCancelTapped:"/>
-                <relationship kind="action" name="btnLoginRegisterTapped:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fldPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fldUsername" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
-                <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="action" name="segmentedCotnrolIndexChanged:"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="buttonToggle" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="buttonToggleScrollView" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="dealsTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="scrollDividerView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="segmentedControlMapList" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="viewFilterByView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="MoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doChangePage:"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="MyAccountScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyAccountScreenViewController.h"/>
-        </class>
-        <class className="NewDealDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewDealDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonBackTapped:"/>
-                <relationship kind="action" name="buttonFavoritesPressed:"/>
-                <relationship kind="action" name="buttonNext:"/>
-                <relationship kind="action" name="buttonPrev:"/>
-                <relationship kind="action" name="buttonShareButtonPressed:"/>
-                <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NewFavoritesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewFavoritesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="favoritesTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="PostADealViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostADealViewController.h"/>
-        </class>
-        <class className="PreSplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PreSplashViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonStart:"/>
-                <relationship kind="outlet" name="imageViewPreSplashLogo" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SocialLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonCancel:"/>
-                <relationship kind="action" name="buttonFacebookButtonPressed:"/>
-                <relationship kind="action" name="buttonFacebookLogoutButtonPressed:"/>
-                <relationship kind="action" name="buttonTwitterButtonPressed:"/>
-                <relationship kind="outlet" name="activityIndicatorViewLarge" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="buttonFacebookLoginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonFacebookLogoutButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelLoginLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonYesPressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

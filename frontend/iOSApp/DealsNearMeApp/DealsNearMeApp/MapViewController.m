@@ -15,6 +15,7 @@
 #import "DealCell.h"
 #import "DealDetailViewController.h"
 #import "LocationPickerViewController.h"
+#import "FilterPickerViewController.h"
 #import "NewDealDetailViewController.h"
 
 #define METERS_PER_MILE 1689.344
@@ -1397,6 +1398,15 @@
         
         locationPickerViewController.delegate = self;
     }
+    else if ([segue.identifier isEqualToString:@"FilterPickerSegue"])
+    {
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        
+        FilterPickerViewController *filterPickerViewController = [[navigationController viewControllers] objectAtIndex:0];
+        
+        filterPickerViewController.delegate = self;
+    }
 }
 
 
@@ -1420,6 +1430,11 @@
 	
     
     NSLog(@"Button List Pressed");
+}
+- (IBAction)buttonFilterPressed:(id)sender
+{
+    [self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
+    
 }
 
 - (IBAction)buttonToggleScrollViewPressed:(id)sender
@@ -1588,7 +1603,7 @@
     }];
 	
 }
-- (IBAction)segmentedCotnrolIndexChanged:(id)sender
+- (IBAction)segmentedControlIndexChanged:(id)sender
 {
     switch (self.segmentedControlMapList.selectedSegmentIndex)
     {
@@ -1624,6 +1639,37 @@
             
     }
 }
+
+- (IBAction)buttonFilterButtonPressed:(id)sender
+{
+}
+
+
+#pragma mark FilterPickerViewControllerDelegate methods
+
+-
+(void) filterPickerViewControllerDidCancel:(FilterPickerViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        //do map stuff here
+    }];
+    
+}
+
+- (void) filterPickerViewController:(FilterPickerViewController *)controller
+                        didSelectFilter:(NSString *)theFilter
+{
+    
+    NSLog(@"-------------%@", theFilter);
+    
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        //do map stuff here
+    }];
+    
+}
+
+
 @end
 
 

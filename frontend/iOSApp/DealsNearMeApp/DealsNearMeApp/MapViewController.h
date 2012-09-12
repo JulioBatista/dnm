@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MapKit/MapKit.h"
 #import "LocationPickerViewController.h"
+#import "FilterPickerViewController.h"
 
 @interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource,LocationPickerViewControllerDelegate>
 {
@@ -69,6 +70,8 @@
 @property (nonatomic) NSUInteger mapIndexPath;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlMapList;
 
-- (IBAction)segmentedCotnrolIndexChanged:(id)sender;
+- (IBAction)segmentedControlIndexChanged:(id)sender;
+
+- (IBAction)buttonFilterButtonPressed:(id)sender;
 
 @end
