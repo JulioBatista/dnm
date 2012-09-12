@@ -95,17 +95,17 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
         
     }
     
-
+    
     /*
-    _facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:self];
-    _facebook.accessToken    = [[NSUserDefaults standardUserDefaults] stringForKey:kFBAccessTokenKey];
-    _facebook.expirationDate = (NSDate *) [[NSUserDefaults standardUserDefaults] objectForKey:kFBExpirationDateKey];
-    
-    //_permissions =  [[NSArray arrayWithObjects: @"read_stream", @"publish_stream", @"offline_access",nil] retain];
-    _permissions =  [NSArray arrayWithObjects: @"read_stream", @"publish_stream", nil];
-    
-    // _permissions =  [NSArray arrayWithObjects:@"publish_stream", nil] ;
-    */
+     _facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:self];
+     _facebook.accessToken    = [[NSUserDefaults standardUserDefaults] stringForKey:kFBAccessTokenKey];
+     _facebook.expirationDate = (NSDate *) [[NSUserDefaults standardUserDefaults] objectForKey:kFBExpirationDateKey];
+     
+     //_permissions =  [[NSArray arrayWithObjects: @"read_stream", @"publish_stream", @"offline_access",nil] retain];
+     _permissions =  [NSArray arrayWithObjects: @"read_stream", @"publish_stream", nil];
+     
+     // _permissions =  [NSArray arrayWithObjects:@"publish_stream", nil] ;
+     */
     // Check if there is a valid session
     if (![[[FacebookHelper sharedInstance] facebook] isSessionValid]) {
         [[[FacebookHelper sharedInstance] facebook] authorize:_permissions];
@@ -249,7 +249,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
                                               otherButtonTitles:nil];
     
     [alertView show];
-
+    
 }
 
 /**
@@ -274,7 +274,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
                                               otherButtonTitles:nil];
     
     [alertView show];
-
+    
     
     [self.buttonFacebookLoginButton setHidden:NO];
     
@@ -375,10 +375,10 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 }
 
 - (void) facebookHelper:(FacebookHelper *)facebookHelper
-request:(FBRequest *) request
-didLoad:(id)result
+                request:(FBRequest *) request
+                didLoad:(id)result
 {
-        NSLog(@"++++++++++facebookHelper: request: didLoad: +++++++++++++++++++the delegate method was triggered");
+    NSLog(@"++++++++++facebookHelper: request: didLoad: +++++++++++++++++++the delegate method was triggered");
     
     NSLog(@"FB request OK %@", result);
     
