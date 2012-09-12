@@ -7,6 +7,20 @@
 #define kFBAccessTokenKey  @"AccessToken"
 #define kFBExpirationDateKey  @"ExpirationDate"
 
+@class FacebookHelper;
+
+@protocol FacebookHelperDelegate <NSObject>
+
+- (void) facebookHelperDidLogin:(FacebookHelper *) facebookHelper;
+
+- (void) facebookHelperDidNotLogin:(FacebookHelper *) facebookHelper;
+
+- (void) facebookHelperDidLogout:(FacebookHelper *) facebookHelper;
+
+
+
+@end
+
 @interface FacebookHelper : NSObject <FBRequestDelegate, FBDialogDelegate, FBSessionDelegate>
 {
     Facebook* _facebook;
@@ -17,6 +31,8 @@
 	
 	NSString *themessage;
 }
+
+@property (nonatomic, weak) id<FacebookHelperDelegate> delegate;
 
 @property(readonly) Facebook *facebook;
 

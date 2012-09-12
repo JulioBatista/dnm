@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Accounts/Accounts.h>
 #import "FBConnect/FBConnect.h"
+#import "FacebookHelper.h"
 
-#define kFBAccessTokenKey  @"FBAccessTokenKey"
-#define kFBExpirationDateKey  @"FBExpirationDateKey"
 
-@interface SocialLoginViewController : UIViewController<FBRequestDelegate, FBDialogDelegate, FBSessionDelegate>
+@interface SocialLoginViewController : UIViewController<FBRequestDelegate, FBDialogDelegate, FBSessionDelegate, FacebookHelperDelegate>
 {
      ACAccountStore  *account;
      NSArray         *arrayOfAccounts;
@@ -38,5 +37,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorViewLarge;
 
 @property(readonly) Facebook *facebook;
+
++ (SocialLoginViewController *) sharedInstance;
 
 @end

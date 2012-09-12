@@ -19,6 +19,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 @synthesize facebook = _facebook;
 @synthesize isLoggedIn = _isLoggedIn;
 @synthesize isForPostingScore = _isForPostingScore;
+
+@synthesize delegate = _delegate;
 #pragma mark -
 #pragma mark Singleton Variables
 static FacebookHelper *singletonDelegate = nil;
@@ -228,6 +230,9 @@ static FacebookHelper *singletonDelegate = nil;
 {
     NSLog(@"FB login OK---------");
     
+    [self.delegate facebookHelperDidLogin:self];
+    
+    
     // Store session info.
     [[NSUserDefaults standardUserDefaults] setObject:_facebook.accessToken forKey:@"AccessToken"];
     [[NSUserDefaults standardUserDefaults] setObject:_facebook.expirationDate forKey:@"ExpirationDate"];
@@ -251,6 +256,7 @@ static FacebookHelper *singletonDelegate = nil;
 {
     NSLog(@"FB did not login");
 	self.isLoggedIn = NO;
+    [self.delegate facebookHelperDidNotLogin:self];
 }
 
 /**
@@ -265,6 +271,7 @@ static FacebookHelper *singletonDelegate = nil;
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"ExpirationDate"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 	
+    [self.delegate facebookHelperDidLogout:self];
 	self.isLoggedIn = NO;
 }
 

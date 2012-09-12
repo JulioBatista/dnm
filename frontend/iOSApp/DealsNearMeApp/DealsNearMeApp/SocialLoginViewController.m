@@ -8,7 +8,7 @@
 
 #import "SocialLoginViewController.h"
 #import "Twitter/Twitter.h"
-
+#import "FacebookHelper.h"
 
 static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 
@@ -47,7 +47,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     
     [self.activityIndicatorViewLarge setHidden:YES];
 	
-	
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -73,6 +73,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+
 - (IBAction)buttonCancel:(id)sender
 {
 	[self dismissViewControllerAnimated:YES completion:^{
@@ -83,6 +85,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 {
 	
 	/* [[FacebookHelper sharedInstance] postToWallWithDialogNewHighscore:99]; */
+    
+    
     
     if (!kAppId)
 	{
@@ -109,6 +113,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
         [_facebook requestWithGraphPath:@"me" andDelegate:self];
     }
     
+    [FacebookHelper sharedInstance].delegate = self;
     
     
 }
@@ -206,7 +211,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 
 - (void)fbDidLogin
 {
-    NSLog(@"FB login OK");
+    NSLog(@"F*******B login OK");
     [self.buttonFacebookLoginButton setHidden:YES];
     
     
@@ -243,7 +248,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kFBExpirationDateKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-        [self showAlert:@"LogOut Success" withResult:@"Success"];
+    [self showAlert:@"LogOut Success" withResult:@"Success"];
     
     [self.buttonFacebookLoginButton setHidden:NO];
     
@@ -286,7 +291,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
  */
 - (void)request:(FBRequest *)request didLoad:(id)result
 {
-    NSLog(@"FB request OK %@", result);
+    NSLog(@"FB request OK %@", [result objectForKey:@"first_name"]);
     
     [self showAlert:[result objectForKey:@"first_name"] withResult:@"Welcome"];
     
@@ -313,4 +318,22 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     NSLog(@"published successfully on FB");
 }
 
+#pragma mark FacebookHelperDelegate
+
+- (void) facebookHelperDidLogin:(FacebookHelper *) facebookHelper
+{
+    NSLog(@"++++++++facebookHelperDidLogin+++++++++++++++++++++the delegate method was triggered");
+    
+    
+}
+
+- (void) facebookHelperDidNotLogin:(FacebookHelper *) facebookHelper
+{
+    NSLog(@"++++++++++facebookHelperDidNotLogin+++++++++++++++++++the delegate method was triggered");
+}
+
+- (void) facebookHelperDidLogout:(FacebookHelper *) facebookHelper
+{
+    NSLog(@"++++++++++facebookHelperDidLogout+++++++++++++++++++the delegate method was triggered");
+}
 @end
