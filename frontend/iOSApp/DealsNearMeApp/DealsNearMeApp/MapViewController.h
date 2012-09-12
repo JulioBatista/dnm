@@ -11,7 +11,7 @@
 #import "LocationPickerViewController.h"
 #import "FilterPickerViewController.h"
 
-@interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource,LocationPickerViewControllerDelegate>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource,LocationPickerViewControllerDelegate, FilterPickerViewControllerDelegate>
 {
 	UITableViewController *myTableViewController;
 	UITableView *dealsTableView;
@@ -69,6 +69,9 @@
 
 @property (nonatomic) NSUInteger mapIndexPath;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlMapList;
+
+@property (nonatomic) NSUInteger theSelectedFilter;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFilterButton;
 
 - (IBAction)segmentedControlIndexChanged:(id)sender;
 

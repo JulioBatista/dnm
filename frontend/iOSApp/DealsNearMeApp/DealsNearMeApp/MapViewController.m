@@ -50,6 +50,8 @@
 @implementation MapViewController
 {
 	NSString *city;
+    
+    
 }
 
 @synthesize viewFilterByView = _viewFilterByView;
@@ -85,6 +87,8 @@
 
 @synthesize mapIndexPath = _mapIndexPath;
 @synthesize segmentedControlMapList = _segmentedControlMapList;
+@synthesize theSelectedFilter = _theSelectedFilter;
+@synthesize buttonFilterButton = _buttonFilterButton;
 
 #pragma mark setters
 
@@ -416,6 +420,7 @@
 	
     [self setSegmentedControlMapList:nil];
     [self setViewFilterByView:nil];
+    [self setButtonFilterButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
@@ -1405,6 +1410,8 @@
         
         FilterPickerViewController *filterPickerViewController = [[navigationController viewControllers] objectAtIndex:0];
         
+        filterPickerViewController.theSelectedFilter = self.theSelectedFilter;
+        
         filterPickerViewController.delegate = self;
     }
 }
@@ -1419,6 +1426,7 @@
 	
 	[self.locationTimer invalidate];
 }
+
 
 
 #pragma mark IBActions
@@ -1657,16 +1665,27 @@
 }
 
 - (void) filterPickerViewController:(FilterPickerViewController *)controller
-                        didSelectFilter:(NSString *)theFilter
+                    didSelectFilter:(NSUInteger) theFilter
 {
+    NSLog(@"-------------%d", theFilter);
     
-    NSLog(@"-------------%@", theFilter);
+    self.theSelectedFilter = theFilter;
     
+    switch (self.theSelectedFilter) {
+        case 0:
+            
+            [self.buttonFilterButton setTitle:@"Filter : Popularity" forState:UIControlStateNormal];
+            break;
+            case 1 :
+            [self.buttonFilterButton setTitle:@"Filter : Distance" forState:UIControlStateNormal];
+        default:
+            break;
+    }
     
     [self dismissViewControllerAnimated:YES completion:^{
         //do map stuff here
     }];
-    
+
 }
 
 

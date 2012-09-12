@@ -15,13 +15,13 @@
 
 @implementation FilterPickerViewController
 {
-    
+    NSUInteger selectedIndex;
 }
 @synthesize segmentedControlFilterScreen = _segmentedControlFilterScreen;
 
 @synthesize delegate = _delegate;
 
-@synthesize theFilter = _theFilter;
+@synthesize theSelectedFilter = _theSelectedFilter;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +36,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+     [self.segmentedControlFilterScreen setSelectedSegmentIndex:self.theSelectedFilter];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+   
+    
 }
 
 - (void)viewDidUnload
@@ -62,12 +71,11 @@
         case 0:
             NSLog(@"Popularity");
             
-            
-            self.theFilter = @"Popularity";
+
             
             [self.segmentedControlFilterScreen setSelectedSegmentIndex:0];
             
-            [self.delegate filterPickerViewController:self didSelectFilter:self.theFilter];
+            [self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlFilterScreen.selectedSegmentIndex];
             
             /* [self.buttonListButton setImage:[UIImage imageNamed:@"259-list-white.png"]];
              */
@@ -81,7 +89,7 @@
              */
             [self.segmentedControlFilterScreen setSelectedSegmentIndex:1];
             
-            [self.delegate filterPickerViewController:self didSelectFilter:self.theFilter];
+            [self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlFilterScreen.selectedSegmentIndex];
             
             break;
             

@@ -15,7 +15,7 @@
 - (void) filterPickerViewControllerDidCancel:(FilterPickerViewController *) controller;
 
 - (void) filterPickerViewController:(FilterPickerViewController *)controller
-                             didSelectFilter:(NSString *) theFilter;
+                             didSelectFilter:(NSUInteger) theFilter;
 
 
 @end
@@ -24,7 +24,10 @@
 
 @property (nonatomic, weak) id<FilterPickerViewControllerDelegate> delegate;
 
-@property (nonatomic, strong) NSString *theFilter;
+
+
+@property (nonatomic) NSUInteger theSelectedFilter;
+@property (nonatomic, strong) NSNumber *filternum;
 
 
 - (IBAction)buttonCancelPressed:(id)sender;
