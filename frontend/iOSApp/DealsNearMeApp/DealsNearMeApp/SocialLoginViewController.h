@@ -38,6 +38,5 @@
 
 @property(readonly) Facebook *facebook;
 
-+ (SocialLoginViewController *) sharedInstance;
 
 @end

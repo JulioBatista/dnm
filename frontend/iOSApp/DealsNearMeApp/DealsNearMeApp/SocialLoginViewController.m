@@ -95,7 +95,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
         
     }
     
-    
+
+    /*
     _facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:self];
     _facebook.accessToken    = [[NSUserDefaults standardUserDefaults] stringForKey:kFBAccessTokenKey];
     _facebook.expirationDate = (NSDate *) [[NSUserDefaults standardUserDefaults] objectForKey:kFBExpirationDateKey];
@@ -104,13 +105,13 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     _permissions =  [NSArray arrayWithObjects: @"read_stream", @"publish_stream", nil];
     
     // _permissions =  [NSArray arrayWithObjects:@"publish_stream", nil] ;
-    
+    */
     // Check if there is a valid session
-    if (![_facebook isSessionValid]) {
-        [_facebook authorize:_permissions];
+    if (![[[FacebookHelper sharedInstance] facebook] isSessionValid]) {
+        [[[FacebookHelper sharedInstance] facebook] authorize:_permissions];
     }
     else {
-        [_facebook requestWithGraphPath:@"me" andDelegate:self];
+        [[[FacebookHelper sharedInstance] facebook] requestWithGraphPath:@"me" andDelegate:self];
     }
     
     [FacebookHelper sharedInstance].delegate = self;
@@ -122,11 +123,11 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     
 	
     // Check if there is a valid session
-    if (![_facebook isSessionValid]) {
+    if (![[[FacebookHelper sharedInstance] facebook] isSessionValid]) {
         NSLog(@"No valid facebook session");
     }
     else {
-        [_facebook logout];
+        [[[FacebookHelper sharedInstance] facebook] logout];
         NSLog(@"Logout delegate method should receive a callback right about now");
     }
     
@@ -324,6 +325,11 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 {
     NSLog(@"++++++++facebookHelperDidLogin+++++++++++++++++++++the delegate method was triggered");
     
+    [self showAlert:@"You are now logged in" withResult:@"Welcome"];
+    
+    [self.buttonFacebookLoginButton setHidden:YES];
+    
+    [self.labelLoginLabel setText:@"LogOut"];
     
 }
 
@@ -335,5 +341,9 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 - (void) facebookHelperDidLogout:(FacebookHelper *) facebookHelper
 {
     NSLog(@"++++++++++facebookHelperDidLogout+++++++++++++++++++the delegate method was triggered");
+    
+    [self.buttonFacebookLoginButton setHidden:NO];
+    
+    [self.labelLoginLabel setText:@"LogIn"];
 }
 @end
