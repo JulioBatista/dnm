@@ -1648,8 +1648,7 @@
     }
 }
 
-- (IBAction)segmentedControlMapListIndexChanged:(id)sender {
-}
+
 
 - (IBAction)buttonFilterButtonPressed:(id)sender
 {
