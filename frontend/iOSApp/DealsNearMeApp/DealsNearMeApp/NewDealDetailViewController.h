@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FacebookHelper.h"
 
-@interface NewDealDetailViewController : UIViewController<UIActionSheetDelegate>
+@interface NewDealDetailViewController : UIViewController<UIActionSheetDelegate, FacebookHelperPublishingDelegate>
 - (IBAction)buttonBackTapped:(id)sender;
 
 

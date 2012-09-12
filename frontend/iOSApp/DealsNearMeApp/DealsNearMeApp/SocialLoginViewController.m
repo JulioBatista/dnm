@@ -143,7 +143,7 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     NSString *alertTitle;
 	
 	
-	alertMsg = [NSString stringWithFormat:@"Message : %@'.\nResult : %@",
+	alertMsg = [NSString stringWithFormat:@"Hello : %@'.\n : %@",
 				message, result];
 	alertTitle = @"Success";
     
@@ -222,7 +222,15 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     [[NSUserDefaults standardUserDefaults] setObject:_facebook.expirationDate forKey:kFBExpirationDateKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [self showAlert:@"LogIn Success" withResult:@"Welcome"];
+    /* [self showAlert:@"LogIn Success" withResult:@"Welcome"]; */
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Welcome"
+                                                        message:@"LogIn Success"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    
+    [alertView show];
     
     NSLog(@"FB login All other methods fired OK");
     
@@ -234,7 +242,14 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 -(void)fbDidNotLogin:(BOOL)cancelled
 {
     NSLog(@"FB did not login");
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"There was an error logging in"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
     
+    [alertView show];
+
 }
 
 /**
@@ -249,7 +264,17 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kFBExpirationDateKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [self showAlert:@"LogOut Success" withResult:@"Success"];
+    /* [self showAlert:@"LogOut Success" withResult:@"Success"]; */
+    
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Logout"
+                                                        message:@"You are now logged out"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    
+    [alertView show];
+
     
     [self.buttonFacebookLoginButton setHidden:NO];
     
@@ -342,8 +367,25 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 {
     NSLog(@"++++++++++facebookHelperDidLogout+++++++++++++++++++the delegate method was triggered");
     
+    [self showAlert:@"You are now logged out" withResult:@"GoodBye"];
+    
     [self.buttonFacebookLoginButton setHidden:NO];
     
     [self.labelLoginLabel setText:@"LogIn"];
+}
+
+- (void) facebookHelper:(FacebookHelper *)facebookHelper
+request:(FBRequest *) request
+didLoad:(id)result
+{
+        NSLog(@"++++++++++facebookHelper: request: didLoad: +++++++++++++++++++the delegate method was triggered");
+    
+    NSLog(@"FB request OK %@", result);
+    
+    [self showAlert:[result objectForKey:@"first_name"] withResult:@"Welcome"];
+    
+    [self.buttonFacebookLoginButton setHidden:YES];
+    
+    [self.labelLoginLabel setText:@"LogOut"];
 }
 @end

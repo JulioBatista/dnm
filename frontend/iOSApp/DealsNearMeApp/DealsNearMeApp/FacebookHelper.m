@@ -21,6 +21,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 @synthesize isForPostingScore = _isForPostingScore;
 
 @synthesize delegate = _delegate;
+@synthesize publishingdelegate = _publishingdelegate;
+
 #pragma mark -
 #pragma mark Singleton Variables
 static FacebookHelper *singletonDelegate = nil;
@@ -310,6 +312,9 @@ static FacebookHelper *singletonDelegate = nil;
 - (void)request:(FBRequest *)request didLoad:(id)result
 {
     NSLog(@"FB request OK");
+    
+    [self.delegate facebookHelper:self request:request didLoad:result];
+    
 }
 
 /**
@@ -327,6 +332,11 @@ static FacebookHelper *singletonDelegate = nil;
 - (void)dialogDidComplete:(FBDialog *)dialog
 {
     NSLog(@"published successfully on FB");
+    
+    [self.publishingdelegate facebookHelperDidPublish:self];
+    
+    
+    
 }
 
 @end

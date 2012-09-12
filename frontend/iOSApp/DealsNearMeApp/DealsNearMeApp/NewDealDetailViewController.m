@@ -115,7 +115,8 @@
 	self.labelAddress.text = [onedeal objectForKey:NETWORK_DEAL_ADDRESS];
 	
 	
-	NSLog(@"-----%@", onedeal);
+	/* NSLog(@"-----%@", onedeal); */
+    [FacebookHelper sharedInstance].publishingdelegate = self;
 }
 
 - (void)viewDidUnload
@@ -368,5 +369,17 @@
 	
     
 }
+
+- (void)  facebookHelperDidPublish:(FacebookHelper *)facebookHelper
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Published Successfully"
+                                                        message:@"Success"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
+
+
 
 @end

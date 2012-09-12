@@ -17,7 +17,16 @@
 
 - (void) facebookHelperDidLogout:(FacebookHelper *) facebookHelper;
 
+- (void) facebookHelper:(FacebookHelper *)facebookHelper
+                request:(FBRequest *) request
+                didLoad:(id)result;
 
+
+@end
+
+@protocol FacebookHelperPublishingDelegate <NSObject>
+
+- (void)  facebookHelperDidPublish:(FacebookHelper *)facebookHelper;
 
 @end
 
@@ -33,6 +42,8 @@
 }
 
 @property (nonatomic, weak) id<FacebookHelperDelegate> delegate;
+
+@property (nonatomic, weak) id<FacebookHelperPublishingDelegate> publishingdelegate;
 
 @property(readonly) Facebook *facebook;
 
