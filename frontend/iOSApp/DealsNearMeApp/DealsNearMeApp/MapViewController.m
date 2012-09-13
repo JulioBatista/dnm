@@ -1676,10 +1676,10 @@
     switch (self.theSelectedFilter) {
         case 0:
             
-            [self.buttonFilterButton setTitle:@"Filter : Popularity" forState:UIControlStateNormal];
+            [self.buttonFilterButton setTitle:@" Filter : Popularity" forState:UIControlStateNormal];
             break;
             case 1 :
-            [self.buttonFilterButton setTitle:@"Filter : Distance" forState:UIControlStateNormal];
+            [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal];
         default:
             break;
     }
