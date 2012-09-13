@@ -30,12 +30,12 @@
                                 <items>
                                     <navigationItem id="ck0-LS-L6f">
                                         <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" image="57-download-reversed-white.png" id="6UV-Uc-IO7">
+                                        <barButtonItem key="leftBarButtonItem" title="Categories" id="6UV-Uc-IO7">
                                             <connections>
                                                 <action selector="buttonToggleScrollViewPressed:" destination="SpU-em-5yu" id="3t5-vs-tJr"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="07-map-marker-white.png" id="Amj-jU-gT6">
+                                        <barButtonItem key="rightBarButtonItem" title="Location" id="Amj-jU-gT6">
                                             <connections>
                                                 <action selector="buttonListPressed:" destination="SpU-em-5yu" id="TWV-ZQ-9rG"/>
                                             </connections>
@@ -131,10 +131,10 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="INF-US-aO9">
-                                        <rect key="frame" x="8" y="7" width="163" height="30"/>
+                                        <rect key="frame" x="8" y="7" width="68" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                        <state key="normal" title="  Filter : None" backgroundImage="category_placeholder.png">
+                                        <state key="normal" title="  Filter" backgroundImage="category_placeholder.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -161,8 +161,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="deals_header_logo.png" id="ln8-6c-Ib8">
-                                <rect key="frame" x="64" y="5" width="192" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="deals_header_logo.png" id="ln8-6c-Ib8">
+                                <rect key="frame" x="92" y="5" width="152" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -1972,7 +1972,6 @@
         <image name="177-building.png" width="14" height="24"/>
         <image name="24-gift.png" width="22" height="26"/>
         <image name="29-heart.png" width="24" height="21"/>
-        <image name="57-download-reversed-white.png" width="19" height="24"/>
         <image name="DealsNear_App_Registration.png" width="320" height="480"/>
         <image name="aviva_button_with_gradient.png" width="289" height="46"/>
         <image name="black_bar.png" width="645" height="62"/>
