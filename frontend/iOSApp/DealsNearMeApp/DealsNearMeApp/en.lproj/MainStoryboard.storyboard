@@ -916,7 +916,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8az-B6-tI9">
-                                <rect key="frame" x="85" y="9" width="151" height="43"/>
+                                <rect key="frame" x="85" y="37" width="151" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="login-button-small-pressed.png">
@@ -931,7 +931,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HRA-5I-W4h">
-                                <rect key="frame" x="85" y="9" width="151" height="43"/>
+                                <rect key="frame" x="85" y="37" width="151" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="login-button-small.png">
@@ -946,17 +946,32 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LogIn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mNk-X6-m2v">
-                                <rect key="frame" x="136" y="19" width="99" height="21"/>
+                                <rect key="frame" x="136" y="47" width="99" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YCO-ck-W1u">
-                                <rect key="frame" x="124" y="253" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VWh-g9-flk">
+                                <rect key="frame" x="16" y="262" width="289" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="twitter_icon_60x60.png">
+                                <state key="normal" image="button_no_text.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonContinueButtonPressed:" destination="UYJ-eB-zaU" eventType="touchUpInside" id="DX5-cu-ud4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YCO-ck-W1u">
+                                <rect key="frame" x="16" y="262" width="289" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="button_no_text.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -967,7 +982,14 @@
                                     <action selector="buttonTwitterButtonPressed:" destination="UYJ-eB-zaU" eventType="touchUpInside" id="neN-iY-Lxh"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="Th3-QK-rZJ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LogIn With Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ngo-JU-aQs">
+                                <rect key="frame" x="90" y="274" width="149" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="Th3-QK-rZJ">
                                 <rect key="frame" x="142" y="201" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
@@ -976,9 +998,13 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicatorViewLarge" destination="Th3-QK-rZJ" id="65I-Yb-Wi3"/>
+                        <outlet property="buttonContinueButton" destination="VWh-g9-flk" id="ea8-X8-lQg"/>
                         <outlet property="buttonFacebookLoginButton" destination="HRA-5I-W4h" id="kd0-tX-NNO"/>
                         <outlet property="buttonFacebookLogoutButton" destination="8az-B6-tI9" id="LP5-Hy-hsb"/>
+                        <outlet property="buttonTwitterLoginButton" destination="YCO-ck-W1u" id="eyK-1D-FmH"/>
                         <outlet property="labelLoginLabel" destination="mNk-X6-m2v" id="cGB-qv-GKS"/>
+                        <outlet property="labelLoginWithTwitterLabel" destination="Ngo-JU-aQs" id="7JQ-fb-e9Q"/>
+                        <segue destination="4" kind="modal" identifier="SocialLoginToTabBarSegue" id="jJF-bS-Qax"/>
                     </connections>
                 </viewController>
             </objects>
@@ -1580,7 +1606,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-863" y="-315"/>
+            <point key="canvasLocation" x="-943" y="-324"/>
         </scene>
         <!--Navigation Controller - More-->
         <scene sceneID="70X-Ks-Mb3">
@@ -1974,6 +2000,9 @@
         </class>
         <class className="BarsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
         </class>
         <class className="DealCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
@@ -2099,13 +2128,17 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialLoginViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonCancel:"/>
+                <relationship kind="action" name="buttonContinueButtonPressed:"/>
                 <relationship kind="action" name="buttonFacebookButtonPressed:"/>
                 <relationship kind="action" name="buttonFacebookLogoutButtonPressed:"/>
                 <relationship kind="action" name="buttonTwitterButtonPressed:"/>
                 <relationship kind="outlet" name="activityIndicatorViewLarge" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="buttonContinueButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonFacebookLoginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonFacebookLogoutButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTwitterLoginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelLoginLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelLoginWithTwitterLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="SplashViewController" superclassName="UIViewController">
@@ -2121,6 +2154,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="jJF-bS-Qax"/>
         <segue reference="vUw-Hu-0dP"/>
     </inferredMetricsTieBreakers>
 </document>

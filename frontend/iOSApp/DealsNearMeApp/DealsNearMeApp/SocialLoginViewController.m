@@ -28,6 +28,9 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 @synthesize buttonFacebookLoginButton;
 @synthesize labelLoginLabel;
 @synthesize buttonFacebookLogoutButton;
+@synthesize buttonTwitterLoginButton;
+@synthesize buttonContinueButton;
+@synthesize labelLoginWithTwitterLabel;
 @synthesize facebook = _facebook;
 
 
@@ -45,6 +48,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+	[FacebookHelper sharedInstance].delegate = self;
+	
     [self.activityIndicatorViewLarge setHidden:YES];
 	
     
@@ -64,6 +69,9 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 	[self setButtonFacebookLoginButton:nil];
 	[self setButtonFacebookLogoutButton:nil];
     [self setActivityIndicatorViewLarge:nil];
+    [self setButtonTwitterLoginButton:nil];
+    [self setButtonContinueButton:nil];
+    [self setLabelLoginWithTwitterLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -94,6 +102,8 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
         exit(1);
         
     }
+	
+	[self.activityIndicatorViewLarge setHidden:NO];
     
     // Check if there is a valid session
     if (![[[FacebookHelper sharedInstance] facebook] isSessionValid]) {
@@ -103,7 +113,9 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
         [[[FacebookHelper sharedInstance] facebook] requestWithGraphPath:@"me" andDelegate:self];
     }
     
-    [FacebookHelper sharedInstance].delegate = self;
+    /* [FacebookHelper sharedInstance].delegate = self; */
+	
+	[self.activityIndicatorViewLarge setHidden:YES];
     
     
 }
@@ -178,7 +190,13 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
                      
                      [self.activityIndicatorViewLarge setHidden:YES];
                      
+					 [self.buttonTwitterLoginButton setHidden:YES];
+					 
+					 [self.labelLoginWithTwitterLabel setText:@"Continue"];
+					 
                      [self showAlert:@"Logged In" withResult:@"Success"];
+					 
+					 
                      
                  }
              }
@@ -194,6 +212,11 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
         [self showAlert:@"Unable to login" withResult:@"Failure"];
     }
     
+}
+
+- (IBAction)buttonContinueButtonPressed:(id)sender
+{
+	[self performSegueWithIdentifier:@"SocialLoginToTabBarSegue" sender:self];
 }
 
 #pragma mark FB delegate methods
@@ -313,6 +336,10 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     [self.buttonFacebookLoginButton setHidden:YES];
     
     [self.labelLoginLabel setText:@"LogOut"];
+	
+	[self.buttonTwitterLoginButton setHidden:YES];
+	
+	[self.labelLoginWithTwitterLabel setText:@"Continue"];
     
 }
 
@@ -354,6 +381,10 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     {
         NSLog(@"----------probably should try to request the user photo here");
     }
+	
+	[self.buttonTwitterLoginButton setHidden:YES];
+	
+	[self.labelLoginWithTwitterLabel setText:@"Continue"];
     
 }
 
@@ -371,6 +402,10 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
     [self.buttonFacebookLoginButton setHidden:NO];
     
     [self.labelLoginLabel setText:@"LogIn"];
+	
+	[self.buttonTwitterLoginButton setHidden:NO];
+	
+	[self.labelLoginWithTwitterLabel setText:@"LogIn With Twitter"];
 }
 
 - (void) facebookHelper:(FacebookHelper *)facebookHelper

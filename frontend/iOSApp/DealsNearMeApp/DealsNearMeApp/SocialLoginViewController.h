@@ -29,10 +29,16 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelLoginLabel;
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonFacebookLogoutButton;
+@property (strong, nonatomic) IBOutlet UIButton *buttonTwitterLoginButton;
+@property (strong, nonatomic) IBOutlet UIButton *buttonContinueButton;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelLoginWithTwitterLabel;
 
 - (IBAction)buttonFacebookLogoutButtonPressed:(id)sender;
 
 - (IBAction)buttonTwitterButtonPressed:(id)sender;
+
+- (IBAction)buttonContinueButtonPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorViewLarge;
 
