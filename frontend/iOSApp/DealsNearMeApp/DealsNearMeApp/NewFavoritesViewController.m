@@ -170,6 +170,55 @@
     return 55;
 }
 
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"FromFavoritesToDealDetailSegue"])
+	{
+		NSLog(@"Wonder if the prepareForSegue is getting called %@", segue.destinationViewController);
+        
+       
+		/*
+		UITableViewCell *cell = (UITableViewCell *) sender;
+        
+        NSIndexPath *indexPath = [self.dealsTableView indexPathForCell:cell];
+                
+        
+        DealDetailViewController *dest = [segue destinationViewController];
+        
+
+		
+		dest.dealnum = [[NSNumber alloc] initWithInteger:indexPath.row];
+        
+        
+		
+        NSLog(@"---------------DealDetailSegue %@", dest.dealnum );
+		
+		*/
+        
+		/*
+		 if ([segue.destinationViewController respondsToSelector:@selector(setMapDeal:)])
+		 {
+		 [segue.destinationViewController performSelector:@selector(setMapDeal:)
+		 withObject:sender];
+		 }
+		 */
+		NSLog(@"---------------end of prepareForSegue " );
+		
+	}
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"This should get called before prepareForSegue gets called");
+	
+	[self performSegueWithIdentifier:@"FromFavoritesToDealDetailSegue" sender:self];
+}
+
+
+
 @end
 
 

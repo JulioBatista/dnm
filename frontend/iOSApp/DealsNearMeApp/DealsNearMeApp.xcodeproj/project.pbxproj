@@ -1646,8 +1646,8 @@
 		4B6BA51615C0F0890095F35E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1657,8 +1657,8 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
+				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1666,8 +1666,8 @@
 		4B6BA51715C0F0890095F35E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1677,8 +1677,8 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
+				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1709,8 +1709,8 @@
 		4B6BF9F115F2BAC600011BCE /* Ad-Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1720,8 +1720,8 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "831CCEFB-9557-47B7-B3D8-07A618C34B19";
+				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "08E31BAF-1F36-4077-9507-4F51EFAE9DB8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad-Hoc";
