@@ -68,14 +68,17 @@
 @property (nonatomic, strong) NSTimer *locationTimer;
 
 @property (nonatomic) NSUInteger mapIndexPath;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlMapList;
+
 
 @property (nonatomic) NSUInteger theSelectedFilter;
-@property (weak, nonatomic) IBOutlet UIButton *buttonFilterButton;
+
 
 
 - (IBAction)segmentedControlMapListIndexChanged:(id)sender;
+- (IBAction)buttonMapListButtonPressed:(id)sender;
 
+- (IBAction)buttonFilterButtonPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonMapListButton;
 - (IBAction)buttonFilterButtonPressed:(id)sender;
 
 @end

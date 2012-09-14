@@ -53,6 +53,7 @@
     
     
 }
+@synthesize buttonMapListButton = _buttonMapListButton;
 
 @synthesize viewFilterByView = _viewFilterByView;
 @synthesize buttonToggle = _buttonToggle;
@@ -86,9 +87,9 @@
 @synthesize geocoder = _geocoder;
 
 @synthesize mapIndexPath = _mapIndexPath;
-@synthesize segmentedControlMapList = _segmentedControlMapList;
+
 @synthesize theSelectedFilter = _theSelectedFilter;
-@synthesize buttonFilterButton = _buttonFilterButton;
+
 
 #pragma mark setters
 
@@ -418,9 +419,9 @@
 	self.button009 = nil;
 	self.button010 = nil;
 	
-    [self setSegmentedControlMapList:nil];
+
     [self setViewFilterByView:nil];
-    [self setButtonFilterButton:nil];
+	[self setButtonMapListButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
@@ -1439,18 +1440,14 @@
     
     NSLog(@"Button List Pressed");
 }
-- (IBAction)buttonFilterPressed:(id)sender
-{
-    [self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
-    
-}
+
 
 - (IBAction)buttonToggleScrollViewPressed:(id)sender
 {
 	if (self.isScrollViewVisible == YES)
 	{
 		
-		[self.buttonToggle setImage:[UIImage imageNamed:@"57-download-white.png"]];
+		/* [self.buttonToggle setImage:[UIImage imageNamed:@"57-download-white.png"]]; */
 		
 		self.isScrollViewVisible = NO;
 		
@@ -1476,7 +1473,7 @@
 	}
 	else
 	{
-		[self.buttonToggle setImage:[UIImage imageNamed:@"57-download-reversed-white.png"]];
+		/* [self.buttonToggle setImage:[UIImage imageNamed:@"57-download-reversed-white.png"]]; */
 		
 		
 		
@@ -1611,6 +1608,7 @@
     }];
 	
 }
+/*
 - (IBAction)segmentedControlMapListIndexChanged:(id)sender
 {
     switch (self.segmentedControlMapList.selectedSegmentIndex)
@@ -1625,8 +1623,7 @@
             [self.dealsTableView setHidden:YES];
             
             
-            /* [self.buttonListButton setImage:[UIImage imageNamed:@"259-list-white.png"]];
-            */
+	
             break;
             
         case 1:
@@ -1637,9 +1634,7 @@
             
             [self.dealsTableView setHidden:NO];
             
-            /*
-            [self.buttonListButton setImage:[UIImage imageNamed:@"07-map-marker-white.png"]];
-             */
+
             break;
             
         default:
@@ -1647,12 +1642,40 @@
             
     }
 }
-
-
-
-- (IBAction)buttonFilterButtonPressed:(id)sender
+*/
+- (IBAction)buttonMapListButtonPressed:(id)sender
 {
+	if (self.isMapVisible)
+	{
+		NSLog(@"List selected");
+		self.isMapVisible = NO;
+		
+		[self.map setHidden:YES];
+		
+		[self.dealsTableView setHidden:NO];
+		
+		[self.buttonMapListButton setTitle:@" Map "];
+		
+		
+	}
+	else
+	{
+		NSLog(@"Map seleected");
+		
+		self.isMapVisible = YES;
+		
+		[self.map setHidden:NO];
+		
+		[self.dealsTableView setHidden:YES];
+		
+		[self.buttonMapListButton setTitle:@" List "];
+		
+	}
 }
+
+
+
+
 
 
 #pragma mark FilterPickerViewControllerDelegate methods
@@ -1676,10 +1699,12 @@
     switch (self.theSelectedFilter) {
         case 0:
             
-            [self.buttonFilterButton setTitle:@" Filter : Popularity" forState:UIControlStateNormal];
+            /* [self.buttonFilterButton setTitle:@" Filter : Popularity" forState:UIControlStateNormal]; */
+			
+			
             break;
             case 1 :
-            [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal];
+            /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
         default:
             break;
     }
@@ -1691,6 +1716,10 @@
 }
 
 
+- (IBAction)buttonFilterButtonPressed:(id)sender
+{
+	    [self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
+}
 @end
 
 

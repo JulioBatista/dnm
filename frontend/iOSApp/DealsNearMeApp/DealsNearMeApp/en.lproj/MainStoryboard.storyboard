@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -30,7 +30,7 @@
                                 <items>
                                     <navigationItem id="ck0-LS-L6f">
                                         <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" title="Categories" id="6UV-Uc-IO7">
+                                        <barButtonItem key="leftBarButtonItem" title="Category" id="6UV-Uc-IO7">
                                             <connections>
                                                 <action selector="buttonToggleScrollViewPressed:" destination="SpU-em-5yu" id="3t5-vs-tJr"/>
                                             </connections>
@@ -70,7 +70,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" image="default_thumb.png" id="smu-8n-8XE">
-                                                    <rect key="frame" x="15" y="13" width="44" height="44"/>
+                                                    <rect key="frame" x="15" y="18" width="44" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="201" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="6DY-lx-omI">
@@ -130,39 +130,29 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="INF-US-aO9">
-                                        <rect key="frame" x="8" y="7" width="68" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                        <state key="normal" title="  Filter" backgroundImage="category_placeholder.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonFilterButtonPressed:" destination="SpU-em-5yu" eventType="touchUpInside" id="bHv-vN-JQE"/>
-                                            <action selector="buttonFilterPressed:" destination="SpU-em-5yu" eventType="touchUpInside" id="U5T-oT-zxm"/>
-                                        </connections>
-                                    </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="taZ-0T-4ff">
-                                        <rect key="frame" x="179" y="7" width="128" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="Map"/>
-                                            <segment title="List"/>
-                                        </segments>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="mXP-PY-Hti">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <items>
+                                            <barButtonItem title="Filter" id="cK0-L5-ghe">
+                                                <connections>
+                                                    <action selector="buttonFilterButtonPressed:" destination="SpU-em-5yu" id="CWx-hf-b5Y"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem width="200" style="plain" systemItem="fixedSpace" id="vN4-tn-wgN"/>
+                                            <barButtonItem title=" List " id="FQt-lQ-em1">
+                                                <connections>
+                                                    <action selector="buttonMapListButtonPressed:" destination="SpU-em-5yu" id="W33-qC-CRA"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
                                         <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="segmentedControlMapListIndexChanged:" destination="SpU-em-5yu" eventType="valueChanged" id="rG1-dg-Ltf"/>
-                                        </connections>
-                                    </segmentedControl>
+                                    </toolbar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="deals_header_logo.png" id="ln8-6c-Ib8">
-                                <rect key="frame" x="92" y="5" width="152" height="33"/>
+                                <rect key="frame" x="88" y="5" width="145" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -172,8 +162,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addressLabel" destination="EwK-DG-5wB" id="VDf-u5-Bg6"/>
-                        <outlet property="buttonFilterButton" destination="INF-US-aO9" id="FdZ-Iu-qgr"/>
                         <outlet property="buttonListButton" destination="Amj-jU-gT6" id="Odd-qh-Lft"/>
+                        <outlet property="buttonMapListButton" destination="FQt-lQ-em1" id="HfD-Li-XXo"/>
                         <outlet property="buttonToggle" destination="6UV-Uc-IO7" id="83S-SL-it4"/>
                         <outlet property="buttonToggleScrollView" destination="6UV-Uc-IO7" id="gGl-AC-GQv"/>
                         <outlet property="dealsTableView" destination="EPJ-pC-2js" id="25G-Ni-MAR"/>
@@ -181,7 +171,6 @@
                         <outlet property="map" destination="1Sd-yk-4AT" id="z7Q-we-f4e"/>
                         <outlet property="scrollDividerView" destination="UoY-ih-1bp" id="AwH-ri-aZi"/>
                         <outlet property="scrollView" destination="Jbg-zK-dbq" id="OCv-38-TQO"/>
-                        <outlet property="segmentedControlMapList" destination="taZ-0T-4ff" id="qyk-lP-wgv"/>
                         <outlet property="viewFilterByView" destination="yFp-kl-eRQ" id="oXc-8K-2Ek"/>
                         <segue destination="KvL-wI-8Ow" kind="push" identifier="FromMapDealDetailSegue" id="4Sc-dY-pY2"/>
                         <segue destination="CZa-pA-fh1" kind="modal" identifier="LocationPickerSegue" id="guJ-df-yqv"/>
@@ -2070,12 +2059,15 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonFilterButtonPressed:"/>
+                <relationship kind="action" name="buttonListPressed:"/>
+                <relationship kind="action" name="buttonMapListButtonPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedControlMapListIndexChanged:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="buttonFilterButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonListButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="buttonMapListButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="buttonToggle" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="buttonToggleScrollView" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="dealsTableView" candidateClass="UITableView"/>
@@ -2083,7 +2075,6 @@
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="scrollDividerView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="segmentedControlMapList" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="viewFilterByView" candidateClass="UIView"/>
             </relationships>
         </class>
