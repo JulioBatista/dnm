@@ -10,6 +10,9 @@
 		4B2DFB0315F9404F00A245CF /* background_dnm_detail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2DFB0215F9404F00A245CF /* background_dnm_detail.jpg */; };
 		4B2DFB0615F949F100A245CF /* dnm_detail_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2DFB0515F949F100A245CF /* dnm_detail_background.jpg */; };
 		4B2DFB0815F94CB900A245CF /* favorite-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B2DFB0715F94CB900A245CF /* favorite-icon.png */; };
+		4B2E52B71603C7E100EBAE92 /* splash_background_with_changes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E52B61603C7E100EBAE92 /* splash_background_with_changes.jpg */; };
+		4B2E52BA1603CC5300EBAE92 /* no_thanks_let_me_in_button_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E52B91603CC5300EBAE92 /* no_thanks_let_me_in_button_image.jpg */; };
+		4B2E52BC1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E52BB1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png */; };
 		4B367DAF15E27B430039AFB5 /* category_icon_003_dining.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DA515E27B3D0039AFB5 /* category_icon_003_dining.png */; };
 		4B367DB015E27B430039AFB5 /* category_icon_007_shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DA615E27B3D0039AFB5 /* category_icon_007_shopping.png */; };
 		4B367DB115E27B430039AFB5 /* category_icon_009_wellness.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DA715E27B3E0039AFB5 /* category_icon_009_wellness.png */; };
@@ -286,6 +289,9 @@
 		4B2DFB0215F9404F00A245CF /* background_dnm_detail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_dnm_detail.jpg; sourceTree = "<group>"; };
 		4B2DFB0515F949F100A245CF /* dnm_detail_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dnm_detail_background.jpg; sourceTree = "<group>"; };
 		4B2DFB0715F94CB900A245CF /* favorite-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite-icon.png"; sourceTree = "<group>"; };
+		4B2E52B61603C7E100EBAE92 /* splash_background_with_changes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash_background_with_changes.jpg; sourceTree = "<group>"; };
+		4B2E52B91603CC5300EBAE92 /* no_thanks_let_me_in_button_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_thanks_let_me_in_button_image.jpg; sourceTree = "<group>"; };
+		4B2E52BB1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_thanks_let_in_button_transparent.png; sourceTree = "<group>"; };
 		4B367DA515E27B3D0039AFB5 /* category_icon_003_dining.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_003_dining.png; sourceTree = "<group>"; };
 		4B367DA615E27B3D0039AFB5 /* category_icon_007_shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_007_shopping.png; sourceTree = "<group>"; };
 		4B367DA715E27B3E0039AFB5 /* category_icon_009_wellness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_009_wellness.png; sourceTree = "<group>"; };
@@ -983,6 +989,9 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B2E52BB1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png */,
+				4B2E52B91603CC5300EBAE92 /* no_thanks_let_me_in_button_image.jpg */,
+				4B2E52B61603C7E100EBAE92 /* splash_background_with_changes.jpg */,
 				4BAF37171602548E00789C29 /* aviva_button_with_gradient.png */,
 				4B89C9B315FFA6F600FDE9E7 /* fb_profile-pic_144x144.png */,
 				4BE60B6815FE8BF200EAD2A2 /* fb-assets */,
@@ -1507,6 +1516,9 @@
 				4BCBFC3915FEFA2800E14936 /* FBDialog.bundle in Resources */,
 				4B89C9B415FFA6F600FDE9E7 /* fb_profile-pic_144x144.png in Resources */,
 				4BAF37181602548E00789C29 /* aviva_button_with_gradient.png in Resources */,
+				4B2E52B71603C7E100EBAE92 /* splash_background_with_changes.jpg in Resources */,
+				4B2E52BA1603CC5300EBAE92 /* no_thanks_let_me_in_button_image.jpg in Resources */,
+				4B2E52BC1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1650,8 +1662,8 @@
 		4B6BA51615C0F0890095F35E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1661,8 +1673,8 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				PROVISIONING_PROFILE = "407D3C28-5490-4753-87FD-2853668F3579";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "407D3C28-5490-4753-87FD-2853668F3579";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1670,8 +1682,8 @@
 		4B6BA51715C0F0890095F35E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1681,8 +1693,8 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				PROVISIONING_PROFILE = "407D3C28-5490-4753-87FD-2853668F3579";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "205A9FB9-9794-446B-872B-6FDDA4298575";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1713,8 +1725,8 @@
 		4B6BF9F115F2BAC600011BCE /* Ad-Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1724,8 +1736,8 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				PROVISIONING_PROFILE = "831CCEFB-9557-47B7-B3D8-07A618C34B19";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "407D3C28-5490-4753-87FD-2853668F3579";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad-Hoc";

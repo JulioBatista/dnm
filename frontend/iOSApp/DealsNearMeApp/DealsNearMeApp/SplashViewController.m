@@ -10,7 +10,7 @@
 
 @interface SplashViewController ()
 
-- (IBAction)buttonYesPressed:(id)sender;
+
 @end
 
 @implementation SplashViewController
@@ -45,5 +45,9 @@
 - (IBAction)buttonYesPressed:(id)sender 
 {
 	[self performSegueWithIdentifier:@"SocialLoginSegue" sender:self];
+}
+- (IBAction)buttonNoThanksButtonPressed:(id)sender
+{
+    [self performSegueWithIdentifier:@"SplashScreenToTabBarControllerSegue" sender:self];
 }
 @end

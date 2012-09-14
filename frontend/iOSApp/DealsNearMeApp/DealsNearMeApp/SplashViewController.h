@@ -10,4 +10,8 @@
 
 @interface SplashViewController : UIViewController
 
+- (IBAction)buttonNoThanksButtonPressed:(id)sender;
+
+
+
 @end
