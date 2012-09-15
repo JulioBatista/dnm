@@ -78,6 +78,15 @@
 - (IBAction)buttonMapListButtonPressed:(id)sender;
 
 - (IBAction)buttonFilterButtonPressed:(id)sender;
+
+- (IBAction)segmentedControlMapListButtonPressed:(id)sender;
+
+- (IBAction)segmentedControlFilterButtonPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlFilterButton;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlMapListButton;
+
+
+
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonMapListButton;
 - (IBAction)buttonFilterButtonPressed:(id)sender;
 

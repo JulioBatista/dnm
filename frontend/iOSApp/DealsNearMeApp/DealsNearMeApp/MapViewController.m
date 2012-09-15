@@ -53,6 +53,10 @@
     
     
 }
+@synthesize segmentedControlMapListButton = _segmentedControlMapListButton;
+@synthesize segmentedControlFilterButton = _segmentedControlFilterButton;
+
+
 @synthesize buttonMapListButton = _buttonMapListButton;
 
 @synthesize viewFilterByView = _viewFilterByView;
@@ -319,8 +323,17 @@
 	self.isMapVisible = YES;
 	
 	[self.dealsTableView setHidden:YES];
+
+		[self.segmentedControlFilterButton removeAllSegments];
+	
+	[self.segmentedControlFilterButton insertSegmentWithTitle:@"Filter" atIndex:0 animated:NO];
+	
+	[self.segmentedControlMapListButton removeAllSegments];
+	
+	[self.segmentedControlMapListButton insertSegmentWithTitle:@"Map" atIndex:0 animated:NO];
 	
 	
+
 	
 	
 	
@@ -419,9 +432,13 @@
 	self.button009 = nil;
 	self.button010 = nil;
 	
-
+	
     [self setViewFilterByView:nil];
 	[self setButtonMapListButton:nil];
+	[self setSegmentedControlMapListButton:nil];
+	[self setSegmentedControlFilterButton:nil];
+	[self setSegmentedControlFilterButton:nil];
+	[self setSegmentedControlMapListButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
@@ -573,7 +590,7 @@
     
     [self.map setUserTrackingMode:MKUserTrackingModeFollow];
 	
-
+	
 	
 }
 
@@ -1166,16 +1183,16 @@
 	[self.scrollView addSubview:self.button004];
     
     /*
-    scrollWidth += 72.0f;
-	frame.origin.x = scrollWidth;
-	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"right_arrow_left_arrow_category.png"] size];
-	self.button004x = [[UIButton alloc] initWithFrame:frame];
-	[self.button004x setImage:[images objectAtIndex:4] forState:UIControlStateNormal];
-	[self.button004x setImage:[UIImage imageNamed:@"right_arrow_left_arrow_category.png"] forState:UIControlStateSelected];
-	[self.button004x setTag:4];
-	[self.button004x addTarget:self action:@selector(categoryFunPressed:) forControlEvents:UIControlEventTouchUpInside];
-	[self.scrollView addSubview:self.button004x];
+	 scrollWidth += 72.0f;
+	 frame.origin.x = scrollWidth;
+	 frame.origin.y = 0;
+	 frame.size = [[UIImage imageNamed:@"right_arrow_left_arrow_category.png"] size];
+	 self.button004x = [[UIButton alloc] initWithFrame:frame];
+	 [self.button004x setImage:[images objectAtIndex:4] forState:UIControlStateNormal];
+	 [self.button004x setImage:[UIImage imageNamed:@"right_arrow_left_arrow_category.png"] forState:UIControlStateSelected];
+	 [self.button004x setTag:4];
+	 [self.button004x addTarget:self action:@selector(categoryFunPressed:) forControlEvents:UIControlEventTouchUpInside];
+	 [self.scrollView addSubview:self.button004x];
      */
 	
 	scrollWidth += 72.0f;
@@ -1468,7 +1485,7 @@
 		
 		[UIView commitAnimations];
 		
-
+		
 		
 	}
 	else
@@ -1609,40 +1626,84 @@
 	
 }
 /*
-- (IBAction)segmentedControlMapListIndexChanged:(id)sender
-{
-    switch (self.segmentedControlMapList.selectedSegmentIndex)
-    {
-        case 0:
-            NSLog(@"Map seleected");
-            
-            self.isMapVisible = YES;
-            
-            [self.map setHidden:NO];
-            
-            [self.dealsTableView setHidden:YES];
-            
-            
-	
-            break;
-            
-        case 1:
-            NSLog(@"List selected");
-            self.isMapVisible = NO;
-            
-            [self.map setHidden:YES];
-            
-            [self.dealsTableView setHidden:NO];
-            
+ - (IBAction)segmentedControlMapListIndexChanged:(id)sender
+ {
+ switch (self.segmentedControlMapList.selectedSegmentIndex)
+ {
+ case 0:
+ NSLog(@"Map seleected");
+ 
+ self.isMapVisible = YES;
+ 
+ [self.map setHidden:NO];
+ 
+ [self.dealsTableView setHidden:YES];
+ 
+ 
+ 
+ break;
+ 
+ case 1:
+ NSLog(@"List selected");
+ self.isMapVisible = NO;
+ 
+ [self.map setHidden:YES];
+ 
+ [self.dealsTableView setHidden:NO];
+ 
+ 
+ break;
+ 
+ default:
+ break;
+ 
+ }
+ }
+ */
 
-            break;
+
+
+
+
+#pragma mark FilterPickerViewControllerDelegate methods
+
+-
+(void) filterPickerViewControllerDidCancel:(FilterPickerViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        //do map stuff here
+    }];
+    
+}
+
+- (void) filterPickerViewController:(FilterPickerViewController *)controller
+                    didSelectFilter:(NSUInteger) theFilter
+{
+    NSLog(@"-------------%d", theFilter);
+    
+    self.theSelectedFilter = theFilter;
+    
+    switch (self.theSelectedFilter) {
+        case 0:
             
+            /* [self.buttonFilterButton setTitle:@" Filter : Popularity" forState:UIControlStateNormal]; */
+			
+			
+            break;
+		case 1 :
+            /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
         default:
             break;
-            
     }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        //do map stuff here
+    }];
+	
 }
-*/
+
+#pragma mark - Buttons Pressed
+
 - (IBAction)buttonMapListButtonPressed:(id)sender
 {
 	if (self.isMapVisible)
@@ -1676,49 +1737,45 @@
 
 
 
-
-
-#pragma mark FilterPickerViewControllerDelegate methods
-
--
-(void) filterPickerViewControllerDidCancel:(FilterPickerViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:^{
-        //do map stuff here
-    }];
-    
-}
-
-- (void) filterPickerViewController:(FilterPickerViewController *)controller
-                    didSelectFilter:(NSUInteger) theFilter
-{
-    NSLog(@"-------------%d", theFilter);
-    
-    self.theSelectedFilter = theFilter;
-    
-    switch (self.theSelectedFilter) {
-        case 0:
-            
-            /* [self.buttonFilterButton setTitle:@" Filter : Popularity" forState:UIControlStateNormal]; */
-			
-			
-            break;
-            case 1 :
-            /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
-        default:
-            break;
-    }
-    
-    [self dismissViewControllerAnimated:YES completion:^{
-        //do map stuff here
-    }];
-
-}
-
-
 - (IBAction)buttonFilterButtonPressed:(id)sender
 {
-	    [self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
+	[self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
+}
+
+
+- (IBAction)segmentedControlMapListButtonPressed:(id)sender
+{
+	if (self.isMapVisible)
+	{
+		NSLog(@"List selected");
+		self.isMapVisible = NO;
+		
+		[self.map setHidden:YES];
+		
+		[self.dealsTableView setHidden:NO];
+		
+		[self.buttonMapListButton setTitle:@" Map "];
+		
+		
+	}
+	else
+	{
+		NSLog(@"Map seleected");
+		
+		self.isMapVisible = YES;
+		
+		[self.map setHidden:NO];
+		
+		[self.dealsTableView setHidden:YES];
+		
+		[self.buttonMapListButton setTitle:@" List "];
+		
+	}
+}
+
+- (IBAction)segmentedControlFilterButtonPressed:(id)sender
+{
+	[self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
 }
 @end
 
