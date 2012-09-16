@@ -85,9 +85,13 @@ static NSString* kAppId = @"192353644230893"; // Your Facebook app ID here
 
 - (IBAction)buttonCancel:(id)sender
 {
-	[self dismissViewControllerAnimated:YES completion:^{
-		// nothing
-	}];
+	/*
+	 [self dismissViewControllerAnimated:YES completion:^{
+	 
+	 }];
+	 */
+	
+	[self performSegueWithIdentifier:@"SplashScreenToTabBarControllerSegue" sender:self];
 }
 - (IBAction)buttonFacebookButtonPressed:(id)sender
 {

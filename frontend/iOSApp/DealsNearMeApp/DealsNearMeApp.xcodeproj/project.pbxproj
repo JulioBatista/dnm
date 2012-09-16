@@ -109,6 +109,9 @@
 		4B85158B1604264E0075B851 /* NewMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B85158A1604264E0075B851 /* NewMoreViewController.m */; };
 		4B85158D16045A540075B851 /* aviva_concept_31px_height.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B85158C16045A540075B851 /* aviva_concept_31px_height.jpg */; };
 		4B85158F160460420075B851 /* aviva_black_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B85158E160460420075B851 /* aviva_black_button.png */; };
+		4B8515911605478B0075B851 /* new_splash_background_with_changes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B8515901605478B0075B851 /* new_splash_background_with_changes.jpg */; };
+		4B851593160548550075B851 /* new_no_thanks_let_me_in.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B851592160548540075B851 /* new_no_thanks_let_me_in.png */; };
+		4B85159616056EB30075B851 /* MyProfileScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B85159516056EB30075B851 /* MyProfileScreenViewController.m */; };
 		4B8880C915FE97CB003AB5F2 /* bluetint.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C215FE97CB003AB5F2 /* bluetint.png */; };
 		4B8880CA15FE97CB003AB5F2 /* f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C315FE97CB003AB5F2 /* f_logo.png */; };
 		4B8880CB15FE97CB003AB5F2 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C415FE97CB003AB5F2 /* facebook.png */; };
@@ -435,6 +438,10 @@
 		4B85158A1604264E0075B851 /* NewMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMoreViewController.m; sourceTree = "<group>"; };
 		4B85158C16045A540075B851 /* aviva_concept_31px_height.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aviva_concept_31px_height.jpg; sourceTree = "<group>"; };
 		4B85158E160460420075B851 /* aviva_black_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aviva_black_button.png; sourceTree = "<group>"; };
+		4B8515901605478B0075B851 /* new_splash_background_with_changes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_splash_background_with_changes.jpg; sourceTree = "<group>"; };
+		4B851592160548540075B851 /* new_no_thanks_let_me_in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_no_thanks_let_me_in.png; sourceTree = "<group>"; };
+		4B85159416056EB30075B851 /* MyProfileScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileScreenViewController.h; sourceTree = "<group>"; };
+		4B85159516056EB30075B851 /* MyProfileScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileScreenViewController.m; sourceTree = "<group>"; };
 		4B8880C215FE97CB003AB5F2 /* bluetint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetint.png; sourceTree = "<group>"; };
 		4B8880C315FE97CB003AB5F2 /* f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_logo.png; sourceTree = "<group>"; };
 		4B8880C415FE97CB003AB5F2 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
@@ -982,6 +989,8 @@
 				4BF8BCB715DA0710002EECD6 /* SplashViewController.m */,
 				4B8515891604264E0075B851 /* NewMoreViewController.h */,
 				4B85158A1604264E0075B851 /* NewMoreViewController.m */,
+				4B85159416056EB30075B851 /* MyProfileScreenViewController.h */,
+				4B85159516056EB30075B851 /* MyProfileScreenViewController.m */,
 				4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */,
 				4B8880D415FE9A5D003AB5F2 /* Helpers */,
 				4B9B425715EEAD02005AC5D3 /* LocationPickerCell.h */,
@@ -998,6 +1007,8 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B851592160548540075B851 /* new_no_thanks_let_me_in.png */,
+				4B8515901605478B0075B851 /* new_splash_background_with_changes.jpg */,
 				4B85158E160460420075B851 /* aviva_black_button.png */,
 				4B85158C16045A540075B851 /* aviva_concept_31px_height.jpg */,
 				4B2E52BB1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png */,
@@ -1532,6 +1543,8 @@
 				4B2E52BC1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png in Resources */,
 				4B85158D16045A540075B851 /* aviva_concept_31px_height.jpg in Resources */,
 				4B85158F160460420075B851 /* aviva_black_button.png in Resources */,
+				4B8515911605478B0075B851 /* new_splash_background_with_changes.jpg in Resources */,
+				4B851593160548550075B851 /* new_no_thanks_let_me_in.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1597,6 +1610,7 @@
 				4BCBFC4315FEFA2800E14936 /* SBJsonWriter.m in Sources */,
 				4B78676F1600E2E300AF0072 /* FilterPickerViewController.m in Sources */,
 				4B85158B1604264E0075B851 /* NewMoreViewController.m in Sources */,
+				4B85159616056EB30075B851 /* MyProfileScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
