@@ -688,81 +688,81 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="letterbox.jpg" id="UD9-2y-OXF">
+                                <rect key="frame" x="0.0" y="95" width="320" height="316"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.70000000000000007" contentMode="scaleToFill" id="1VL-JH-7Jo">
-                                <rect key="frame" x="0.0" y="188" width="320" height="106"/>
+                                <rect key="frame" x="2" y="217" width="316" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="SPg-aC-aZl">
-                                <rect key="frame" x="-2" y="294" width="325" height="122"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="aviva_concept_31px_height.jpg" id="R9D-LA-12p">
                                 <rect key="frame" x="0.0" y="44" width="320" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="photo_container.jpg" id="8hD-aO-4jI">
-                                <rect key="frame" x="20" y="198" width="85" height="85"/>
+                                <rect key="frame" x="15" y="227" width="85" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="aviva_concept_31px_height.jpg" id="quN-cg-QCe">
-                                <rect key="frame" x="0.0" y="159" width="320" height="31"/>
+                                <rect key="frame" x="0.0" y="188" width="320" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="UD9-2y-OXF">
-                                <rect key="frame" x="0.0" y="95" width="320" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="SPg-aC-aZl">
+                                <rect key="frame" x="2" y="320" width="316" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Restaurant week begins THIS Sunday. 3-course meal for only $25 all week long!" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dSq-uN-4Am">
-                                <rect key="frame" x="15" y="95" width="253" height="56"/>
+                                <rect key="frame" x="15" y="100" width="234" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.56565433310000002" blue="0.2489401889" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mac's Warehouse Bar" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="AD0-zR-Zio">
-                                <rect key="frame" x="115" y="198" width="200" height="20"/>
+                                <rect key="frame" x="115" y="227" width="200" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.56565433310000002" blue="0.2489401889" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="555-5555" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Kkd-lr-Tba">
-                                <rect key="frame" x="115" y="264" width="297" height="17"/>
+                                <rect key="frame" x="115" y="293" width="297" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 views" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sPZ-gk-6QX">
-                                <rect key="frame" x="221" y="164" width="86" height="21"/>
+                                <rect key="frame" x="221" y="193" width="86" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.64457268209999996" blue="0.1963088768" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number, Street" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9Af-w5-Coc">
-                                <rect key="frame" x="115" y="219" width="196" height="21"/>
+                                <rect key="frame" x="115" y="248" width="196" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City, State, Zipcode" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="xIi-Tg-BKl">
-                                <rect key="frame" x="115" y="242" width="196" height="21"/>
+                                <rect key="frame" x="115" y="271" width="196" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="t2M-0A-fDe">
-                                <rect key="frame" x="15" y="164" width="112" height="21"/>
+                                <rect key="frame" x="15" y="193" width="112" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Scl-Re-82q">
-                                <rect key="frame" x="109" y="51" width="103" height="30"/>
+                                <rect key="frame" x="109" y="52" width="103" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Category" backgroundImage="category_placeholder.png">
@@ -806,7 +806,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D4m-1a-ir8">
-                                <rect key="frame" x="268" y="103" width="44" height="44"/>
+                                <rect key="frame" x="268" y="115" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="lior_heart_icon.png">
@@ -857,25 +857,29 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MyProfileScreen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="vfo-cM-XeM">
-                                <rect key="frame" x="61" y="177" width="187" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="launch_background.jpg" id="lBV-cv-rOI">
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="Gtf-b0-NNQ">
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LcA-Sp-MOM">
+                                <rect key="frame" x="20" y="103" width="280" height="266"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="CLU-Yf-kIh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Back" id="lOe-YK-yr2">
-                                        <connections>
-                                            <action selector="buttonBackButtonPressed:" destination="WR4-uh-ls0" id="lOn-NS-KoP"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
+                                <items>
+                                    <navigationItem title="My Profile" id="M3r-eO-RKb">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="OwW-5M-H2M">
+                                            <connections>
+                                                <action selector="buttonBackButtonPressed:" destination="WR4-uh-ls0" id="Fe1-Xj-ex9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1329,44 +1333,199 @@
             </objects>
             <point key="canvasLocation" x="3214" y="1276"/>
         </scene>
-        <!--View Controller - Settings-->
+        <!--Settings Screen View Controller - Settings-->
         <scene sceneID="b2L-9y-AG5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8d9-og-AQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="SettingsViewController" id="568-J0-n08" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="568-J0-n08" customClass="SettingsScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mGa-Cw-ma2">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sV9-qj-bDk">
-                                <rect key="frame" x="139" y="219" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="WMx-uk-kzp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Settings" id="cO3-3j-tpZ">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="s3F-C2-Lvk">
+                                            <connections>
+                                                <action selector="buttonBackButtonPressed:" destination="568-J0-n08" id="2sO-dN-eUd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="launch_background.jpg" id="Yh4-Ga-L6Y">
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="29d-tj-qkp">
+                                <rect key="frame" x="20" y="108" width="280" height="266"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="y37-Nj-MZ8"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1598" y="1509"/>
+            <point key="canvasLocation" x="2102" y="1011"/>
         </scene>
-        <!--PostA Deal View Controller - Post a Deal-->
-        <scene sceneID="cAd-Vo-WdZ">
+        <!--About Screen View Controller-->
+        <scene sceneID="eMx-My-t1x">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IRA-CE-WyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="WXR-oE-3T5" customClass="PostADealViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sd5-oY-d6q">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWG-9d-I2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Jqp-sn-6uA" customClass="AboutScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yzr-eZ-3qI">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="launch_background.jpg" id="dae-XF-tuV">
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="wordWrap" numberOfLines="18" baselineAdjustment="alignBaselines" minimumFontSize="10" id="7Vh-NS-gbx">
+                                <rect key="frame" x="217" y="288" width="1885" height="344"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="8J0-OH-QXy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="About" id="ei6-9J-ULw">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ZnS-QY-87M">
+                                            <connections>
+                                                <action selector="buttonBackButtonPressed:" destination="Jqp-sn-6uA" id="vPw-pg-NuG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Pz4-oD-2ZK">
+                                <rect key="frame" x="20" y="68" width="280" height="323"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text">DealsNear.me was created to allow people to find and share the latest deals near them.
+
+DealsNear.me gathers thousands of deals, specials and promotions posted by tens of thousands of local businesses each day. Users no longer have to become fans or followers of hundreds of local businesses. Now they can just search for deals by location and category when they want. Good Times!
+
+The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The mobile application was launched in October 2012. DealsNear.me has collected over 500,000 local deals since launch with thousands being added daily.</mutableString>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Post a Deal" id="0Y5-MZ-evH"/>
+                    <navigationItem key="navigationItem" id="N5G-zC-w2Q"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="3060" y="472"/>
+            <point key="canvasLocation" x="1717" y="1725"/>
+        </scene>
+        <!--Submit Screen View Controller-->
+        <scene sceneID="uSc-2l-ZBI">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zv3-2S-goi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="hRW-OT-dIp" customClass="SubmitScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E8R-51-Xy8">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="4ao-7o-FHc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Submit Business" id="OOr-1l-Wqz">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="418-d5-M1c">
+                                            <connections>
+                                                <action selector="buttonSubmitButtonPressed:" destination="hRW-OT-dIp" id="CIh-1T-4Ec"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="launch_background.jpg" id="Tiv-SL-U8Q">
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ENP-OO-QHL">
+                                <rect key="frame" x="121" y="90" width="179" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Nfa-j3-KDL">
+                                <rect key="frame" x="121" y="131" width="179" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="OdQ-0K-pmP">
+                                <rect key="frame" x="121" y="172" width="179" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Business Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="2e9-Dd-mKW">
+                                <rect key="frame" x="20" y="95" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please enter the following info so we can add your business to DealsNear.me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="Ttz-Eo-fS1">
+                                <rect key="frame" x="20" y="51" width="280" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Twitter handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="6TM-In-JXu">
+                                <rect key="frame" x="20" y="136" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="PQ0-ME-eK2">
+                                <rect key="frame" x="20" y="177" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lMN-D3-Uq6">
+                                <rect key="frame" x="16" y="216" width="289" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="aviva_button_with_gradient.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Submit my business" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="2L1-Ad-FWX">
+                                <rect key="frame" x="80" y="228" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dc1-mh-tGE"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2102" y="1576"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -1663,6 +1822,9 @@
                     <connections>
                         <outlet property="tableViewMoreTableView" destination="F1U-Br-xBz" id="buG-U2-Uzf"/>
                         <segue destination="WR4-uh-ls0" kind="push" identifier="FromMoreToMyProfileSegue" id="OXI-2Z-kgG"/>
+                        <segue destination="568-J0-n08" kind="push" identifier="FromMoreToSettingsSegue" id="Qrj-KT-iNh"/>
+                        <segue destination="hRW-OT-dIp" kind="push" identifier="FromMoreToSubmitSegue" id="B1G-OG-LtZ"/>
+                        <segue destination="Jqp-sn-6uA" kind="push" identifier="FromMoreToAboutSegue" id="yT8-Af-jyl"/>
                     </connections>
                 </viewController>
             </objects>
@@ -1885,6 +2047,7 @@
         <image name="divider_320x4.png" width="72" height="4"/>
         <image name="facebook_icon_60x60.png" width="60" height="60"/>
         <image name="launch_background.jpg" width="640" height="960"/>
+        <image name="letterbox.jpg" width="320" height="64"/>
         <image name="lior_heart_icon.png" width="42" height="42"/>
         <image name="new_no_thanks_let_me_in.png" width="188" height="43"/>
         <image name="new_splash_background_with_changes.jpg" width="640" height="960"/>
@@ -1905,11 +2068,11 @@
         <class className="AboutScreenTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutScreenTableViewController.h"/>
         </class>
+        <class className="AboutScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutScreenViewController.h"/>
+        </class>
         <class className="BarsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
         </class>
         <class className="DealCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
@@ -2008,9 +2171,6 @@
         </class>
         <class className="MyProfileScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyProfileScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonBackButtonPressed:"/>
-            </relationships>
         </class>
         <class className="NewDealDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewDealDetailViewController.h"/>
@@ -2037,15 +2197,15 @@
                 <relationship kind="outlet" name="tableViewMoreTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
-        <class className="PostADealViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PostADealViewController.h"/>
-        </class>
         <class className="PreSplashViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PreSplashViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonStart:"/>
                 <relationship kind="outlet" name="imageViewPreSplashLogo" candidateClass="UIImageView"/>
             </relationships>
+        </class>
+        <class className="SettingsScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsScreenViewController.h"/>
         </class>
         <class className="SocialLoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialLoginViewController.h"/>
@@ -2069,6 +2229,9 @@
             <relationships>
                 <relationship kind="action" name="buttonNoThanksButtonPressed:"/>
             </relationships>
+        </class>
+        <class className="SubmitScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubmitScreenViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -1,18 +1,18 @@
 //
-//  AboutScreenViewController.m
+//  SettingsScreenViewController.m
 //  DealsNearMeApp
 //
 //  Created by Das on 9/16/12.
 //
 //
 
-#import "AboutScreenViewController.h"
+#import "SettingsScreenViewController.h"
 
-@interface AboutScreenViewController ()
+@interface SettingsScreenViewController ()
 
 @end
 
-@implementation AboutScreenViewController
+@implementation SettingsScreenViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

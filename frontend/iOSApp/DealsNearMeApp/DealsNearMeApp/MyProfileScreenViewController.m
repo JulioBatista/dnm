@@ -32,7 +32,7 @@
 
 - (void)viewDidUnload
 {
-
+	
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -42,8 +42,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
 - (IBAction)buttonBackButtonPressed:(id)sender
 {
-
+	[self.navigationController popViewControllerAnimated:YES];
 }
 @end

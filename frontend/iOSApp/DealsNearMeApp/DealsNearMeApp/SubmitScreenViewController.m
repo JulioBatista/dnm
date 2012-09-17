@@ -1,18 +1,18 @@
 //
-//  AboutScreenViewController.m
+//  SubmitScreenViewController.m
 //  DealsNearMeApp
 //
 //  Created by Das on 9/16/12.
 //
 //
 
-#import "AboutScreenViewController.h"
+#import "SubmitScreenViewController.h"
 
-@interface AboutScreenViewController ()
+@interface SubmitScreenViewController ()
 
 @end
 
-@implementation AboutScreenViewController
+@implementation SubmitScreenViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,7 +40,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)buttonBackButtonPressed:(id)sender
+- (IBAction)buttonSubmitButtonPressed:(id)sender
 {
 	[self.navigationController popViewControllerAnimated:YES];
 }

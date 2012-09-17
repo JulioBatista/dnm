@@ -69,6 +69,19 @@
 		}
 		case 1:
 		{
+			[self performSegueWithIdentifier:@"FromMoreToSettingsSegue" sender:self];
+			break;
+		}
+			
+		case 2:
+		{
+			[self performSegueWithIdentifier:@"FromMoreToSubmitSegue" sender:self];
+			break;
+		}
+			
+		case 3:
+		{
+			[self performSegueWithIdentifier:@"FromMoreToAboutSegue" sender:self];
 			break;
 		}
 		default:
