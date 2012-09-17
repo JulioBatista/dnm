@@ -1444,7 +1444,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                                     <navigationItem title="Submit Business" id="OOr-1l-Wqz">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="418-d5-M1c">
                                             <connections>
-                                                <action selector="buttonSubmitButtonPressed:" destination="hRW-OT-dIp" id="CIh-1T-4Ec"/>
+                                                <action selector="buttonBackButtonPressed:" destination="hRW-OT-dIp" id="bE5-vg-oMc"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1486,7 +1486,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Twitter handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="6TM-In-JXu">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Twitter Handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="6TM-In-JXu">
                                 <rect key="frame" x="20" y="136" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
@@ -1511,6 +1511,9 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonSubmitButtonPressed:" destination="hRW-OT-dIp" eventType="touchUpInside" id="CdF-Bg-6Kv"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Submit my business" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="2L1-Ad-FWX">
                                 <rect key="frame" x="80" y="228" width="160" height="21"/>
@@ -1523,6 +1526,11 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Dc1-mh-tGE"/>
+                    <connections>
+                        <outlet property="textFieldBusinessName" destination="ENP-OO-QHL" id="GCR-ln-uFq"/>
+                        <outlet property="textFieldEmailAddress" destination="OdQ-0K-pmP" id="nF9-Fo-Rgb"/>
+                        <outlet property="textFieldTwitterHandle" destination="Nfa-j3-KDL" id="Ftu-qD-7tk"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2102" y="1576"/>
@@ -2070,9 +2078,15 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         </class>
         <class className="AboutScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutScreenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonBackButtonPressed:"/>
+            </relationships>
         </class>
         <class className="BarsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
         </class>
         <class className="DealCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
@@ -2171,6 +2185,9 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         </class>
         <class className="MyProfileScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyProfileScreenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonBackButtonPressed:"/>
+            </relationships>
         </class>
         <class className="NewDealDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewDealDetailViewController.h"/>
@@ -2206,6 +2223,9 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         </class>
         <class className="SettingsScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsScreenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonBackButtonPressed:"/>
+            </relationships>
         </class>
         <class className="SocialLoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SocialLoginViewController.h"/>
@@ -2232,6 +2252,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         </class>
         <class className="SubmitScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SubmitScreenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonBackButtonPressed:"/>
+                <relationship kind="action" name="buttonSubmitButtonPressed:"/>
+                <relationship kind="outlet" name="textFieldBusinessName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFieldEmailAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFieldTwitterHandle" candidateClass="UITextField"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
