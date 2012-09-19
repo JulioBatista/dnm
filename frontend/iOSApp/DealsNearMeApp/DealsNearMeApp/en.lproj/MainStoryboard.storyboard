@@ -2151,9 +2151,11 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonFilterButtonPressed:"/>
+                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonMapListButtonPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedControlFilterButtonPressed:"/>
                 <relationship kind="action" name="segmentedControlMapListButtonPressed:"/>
                 <relationship kind="action" name="segmentedControlMapListIndexChanged:"/>

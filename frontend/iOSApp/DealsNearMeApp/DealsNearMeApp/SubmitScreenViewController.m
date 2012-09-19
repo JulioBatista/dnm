@@ -13,9 +13,9 @@
 @end
 
 @implementation SubmitScreenViewController
-@synthesize textFieldBusinessName;
-@synthesize textFieldTwitterHandle;
-@synthesize textFieldEmailAddress;
+@synthesize textFieldBusinessName = _textFieldBusinessName;
+@synthesize textFieldTwitterHandle = _textFieldTwitterHandle;
+@synthesize textFieldEmailAddress = _textFieldEmailAddress;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -61,16 +61,35 @@
     mc.mailComposeDelegate = self;
 	
     // pre-populating the message subject
-    [mc setSubject:@"Send me a message"];
+    [mc setSubject:@"Request to add my business"];
+	
+	
+	NSString *messageString = @"";
+	
+	messageString = [messageString stringByAppendingString:@"<p>Business Name : "];
+	
+	messageString = [messageString stringByAppendingString:self.textFieldBusinessName.text];
+	
+	messageString = [messageString stringByAppendingString:@"</p><p>Email Address : "];
+	
+	messageString = [messageString stringByAppendingString:self.textFieldEmailAddress.text];
+	
+	messageString = [messageString stringByAppendingString:@"</p><p>Twitter Handle : "];
+	
+	messageString = [messageString stringByAppendingString:self.textFieldTwitterHandle.text];
+	
+	messageString = [messageString stringByAppendingString:@"</p>"];
+	
+	
 	
     // adding content of the message as a plain text
-    [mc setMessageBody:@"Send me a message is you like this tutorial :)" isHTML:NO];
+    // [mc setMessageBody:@"Send me a message is you like this tutorial :)" isHTML:NO];
 	
     // adding content of the message as an HTML
 	
 	
 	
-    [mc setMessageBody:@"<p>Send me a message is you like this tutorial :)<p>" isHTML:YES];
+    [mc setMessageBody:messageString isHTML:YES];
 	
     // adding recipients
     [mc setToRecipients:[NSArray arrayWithObjects:@"Das <das@leviait.com>", @"arunabhdas@gmail.com", nil]];
@@ -104,7 +123,7 @@
 	
     // displaying our modal view controller on the screen (of course animated has to be set on YES if you want to see any transition)
     [self presentModalViewController:mc animated:YES];
-
+	
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
