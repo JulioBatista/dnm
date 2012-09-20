@@ -69,8 +69,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photo_border.jpg" id="2oQ-De-b7N">
+                                                    <rect key="frame" x="6" y="12" width="60" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" image="default_thumb.png" id="smu-8n-8XE">
-                                                    <rect key="frame" x="15" y="18" width="44" height="44"/>
+                                                    <rect key="frame" x="14" y="20" width="44" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="201" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="6DY-lx-omI">
@@ -2122,6 +2126,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         <image name="next_arrow_orange.png" width="72" height="72"/>
         <image name="no_thanks_let_in_button_transparent.png" width="188" height="43"/>
         <image name="orange_map_icon_114x114.png" width="114" height="114"/>
+        <image name="photo_border.jpg" width="60" height="60"/>
         <image name="photo_container.jpg" width="106" height="106"/>
         <image name="presplash_without_glow.png" width="535" height="261"/>
         <image name="previous_arrow_orange.png" width="72" height="72"/>
@@ -2144,9 +2149,6 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         </class>
         <class className="BarsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
         </class>
         <class className="DealCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
