@@ -271,8 +271,13 @@
 	
 	self.mapIndexPath = [self.map.annotations indexOfObject:view];
 	
+	NSLog(@"---------------calloutAccessoryControlTapped %@", view.description);
+	
 	
 	[self performSegueWithIdentifier:@"FromMapDealDetailSegue" sender:self];
+	
+	
+	
 }
 
 
@@ -284,6 +289,16 @@
 	 
 	 [(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
 	 */
+	
+	NSLog(@"---------------didSelectAnnotationView %@", aView.description);
+	
+	//Example
+	if ([aView.description isEqualToString: @"Golden Gate"])
+	{
+		//Load golden gate information in a new viewcontroller
+	}
+	
+	
 }
 
 #pragma mark Lifecycle
@@ -323,8 +338,8 @@
 	self.isMapVisible = YES;
 	
 	[self.dealsTableView setHidden:YES];
-
-		[self.segmentedControlFilterButton removeAllSegments];
+	
+	[self.segmentedControlFilterButton removeAllSegments];
 	
 	[self.segmentedControlFilterButton insertSegmentWithTitle:@"Filter" atIndex:0 animated:NO];
 	
@@ -333,7 +348,7 @@
 	[self.segmentedControlMapListButton insertSegmentWithTitle:@"Map" atIndex:0 animated:NO];
 	
 	
-
+	
 	
 	
 	
