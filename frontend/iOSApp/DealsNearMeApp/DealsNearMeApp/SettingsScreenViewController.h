@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsScreenViewController : UIViewController
+@interface SettingsScreenViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+{
+	UITableViewController *myTableViewController;
+	
+	UITableView *settingsTableView;
+}
+
+@property (strong, nonatomic) IBOutlet UITableView *settingsTableView;
+
+@property (nonatomic, strong) UITableViewController *myTableViewController;
+
 
 - (IBAction)buttonBackButtonPressed:(id)sender;
 
