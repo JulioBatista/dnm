@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyProfileScreenViewController : UIViewController
+@interface MyProfileScreenViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+{
+	UITableViewController *myTableViewController;
+	
+	UITableView *myProfileTableView;
+}
+
 
 - (IBAction)buttonBackButtonPressed:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UITableView *myProfileTableView;
+
+@property (nonatomic, assign) UITableViewController *myTableViewController;
+
 
 
 @end
