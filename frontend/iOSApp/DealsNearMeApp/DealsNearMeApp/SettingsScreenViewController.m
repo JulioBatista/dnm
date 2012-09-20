@@ -81,13 +81,13 @@
 
     if (indexPath.section == 0)
 	{
-		cell.textLabel.text = @"settingkey0";
-		cell.detailTextLabel.text = @"settingvalue0";
+		cell.textLabel.text = @"System Version";
+		cell.detailTextLabel.text = [[UIDevice currentDevice] systemName];
 	}
 	else if (indexPath.section == 1)
 	{
-		cell.textLabel.text = @"settingkey1";
-		cell.detailTextLabel.text = @"settingvalue1";
+		cell.textLabel.text = @"Model";
+		cell.detailTextLabel.text = [[UIDevice currentDevice] systemVersion];
 		
 	}
 	
@@ -102,11 +102,11 @@
 	
 	if (section == 0)
 	{
-		return @"Setting1";
+		return @"System Version";
 	}
 	if (section == 1)
 	{
-		return @"Setting2";
+		return @"Model";
 	}
 	else
 	{

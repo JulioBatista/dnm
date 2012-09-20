@@ -85,15 +85,15 @@
 	if (indexPath.section == 0)
 	{
 		
-		cell.textLabel.text = @"First Name";
+		cell.textLabel.text = @"Phone";
 		
-		cell.detailTextLabel.text = @"Levi Bergovoy";
+		cell.detailTextLabel.text = [[UIDevice currentDevice] uniqueIdentifier];
 	}
 	else if (indexPath.section == 1)
 	{
-		cell.textLabel.text = @"City";
+		cell.textLabel.text = @"Name";
 		
-		cell.detailTextLabel.text = @"Chicago";
+		cell.detailTextLabel.text = [[UIDevice currentDevice] name];
 		
 	}
 	
@@ -109,11 +109,11 @@
 	
 	if (section == 0)
 	{
-		return @"Name";
+		return @"Phone";
 	}
 	if (section == 1)
 	{
-		return @"Location";
+		return @"Name";
 	}
 	else
 	{
