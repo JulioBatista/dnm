@@ -238,6 +238,8 @@
 			pinViewFilename = @"map_pin_fun_23px.png";
 		}
 		
+		iconFilename = @"default_thumb_23x23.png";
+		
 		UIImageView *leftIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:iconFilename]];
 		
 		UIImage *pinImage = [UIImage imageNamed:pinViewFilename];
@@ -323,7 +325,9 @@
 	
 	[self.button001 setSelected:YES];
 	
-	[self.button001 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_001_seeall.png"] forState:UIControlStateSelected];
+	// [self.button001 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_001_seeall.png"] forState:UIControlStateSelected];
+	
+	[self.button001 setImage:[UIImage imageNamed:@"seeall_hover.jpg"] forState:UIControlStateSelected];
 	
 	self.map.delegate = self;
 	
@@ -1126,25 +1130,43 @@
 - (void)arrangeButtons
 {
 	NSMutableArray *images = [NSMutableArray new];
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_001_seeall.png"]];
+	// [images addObject:[UIImage imageNamed:@"guides_new_category_icon_001_seeall.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_002_bars.png"]];
+	[images addObject:[UIImage imageNamed:@"seeall.jpg"]];
 	
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_003_travel.png"]];
+	// [images addObject:[UIImage imageNamed:@"guides_new_category_icon_002_bars.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_004_fun.png"]];
-    
-    /* [images addObject:[UIImage imageNamed:@"right_arrow_left_arrow_category.png"]]; */
+	[images addObject:[UIImage imageNamed:@"barsandclubs.jpg"]];
 	
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_005_services.png"]];
+	// [images addObject:[UIImage imageNamed:@"guides_new_category_icon_003_travel.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_006_dining.png"]];
+	[images addObject:[UIImage imageNamed:@"travel.jpg"]];
 	
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_007_family.png"]];
+	// [images addObject:[UIImage imageNamed:@"guides_new_category_icon_004_fun.png"]];
 	
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_008_shopping.png"]];
+	[images addObject:[UIImage imageNamed:@"fun.jpg"]];
 	
-	[images addObject:[UIImage imageNamed:@"guides_new_category_icon_009_wellness.png"]];
+	// [images addObject:[UIImage imageNamed:@"guides_new_category_icon_005_services.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"services.jpg"]];
+	
+	// [images addObject:[UIImage imageNamed:@"guides_new_category_icon_006_dining.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"dining.jpg"]];
+	
+	// [images addObject:[UIImage imageNamed:@"guides_new_category_icon_007_family.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"family.jpg"]];
+	
+	// [images addObject:[UIImage imageNamed:@"guides_new_category_icon_008_shopping.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"shopping.jpg"]];
+	
+	// [images addObject:[UIImage imageNamed:@"guides_new_category_icon_009_wellness.png"]];
+	
+	[images addObject:[UIImage imageNamed:@"wellness.jpg"]];
+	
+	// [images addObject:[UIImage imageNamed:@"category_icon_010_blank.png"]];
 	
 	[images addObject:[UIImage imageNamed:@"category_icon_010_blank.png"]];
 	
@@ -1152,10 +1174,10 @@
 	CGRect frame;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_001_seeall.png"] size];
+	frame.size = [[UIImage imageNamed:@"seeall.jpg"] size];
 	self.button001 = [[UIButton alloc] initWithFrame:frame];
 	[self.button001 setImage:[images objectAtIndex:0] forState:UIControlStateNormal];
-	[self.button001 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_001_seeall.png"] forState:UIControlStateSelected];
+	[self.button001 setImage:[UIImage imageNamed:@"seeall_hover.jpg"] forState:UIControlStateSelected];
 	[self.button001 setTag:0];
 	[self.button001 addTarget:self action:@selector(categorySeeAllPressed:) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -1163,36 +1185,36 @@
 	
 	
 	
-	scrollWidth += 72.0f;
+	scrollWidth += 65.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_002_bars.png"] size];
+	frame.size = [[UIImage imageNamed:@"barsandclubs.jpg"] size];
 	self.button002 = [[UIButton alloc] initWithFrame:frame];
 	[self.button002 setImage:[images objectAtIndex:1] forState:UIControlStateNormal];
-	[self.button002 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_002_bars.png"] forState:UIControlStateSelected];
+	[self.button002 setImage:[UIImage imageNamed:@"barsandclubs_hover.jpg"] forState:UIControlStateSelected];
 	[self.button002 setTag:1];
 	[self.button002 addTarget:self action:@selector(categoryBarsPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button002];
 	
-	scrollWidth += 72.0f;
+	scrollWidth += 65.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_003_travel.png"] size];
+	frame.size = [[UIImage imageNamed:@"travel.jpg"] size];
 	self.button003 = [[UIButton alloc] initWithFrame:frame];
 	[self.button003 setImage:[images objectAtIndex:2] forState:UIControlStateNormal];
-	[self.button003 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_003_travel.png"] forState:UIControlStateSelected];
+	[self.button003 setImage:[UIImage imageNamed:@"travel_hover.jpg"] forState:UIControlStateSelected];
 	[self.button003 setTag:2];
 	[self.button003 addTarget:self action:@selector(categoryTravelPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button003];
 	
 	
-	scrollWidth += 72.0f;
+	scrollWidth += 65.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_004_fun.png"] size];
+	frame.size = [[UIImage imageNamed:@"fun.jpg"] size];
 	self.button004 = [[UIButton alloc] initWithFrame:frame];
 	[self.button004 setImage:[images objectAtIndex:3] forState:UIControlStateNormal];
-	[self.button004 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_004_fun.png"] forState:UIControlStateSelected];
+	[self.button004 setImage:[UIImage imageNamed:@"fun_hover.jpg"] forState:UIControlStateSelected];
 	[self.button004 setTag:3];
 	[self.button004 addTarget:self action:@selector(categoryFunPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button004];
@@ -1210,70 +1232,70 @@
 	 [self.scrollView addSubview:self.button004x];
      */
 	
-	scrollWidth += 72.0f;
+	scrollWidth += 65.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_005_services.png"] size];
+	frame.size = [[UIImage imageNamed:@"services.jpg"] size];
 	self.button005 = [[UIButton alloc] initWithFrame:frame];
 	[self.button005 setImage:[images objectAtIndex:4] forState:UIControlStateNormal];
-	[self.button005 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_005_services.png"] forState:UIControlStateSelected];
+	[self.button005 setImage:[UIImage imageNamed:@"services_hover.jpg"] forState:UIControlStateSelected];
 	[self.button005 setTag:4];
 	[self.button005 addTarget:self action:@selector(categoryServicesPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button005];
 	
 	
 	
-	scrollWidth += 72.0f;
+	scrollWidth += 65.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_006_dining.png"] size];
+	frame.size = [[UIImage imageNamed:@"dining.jpg"] size];
 	self.button006 = [[UIButton alloc] initWithFrame:frame];
 	[self.button006 setImage:[images objectAtIndex:5] forState:UIControlStateNormal];
-	[self.button006 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_006_dining.png"] forState:UIControlStateSelected];
+	[self.button006 setImage:[UIImage imageNamed:@"dining_hover.jpg"] forState:UIControlStateSelected];
 	[self.button006 setTag:5];
 	[self.button006 addTarget:self action:@selector(categoryDiningPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button006];
 	
-	scrollWidth += 72.0f;
+	scrollWidth += 65.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_007_family.png"] size];
+	frame.size = [[UIImage imageNamed:@"family.jpg"] size];
 	self.button007 = [[UIButton alloc] initWithFrame:frame];
 	[self.button007 setImage:[images objectAtIndex:6] forState:UIControlStateNormal];
-	[self.button007 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_007_family.png"] forState:UIControlStateSelected];
+	[self.button007 setImage:[UIImage imageNamed:@"family_hover.jpg"] forState:UIControlStateSelected];
 	[self.button007 setTag:6];
 	[self.button007 addTarget:self action:@selector(categoryFamilyPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button007];
 	
 	
-	scrollWidth += 72.0f;
+	scrollWidth += 65.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_008_shopping.png"] size];
+	frame.size = [[UIImage imageNamed:@"shopping.jpg"] size];
 	self.button008 = [[UIButton alloc] initWithFrame:frame];
 	[self.button008 setImage:[images objectAtIndex:7] forState:UIControlStateNormal];
-	[self.button008 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_008_shopping.png"] forState:UIControlStateSelected];
+	[self.button008 setImage:[UIImage imageNamed:@"shopping_hover.jpg"] forState:UIControlStateSelected];
 	[self.button008 setTag:7];
 	[self.button008 addTarget:self action:@selector(categoryShoppingPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button008];
 	
 	
 	
-	scrollWidth += 72.0f;
+	scrollWidth += 65.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"guides_new_category_icon_009_wellness.png"] size];
+	frame.size = [[UIImage imageNamed:@"wellness.jpg"] size];
 	self.button009 = [[UIButton alloc] initWithFrame:frame];
 	[self.button009 setImage:[images objectAtIndex:8] forState:UIControlStateNormal];
-	[self.button009 setImage:[UIImage imageNamed:@"selected_guides_new_category_icon_009_wellness.png"] forState:UIControlStateSelected];
+	[self.button009 setImage:[UIImage imageNamed:@"wellness_hover.jpg"] forState:UIControlStateSelected];
 	[self.button009 setTag:8];
 	[self.button009 addTarget:self action:@selector(categoryWellnessPressed:) forControlEvents:UIControlEventTouchUpInside];
 	[self.scrollView addSubview:self.button009];
 	
-	scrollWidth += 72.0f;
+	scrollWidth += 65.0f;
 	frame.origin.x = scrollWidth;
 	frame.origin.y = 0;
-	frame.size = [[UIImage imageNamed:@"category_icon_010_blank.png"] size];
+	frame.size = [[UIImage imageNamed:@"blank.jpg"] size];
 	self.button010 = [[UIButton alloc] initWithFrame:frame];
 	[self.button010 setImage:[images objectAtIndex:9] forState:UIControlStateNormal];
 	[self.button010 setTag:9];
@@ -1282,7 +1304,7 @@
 	
 	[self.scrollView setBackgroundColor:[UIColor whiteColor]];
 	self.scrollView.pagingEnabled = NO;
-	self.scrollView.contentSize = CGSizeMake(scrollWidth, 72.0f);
+	self.scrollView.contentSize = CGSizeMake(scrollWidth, 65.0f);
 }
 #pragma mark - UITableViewDataSource
 
