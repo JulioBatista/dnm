@@ -90,6 +90,14 @@
 	return [self.favoriteDeals count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	static NSString *CellIdentifier = @"FavoritesCell";
+    UITableViewCell *cell = [self.favoritesTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	
+	return cell.frame.size.height;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -165,10 +173,7 @@
 
 #pragma mark UITableViewDelegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 55;
-}
+
 
 #pragma mark - Segue
 
