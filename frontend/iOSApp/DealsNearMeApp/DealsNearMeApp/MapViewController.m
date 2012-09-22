@@ -191,51 +191,51 @@
 		
 		if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Bars & Clubs"])
 		{
-			iconFilename = @"map_pin_bars_23px.png";
-			pinViewFilename = @"map_pin_bars_23px.png";
+			iconFilename = @"map_pin_bars_30px.png";
+			pinViewFilename = @"map_pin_bars_30px.png";
 		}
 		
 		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Travel"])
 		{
-			iconFilename = @"map_pin_travel_23px.png";
-			pinViewFilename = @"map_pin_travel_23px.png";
+			iconFilename = @"map_pin_travel_30px.png";
+			pinViewFilename = @"map_pin_travel_30px.png";
 		}
 		
 		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Fun"])
 		{
-			iconFilename = @"map_pin_fun_23px.png";
-			pinViewFilename = @"map_pin_fun_23px.png";
+			iconFilename = @"map_pin_fun_30px.png";
+			pinViewFilename = @"map_pin_fun_30px.png";
 		}
 		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Services"])
 		{
-			iconFilename = @"map_pin_services_23px.png";
-			pinViewFilename = @"map_pin_services_23px.png";
+			iconFilename = @"map_pin_services_30px.png";
+			pinViewFilename = @"map_pin_services_30px.png";
 		}
 		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Dining"])
 		{
-			iconFilename = @"map_pin_dining_23px.png";
-			pinViewFilename = @"map_pin_dining_23px.png";
+			iconFilename = @"map_pin_dining_30px.png";
+			pinViewFilename = @"map_pin_dining_30px.png";
 		}
 		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Family"])
 		{
-			iconFilename = @"map_pin_family_23px.png";
-			pinViewFilename = @"map_pin_family_23px.png";
+			iconFilename = @"map_pin_family_30px.png";
+			pinViewFilename = @"map_pin_family_30px.png";
 		}
 		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Shopping"])
 		{
-			iconFilename = @"map_pin_shopping_23px.png";
-			pinViewFilename = @"map_pin_shopping_23px.png";
+			iconFilename = @"map_pin_shopping_30px.png";
+			pinViewFilename = @"map_pin_shopping_30px.png";
 		}
 		else if ([[networkDealAnnotation.deal objectForKey:@"sector"] isEqualToString:@"Wellness"])
 		{
-			iconFilename = @"map_pin_wellness_23px.png";
-			pinViewFilename = @"map_pin_wellness_23px.png";
+			iconFilename = @"map_pin_wellness_30px.png";
+			pinViewFilename = @"map_pin_wellness_30px.png";
 		}
 		
 		else
 		{
-			iconFilename = @"map_pin_fun_23px.png";
-			pinViewFilename = @"map_pin_fun_23px.png";
+			iconFilename = @"map_pin_fun_30px.png";
+			pinViewFilename = @"map_pin_fun_30px.png";
 		}
 		
 		iconFilename = @"default_thumb_23x23.png";

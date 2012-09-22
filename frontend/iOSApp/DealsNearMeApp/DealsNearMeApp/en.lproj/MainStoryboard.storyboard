@@ -277,8 +277,8 @@
                                     <navigationItem id="w6P-Ol-wz6"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="deals_header_logo.png" id="UWo-79-p6B">
-                                <rect key="frame" x="64" y="5" width="192" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="deals_header_logo.png" id="UWo-79-p6B">
+                                <rect key="frame" x="88" y="5" width="145" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -2334,6 +2334,6 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="jJF-bS-Qax"/>
-        <segue reference="tMy-7Z-wft"/>
+        <segue reference="vUw-Hu-0dP"/>
     </inferredMetricsTieBreakers>
 </document>
