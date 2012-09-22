@@ -188,6 +188,7 @@
 		4B8516C8160D6EE60075B851 /* map_pin_wellness_30px@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8516C7160D6EE60075B851 /* map_pin_wellness_30px@2x.png */; };
 		4B8516CB160D6F8F0075B851 /* map_pin_shopping_30px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8516C9160D6F8E0075B851 /* map_pin_shopping_30px.png */; };
 		4B8516CC160D6F8F0075B851 /* map_pin_wellness_30px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8516CA160D6F8E0075B851 /* map_pin_wellness_30px.png */; };
+		4B8516CF160D74110075B851 /* RequestCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8516CE160D740F0075B851 /* RequestCityViewController.m */; };
 		4B8880C915FE97CB003AB5F2 /* bluetint.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C215FE97CB003AB5F2 /* bluetint.png */; };
 		4B8880CA15FE97CB003AB5F2 /* f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C315FE97CB003AB5F2 /* f_logo.png */; };
 		4B8880CB15FE97CB003AB5F2 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C415FE97CB003AB5F2 /* facebook.png */; };
@@ -597,6 +598,8 @@
 		4B8516C7160D6EE60075B851 /* map_pin_wellness_30px@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pin_wellness_30px@2x.png"; sourceTree = "<group>"; };
 		4B8516C9160D6F8E0075B851 /* map_pin_shopping_30px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shopping_30px.png; sourceTree = "<group>"; };
 		4B8516CA160D6F8E0075B851 /* map_pin_wellness_30px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_wellness_30px.png; sourceTree = "<group>"; };
+		4B8516CD160D740D0075B851 /* RequestCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCityViewController.h; sourceTree = "<group>"; };
+		4B8516CE160D740F0075B851 /* RequestCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCityViewController.m; sourceTree = "<group>"; };
 		4B8880C215FE97CB003AB5F2 /* bluetint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetint.png; sourceTree = "<group>"; };
 		4B8880C315FE97CB003AB5F2 /* f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_logo.png; sourceTree = "<group>"; };
 		4B8880C415FE97CB003AB5F2 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
@@ -1152,6 +1155,8 @@
 				4B85159C1605A4C40075B851 /* SettingsScreenViewController.m */,
 				4B85159E1605A6030075B851 /* SubmitScreenViewController.h */,
 				4B85159F1605A6030075B851 /* SubmitScreenViewController.m */,
+				4B8516CD160D740D0075B851 /* RequestCityViewController.h */,
+				4B8516CE160D740F0075B851 /* RequestCityViewController.m */,
 				4B8515A11605A9A00075B851 /* AboutScreenViewController.h */,
 				4B8515A21605A9A00075B851 /* AboutScreenViewController.m */,
 				4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */,
@@ -1953,6 +1958,7 @@
 				4B85159D1605A4C40075B851 /* SettingsScreenViewController.m in Sources */,
 				4B8515A01605A6030075B851 /* SubmitScreenViewController.m in Sources */,
 				4B8515A31605A9A00075B851 /* AboutScreenViewController.m in Sources */,
+				4B8516CF160D74110075B851 /* RequestCityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

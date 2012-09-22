@@ -43,13 +43,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Deals Found" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kGO-Wi-EeK">
-                                <rect key="frame" x="224" y="162" width="89" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="EwK-DG-5wB">
                                 <rect key="frame" x="10" y="140" width="156" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -165,6 +158,13 @@
                                 <rect key="frame" x="88" y="5" width="145" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kGO-Wi-EeK">
+                                <rect key="frame" x="116" y="55" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
@@ -186,6 +186,7 @@
                         <segue destination="KvL-wI-8Ow" kind="push" identifier="FromMapDealDetailSegue" id="4Sc-dY-pY2"/>
                         <segue destination="CZa-pA-fh1" kind="modal" identifier="LocationPickerSegue" id="guJ-df-yqv"/>
                         <segue destination="mOU-QP-8YS" kind="modal" identifier="FilterPickerSegue" id="O2q-S5-qWQ"/>
+                        <segue destination="wfB-4I-Q1X" kind="push" identifier="FromMapToRequestSegue" id="dtg-Hf-kCC"/>
                     </connections>
                 </viewController>
             </objects>
@@ -1489,7 +1490,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                     <navigationItem key="navigationItem" id="N5G-zC-w2Q"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1717" y="1725"/>
+            <point key="canvasLocation" x="1321" y="1835"/>
         </scene>
         <!--Submit Screen View Controller-->
         <scene sceneID="uSc-2l-ZBI">
@@ -1598,6 +1599,83 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2102" y="1576"/>
+        </scene>
+        <!--Request City View Controller-->
+        <scene sceneID="rbY-xm-pAd">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVo-zG-5Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="wfB-4I-Q1X" customClass="RequestCityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Msi-rl-C6T">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="mfx-lh-0jr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Request City" id="oyh-Io-FFr">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ndP-PR-0MG">
+                                            <connections>
+                                                <action selector="buttonBackButtonPressed:" destination="wfB-4I-Q1X" id="0ox-MN-r0r"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="launch_background.jpg" id="yMr-Cf-ILE">
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="nwP-Ye-qeZ">
+                                <rect key="frame" x="57" y="100" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="eD1-KO-hAg">
+                                <rect key="frame" x="110" y="95" width="179" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DPI-Tl-VHW">
+                                <rect key="frame" x="20" y="207" width="289" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="aviva_button_with_gradient.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonSubmitButtonPressed:" destination="hRW-OT-dIp" eventType="touchUpInside" id="8Eu-dP-IKF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Request city" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="DOJ-Do-6OH">
+                                <rect key="frame" x="110" y="217" width="101" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please add my city to DealsNear.me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="qN2-h0-aWi">
+                                <rect key="frame" x="20" y="51" width="280" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fps-rj-ljP"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1725" y="1859"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -1897,6 +1975,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="568-J0-n08" kind="push" identifier="FromMoreToSettingsSegue" id="Qrj-KT-iNh"/>
                         <segue destination="hRW-OT-dIp" kind="push" identifier="FromMoreToSubmitSegue" id="B1G-OG-LtZ"/>
                         <segue destination="Jqp-sn-6uA" kind="push" identifier="FromMoreToAboutSegue" id="yT8-Af-jyl"/>
+                        <segue destination="wfB-4I-Q1X" kind="push" identifier="FromMoreToRequestSegue" id="EX2-om-sJJ"/>
                     </connections>
                 </viewController>
             </objects>
@@ -2215,9 +2294,11 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonFilterButtonPressed:"/>
+                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonMapListButtonPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedControlFilterButtonPressed:"/>
                 <relationship kind="action" name="segmentedControlMapListButtonPressed:"/>
                 <relationship kind="action" name="segmentedControlMapListIndexChanged:"/>
@@ -2286,6 +2367,12 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <relationship kind="outlet" name="imageViewPreSplashLogo" candidateClass="UIImageView"/>
             </relationships>
         </class>
+        <class className="RequestCityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RequestCityViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonBackButtonPressed:"/>
+            </relationships>
+        </class>
         <class className="SettingsScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsScreenViewController.h"/>
             <relationships>
@@ -2334,6 +2421,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="jJF-bS-Qax"/>
-        <segue reference="vUw-Hu-0dP"/>
+        <segue reference="tMy-7Z-wft"/>
+        <segue reference="dtg-Hf-kCC"/>
     </inferredMetricsTieBreakers>
 </document>

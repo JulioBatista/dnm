@@ -44,16 +44,17 @@
     cities = [NSArray arrayWithObjects:
               @"Use Current Location",
               @"Atlanta, GA",
+			  @"Austin, TX",
+			  @"Boston, MA",
+			  @"Chicago, IL",
+			  @"Los Angeles, CA",
+			  @"Miami, FL",
               @"New York City, NY",
-              @"Austin, TX",
-              @"Boston, MA",
-              @"Chicago, IL",
-              @"Los Angeles, CA",
-              @"Miami, FL",
               @"Philadelphia, PA",
               @"Seattle, Washington",
-              @"Washington, D.C.",
 			  @"Toronto, ON",
+              @"Washington, D.C.",
+			  
               @"I Don't See My City",
               nil];
     
@@ -75,7 +76,7 @@
 
 - (void)viewDidUnload
 {
-
+	
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

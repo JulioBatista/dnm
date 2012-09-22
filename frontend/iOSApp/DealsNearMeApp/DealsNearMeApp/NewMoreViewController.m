@@ -79,7 +79,13 @@
 			break;
 		}
 			
-		case 3:
+		case 3 :
+		{
+			[self performSegueWithIdentifier:@"FromMoreToRequestSegue" sender:self];
+			break;
+		}
+			
+		case 4:
 		{
 			[self performSegueWithIdentifier:@"FromMoreToAboutSegue" sender:self];
 			break;
@@ -106,7 +112,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	NSLog(@"Is this being called");
-	return 4;
+	return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -143,8 +149,13 @@
 			titleLabel.text = @"Submit Your Business";
 			break;
 		}
-			
 		case 3:
+		{
+			titleLabel.text = @"Request Your City";
+			break;
+		}
+			
+		case 4:
 		{
 			titleLabel.text = @"About";
 			break;

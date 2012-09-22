@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RequestCityViewController : UIViewController
+- (IBAction)buttonBackButtonPressed:(id)sender;
 
 @end

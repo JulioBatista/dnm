@@ -353,7 +353,17 @@
 	
 	
 	
+	/* do what seeall button does */
 	
+	self.map.showsUserLocation = YES;
+    
+    [self.map setUserTrackingMode:MKUserTrackingModeNone];
+	
+	[self getDealsFromNetwork];
+	
+	[self gotoHardCodedLocation];
+	
+	/* do what seeall button does */
 	
 	
 	// Do any additional setup after loading the view.
@@ -509,7 +519,7 @@
 -(void) geocode:(NSString *)address
 {
 	//1
-	self.locationLabel.text = @"Getting deals";
+	/* self.locationLabel.text = @"Getting deals"; */
 	CLGeocoder *gc = [[CLGeocoder alloc] init];
 	//2
 	[gc geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error)
@@ -524,10 +534,10 @@
 			 double lng = mark.location.coordinate.longitude;
 			 
 			 //5
-			 self.locationLabel.text = [NSString stringWithFormat:@"Coordinate\n lat:%@, long:%@",
+			 /* self.locationLabel.text = [NSString stringWithFormat:@"Coordinate\n lat:%@, long:%@",
 										[NSNumber numberWithDouble:lat],
 										[NSNumber numberWithDouble:lng]];
-			 
+			 */
 			 // show on the map
 			 //1
 			 CLLocationCoordinate2D coordinate;
@@ -645,7 +655,7 @@
 			
 			// spinner goes away
 			self.navigationItem.rightBarButtonItem = sender;
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			
 		});
 	});
@@ -671,7 +681,7 @@
 			self.deals = deals;
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
 			if ([self.deals count] == 0)
@@ -704,7 +714,7 @@
 			self.deals = deals;
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
 			if ([self.deals count] == 0)
@@ -737,7 +747,7 @@
 			self.deals = deals;
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
 			if ([self.deals count] == 0)
@@ -769,7 +779,7 @@
 			self.deals = deals;
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
 			if ([self.deals count] == 0)
@@ -801,7 +811,7 @@
 			self.deals = deals;
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
 			if ([self.deals count] == 0)
@@ -833,7 +843,7 @@
 			self.deals = deals;
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
 			if ([self.deals count] == 0)
@@ -866,7 +876,7 @@
 			self.deals = deals;
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
 			if ([self.deals count] == 0)
@@ -898,7 +908,7 @@
 			self.deals = deals;
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
 			if ([self.deals count] == 0)
@@ -931,7 +941,7 @@
 			self.deals = deals;
 			// spinner goes away
 			/* self.navigationItem.rightBarButtonItem = sender; */
-			self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]];
+			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
 			if ([self.deals count] == 0)
@@ -963,7 +973,7 @@
     // hardcodedLocation.longitude= -79.426240;
     
     // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(hardcodedLocation, 20 * METERS_PER_MILE, 20  * METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(hardcodedLocation, 40 * METERS_PER_MILE, 40  * METERS_PER_MILE);
     // 3
     MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];
     // 4
@@ -1593,6 +1603,10 @@
         
         /* above is what used to happen when you clicked the blue locateMe Button */
     }
+	else if ([theCity isEqualToString:@"I Don't See My City"])
+	{
+		[self performSegueWithIdentifier:@"FromMapToRequestSegue" sender:self];
+	}
     
 	[self dismissViewControllerAnimated:YES completion:^{
         //do map stuff here
@@ -1791,7 +1805,9 @@
 		
 		[self.dealsTableView setHidden:NO];
 		
-		[self.buttonMapListButton setTitle:@" Map "];
+		/* [self.buttonMapListButton setTitle:@" Map "]; */
+		
+		[self.segmentedControlMapListButton setTitle:@" Map " forSegmentAtIndex:0];
 		
 		
 	}
@@ -1805,7 +1821,9 @@
 		
 		[self.dealsTableView setHidden:YES];
 		
-		[self.buttonMapListButton setTitle:@" List "];
+		/* [self.buttonMapListButton setTitle:@" List "]; */
+		
+		[self.segmentedControlMapListButton setTitle:@" List " forSegmentAtIndex:0];
 		
 	}
 }
