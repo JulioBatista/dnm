@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MapKit/MapKit.h"
 #import "LocationPickerViewController.h"
-#import "FilterPickerViewController.h"
+#import "NewFilterPickerViewController.h"
 
-@interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource,LocationPickerViewControllerDelegate, FilterPickerViewControllerDelegate>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource,LocationPickerViewControllerDelegate, NewFilterPickerViewController>
 {
 	UITableViewController *myTableViewController;
 	UITableView *dealsTableView;
@@ -74,20 +74,19 @@
 
 
 
-- (IBAction)segmentedControlMapListIndexChanged:(id)sender;
-- (IBAction)buttonMapListButtonPressed:(id)sender;
 
-- (IBAction)buttonFilterButtonPressed:(id)sender;
 
 - (IBAction)segmentedControlMapListButtonPressed:(id)sender;
-
 - (IBAction)segmentedControlFilterButtonPressed:(id)sender;
+
+
+
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlFilterButton;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlMapListButton;
 
 
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonMapListButton;
-- (IBAction)buttonFilterButtonPressed:(id)sender;
+
+
 
 @end

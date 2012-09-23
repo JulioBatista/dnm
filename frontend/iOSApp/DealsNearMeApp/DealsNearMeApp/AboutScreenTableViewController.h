@@ -10,4 +10,6 @@
 
 @interface AboutScreenTableViewController : UITableViewController
 
+- (IBAction)buttonBackButtonPressed:(id)sender;
+
 @end

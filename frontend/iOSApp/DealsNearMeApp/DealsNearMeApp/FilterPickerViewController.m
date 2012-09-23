@@ -17,7 +17,9 @@
 {
     NSUInteger selectedIndex;
 }
-@synthesize segmentedControlFilterScreen = _segmentedControlFilterScreen;
+@synthesize segmentedControlRatingControl = _segmentedControlRatingControl;
+@synthesize segmentedControlDistanceControl = _segmentedControlDistanceControl;
+
 
 @synthesize delegate = _delegate;
 
@@ -36,7 +38,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-     [self.segmentedControlFilterScreen setSelectedSegmentIndex:self.theSelectedFilter];
+    // [self.segmentedControlRatingControl setSelectedSegmentIndex:self.theSelectedFilter];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -49,7 +51,9 @@
 
 - (void)viewDidUnload
 {
-    [self setSegmentedControlFilterScreen:nil];
+
+    [self setSegmentedControlRatingControl:nil];
+    [self setSegmentedControlDistanceControl:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -64,44 +68,30 @@
     [self.delegate filterPickerViewControllerDidCancel:self];
 }
 
-- (IBAction)segmentedControlValueChanged:(id)sender
-{
-    switch (self.segmentedControlFilterScreen.selectedSegmentIndex)
-    {
-        case 0:
-            NSLog(@"Popularity");
-            
 
-            
-            [self.segmentedControlFilterScreen setSelectedSegmentIndex:0];
-            
-            [self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlFilterScreen.selectedSegmentIndex];
-            
-            /* [self.buttonListButton setImage:[UIImage imageNamed:@"259-list-white.png"]];
-             */
-            break;
-            
-        case 1:
-            NSLog(@"Distance");
-            
-            /*
-             [self.buttonListButton setImage:[UIImage imageNamed:@"07-map-marker-white.png"]];
-             */
-            [self.segmentedControlFilterScreen setSelectedSegmentIndex:1];
-            
-            [self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlFilterScreen.selectedSegmentIndex];
-            
-            break;
-            
-        default:
-            break;
-            
-    }
-    
-    
+
+
+
+- (IBAction)segmentedControlRatingControlValueChanged:(id)sender
+{
+	/* 
+	 
+	 [self.segmentedControlRatingControl setSelectedSegmentIndex:0];
+	
+	[self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlRatingControl.selectedSegmentIndex];
+	 */
+	
+
 }
 
-
-
-
+- (IBAction)segmentedControlDistanceControlValueChanged:(id)sender
+{
+	/* 
+	 
+	[self.segmentedControlDistanceControl setSelectedSegmentIndex:1];
+	
+	[self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlDistanceControl.selectedSegmentIndex];
+	*/
+}
+ 
 @end

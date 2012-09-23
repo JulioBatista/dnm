@@ -191,6 +191,7 @@
 		4B8516CF160D74110075B851 /* RequestCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8516CE160D740F0075B851 /* RequestCityViewController.m */; };
 		4B8516D1160D88770075B851 /* 29-heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8516D0160D88770075B851 /* 29-heart@2x.png */; };
 		4B8516D3160D88ED0075B851 /* 24-gift@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8516D2160D88ED0075B851 /* 24-gift@2x.png */; };
+		4B8516D6160EC0460075B851 /* NewFilterPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8516D5160EC0440075B851 /* NewFilterPickerViewController.m */; };
 		4B8880C915FE97CB003AB5F2 /* bluetint.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C215FE97CB003AB5F2 /* bluetint.png */; };
 		4B8880CA15FE97CB003AB5F2 /* f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C315FE97CB003AB5F2 /* f_logo.png */; };
 		4B8880CB15FE97CB003AB5F2 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8880C415FE97CB003AB5F2 /* facebook.png */; };
@@ -604,6 +605,8 @@
 		4B8516CE160D740F0075B851 /* RequestCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCityViewController.m; sourceTree = "<group>"; };
 		4B8516D0160D88770075B851 /* 29-heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart@2x.png"; sourceTree = "<group>"; };
 		4B8516D2160D88ED0075B851 /* 24-gift@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "24-gift@2x.png"; sourceTree = "<group>"; };
+		4B8516D4160EC0430075B851 /* NewFilterPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFilterPickerViewController.h; sourceTree = "<group>"; };
+		4B8516D5160EC0440075B851 /* NewFilterPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFilterPickerViewController.m; sourceTree = "<group>"; };
 		4B8880C215FE97CB003AB5F2 /* bluetint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetint.png; sourceTree = "<group>"; };
 		4B8880C315FE97CB003AB5F2 /* f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_logo.png; sourceTree = "<group>"; };
 		4B8880C415FE97CB003AB5F2 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
@@ -1149,6 +1152,8 @@
 				4BF992D515EE92E600E2D80E /* LocationPickerViewController.m */,
 				4B78676D1600E2E300AF0072 /* FilterPickerViewController.h */,
 				4B78676E1600E2E300AF0072 /* FilterPickerViewController.m */,
+				4B8516D4160EC0430075B851 /* NewFilterPickerViewController.h */,
+				4B8516D5160EC0440075B851 /* NewFilterPickerViewController.m */,
 				4BF8BCB615DA0710002EECD6 /* SplashViewController.h */,
 				4BF8BCB715DA0710002EECD6 /* SplashViewController.m */,
 				4B8515891604264E0075B851 /* NewMoreViewController.h */,
@@ -1967,6 +1972,7 @@
 				4B8515A01605A6030075B851 /* SubmitScreenViewController.m in Sources */,
 				4B8515A31605A9A00075B851 /* AboutScreenViewController.m in Sources */,
 				4B8516CF160D74110075B851 /* RequestCityViewController.m in Sources */,
+				4B8516D6160EC0460075B851 /* NewFilterPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

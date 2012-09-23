@@ -201,4 +201,8 @@
      */
 }
 
+- (IBAction)buttonBackButtonPressed:(id)sender
+{
+	[self.navigationController popViewControllerAnimated:YES];
+}
 @end

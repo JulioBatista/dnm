@@ -90,6 +90,12 @@
 			[self performSegueWithIdentifier:@"FromMoreToAboutSegue" sender:self];
 			break;
 		}
+			
+		case 5:
+		{
+			[self performSegueWithIdentifier:@"FromMoreToAboutTableSegue" sender:self];
+			break;
+		}
 		default:
 			break;
 	}
@@ -112,7 +118,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	NSLog(@"Is this being called");
-	return 5;
+	return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -158,6 +164,12 @@
 		case 4:
 		{
 			titleLabel.text = @"About";
+			break;
+		}
+			
+		case 5:
+		{
+			titleLabel.text = @"App Info";
 			break;
 		}
 			

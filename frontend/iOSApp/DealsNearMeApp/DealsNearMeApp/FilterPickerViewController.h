@@ -32,7 +32,12 @@
 
 - (IBAction)buttonCancelPressed:(id)sender;
 
-- (IBAction)segmentedControlValueChanged:(id)sender;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlFilterScreen;
+
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlRatingControl;
+
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlDistanceControl;
+- (IBAction)segmentedControlRatingControlValueChanged:(id)sender;
+
+- (IBAction)segmentedControlDistanceControlValueChanged:(id)sender;
 
 @end

@@ -15,7 +15,7 @@
 #import "DealCell.h"
 #import "DealDetailViewController.h"
 #import "LocationPickerViewController.h"
-#import "FilterPickerViewController.h"
+#import "NewFilterPickerViewController.h"
 #import "NewDealDetailViewController.h"
 
 #define METERS_PER_MILE 1689.344
@@ -57,7 +57,7 @@
 @synthesize segmentedControlFilterButton = _segmentedControlFilterButton;
 
 
-@synthesize buttonMapListButton = _buttonMapListButton;
+
 
 @synthesize viewFilterByView = _viewFilterByView;
 @synthesize buttonToggle = _buttonToggle;
@@ -463,7 +463,6 @@
 	
 	
     [self setViewFilterByView:nil];
-	[self setButtonMapListButton:nil];
 	[self setSegmentedControlMapListButton:nil];
 	[self setSegmentedControlFilterButton:nil];
 	[self setSegmentedControlFilterButton:nil];
@@ -1470,14 +1469,17 @@
     }
     else if ([segue.identifier isEqualToString:@"FilterPickerSegue"])
     {
-        UINavigationController *navigationController = segue.destinationViewController;
+      
+		UINavigationController *navigationController = segue.destinationViewController;
         
         
-        FilterPickerViewController *filterPickerViewController = [[navigationController viewControllers] objectAtIndex:0];
+        NewFilterPickerViewController *newfilterPickerViewController = [[navigationController viewControllers] objectAtIndex:0];
+		
+		NSLog(@"---------------NewFilterPickerSegue");
         
-        filterPickerViewController.theSelectedFilter = self.theSelectedFilter;
+        /* filterPickerViewController.theSelectedFilter = self.theSelectedFilter; */
         
-        filterPickerViewController.delegate = self;
+        newfilterPickerViewController.delegate = self;
     }
 }
 
@@ -1716,10 +1718,10 @@
 
 
 
-#pragma mark FilterPickerViewControllerDelegate methods
+#pragma mark NewFilterPickerViewControllerDelegate methods
 
 -
-(void) filterPickerViewControllerDidCancel:(FilterPickerViewController *)controller
+(void) filterPickerViewControllerDidCancel:(NewFilterPickerViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:^{
         //do map stuff here
@@ -1727,7 +1729,7 @@
     
 }
 
-- (void) filterPickerViewController:(FilterPickerViewController *)controller
+- (void) filterPickerViewController:(NewFilterPickerViewController *)controller
                     didSelectFilter:(NSUInteger) theFilter
 {
     NSLog(@"-------------%d", theFilter);
@@ -1753,45 +1755,10 @@
 	
 }
 
-#pragma mark - Buttons Pressed
-
-- (IBAction)buttonMapListButtonPressed:(id)sender
-{
-	if (self.isMapVisible)
-	{
-		NSLog(@"List selected");
-		self.isMapVisible = NO;
-		
-		[self.map setHidden:YES];
-		
-		[self.dealsTableView setHidden:NO];
-		
-		[self.buttonMapListButton setTitle:@" Map "];
-		
-		
-	}
-	else
-	{
-		NSLog(@"Map seleected");
-		
-		self.isMapVisible = YES;
-		
-		[self.map setHidden:NO];
-		
-		[self.dealsTableView setHidden:YES];
-		
-		[self.buttonMapListButton setTitle:@" List "];
-		
-	}
-}
+#pragma mark - segmentedControls Pressed
 
 
 
-
-- (IBAction)buttonFilterButtonPressed:(id)sender
-{
-	[self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
-}
 
 
 - (IBAction)segmentedControlMapListButtonPressed:(id)sender
@@ -1828,9 +1795,10 @@
 	}
 }
 
+
 - (IBAction)segmentedControlFilterButtonPressed:(id)sender
 {
-	[self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
+	[self performSegueWithIdentifier:@"FilterPickerSegue" sender:self]; 
 }
 @end
 
