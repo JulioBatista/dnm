@@ -14,6 +14,8 @@
 
 - (void)filterPickerViewControllerDidCancel:(NewFilterPickerViewController *)controller;
 
+- (void) filterPickerViewController:(NewFilterPickerViewController *)controller
+					didSelectFilter:(NSUInteger) theFilter;
 
 @end
 
@@ -22,5 +24,13 @@
 @property (nonatomic, weak) id<NewFilterPickerViewController> delegate;
 
 - (IBAction)buttonBackButtonPressed:(id)sender;
+
+- (IBAction)segmentedControlRatingControlValueChanged:(id)sender;
+
+- (IBAction)segmentedControlDistanceControlValueChanged:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlRatingControl;
+
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlDistanceControl;
 
 @end

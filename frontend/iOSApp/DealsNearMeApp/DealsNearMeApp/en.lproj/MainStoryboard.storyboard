@@ -1910,6 +1910,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                                     <segment title="20 mile"/>
                                 </segments>
                                 <connections>
+                                    <action selector="segmentedControlDistanceControlValueChanged:" destination="uDP-PL-8EJ" eventType="valueChanged" id="Ssh-iZ-5Om"/>
                                     <action selector="segmentedControlDistanceControlValueChanged:" destination="Dyy-4v-mH3" eventType="valueChanged" id="sUI-DJ-66r"/>
                                     <action selector="segmentedControlValueChanged:" destination="Dyy-4v-mH3" eventType="valueChanged" id="cj6-wK-XHh"/>
                                 </connections>
@@ -1932,6 +1933,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                                 </segments>
                                 <connections>
                                     <action selector="segmentedControlRatingControlValueChanged:" destination="Dyy-4v-mH3" eventType="valueChanged" id="cGU-Sd-CBP"/>
+                                    <action selector="segmentedControlRatingControlValueChanged:" destination="uDP-PL-8EJ" eventType="valueChanged" id="dee-KB-AeO"/>
                                     <action selector="segmentedControlValueChanged:" destination="Dyy-4v-mH3" eventType="valueChanged" id="QsZ-I7-HyK"/>
                                 </connections>
                             </segmentedControl>
@@ -1952,6 +1954,10 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControlDistanceControl" destination="tqH-eB-scI" id="IVL-ej-wwO"/>
+                        <outlet property="segmentedControlRatingControl" destination="kDV-OO-8YU" id="QLT-Qi-aSW"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2618" y="-1444"/>
@@ -2468,6 +2474,10 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewFilterPickerViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonBackButtonPressed:"/>
+                <relationship kind="action" name="segmentedControlDistanceControlValueChanged:"/>
+                <relationship kind="action" name="segmentedControlRatingControlValueChanged:"/>
+                <relationship kind="outlet" name="segmentedControlDistanceControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="segmentedControlRatingControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="NewMoreViewController" superclassName="UIViewController">

@@ -46,4 +46,16 @@
 {
 	[self.delegate filterPickerViewControllerDidCancel:self];
 }
+
+- (IBAction)segmentedControlRatingControlValueChanged:(id)sender
+{
+	[self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlRatingControl.selectedSegmentIndex];
+	
+	
+}
+
+- (IBAction)segmentedControlDistanceControlValueChanged:(id)sender
+{
+	[self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlDistanceControl.selectedSegmentIndex];
+}
 @end
