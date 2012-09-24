@@ -116,8 +116,8 @@
 	titleLabel.text = [favoriteDeal objectForKey:NETWORK_DEAL_TITLE];
 	
 	UILabel *ownerLabel = (UILabel *) [cell viewWithTag:201];
-	cell.detailTextLabel.text = [favoriteDeal objectForKey:NETWORK_DEAL_OWNER];
-	ownerLabel.text = [favoriteDeal objectForKey:NETWORK_DEAL_OWNER];
+	cell.detailTextLabel.text = [favoriteDeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
+	ownerLabel.text = [favoriteDeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
 	
     
 	UIImageView *ratingImageView = (UIImageView *) [cell viewWithTag:202];

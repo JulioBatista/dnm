@@ -92,7 +92,9 @@
 
 @synthesize mapIndexPath = _mapIndexPath;
 
-@synthesize theSelectedFilter = _theSelectedFilter;
+@synthesize theSelectedRatingFilter = _theSelectedRatingFilter;
+
+@synthesize theSelectedDistanceFilter = _theSelectedDistanceFilter;
 
 
 #pragma mark setters
@@ -253,6 +255,10 @@
 		UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 		
 		
+		NSInteger annotationValue = [self.annotations indexOfObject:annotation];
+		
+		rightButton.tag = annotationValue;
+		
 		pinView.rightCalloutAccessoryView = rightButton;
         
         
@@ -260,7 +266,8 @@
 		
 		
     }
-    else {
+    else
+	{
         [map.userLocation setTitle:@"I am here"];
         map.userLocation.subtitle = @"Hello";
     }
@@ -270,13 +277,22 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
 	
+
 	
-	self.mapIndexPath = [self.map.annotations indexOfObject:view];
+	self.mapIndexPath = control.tag;
 	
 	NSLog(@"---------------calloutAccessoryControlTapped %@", view.description);
 	
 	
+	
+	
 	[self performSegueWithIdentifier:@"FromMapDealDetailSegue" sender:self];
+	
+	// NSInteger selectedIndex = view.tag;
+	
+	
+
+	
 	
 	
 	
@@ -349,7 +365,7 @@
 	
 	[self.segmentedControlMapListButton removeAllSegments];
 	
-	[self.segmentedControlMapListButton insertSegmentWithTitle:@"Map" atIndex:0 animated:NO];
+	[self.segmentedControlMapListButton insertSegmentWithTitle:@"List" atIndex:0 animated:NO];
 	
 	
 	
@@ -534,9 +550,9 @@
 			 
 			 //5
 			 /* self.locationLabel.text = [NSString stringWithFormat:@"Coordinate\n lat:%@, long:%@",
-										[NSNumber numberWithDouble:lat],
-										[NSNumber numberWithDouble:lng]];
-			 */
+			  [NSNumber numberWithDouble:lat],
+			  [NSNumber numberWithDouble:lng]];
+			  */
 			 // show on the map
 			 //1
 			 CLLocationCoordinate2D coordinate;
@@ -1454,7 +1470,14 @@
 	{
 		NewDealDetailViewController *dest = [segue destinationViewController];
 		
-		dest.dealIndex = self.mapIndexPath;
+		
+		dest.dealnum = [[NSNumber alloc] initWithInteger:self.mapIndexPath];
+		
+		
+		NSLog(@"-------------the number being sent in prepareForSegue is %d", self.mapIndexPath);
+		
+		
+		
 		
 	}
 	
@@ -1469,7 +1492,7 @@
     }
     else if ([segue.identifier isEqualToString:@"FilterPickerSegue"])
     {
-      
+		
 		UINavigationController *navigationController = segue.destinationViewController;
         
         
@@ -1477,7 +1500,9 @@
 		
 		NSLog(@"---------------NewFilterPickerSegue");
         
-        /* filterPickerViewController.theSelectedFilter = self.theSelectedFilter; */
+        newfilterPickerViewController.theSelectedRatingFilter = self.theSelectedRatingFilter;
+		
+		newfilterPickerViewController.theSelectedDistanceFilter = self.theSelectedDistanceFilter;
         
         newfilterPickerViewController.delegate = self;
     }
@@ -1730,22 +1755,107 @@
 }
 
 - (void) filterPickerViewController:(NewFilterPickerViewController *)controller
-                    didSelectFilter:(NSUInteger) theFilter
+			  didSelectRatingFilter:(NSUInteger) theRatingFilter
 {
-    NSLog(@"-------------%d", theFilter);
+    NSLog(@"-------------%d", theRatingFilter);
     
-    self.theSelectedFilter = theFilter;
+    self.theSelectedRatingFilter = theRatingFilter;
     
-    switch (self.theSelectedFilter) {
+	
+    switch (self.theSelectedRatingFilter)
+	{
         case 0:
             
             /* [self.buttonFilterButton setTitle:@" Filter : Popularity" forState:UIControlStateNormal]; */
+			
+
+			[self.segmentedControlFilterButton setTitle:@"1 Star" forSegmentAtIndex:0];	
+			
+            break;
+		case 1 :
+            /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
+			
+			[self.segmentedControlFilterButton setTitle:@"2 Stars" forSegmentAtIndex:0];
+			break;
+			
+		case 2 :
+            /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
+			
+			[self.segmentedControlFilterButton setTitle:@"3 Stars" forSegmentAtIndex:0];
+			break;
+			
+			
+		case 3 :
+            /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
+			
+			[self.segmentedControlFilterButton setTitle:@"4 Stars" forSegmentAtIndex:0];
+			
+			break;
+			
+        default:
+			
+			[self.segmentedControlFilterButton setTitle:@"1 Star" forSegmentAtIndex:0];	
+			
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        //do map stuff here
+    }];
+	
+}
+
+- (void) filterPickerViewController:(NewFilterPickerViewController *)controller
+			didSelectDistanceFilter:(NSUInteger) theDistanceFilter
+{
+    NSLog(@"-------------%d", theDistanceFilter);
+    
+    self.theSelectedDistanceFilter = theDistanceFilter;
+    
+	
+	
+    switch (self.theSelectedDistanceFilter)
+	{
+        case 0:
+            
+            /* [self.buttonFilterButton setTitle:@" Filter : Popularity" forState:UIControlStateNormal]; */
+			
+			[self.segmentedControlFilterButton setTitle:@"0.5 miles" forSegmentAtIndex:0];
 			
 			
             break;
 		case 1 :
             /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
+			
+			[self.segmentedControlFilterButton setTitle:@"1 mile" forSegmentAtIndex:0];
+			
+			break;
+			
+		case 2 :
+            /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
+			
+			[self.segmentedControlFilterButton setTitle:@"5 miles" forSegmentAtIndex:0];
+			
+			break;
+			
+			
+		case 3 :
+            /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
+			
+			[self.segmentedControlFilterButton setTitle:@"10 miles" forSegmentAtIndex:0];
+			
+			break;
+		case 4 :
+            /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
+			
+			[self.segmentedControlFilterButton setTitle:@"20 miles" forSegmentAtIndex:0];
+			
+			break;
+			
         default:
+			
+			[self.segmentedControlFilterButton setTitle:@"Filter" forSegmentAtIndex:0];
+			
             break;
     }
     
@@ -1798,7 +1908,7 @@
 
 - (IBAction)segmentedControlFilterButtonPressed:(id)sender
 {
-	[self performSegueWithIdentifier:@"FilterPickerSegue" sender:self]; 
+	[self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
 }
 @end
 

@@ -20,7 +20,7 @@
 
 @property (nonatomic) NSUInteger dealIndex;
 
-@property (nonatomic) NSInteger currentDealNum;
+@property (nonatomic) NSUInteger currentDealNum;
 
 @property (nonatomic, strong) NSDictionary *currentDeal;
 
@@ -30,7 +30,14 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonCategory;
 
+@property (strong, nonatomic) IBOutlet UILabel *labelBusinessName;
+
+
 @property (strong, nonatomic) IBOutlet UILabel *labelAddress;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelAddressLine2;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelBusinessPhoneLabel;
 
 @property (nonatomic, weak) UIActionSheet *actionSheet;
 

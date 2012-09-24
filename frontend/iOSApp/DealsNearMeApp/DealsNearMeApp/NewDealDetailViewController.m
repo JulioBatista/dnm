@@ -27,7 +27,10 @@
 @synthesize currentDealNum = _currentDealNum;
 @synthesize archivedDeals = _archivedDeals;
 @synthesize buttonCategory;
+@synthesize labelBusinessName = _labelBusinessName;
 @synthesize labelAddress;
+@synthesize labelAddressLine2 = _labelAddressLine2;
+@synthesize labelBusinessPhoneLabel = _labelBusinessPhoneLabel;
 @synthesize favoriteDeals = _favoriteDeals;
 @synthesize actionSheet = _actionSheet;
 @synthesize canTweet = _canTweet;
@@ -40,22 +43,7 @@
     }
     return self;
 }
-/*
- #define NETWORK_DEAL_TITLE @"title"
- #define NETWORK_DEAL_DEALNAME @"dealname"
- #define NETWORK_DEAL_DEALDESCRIPTION @"dealdescription"
- #define NETWORK_DEAL_DESCRIPTION @"description"
- #define NETWORK_DEAL_SECTOR @"sector"
- #define NETWORK_DEAL_CONTENT @"_content"
- #define NETWORK_DEAL_ID @"id"
- #define NETWORK_LATITUDE @"latitude"
- #define NETWORK_LONGITUDE @"longitude"
- #define NETWORK_DEAL_OWNER @"business_name"
- #define NETWORK_DEAL_ADDRESS @"business_address"
- #define NETWORK_DEAL_PLACE_NAME @"derived_place"
- #define NETWORK_DEAL_RATING @"rating"
- #define NETWORK_TAGS @"tags"
- */
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -76,7 +64,7 @@
     }
     
     
-	NSLog(@"Echo the dealnum....%@", self.dealnum);
+	NSLog(@"Echo the dealnum--------------------------------------------....%@", self.dealnum);
 	NSData *dealsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"dealsarchive"];
 	
 	self.archivedDeals = [NSKeyedUnarchiver unarchiveObjectWithData:dealsData];
@@ -101,7 +89,7 @@
 	
 	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:[self.dealnum integerValue]];
 	
-
+	
 	
 	self.labelDealDescription.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION];
     
@@ -112,7 +100,14 @@
 	
 	[self.buttonCategory setTitle:[onedeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 	
+	
+	self.labelBusinessName.text = [onedeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
+	
 	self.labelAddress.text = [onedeal objectForKey:NETWORK_DEAL_ADDRESS];
+	
+	self.labelAddressLine2.text = [onedeal objectForKey:NETWORK_DEAL_ID];
+	
+	self.labelBusinessPhoneLabel.text = [onedeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
 	
 	
 	/* NSLog(@"-----%@", onedeal); */
@@ -121,10 +116,13 @@
 
 - (void)viewDidUnload
 {
-
+	
 	[self setLabelDealDescription:nil];
 	[self setButtonCategory:nil];
 	[self setLabelAddress:nil];
+	[self setLabelBusinessName:nil];
+	[self setLabelAddressLine2:nil];
+	[self setLabelBusinessPhoneLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -153,12 +151,15 @@
 		
 		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
 		
+		self.labelBusinessName.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
 		
 		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
 		[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 		
 		self.labelAddress.text = [self.currentDeal objectForKey:NETWORK_DEAL_ADDRESS];
+		
+		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
 	}
 }
 
@@ -176,11 +177,15 @@
 		
 		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
 		
+		self.labelBusinessName.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
+		
 		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
 		[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 		
 		self.labelAddress.text = [self.currentDeal objectForKey:NETWORK_DEAL_ADDRESS];
+		
+		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
 		
 	}
 	

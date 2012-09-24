@@ -751,7 +751,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="555-5555" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Kkd-lr-Tba">
-                                <rect key="frame" x="115" y="293" width="297" height="17"/>
+                                <rect key="frame" x="115" y="297" width="297" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -765,14 +765,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number, Street" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9Af-w5-Coc">
-                                <rect key="frame" x="115" y="248" width="196" height="21"/>
+                                <rect key="frame" x="115" y="242" width="126" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City, State, Zipcode" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="xIi-Tg-BKl">
-                                <rect key="frame" x="115" y="271" width="196" height="21"/>
+                                <rect key="frame" x="115" y="278" width="114" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -852,6 +852,9 @@
                     <connections>
                         <outlet property="buttonCategory" destination="Scl-Re-82q" id="Apj-Oi-2Qj"/>
                         <outlet property="labelAddress" destination="9Af-w5-Coc" id="GWE-YH-zUr"/>
+                        <outlet property="labelAddressLine2" destination="xIi-Tg-BKl" id="CM7-l1-O6b"/>
+                        <outlet property="labelBusinessName" destination="AD0-zR-Zio" id="eLS-HK-cVJ"/>
+                        <outlet property="labelBusinessPhoneLabel" destination="Kkd-lr-Tba" id="B7t-bS-wex"/>
                         <outlet property="labelDealDescription" destination="dSq-uN-4Am" id="8wK-r4-VGE"/>
                     </connections>
                 </viewController>
@@ -2413,10 +2416,8 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedControlFilterButtonPressed:"/>
                 <relationship kind="action" name="segmentedControlMapListButtonPressed:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
@@ -2461,7 +2462,11 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <relationship kind="action" name="buttonShareButtonPressed:"/>
                 <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelAddress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelAddressLine2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelBusinessName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelBusinessPhoneLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webViewDealDescription" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="NewFavoritesViewController" superclassName="UIViewController">

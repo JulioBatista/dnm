@@ -70,7 +70,9 @@
 @property (nonatomic) NSUInteger mapIndexPath;
 
 
-@property (nonatomic) NSUInteger theSelectedFilter;
+@property (nonatomic) NSUInteger theSelectedRatingFilter;
+
+@property (nonatomic) NSUInteger theSelectedDistanceFilter;
 
 
 

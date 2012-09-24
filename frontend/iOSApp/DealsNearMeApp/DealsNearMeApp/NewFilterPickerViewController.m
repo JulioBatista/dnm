@@ -29,12 +29,26 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+	
+	[self.segmentedControlRatingControl setSelectedSegmentIndex:self.theSelectedRatingFilter];
+	
+	[self.segmentedControlDistanceControl setSelectedSegmentIndex:self.theSelectedDistanceFilter];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+	
+
+	
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -49,13 +63,13 @@
 
 - (IBAction)segmentedControlRatingControlValueChanged:(id)sender
 {
-	[self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlRatingControl.selectedSegmentIndex];
+	[self.delegate filterPickerViewController:self didSelectRatingFilter:self.segmentedControlRatingControl.selectedSegmentIndex];
 	
 	
 }
 
 - (IBAction)segmentedControlDistanceControlValueChanged:(id)sender
 {
-	[self.delegate filterPickerViewController:self didSelectFilter:self.segmentedControlDistanceControl.selectedSegmentIndex];
+	[self.delegate filterPickerViewController:self didSelectDistanceFilter:self.segmentedControlDistanceControl.selectedSegmentIndex];
 }
 @end

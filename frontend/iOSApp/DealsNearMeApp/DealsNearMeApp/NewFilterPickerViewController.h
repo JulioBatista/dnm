@@ -15,7 +15,11 @@
 - (void)filterPickerViewControllerDidCancel:(NewFilterPickerViewController *)controller;
 
 - (void) filterPickerViewController:(NewFilterPickerViewController *)controller
-					didSelectFilter:(NSUInteger) theFilter;
+					didSelectRatingFilter:(NSUInteger) theRatingFilter;
+
+- (void) filterPickerViewController:(NewFilterPickerViewController *)controller
+					didSelectDistanceFilter:(NSUInteger) theDistanceFilter;
+
 
 @end
 
@@ -32,5 +36,9 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlRatingControl;
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlDistanceControl;
+
+@property (nonatomic) NSUInteger theSelectedRatingFilter;
+
+@property (nonatomic) NSUInteger theSelectedDistanceFilter;
 
 @end
