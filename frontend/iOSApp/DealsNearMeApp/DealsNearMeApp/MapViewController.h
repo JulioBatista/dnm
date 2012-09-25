@@ -17,6 +17,7 @@
 	UITableView *dealsTableView;
 	CLLocationManager *locationManager;
 	UIScrollView *scrollView;
+	NSTimer *fiveSecondsTimer;
 }
 
 
@@ -87,7 +88,7 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlMapListButton;
 
 
-
+@property (nonatomic) CLLocationCoordinate2D newcoordinate;
 
 
 

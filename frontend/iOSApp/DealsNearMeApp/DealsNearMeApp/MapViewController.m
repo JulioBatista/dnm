@@ -45,6 +45,7 @@
 @property (nonatomic, strong) CLGeocoder *geocoder;
 
 
+
 @end
 
 @implementation MapViewController
@@ -95,6 +96,8 @@
 @synthesize theSelectedRatingFilter = _theSelectedRatingFilter;
 
 @synthesize theSelectedDistanceFilter = _theSelectedDistanceFilter;
+
+@synthesize newcoordinate = _newcoordinate;
 
 
 #pragma mark setters
@@ -277,7 +280,7 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
 	
-
+	
 	
 	self.mapIndexPath = control.tag;
 	
@@ -291,7 +294,7 @@
 	// NSInteger selectedIndex = view.tag;
 	
 	
-
+	
 	
 	
 	
@@ -317,6 +320,14 @@
 	}
 	
 	
+}
+
+- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
+{
+	NSLog(@"The mapview was dragged / moved");
+	
+	NSLog(@"-------center latitude %f", mapView.centerCoordinate.latitude);
+	NSLog(@"-------center longitude %f", mapView.centerCoordinate.longitude);
 }
 
 #pragma mark Lifecycle
@@ -446,6 +457,8 @@
 	[self.newdeals addObject:newdeal];
 	
 	NSLog(@"The Number of newdeals is %d", [self.newdeals count]);
+	
+	[self startTimer];
 	
 }
 - (void)categoryPressed:(UIButton*)sender
@@ -1561,6 +1574,10 @@
 		
 		
 		
+		
+		
+		
+		
 	}
 	else
 	{
@@ -1590,6 +1607,9 @@
 		
 		[UIView commitAnimations];
 		
+		NSLog(@"----------about to start timer");
+		
+		[self startTimer];
 		
 	}
 }
@@ -1768,8 +1788,8 @@
             
             /* [self.buttonFilterButton setTitle:@" Filter : Popularity" forState:UIControlStateNormal]; */
 			
-
-			[self.segmentedControlFilterButton setTitle:@"1 Star" forSegmentAtIndex:0];	
+			
+			[self.segmentedControlFilterButton setTitle:@"1 Star" forSegmentAtIndex:0];
 			
             break;
 		case 1 :
@@ -1794,7 +1814,7 @@
 			
         default:
 			
-			[self.segmentedControlFilterButton setTitle:@"1 Star" forSegmentAtIndex:0];	
+			[self.segmentedControlFilterButton setTitle:@"1 Star" forSegmentAtIndex:0];
 			
             break;
     }
@@ -1909,6 +1929,47 @@
 - (IBAction)segmentedControlFilterButtonPressed:(id)sender
 {
 	[self performSegueWithIdentifier:@"FilterPickerSegue" sender:self];
+}
+
+#pragma mark Timer
+
+- (IBAction)startTimer
+{
+	NSLog(@"-------timer started");
+	
+    fiveSecondsTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(collapseCategoryCarousel) userInfo:nil repeats:YES];
+	
+}
+
+- (IBAction)stopTimer
+{
+    [fiveSecondsTimer invalidate];
+
+	NSLog(@"-------timer started");
+}
+
+- (void) collapseCategoryCarousel
+{
+	self.isScrollViewVisible = NO;
+	
+	[UIView beginAnimations:@"animateViewOff" context:NULL];
+	
+	[self.scrollView setFrame:CGRectOffset([self.scrollView frame], 0, -((2 *self.scrollView.frame.size.height) + 44))];
+	
+	[self.scrollDividerView setFrame:CGRectOffset([self.scrollDividerView frame], 0, -(self.scrollView.frame.size.height))];
+	
+	
+	CGRect navframe = [[self.navigationController navigationBar] frame];
+	
+	CGRect l_RectFrame = CGRectMake(0,  navframe.size.height + 44, self.view.frame.size.width, self.view.frame.size.height);
+	
+	[self.dealsTableView setFrame:l_RectFrame];
+	
+	[self.map setFrame:l_RectFrame];
+	
+	[UIView commitAnimations];
+	
+	[self stopTimer];
 }
 @end
 
