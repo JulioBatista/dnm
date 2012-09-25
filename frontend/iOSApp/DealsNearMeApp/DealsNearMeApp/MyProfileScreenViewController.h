@@ -20,7 +20,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *myProfileTableView;
 
-@property (nonatomic, assign) UITableViewController *myTableViewController;
+@property (nonatomic, retain) UITableViewController *myTableViewController;
 
 
 

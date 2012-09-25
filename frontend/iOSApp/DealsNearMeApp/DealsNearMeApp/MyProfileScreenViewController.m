@@ -17,6 +17,8 @@
 
 @implementation MyProfileScreenViewController
 @synthesize myProfileTableView;
+@synthesize myTableViewController;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

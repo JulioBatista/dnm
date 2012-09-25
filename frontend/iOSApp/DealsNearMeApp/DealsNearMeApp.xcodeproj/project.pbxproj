@@ -53,7 +53,6 @@
 		4B4CC2BD15CE08AA00B5530C /* DealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CC2BC15CE08AA00B5530C /* DealCell.m */; };
 		4B4D015515F53D3B0094816C /* AboutScreenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D015415F53D3B0094816C /* AboutScreenTableViewController.m */; };
 		4B4E0D6A15FD854B00A0CF97 /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E0D6915FD854B00A0CF97 /* FacebookHelper.m */; };
-		4B4E0E3915FD886300A0CF97 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4E0E3815FD886300A0CF97 /* SenTestingKit.framework */; };
 		4B53420D15FE7ABF00C7356E /* screen_gradient_logo_only.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B53420B15FE7ABF00C7356E /* screen_gradient_logo_only.png */; };
 		4B53420E15FE7ABF00C7356E /* screen_gradient_only.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B53420C15FE7ABF00C7356E /* screen_gradient_only.jpg */; };
 		4B5A366115CDF75600552ECF /* DealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5A366015CDF75600552ECF /* DealsViewController.m */; };
@@ -444,7 +443,6 @@
 		4B4D015415F53D3B0094816C /* AboutScreenTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutScreenTableViewController.m; sourceTree = "<group>"; };
 		4B4E0D6815FD854B00A0CF97 /* FacebookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookHelper.h; sourceTree = "<group>"; };
 		4B4E0D6915FD854B00A0CF97 /* FacebookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookHelper.m; sourceTree = "<group>"; };
-		4B4E0E3815FD886300A0CF97 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4B53420B15FE7ABF00C7356E /* screen_gradient_logo_only.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_gradient_logo_only.png; sourceTree = "<group>"; };
 		4B53420C15FE7ABF00C7356E /* screen_gradient_only.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screen_gradient_only.jpg; sourceTree = "<group>"; };
 		4B5A365F15CDF75600552ECF /* DealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsViewController.h; sourceTree = "<group>"; };
@@ -831,7 +829,6 @@
 				4B6BA4F515C0F0890095F35E /* CoreGraphics.framework in Frameworks */,
 				4BB5A9FC15D052B6003E5F97 /* CoreLocation.framework in Frameworks */,
 				4B6BA62315C600970095F35E /* SystemConfiguration.framework in Frameworks */,
-				4B4E0E3915FD886300A0CF97 /* SenTestingKit.framework in Frameworks */,
 				4B8515A51606B08F0075B851 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1086,7 +1083,6 @@
 			isa = PBXGroup;
 			children = (
 				4B89C9B615FFAF0A00FDE9E7 /* Accounts.framework */,
-				4B4E0E3815FD886300A0CF97 /* SenTestingKit.framework */,
 				4B81CB8215F9214B00DB7FAA /* Twitter.framework */,
 				4BB5A9FB15D052B6003E5F97 /* CoreLocation.framework */,
 				4BB9A13415CA4F50009263A1 /* MapKit.framework */,
@@ -2065,6 +2061,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2085,6 +2082,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2115,8 +2113,8 @@
 		4B6BF9F115F2BAC600011BCE /* Ad-Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (H9FPA29GV4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: LeviaIT Corp.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: LeviaIT Corp.";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -2126,8 +2124,9 @@
 				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
+				PROVISIONING_PROFILE = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad-Hoc";

@@ -1,0 +1,353 @@
+
+========================
+ASL is here to serve you
+> 
+
+Sep 24 11:00:45 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled packet filters
+Sep 24 11:00:45 unknown kernel[0] <Debug>: en0: BSSID changed to 4c:17:eb:e2:c1:9d
+Sep 24 11:00:45 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableDetect 0
+Sep 24 11:00:45 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableType Detached
+Sep 24 11:00:45 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 11:00:47 unknown CLTM[12] <Error>: CLTM: resetting temps: now = 1348498847, last update = 1348497063
+Sep 24 11:00:56 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 0 swapBusy: 0  fController: 0 -> 0
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x18000, stateNum 0, dev 0xc0796800 (this 1, provider 0)
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOffSystem() : Powering Off and sleeping
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): fStateFlags(14022)
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Unicast IP filter enabled 
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  0 (ID=103)
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  1 (ID=104)
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled the '!ICMP' packet filter
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLAN Sleeping on BSS:   @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -55, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 75, ssid[11] = "theAperture"
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): Associated & WoW enabled, WiFi will remain up
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOff(): fStateFlags(00000021)
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 0, pol 0xc0796800 (this 1, provider 0)
+Sep 24 11:00:55 unknown kernel[0] <Debug>: pmu wake events: rtc
+Sep 24 11:30:35 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0  fController: 0 -> 0
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x8002, stateNum 1, dev 0xc0796800 (this 1, provider 0)
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 1, pol 0xc0796800 (this 1, provider 0)
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOnSystem() : Powering On
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): stateFlags(4023)
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOn()
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): Tearing down WoW mode
+Sep 24 11:30:35 unknown kernel[0] <Debug>: AppleBCMWLAN Woke on same BSS:  @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -57, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 75, ssid[11] = "theAperture"
+Sep 24 11:30:36 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 11:30:36 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 11:30:36 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableDetect 0
+Sep 24 11:30:36 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableType Detached
+Sep 24 11:30:36 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 11:30:36 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled packet filters
+Sep 24 11:30:36 unknown kernel[0] <Debug>: en0: BSSID changed to 4c:17:eb:e2:c1:9d
+Sep 24 11:30:36 unknown CLTM[12] <Error>: CLTM: resetting temps: now = 1348500636, last update = 1348498852
+Sep 24 11:30:46 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 0 swapBusy: 0  fController: 0 -> 0
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x18000, stateNum 0, dev 0xc0796800 (this 1, provider 0)
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOffSystem() : Powering Off and sleeping
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): fStateFlags(14022)
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Unicast IP filter enabled 
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  0 (ID=103)
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  1 (ID=104)
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled the '!ICMP' packet filter
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLAN Sleeping on BSS:   @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -56, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 86, ssid[11] = "theAperture"
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): Associated & WoW enabled, WiFi will remain up
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOff(): fStateFlags(00000021)
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 0, pol 0xc0796800 (this 1, provider 0)
+Sep 24 11:30:45 unknown kernel[0] <Debug>: pmu wake events: rtc
+Sep 24 12:00:25 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0  fController: 0 -> 0
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x8002, stateNum 1, dev 0xc0796800 (this 1, provider 0)
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 1, pol 0xc0796800 (this 1, provider 0)
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOnSystem() : Powering On
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): stateFlags(4023)
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOn()
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): Tearing down WoW mode
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLAN Woke on same BSS:  @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -55, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 87, ssid[11] = "theAperture"
+Sep 24 12:00:25 unknown CLTM[12] <Error>: CLTM: resetting temps: now = 1348502425, last update = 1348500641
+Sep 24 12:00:25 unknown apsd[62] <Warning>: Unable to cancel system wake for 2012-09-24 12:00:25 -0400. IOPMCancelScheduledPowerEvent() returned 0xe00002c2
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled packet filters
+Sep 24 12:00:25 unknown kernel[0] <Debug>: en0: BSSID changed to 4c:17:eb:e2:c1:9d
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableDetect 0
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableType Detached
+Sep 24 12:00:25 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 12:00:36 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 0 swapBusy: 0  fController: 0 -> 0
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x18000, stateNum 0, dev 0xc0796800 (this 1, provider 0)
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOffSystem() : Powering Off and sleeping
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): fStateFlags(14022)
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Unicast IP filter enabled 
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  0 (ID=103)
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  1 (ID=104)
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled the '!ICMP' packet filter
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLAN Sleeping on BSS:   @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -54, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 97, ssid[11] = "theAperture"
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): Associated & WoW enabled, WiFi will remain up
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOff(): fStateFlags(00000021)
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 0, pol 0xc0796800 (this 1, provider 0)
+Sep 24 12:00:35 unknown kernel[0] <Debug>: pmu wake events: rtc
+Sep 24 12:30:15 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0  fController: 0 -> 0
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x8002, stateNum 1, dev 0xc0796800 (this 1, provider 0)
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 1, pol 0xc0796800 (this 1, provider 0)
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOnSystem() : Powering On
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): stateFlags(4023)
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOn()
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): Tearing down WoW mode
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLAN Woke on same BSS:  @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -56, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 98, ssid[11] = "theAperture"
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled packet filters
+Sep 24 12:30:15 unknown kernel[0] <Debug>: en0: BSSID changed to 4c:17:eb:e2:c1:9d
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableDetect 0
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableType Detached
+Sep 24 12:30:15 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 12:30:18 unknown CLTM[12] <Error>: CLTM: resetting temps: now = 1348504218, last update = 1348502434
+Sep 24 12:30:26 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 0 swapBusy: 0  fController: 0 -> 0
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x18000, stateNum 0, dev 0xc0796800 (this 1, provider 0)
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOffSystem() : Powering Off and sleeping
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): fStateFlags(14022)
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Unicast IP filter enabled 
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  0 (ID=103)
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  1 (ID=104)
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled the '!ICMP' packet filter
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLAN Sleeping on BSS:   @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -56, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 109, ssid[11] = "theAperture"
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): Associated & WoW enabled, WiFi will remain up
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOff(): fStateFlags(00000021)
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 0, pol 0xc0796800 (this 1, provider 0)
+Sep 24 12:30:25 unknown kernel[0] <Debug>: pmu wake events: rtc
+Sep 24 13:00:05 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0  fController: 0 -> 0
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x8002, stateNum 1, dev 0xc0796800 (this 1, provider 0)
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 1, pol 0xc0796800 (this 1, provider 0)
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOnSystem() : Powering On
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): stateFlags(4023)
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOn()
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): Tearing down WoW mode
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLAN Woke on same BSS:  @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -57, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 109, ssid[11] = "theAperture"
+Sep 24 13:00:05 unknown apsd[62] <Warning>: Unable to cancel system wake for 2012-09-24 13:00:05 -0400. IOPMCancelScheduledPowerEvent() returned 0xe00002c2
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled packet filters
+Sep 24 13:00:05 unknown kernel[0] <Debug>: en0: BSSID changed to 4c:17:eb:e2:c1:9d
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableDetect 0
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableType Detached
+Sep 24 13:00:05 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:00:07 unknown CLTM[12] <Error>: CLTM: resetting temps: now = 1348506007, last update = 1348504223
+Sep 24 13:00:16 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 0 swapBusy: 0  fController: 0 -> 0
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x18000, stateNum 0, dev 0xc0796800 (this 1, provider 0)
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOffSystem() : Powering Off and sleeping
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): fStateFlags(14022)
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Unicast IP filter enabled 
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  0 (ID=103)
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  1 (ID=104)
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled the '!ICMP' packet filter
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLAN Sleeping on BSS:   @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -58, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 120, ssid[11] = "theAperture"
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): Associated & WoW enabled, WiFi will remain up
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOff(): fStateFlags(00000021)
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 0, pol 0xc0796800 (this 1, provider 0)
+Sep 24 13:00:15 unknown kernel[0] <Debug>: pmu wake events: rtc
+Sep 24 13:07:35 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0  fController: 0 -> 0
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x8002, stateNum 1, dev 0xc0796800 (this 1, provider 0)
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 1, pol 0xc0796800 (this 1, provider 0)
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOnSystem() : Powering On
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): stateFlags(4023)
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOn()
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): Tearing down WoW mode
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLAN Woke on same BSS:  @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -57, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 121, ssid[11] = "theAperture"
+Sep 24 13:07:35 unknown CLTM[12] <Error>: CLTM: resetting temps: now = 1348506455, last update = 1348506012
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled packet filters
+Sep 24 13:07:35 unknown kernel[0] <Debug>: en0: BSSID changed to 4c:17:eb:e2:c1:9d
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableDetect 0
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableType Detached
+Sep 24 13:07:35 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:07:45 unknown UserEventAgent[12] <Warning>: Unable to cancel system wake for 2012-09-24 13:07:37 -0400. IOPMCancelScheduledPowerEvent() returned 0xe00002c2
+Sep 24 13:07:52 unknown UserEventAgent[12] <Warning>: Unable to cancel system wake for 2012-09-24 13:07:37 -0400. IOPMCancelScheduledPowerEvent() returned 0xe00002c2
+Sep 24 13:07:52 unknown syncdefaultsd[2089] <Warning>: Asked to perform job com.apple.syncdefaultsd.relaunch
+Sep 24 13:07:53 unknown kernel[0] <Debug>: launchd[2089] Builtin profile: syncdefaultsd (sandbox)
+Sep 24 13:07:58 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 0 swapBusy: 0  fController: 0 -> 0
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x18000, stateNum 0, dev 0xc0796800 (this 1, provider 0)
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOffSystem() : Powering Off and sleeping
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): fStateFlags(14022)
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Unicast IP filter enabled 
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  0 (ID=103)
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  1 (ID=104)
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled the '!ICMP' packet filter
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLAN Sleeping on BSS:   @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -56, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 143, ssid[11] = "theAperture"
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): Associated & WoW enabled, WiFi will remain up
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOff(): fStateFlags(00000021)
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 0, pol 0xc0796800 (this 1, provider 0)
+Sep 24 13:07:57 unknown kernel[0] <Debug>: pmu wake events: wlan
+Sep 24 13:12:42 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0  fController: 0 -> 0
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x8002, stateNum 1, dev 0xc0796800 (this 1, provider 0)
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 1, pol 0xc0796800 (this 1, provider 0)
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOnSystem() : Powering On
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): stateFlags(4023)
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOn()
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): Tearing down WoW mode
+Sep 24 13:12:42 unknown kernel[0] <Debug>: [29587.377643000]: AppleBCMWLANCore::systemWokenByWiFi(): Wake reason = wlan 
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::handleDataPacket(): Wake up packet received: Data
+Sep 24 13:12:42 unknown kernel[0] <Debug>: Wakeup Packet: f0b479fb46c94c17ebe2c19b08004500003f690e4000f0067d1b11acd02fc0a8020b01bbcaf7c60140d88d7f52d350119ffe562800001503010012b94d040a53e1c44e76f922526b34334e16e3 (77 bytes)
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLAN Woke on same BSS:  @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -57, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 144, ssid[11] = "theAperture"
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled packet filters
+Sep 24 13:12:42 unknown kernel[0] <Debug>: en0: BSSID changed to 4c:17:eb:e2:c1:9d
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableDetect 0
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableType Detached
+Sep 24 13:12:42 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:12:44 unknown CLTM[12] <Error>: CLTM: resetting temps: now = 1348506764, last update = 1348506475
+Sep 24 13:13:13 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 0 swapBusy: 0  fController: 0 -> 0
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x18000, stateNum 0, dev 0xc0796800 (this 1, provider 0)
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOffSystem() : Powering Off and sleeping
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): fStateFlags(14022)
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Unicast IP filter enabled 
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  0 (ID=103)
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled WOMP filter  1 (ID=104)
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedEntry(): Enabled the '!ICMP' packet filter
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLAN Sleeping on BSS:   @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -55, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 174, ssid[11] = "theAperture"
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOff(): Associated & WoW enabled, WiFi will remain up
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOff(): fStateFlags(00000021)
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 0, pol 0xc0796800 (this 1, provider 0)
+Sep 24 13:13:12 unknown kernel[0] <Debug>: pmu wake events: hold
+Sep 24 13:20:46 unknown SpringBoard[49] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Sep 24 13:20:46 unknown kernel[0] <Debug>: virtual void AppleRGBOUT::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0  fController: 0 -> 0
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateWillChangeToGated(): cap 0x8002, stateNum 1, dev 0xc0796800 (this 1, provider 0)
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerStateDidChangeToGated(): stateNum 1, pol 0xc0796800 (this 1, provider 0)
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOnSystem() : Powering On
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): stateFlags(4023)
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANBusInterfaceSdio::powerOn()
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::powerOn(): Tearing down WoW mode
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLAN Woke on same BSS:  @ 0xc0f19200, BSSID = 4c:17:eb:e2:c1:9d, rssi = -60, rate = 54 (100%), channel =  4, encryption = 0x8, ap = 1, failures =   0, age = 175, ssid[11] = "theAperture"
+Sep 24 13:20:46 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 13:20:46 unknown SpringBoard[49] <Notice>: MultitouchHID: detection mode: 255->0 (deferring until bootloaded)
+Sep 24 13:20:46 unknown UserEventAgent[12] <Warning>: DEBUG: Changing screen blanked state: 0
+Sep 24 13:20:46 unknown SpringBoard[49] <Notice>: MultitouchHID: device bootloaded
+Sep 24 13:20:46 unknown SpringBoard[49] <Notice>: MultitouchHID: detection mode: 0->0
+Sep 24 13:20:47 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled the '!ICMP' packet filter
+Sep 24 13:20:47 unknown kernel[0] <Debug>: set_crc_notification_state 0
+Sep 24 13:20:47 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableDetect 0
+Sep 24 13:20:47 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableType Detached
+Sep 24 13:20:47 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBCableDisconnect
+Sep 24 13:20:47 unknown kernel[0] <Debug>: AppleBCMWLANCore::configureWoWAssociatedExit(): Disabled packet filters
+Sep 24 13:20:47 unknown kernel[0] <Debug>: en0: BSSID changed to 4c:17:eb:e2:c1:9d
+Sep 24 13:20:47 unknown CLTM[12] <Error>: CLTM: resetting temps: now = 1348507247, last update = 1348506789
+Sep 24 13:21:27 unknown aggregated[48] <Warning>: PLAggregateState Error: Leaving state unplugged_asleep even though we are not in it, doing nothing
+Sep 24 13:21:27 unknown aggregated[48] <Warning>: PLAggregateState Error: Leaving state unplugged_screen_off even though we are not in it, doing nothing
+Sep 24 13:21:27 unknown aggregated[48] <Warning>: PLAggregateState Error: Leaving state pluggedin_screen_off even though we are not in it, doing nothing
+Sep 24 13:21:28 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableDetect 1
+Sep 24 13:21:28 unknown kernel[0] <Debug>: AppleD1815PMUPowerSource: AppleUSBCableType USBHost
+Sep 24 13:21:28 unknown kernel[0] <Debug>: AppleSynopsysOTGDevice::handleUSBReset
+Sep 24 13:21:28 unknown UserEventAgent[12] <Warning>: DEBUG: Changing powered state: 1
+Sep 24 13:21:29 unknown kernel[0] <Debug>: launchd[2099] Builtin profile: ptpd (sandbox)
+Sep 24 13:21:29 unknown ptpd[2099] <Notice>: PTP interface has been activated at high speed.
+Sep 24 13:21:29 unknown lockdownd[26] <Notice>: 01737000 copy_phonenumber: CTSettingCopyMyPhoneNumber() returned NULL
+Sep 24 13:21:29 unknown lockdownd[26] <Error>: libMobileGestalt copyBasebandMobileEquipmentInfo: CommCenter error: 1:45
+Sep 24 13:21:29 unknown lockdownd[26] <Error>: libMobileGestalt copyInternationalMobileEquipmentIdentity: Could not get mobile equipment info dictionary
+Sep 24 13:21:29 unknown lockdownd[26] <Notice>: 01737000 copy_imei: MobileGestalt failed to provide an IMEI
+Sep 24 13:21:29 unknown lockdownd[26] <Notice>: 01737000 copy_iccid: CommCenter error: 1:45
+Sep 24 13:21:29 unknown lockdownd[26] <Error>: libMobileGestalt copyBasebandMobileEquipmentInfo: CommCenter error: 1:45
+Sep 24 13:21:29 unknown lockdownd[26] <Error>: libMobileGestalt copyMobileEquipmentIdentifier: Could not get mobile equipment info dictionary
+Sep 24 13:21:29 unknown lockdownd[26] <Notice>: 01737000 copy_meid: MobileGestalt failed to provide an MEID but returned no error (?)
+Sep 24 13:21:29 unknown kernel[0] <Debug>: lockbot[2101] Builtin profile: gputoolsd (sandbox)
+> 
+Sep 24 13:21:31 unknown timed[2113] <Notice>: (Note ) CoreTime: Received time 09/24/2012 17:18:49±-6-0-.-0-0 -f-r-o-m -"-M-o-b-i-l-e-L-o-c-k-d-o-w-n-"
+Sep 24 13:21:31 unknown timed[2113] <Notice>: (Note ) CoreTime: Not setting system time to 09/24/2012 17:21:31 from NTP because time is unchanged
+Sep 24 13:21:31 unknown timed[2113] <Notice>: (Note ) CoreTime: Want active time in 24.21hrs. Need active time in 107.54hrs.
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: Found paths:
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: /usr/lib/dyld
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: /System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv7
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: /Developer/usr/lib/CFDataFormatters.dylib
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: /Developer/usr/lib/libdebugnub.dylib
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: /Developer/usr/lib/libXcodeDebuggerSupport.dylib
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: /Developer/Library/PrivateFrameworks/GPUTools.framework/libglInterpose.dylib
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: /Developer/Library/PrivateFrameworks/GPUToolsCore.framework/GPUToolsCore
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: /Developer/Library/PrivateFrameworks/DevToolsBundleInjection.framework/DevToolsBundleInjection
+Sep 24 13:21:31 unknown DTFetchSymbols[2116] <Notice>: /Developer/Library/Frameworks/SenTestingKit.framework/SenTestingKit
+> 
+ Sep 24 13:21:32 unknown wifid[13] <Error>: WiFi:[370200092.639323]: Client itunesstored is background application
+ >  > 
+Sep 24 13:21:34 unknown timed[2113] <Notice>: (Note ) CoreTime: Want active time in 24.21hrs. Need active time in 107.54hrs.
+ >  > 
+Sep 24 13:21:44 unknown timed[2113] <Notice>: (Note ) CoreTime: Not setting time zone to America/Toronto from Location
+ >  > 
+Sep 24 13:21:47 unknown librariand[2124] <Notice>: changing log level to 5
+Sep 24 13:21:48 unknown librariand[2124] <Error>: client connection is invalid: Connection invalid
+> 
+Sep 24 13:21:49 unknown installd[2091] <Error>: 2ffca000 handle_uninstall: uninstall requested by SpringBoard
+Sep 24 13:21:49 unknown installd[2091] <Error>: 2ffca000 MobileInstallationUninstall: Uninstalling com.leviait.mobile.DealsNearMeApp
+Sep 24 13:21:49 unknown com.apple.launchd[1] <Notice>: (UIKitApplication:com.leviait.mobile.DealsNearMeApp[0x8b00]) Exited: Killed: 9
+Sep 24 13:21:49 unknown SpringBoard[49] <Warning>: Application 'DealsNearMeApp' exited abnormally with signal 9: Killed: 9
+> 
+Sep 24 13:22:19 unknown wifid[13] <Error>: WiFi:[370200139.583706]: Client itunesstored is background application
+ >  > 
+Sep 24 13:22:21 unknown BackupAgent2[2145] <Error>: Starting service with bag=24b870d5443e00f00327f2948869ddabf97b58a5
+Sep 24 13:22:22 unknown BackupAgent2[2145] <Warning>: WARNING: Starting backup
+Sep 24 13:22:22 unknown BackupAgent2[2145] <Warning>: INFO: DeviceID="a597d40e41378a62859e56a10b75ca4b01ac5ff3", DeviceName="Daspod", ProductType="iPod4,1", BuildVersion="9B206"
+Sep 24 13:22:22 unknown kernel[0] <Debug>: AppleKeyStore:cp_key_store_action(1)
+Sep 24 13:22:22 unknown profiled[2146] <Notice>: (Note ) profiled: Service starting...
+Sep 24 13:22:22 unknown BackupAgent2[2145] <Warning>: INFO: Backup status: <MBStatus: version=2.4, date=2012-09-24 12:47:18 +0000, backupState=new, snapshotState=finished, fullBackup=0>
+Sep 24 13:22:22 unknown BackupAgent2[2145] <Warning>: INFO: Backup properties: <MBDriveProperties: version=9.0, systemDomainsVersion=12.0, date=2012-09-24 12:47:16 +0000, encrypted=0, passcodeSet=0, lockdownKeys={UniqueDeviceID: "a597d40e41378a62859e56a10b75ca4b01ac5ff3", com.apple.TerminalFlashr: {}, com.apple.mobile.data_sync: {Bookmarks: {AccountNames: ["iCloud"], Sources: ["iCloud"]}, Calendars: {AccountNames: ["iCloud"], Sources: ["iCloud"]}, Contacts: {AccountNames: ["iCloud"], Sources: ["iCloud"]}}, BuildVersion: "9B206", com.apple.mobile.iTunes.accessories: {}, DeviceName: "Das’-s -i-P-o-d-"-, -c-o-m-.-a-p-p-l-e-.-m-o-b-i-l-e-.-w-i-r-e-l-e-s-s-_-l-o-c-k-d-o-w-n-: -{-}-, -S-e-r-i-a-l-N-u-m-b-e-r-: -"-C-3-R-F-7-4-W-K-D-C-P-7-"-, -c-o-m-.-a-p-p-l-e-.-M-o-b-i-l-e-D-e-v-i-c-e-C-r-a-s-h-C-o-p-y-: -{-S-h-o-u-l-d-S-u-b-m-i-t-: -0-}-, -c-o-m-.-a-p-p-l-e-.-i-T-u-n-e-s-.-b-a-c-k-u-p-: -{-L-a-s-t-B-a-c-k-u-p-C-o-m-p-u-t-e-r-T-y-p-e-: -"-M-a-c-"-, -L-a-s-t-B-a-c-k-u-p-C-o-m-p-u-t-e-r-N-a-m-e-: -"-b-o-t-w-i-n-"-}-, -c-o-m-.-a-p-p-l-e-.-A-c-c-e-s-s-i-b-i-l-i-t-y-: -{-V-o-i-c-e-O-v-e-r-T-o-u-c-h-E-n-a-b-l-e-d-B-y-i-T-u-n-e-s-: -0-}-, -c-o-m-.-a-p-p-l-e-.-i-t-u-n-e-s-s-t-o-r-e-d-: -{-C-r-e-d-i-t-D-i-s-p-l-a-y-S-t-r-i-n-g-: -"-"-, -A-c-c-o-u-n-t-S-o-c-i-a-l-E-n-a-b-l-e-d-: -0-, -D-S-P-e-r-s-o-n-I-D-: -1-1-8-9-8-6-1-5-8-3-, -A-c-c-o-u-n-t-S-e-r-v-i-c-e-T-y-p-e-s-: -0-, -A-c-c-o-u-n-t-S-t-o-r-e-F-r-o-n-t-: -"-1-4-3-4-5-5---6-,-4-"-, -A-c-c-o-u-n-t-U-R-L-B-a-g-T-y-p-e-: -"-p-r-o-d-u-c-t-i-o-n-"-, -A-c-c-o-u-n-t-A-v-a-i-l-a-b-l-e-S-e-r-v-i-c-e-T-y-p-e-s-: -0-, -S-t-o-r-e-f-r-o-n-t-: -"-1-4-3-4-5-5---6-,-4-"-, -A-c-c-o-u-n-t-K-i-n-d-: -0-, -T-e-m-p-S-t-o-r-e-f-r-o-n-t-: -"-1-4-3-4-5-5---6-,-4-"-, -A-p-p-l-e-I-D-: -"-a-p-p-l-i-a-i-s-o-n-@-g-m-a-i-l-.-c-o-m-"-}-, -P-r-o-d-u-c-t-T-y-p-e-: -"-i-P-o-d-4-,-1-"-, -P-r-o-d-u-c-t-V-e-r-s-i-o-n-: -"-5-.-1-.-1-"-}->
+Sep 24 13:22:22 unknown BackupAgent2[2145] <Warning>: INFO: Backup database: <MBDatabase: version=5.0>
+> 
+Sep 24 13:22:24 unknown BackupAgent2[2145] <Warning>: INFO: Scanned in 1.949 s
+Sep 24 13:22:24 unknown BackupAgent2[2145] <Warning>: INFO: Uploaded 20 files of 51.0 KB in 0.136 s at 0.37 MB/s
+Sep 24 13:22:24 unknown BackupAgent2[2145] <Warning>: INFO: Moved 20 files in 0.124 s
+Sep 24 13:22:24 unknown BackupAgent2[2145] <Warning>: INFO: Removed 3 items in 0.039 s
+Sep 24 13:22:24 unknown BackupAgent2[2145] <Warning>: WARNING: Finished backup in 2.740 s
+> 
+Sep 24 13:22:26 unknown SpringBoard[49] <Warning>: could not save thumbnail for downloading icon: image=(null) path='/var/mobile/Library/SpringBoard/DownloadingIconImageCache/com.leviait.mobile.DealsNearMeApp-73271C98-1889-4203-933B-0F1BD0B1F7DD'
+ >  > 
+Sep 24 13:22:33 unknown installd[2091] <Error>: entitlement 'keychain-access-groups' has value not permitted by a provisioning profile
+Sep 24 13:22:33 unknown installd[2091] <Error>: entitlement 'get-task-allow' has value not permitted by a provisioning profile
+Sep 24 13:22:33 unknown installd[2091] <Error>: entitlement 'application-identifier' has value not permitted by a provisioning profile
+Sep 24 13:22:33 unknown installd[2091] <Error>: 2ffca000 verify_signer_identity: Could not copy validate signature: -402620394
+Sep 24 13:22:33 unknown installd[2091] <Error>: 2ffca000 preflight_application_install: Could not verify executable at /var/tmp/install_staging.DXbjQT/foo_extracted/Payload/DealsNearMeApp.app
+Sep 24 13:22:33 unknown com.apple.itunesstored[2143] <Notice>: MobileInstallationInstall: failed with -1
+Sep 24 13:22:33 unknown installd[2091] <Error>: 2ffca000 install_application: Could not preflight application install
+Sep 24 13:22:34 unknown installd[2091] <Error>: 2ffca000 handle_install: API failed
+Sep 24 13:22:34 unknown installd[2091] <Error>: 2ffca000 send_message: failed to send mach message of 71 bytes: 10000003
+Sep 24 13:22:34 unknown installd[2091] <Error>: 2ffca000 send_error: Could not send error response to client
+> 
+Sep 24 13:22:56 unknown wifid[13] <Error>: WiFi:[370200176.843181]: Client itunesstored is background application
+ >  > 
+Sep 24 13:22:58 unknown lockdownd[26] <Notice>: 016b5000 copy_phonenumber: CTSettingCopyMyPhoneNumber() returned NULL
+Sep 24 13:22:58 unknown lockdownd[26] <Error>: libMobileGestalt copyBasebandMobileEquipmentInfo: CommCenter error: 1:45
+Sep 24 13:22:58 unknown lockdownd[26] <Error>: libMobileGestalt copyInternationalMobileEquipmentIdentity: Could not get mobile equipment info dictionary
+Sep 24 13:22:58 unknown lockdownd[26] <Notice>: 016b5000 copy_imei: MobileGestalt failed to provide an IMEI
+Sep 24 13:22:58 unknown lockdownd[26] <Notice>: 016b5000 copy_iccid: CommCenter error: 1:45
+Sep 24 13:22:58 unknown lockdownd[26] <Error>: libMobileGestalt copyBasebandMobileEquipmentInfo: CommCenter error: 1:45
+Sep 24 13:22:58 unknown lockdownd[26] <Error>: libMobileGestalt copyMobileEquipmentIdentifier: Could not get mobile equipment info dictionary
+Sep 24 13:22:58 unknown lockdownd[26] <Notice>: 016b5000 copy_meid: MobileGestalt failed to provide an MEID but returned no error (?)
+> 
+Sep 24 13:23:00 unknown SpringBoard[49] <Warning>: could not save thumbnail for downloading icon: image=(null) path='/var/mobile/Library/SpringBoard/DownloadingIconImageCache/com.leviait.mobile.DealsNearMeApp-27C24D2B-C801-4EA7-B1C0-D66ACD6F119E'
+ >  > 
+Sep 24 13:23:06 unknown installd[2091] <Error>: entitlement 'keychain-access-groups' has value not permitted by a provisioning profile
+Sep 24 13:23:06 unknown installd[2091] <Error>: entitlement 'get-task-allow' has value not permitted by a provisioning profile
+Sep 24 13:23:06 unknown installd[2091] <Error>: entitlement 'application-identifier' has value not permitted by a provisioning profile
+Sep 24 13:23:06 unknown installd[2091] <Error>: 2ffca000 verify_signer_identity: Could not copy validate signature: -402620394
+Sep 24 13:23:06 unknown installd[2091] <Error>: 2ffca000 preflight_application_install: Could not verify executable at /var/tmp/install_staging.v8FCuD/foo_extracted/Payload/DealsNearMeApp.app
+Sep 24 13:23:06 unknown com.apple.itunesstored[2164] <Notice>: MobileInstallationInstall: failed with -1
+Sep 24 13:23:06 unknown installd[2091] <Error>: 2ffca000 install_application: Could not preflight application install
+Sep 24 13:23:07 unknown installd[2091] <Error>: 2ffca000 handle_install: API failed
+Sep 24 13:23:07 unknown installd[2091] <Error>: 2ffca000 send_message: failed to send mach message of 71 bytes: 10000003
+Sep 24 13:23:07 unknown installd[2091] <Error>: 2ffca000 send_error: Could not send error response to client
+> 
+Sep 24 13:23:19 unknown notification_proxy[2130] <Error>: Could not receive size of message: 0 Invalid argument
+Sep 24 13:23:19 unknown notification_proxy[2130] <Error>: Could not receive message
+> 
+Sep 24 13:23:22 unknown profiled[2146] <Notice>: (Note ) profiled: Idled.
+Sep 24 13:23:22 unknown profiled[2146] <Notice>: (Note ) profiled: Service stopping.
+> 
+Sep 24 13:24:51 unknown SpringBoard[49] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Sep 24 13:24:51 unknown SpringBoard[49] <Notice>: MultitouchHID: detection mode: 0->255
+Sep 24 13:24:51 unknown UserEventAgent[12] <Warning>: DEBUG: Changing screen blanked state: 1
