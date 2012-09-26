@@ -458,7 +458,6 @@
 	
 	NSLog(@"The Number of newdeals is %d", [self.newdeals count]);
 	
-	[self startTimer];
 	
 }
 - (void)categoryPressed:(UIButton*)sender
@@ -1555,6 +1554,7 @@
 		
 		self.isScrollViewVisible = NO;
 		
+		
 		[UIView beginAnimations:@"animateViewOff" context:NULL];
 		
 		[self.scrollView setFrame:CGRectOffset([self.scrollView frame], 0, -((2 *self.scrollView.frame.size.height) + 44))];
@@ -1609,7 +1609,7 @@
 		
 		NSLog(@"----------about to start timer");
 		
-		[self startTimer];
+		/* [self startTimer]; */
 		
 	}
 }

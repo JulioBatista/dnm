@@ -13,6 +13,12 @@
 		4B2E52B71603C7E100EBAE92 /* splash_background_with_changes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E52B61603C7E100EBAE92 /* splash_background_with_changes.jpg */; };
 		4B2E52BA1603CC5300EBAE92 /* no_thanks_let_me_in_button_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E52B91603CC5300EBAE92 /* no_thanks_let_me_in_button_image.jpg */; };
 		4B2E52BC1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B2E52BB1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png */; };
+		4B32D26A1612B03800078019 /* hearticon_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B32D2681612B03800078019 /* hearticon_press.png */; };
+		4B32D26B1612B03800078019 /* hearticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B32D2691612B03800078019 /* hearticon.png */; };
+		4B32D26E1612B04900078019 /* bevelbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B32D26C1612B04900078019 /* bevelbox@2x.png */; };
+		4B32D26F1612B04900078019 /* bevelbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B32D26D1612B04900078019 /* bevelbox.png */; };
+		4B32D2721612BB5D00078019 /* navlogo145x33.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B32D2711612BB5D00078019 /* navlogo145x33.png */; };
+		4B32D2751612C78600078019 /* aviva_button_with_gradient_198x46.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B32D2741612C78600078019 /* aviva_button_with_gradient_198x46.png */; };
 		4B367DAF15E27B430039AFB5 /* category_icon_003_dining.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DA515E27B3D0039AFB5 /* category_icon_003_dining.png */; };
 		4B367DB015E27B430039AFB5 /* category_icon_007_shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DA615E27B3D0039AFB5 /* category_icon_007_shopping.png */; };
 		4B367DB115E27B430039AFB5 /* category_icon_009_wellness.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B367DA715E27B3E0039AFB5 /* category_icon_009_wellness.png */; };
@@ -377,6 +383,12 @@
 		4B2E52B61603C7E100EBAE92 /* splash_background_with_changes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash_background_with_changes.jpg; sourceTree = "<group>"; };
 		4B2E52B91603CC5300EBAE92 /* no_thanks_let_me_in_button_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_thanks_let_me_in_button_image.jpg; sourceTree = "<group>"; };
 		4B2E52BB1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_thanks_let_in_button_transparent.png; sourceTree = "<group>"; };
+		4B32D2681612B03800078019 /* hearticon_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hearticon_press.png; sourceTree = "<group>"; };
+		4B32D2691612B03800078019 /* hearticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hearticon.png; sourceTree = "<group>"; };
+		4B32D26C1612B04900078019 /* bevelbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bevelbox@2x.png"; sourceTree = "<group>"; };
+		4B32D26D1612B04900078019 /* bevelbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bevelbox.png; sourceTree = "<group>"; };
+		4B32D2711612BB5D00078019 /* navlogo145x33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navlogo145x33.png; sourceTree = "<group>"; };
+		4B32D2741612C78600078019 /* aviva_button_with_gradient_198x46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aviva_button_with_gradient_198x46.png; sourceTree = "<group>"; };
 		4B367DA515E27B3D0039AFB5 /* category_icon_003_dining.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_003_dining.png; sourceTree = "<group>"; };
 		4B367DA615E27B3D0039AFB5 /* category_icon_007_shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_007_shopping.png; sourceTree = "<group>"; };
 		4B367DA715E27B3E0039AFB5 /* category_icon_009_wellness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category_icon_009_wellness.png; sourceTree = "<group>"; };
@@ -836,6 +848,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B32D2661612B01000078019 /* aviva_deal_detail_icons */ = {
+			isa = PBXGroup;
+			children = (
+				4B32D26C1612B04900078019 /* bevelbox@2x.png */,
+				4B32D26D1612B04900078019 /* bevelbox.png */,
+				4B32D2681612B03800078019 /* hearticon_press.png */,
+				4B32D2691612B03800078019 /* hearticon.png */,
+			);
+			name = aviva_deal_detail_icons;
+			sourceTree = "<group>";
+		};
+		4B32D2701612BB4700078019 /* aviva_nav_header_icon */ = {
+			isa = PBXGroup;
+			children = (
+				4BC5048515CD833B00E535A2 /* deals_header_logo.png */,
+				4BD9EE1815FBEFB4001D1DA6 /* deals_header_logo_better.png */,
+				4BD9EE1A15FBF0A1001D1DA6 /* new_deals_header_logo.png */,
+				4B32D2711612BB5D00078019 /* navlogo145x33.png */,
+			);
+			name = aviva_nav_header_icon;
+			sourceTree = "<group>";
+		};
+		4B32D2731612C77600078019 /* aviva_loginscreen_button */ = {
+			isa = PBXGroup;
+			children = (
+				4BAF37171602548E00789C29 /* aviva_button_with_gradient.png */,
+				4B32D2741612C78600078019 /* aviva_button_with_gradient_198x46.png */,
+			);
+			name = aviva_loginscreen_button;
+			sourceTree = "<group>";
+		};
 		4B44261515C61D3100E46BD9 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1180,6 +1223,9 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B32D2731612C77600078019 /* aviva_loginscreen_button */,
+				4B32D2701612BB4700078019 /* aviva_nav_header_icon */,
+				4B32D2661612B01000078019 /* aviva_deal_detail_icons */,
 				4B8516A2160D6B610075B851 /* map_pins_icons_30px */,
 				4B851681160D6AE30075B851 /* map_pins_icons_35px */,
 				4B8515C4160C01F40075B851 /* aviva_new_category_icons */,
@@ -1194,11 +1240,8 @@
 				4B2E52BB1603CD8200EBAE92 /* no_thanks_let_in_button_transparent.png */,
 				4B2E52B91603CC5300EBAE92 /* no_thanks_let_me_in_button_image.jpg */,
 				4B2E52B61603C7E100EBAE92 /* splash_background_with_changes.jpg */,
-				4BAF37171602548E00789C29 /* aviva_button_with_gradient.png */,
 				4B89C9B315FFA6F600FDE9E7 /* fb_profile-pic_144x144.png */,
 				4BE60B6815FE8BF200EAD2A2 /* fb-assets */,
-				4BD9EE1A15FBF0A1001D1DA6 /* new_deals_header_logo.png */,
-				4BD9EE1815FBEFB4001D1DA6 /* deals_header_logo_better.png */,
 				4BE60B5C15FE873600EAD2A2 /* new_deal_detail_assets */,
 				4B53420A15FE7A9D00C7356E /* highresbackgroundimages */,
 				4B53421315FE7D7200C7356E /* map_pins_icons_23px */,
@@ -1240,7 +1283,6 @@
 			isa = PBXGroup;
 			children = (
 				4BF8BCC615DA1ECF002EECD6 /* new_dnm_header_logo.png */,
-				4BC5048515CD833B00E535A2 /* deals_header_logo.png */,
 			);
 			name = low_res_dnm_logo;
 			sourceTree = "<group>";
@@ -1898,6 +1940,12 @@
 				4B8516CC160D6F8F0075B851 /* map_pin_wellness_30px.png in Resources */,
 				4B8516D1160D88770075B851 /* 29-heart@2x.png in Resources */,
 				4B8516D3160D88ED0075B851 /* 24-gift@2x.png in Resources */,
+				4B32D26A1612B03800078019 /* hearticon_press.png in Resources */,
+				4B32D26B1612B03800078019 /* hearticon.png in Resources */,
+				4B32D26E1612B04900078019 /* bevelbox@2x.png in Resources */,
+				4B32D26F1612B04900078019 /* bevelbox.png in Resources */,
+				4B32D2721612BB5D00078019 /* navlogo145x33.png in Resources */,
+				4B32D2751612C78600078019 /* aviva_button_with_gradient_198x46.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
