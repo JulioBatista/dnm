@@ -1010,8 +1010,8 @@
                                     <action selector="buttonFacebookButtonPressed:" destination="UYJ-eB-zaU" eventType="touchUpInside" id="UAJ-vm-lhf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LogIn With Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mNk-X6-m2v">
-                                <rect key="frame" x="80" y="312" width="168" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log in With Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mNk-X6-m2v">
+                                <rect key="frame" x="76" y="312" width="177" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1047,8 +1047,8 @@
                                     <action selector="buttonTwitterButtonPressed:" destination="UYJ-eB-zaU" eventType="touchUpInside" id="neN-iY-Lxh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LogIn With Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ngo-JU-aQs">
-                                <rect key="frame" x="89" y="373" width="149" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log in With Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ngo-JU-aQs">
+                                <rect key="frame" x="87" y="373" width="153" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1832,7 +1832,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             </objects>
             <point key="canvasLocation" x="2215" y="-2068"/>
         </scene>
-        <!--Location Picker View Controller-->
+        <!--Location Picker View Controller - Search by location-->
         <scene sceneID="HaE-cm-lIC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HoZ-tj-Ohe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1878,7 +1878,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                             <outlet property="delegate" destination="QGo-yv-kUL" id="b9A-7U-01Y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cWo-Al-ux9">
+                    <navigationItem key="navigationItem" title="Search by location" id="cWo-Al-ux9">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="nsr-5V-XaS">
                             <connections>
                                 <action selector="cancel:" destination="QGo-yv-kUL" id="Spi-lF-puA"/>

@@ -458,6 +458,8 @@
 	
 	NSLog(@"The Number of newdeals is %d", [self.newdeals count]);
 	
+	[self startTimer];
+	
 	
 }
 - (void)categoryPressed:(UIButton*)sender
@@ -1042,6 +1044,11 @@
 	
     /* [self gotoHardCodedLocation]; */
 	
+	
+	
+	
+	
+	
 }
 
 - (void)categoryBarsPressed:(id)sender
@@ -1060,6 +1067,8 @@
 	
 	[self getDealsFromNetwork_filter0_bars];
 	
+	
+	
 }
 
 - (void) categoryTravelPressed:(id) sender
@@ -1075,6 +1084,7 @@
 	[self.button009 setSelected:NO];
 	
     [self getDealsFromNetwork_filter0_travel];
+	
 }
 
 - (void) categoryFunPressed:(id) sender
@@ -1089,6 +1099,8 @@
 	[self.button008 setSelected:NO];
 	
 	[self getDealsFromNetwork_filter0_fun];
+	
+	
 }
 
 - (void) categoryServicesPressed:(id) sender
@@ -1104,6 +1116,8 @@
 	[self.button009 setSelected:NO];
 	
 	[self getDealsFromNetwork_filter0_services];
+	
+	
 }
 
 - (void) categoryDiningPressed:(id) sender
@@ -1119,6 +1133,8 @@
 	[self.button009 setSelected:NO];
 	
 	[self getDealsFromNetwork_filter0_dining];
+	
+	
 }
 - (void) categoryFamilyPressed:(id) sender
 {
@@ -1133,6 +1149,8 @@
 	[self.button009 setSelected:NO];
 	
     [self getDealsFromNetwork_filter0_family];
+	
+	
 }
 - (void) categoryShoppingPressed:(id) sender
 {
@@ -1147,6 +1165,8 @@
 	[self.button009 setSelected:NO];
 	
 	[self getDealsFromNetwork_filter0_shopping];
+	
+	
 }
 
 - (void) categoryWellnessPressed:(id) sender
@@ -1162,6 +1182,8 @@
 	[self.button009 setSelected:YES];
 	
 	[self getDealsFromNetwork_filter0_wellness];
+	
+	
 }
 
 - (void)arrangeButtons
@@ -1609,7 +1631,8 @@
 		
 		NSLog(@"----------about to start timer");
 		
-		/* [self startTimer]; */
+		[self startTimer];
+		
 		
 	}
 }
@@ -1937,6 +1960,8 @@
 {
 	NSLog(@"-------timer started");
 	
+	[self.buttonToggleScrollView setEnabled:NO];
+	
     fiveSecondsTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(collapseCategoryCarousel) userInfo:nil repeats:YES];
 	
 }
@@ -1944,7 +1969,9 @@
 - (IBAction)stopTimer
 {
     [fiveSecondsTimer invalidate];
-
+	
+	[self.buttonToggleScrollView setEnabled:YES];
+	
 	NSLog(@"-------timer started");
 }
 
