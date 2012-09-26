@@ -19,6 +19,7 @@
 @end
 
 @implementation NewDealDetailViewController
+@synthesize buttonFavoritesButton = _buttonFavoritesButton;
 
 @synthesize labelDealDescription;
 @synthesize dealnum = _dealnum;
@@ -34,6 +35,8 @@
 @synthesize favoriteDeals = _favoriteDeals;
 @synthesize actionSheet = _actionSheet;
 @synthesize canTweet = _canTweet;
+@synthesize fromFavoritesView = _fromFavoritesView;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -112,6 +115,17 @@
 	
 	/* NSLog(@"-----%@", onedeal); */
     [FacebookHelper sharedInstance].publishingdelegate = self;
+	
+	/* set the favorites button to pressed state if you are coming from Favorites screen */
+	
+	if (self.fromFavoritesView)
+	{
+		[self.buttonFavoritesButton setEnabled:NO];
+	}
+	else
+	{
+		[self.buttonFavoritesButton setEnabled:YES];
+	}
 }
 
 - (void)viewDidUnload
@@ -123,6 +137,7 @@
 	[self setLabelBusinessName:nil];
 	[self setLabelAddressLine2:nil];
 	[self setLabelBusinessPhoneLabel:nil];
+	[self setButtonFavoritesButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -195,6 +210,12 @@
 {
     
 	
+	[self.buttonFavoritesButton setImage:[UIImage imageNamed:@"hearticon_press.png"] forState:UIControlStateSelected];
+	
+	[self.buttonFavoritesButton setImage:[UIImage imageNamed:@"hearticon_press.png"] forState:UIControlStateNormal];
+	
+	[self.buttonFavoritesButton setEnabled:NO];
+	
     
 	NSLog(@"How many deals in Favorites view Controller %d", [self.favoriteDeals count]);
     
@@ -222,8 +243,11 @@
                                               otherButtonTitles:nil];
     
     [alertView show];
+	
+	
     
 }
+
 
 - (IBAction)buttonShareButtonPressed:(id)sender
 {

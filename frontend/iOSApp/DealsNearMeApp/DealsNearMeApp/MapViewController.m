@@ -1477,9 +1477,9 @@
         
         
         
-        DealDetailViewController *dest = [segue destinationViewController];
+        NewDealDetailViewController *dest = [segue destinationViewController];
         
-		
+		dest.fromFavoritesView = NO;
 		
 		
 		dest.dealnum = [[NSNumber alloc] initWithInteger:indexPath.row];

@@ -62,37 +62,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="2oQ-De-b7N">
-                                                    <rect key="frame" x="6" y="13" width="60" height="60"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="60x60thumb.png" id="2oQ-De-b7N">
+                                                    <rect key="frame" x="6" y="10" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" image="default_thumb.png" id="smu-8n-8XE">
-                                                    <rect key="frame" x="15" y="18" width="44" height="44"/>
+                                                    <rect key="frame" x="8" y="12" width="56" height="56"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="201" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="6DY-lx-omI">
-                                                    <rect key="frame" x="70" y="7" width="210" height="21"/>
+                                                    <rect key="frame" x="70" y="8" width="210" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="1" green="0.56565433310000002" blue="0.2489401889" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="202" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="CIp-eo-BRp">
-                                                    <rect key="frame" x="70" y="24" width="210" height="35"/>
+                                                    <rect key="frame" x="70" y="22" width="210" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Uh5-Yh-H28">
-                                                    <rect key="frame" x="70" y="56" width="86" height="21"/>
+                                                    <rect key="frame" x="70" y="50" width="86" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.14932834447959667" green="0.65728635204081631" blue="0.65015356962735482" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ZIy-sQ-rT8">
-                                                    <rect key="frame" x="187" y="56" width="90" height="21"/>
+                                                    <rect key="frame" x="187" y="50" width="90" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -247,37 +247,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="X3Y-0e-hBh">
-                                                    <rect key="frame" x="6" y="13" width="60" height="60"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="60x60thumb.png" id="X3Y-0e-hBh">
+                                                    <rect key="frame" x="6" y="10" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="202" contentMode="scaleAspectFit" image="default_thumb.png" id="gYz-6O-5Yc">
-                                                    <rect key="frame" x="15" y="18" width="44" height="44"/>
+                                                    <rect key="frame" x="8" y="12" width="56" height="56"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="200" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="iog-HY-E8e">
-                                                    <rect key="frame" x="70" y="7" width="210" height="21"/>
+                                                    <rect key="frame" x="70" y="10" width="210" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.93193783969999999" green="0.52866626230000002" blue="0.32210397899999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="201" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sae-9S-Qoi">
-                                                    <rect key="frame" x="70" y="24" width="210" height="35"/>
+                                                    <rect key="frame" x="70" y="22" width="210" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aYX-0C-ads">
-                                                    <rect key="frame" x="70" y="56" width="86" height="21"/>
+                                                    <rect key="frame" x="70" y="49" width="86" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.14932834449999999" green="0.65728635199999996" blue="0.65015356960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kiw-oe-fcz">
-                                                    <rect key="frame" x="187" y="56" width="90" height="21"/>
+                                                    <rect key="frame" x="187" y="49" width="90" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -297,7 +297,7 @@
                                     <navigationItem id="w6P-Ol-wz6"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="deals_header_logo.png" id="UWo-79-p6B">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="navlogo145x33.png" id="UWo-79-p6B">
                                 <rect key="frame" x="88" y="5" width="145" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -698,7 +698,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Deal Detail" id="IXc-yI-8PE">
+                                    <navigationItem title="Deal Details" id="IXc-yI-8PE">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="gsA-qZ-hYG">
                                             <connections>
                                                 <action selector="buttonBackTapped:" destination="KvL-wI-8Ow" id="WX7-nX-Bjv"/>
@@ -736,6 +736,10 @@
                                 <rect key="frame" x="2" y="320" width="316" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bevelbox.png" id="mO1-iA-S8Q">
+                                <rect key="frame" x="2" y="95" width="316" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Restaurant week begins THIS Sunday. 3-course meal for only $25 all week long!" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dSq-uN-4Am">
                                 <rect key="frame" x="15" y="100" width="234" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -833,7 +837,7 @@
                                 <rect key="frame" x="268" y="115" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="lior_heart_icon.png">
+                                <state key="normal" image="hearticon.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -844,6 +848,10 @@
                                     <action selector="buttonFavoritesPressed:" destination="KvL-wI-8Ow" eventType="touchUpInside" id="NfK-rt-nlM"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="telephone_icon_60x60.png" id="vz0-Ve-aMa">
+                                <rect key="frame" x="268" y="248" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -851,6 +859,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="buttonCategory" destination="Scl-Re-82q" id="Apj-Oi-2Qj"/>
+                        <outlet property="buttonFavoritesButton" destination="D4m-1a-ir8" id="hwM-Sk-9xb"/>
                         <outlet property="labelAddress" destination="9Af-w5-Coc" id="GWE-YH-zUr"/>
                         <outlet property="labelAddressLine2" destination="xIi-Tg-BKl" id="CM7-l1-O6b"/>
                         <outlet property="labelBusinessName" destination="AD0-zR-Zio" id="eLS-HK-cVJ"/>
@@ -954,15 +963,15 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="new_splash_background_with_changes.jpg" id="1o4-wk-fyx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="splash_background_with_changes_without_already_have_an_account_message_and_without_logo.jpg" id="1o4-wk-fyx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cw3-Yj-Uxs">
-                                <rect key="frame" x="15" y="408" width="289" height="46"/>
+                                <rect key="frame" x="16" y="408" width="289" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="new_no_thanks_let_me_in.png">
+                                <state key="normal" image="no_thanks_let_me_in_198x43.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1010,8 +1019,8 @@
                                     <action selector="buttonFacebookButtonPressed:" destination="UYJ-eB-zaU" eventType="touchUpInside" id="UAJ-vm-lhf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log in With Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mNk-X6-m2v">
-                                <rect key="frame" x="76" y="312" width="177" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log-In With Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mNk-X6-m2v">
+                                <rect key="frame" x="75" y="312" width="180" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1047,8 +1056,8 @@
                                     <action selector="buttonTwitterButtonPressed:" destination="UYJ-eB-zaU" eventType="touchUpInside" id="neN-iY-Lxh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log in With Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ngo-JU-aQs">
-                                <rect key="frame" x="87" y="373" width="153" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Log-In With Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ngo-JU-aQs">
+                                <rect key="frame" x="86" y="373" width="156" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1058,6 +1067,14 @@
                                 <rect key="frame" x="142" y="365" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo223x124.png" id="oGd-Zf-7py">
+                                <rect key="frame" x="49" y="43" width="223" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="to_start_finding_deals.png" id="4vk-DT-HEj">
+                                <rect key="frame" x="61" y="249" width="198" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -2038,7 +2055,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                                 <items/>
                                 <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="deals_header_logo.png" id="Be3-LP-t2z">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="navlogo145x33.png" id="Be3-LP-t2z">
                                 <rect key="frame" x="88" y="5" width="145" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2306,24 +2323,26 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         <image name="177-building.png" width="14" height="24"/>
         <image name="24-gift.png" width="22" height="26"/>
         <image name="29-heart.png" width="24" height="21"/>
+        <image name="60x60thumb.png" width="60" height="60"/>
         <image name="DealsNear_App_Registration.png" width="320" height="480"/>
         <image name="aviva_button_with_gradient.png" width="289" height="46"/>
         <image name="aviva_button_with_gradient_198x46.png" width="198" height="45"/>
         <image name="aviva_concept_31px_height.jpg" width="320" height="31"/>
+        <image name="bevelbox.png" width="310" height="87"/>
         <image name="black_bar.png" width="645" height="62"/>
         <image name="category_placeholder.png" width="139" height="54"/>
         <image name="deals_header_logo.png" width="192" height="33"/>
         <image name="default_thumb.png" width="72" height="72"/>
         <image name="divider_320x4.png" width="72" height="4"/>
         <image name="facebook_icon_60x60.png" width="60" height="60"/>
+        <image name="hearticon.png" width="40" height="40"/>
         <image name="launch_background.jpg" width="640" height="960"/>
         <image name="letterbox.jpg" width="320" height="64"/>
-        <image name="lior_heart_icon.png" width="42" height="42"/>
+        <image name="logo223x124.png" width="223" height="124"/>
         <image name="navlogo145x33.png" width="145" height="33"/>
-        <image name="new_no_thanks_let_me_in.png" width="188" height="43"/>
-        <image name="new_splash_background_with_changes.jpg" width="640" height="960"/>
         <image name="next_arrow_orange.png" width="72" height="72"/>
         <image name="no_thanks_let_in_button_transparent.png" width="188" height="43"/>
+        <image name="no_thanks_let_me_in_198x43.png" width="198" height="43"/>
         <image name="orange_map_icon_114x114.png" width="114" height="114"/>
         <image name="photo_container.jpg" width="106" height="106"/>
         <image name="presplash_without_glow.png" width="535" height="261"/>
@@ -2332,7 +2351,9 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         <image name="screen_gradient_only.jpg" width="320" height="480"/>
         <image name="smsnote_icon_60x60.png" width="60" height="60"/>
         <image name="splash_background_with_changes.jpg" width="320" height="460"/>
+        <image name="splash_background_with_changes_without_already_have_an_account_message_and_without_logo.jpg" width="640" height="960"/>
         <image name="telephone_icon_60x60.png" width="60" height="60"/>
+        <image name="to_start_finding_deals.png" width="198" height="43"/>
         <image name="twitter_icon_60x60.png" width="60" height="60"/>
     </resources>
     <classes>
@@ -2350,6 +2371,9 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         </class>
         <class className="BarsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BarsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
         </class>
         <class className="DealCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DealCell.h"/>
@@ -2460,6 +2484,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <relationship kind="action" name="buttonPrev:"/>
                 <relationship kind="action" name="buttonShareButtonPressed:"/>
                 <relationship kind="outlet" name="buttonCategory" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonFavoritesButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="labelAddress" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelAddressLine2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelBusinessName" candidateClass="UILabel"/>
@@ -2550,7 +2575,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="jJF-bS-Qax"/>
-        <segue reference="tMy-7Z-wft"/>
         <segue reference="dtg-Hf-kCC"/>
+        <segue reference="vUw-Hu-0dP"/>
     </inferredMetricsTieBreakers>
 </document>

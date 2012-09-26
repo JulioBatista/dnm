@@ -48,9 +48,14 @@
 
 - (IBAction)buttonFavoritesPressed:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *buttonFavoritesButton;
+
+
 - (IBAction)buttonShareButtonPressed:(id)sender;
 
 @property (nonatomic) BOOL canTweet;
+
+@property (nonatomic) BOOL fromFavoritesView;
 
 
 @end

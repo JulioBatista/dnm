@@ -8,6 +8,8 @@
 
 #import "NewFavoritesViewController.h"
 #import "NetworkFetcher.h"
+#import "NewDealDetailViewController.h"
+
 
 @interface NewFavoritesViewController ()
 
@@ -17,6 +19,7 @@
 @synthesize favoritesTableView = _favoritesTableView;
 @synthesize favoriteDeals = _favoriteDeals;
 @synthesize myTableViewController = _myTableViewController;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -184,6 +187,11 @@
 		NSLog(@"Wonder if the prepareForSegue is getting called %@", segue.destinationViewController);
         
        
+		NewDealDetailViewController *dest = [segue destinationViewController];
+		
+		dest.fromFavoritesView = YES;
+		
+		
 		/*
 		UITableViewCell *cell = (UITableViewCell *) sender;
         
