@@ -324,10 +324,10 @@
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
 {
-	NSLog(@"The mapview was dragged / moved");
+	// NSLog(@"The mapview was dragged / moved");
 	
-	NSLog(@"-------center latitude %f", mapView.centerCoordinate.latitude);
-	NSLog(@"-------center longitude %f", mapView.centerCoordinate.longitude);
+	// NSLog(@"-------center latitude %f", mapView.centerCoordinate.latitude);
+	// NSLog(@"-------center longitude %f", mapView.centerCoordinate.longitude);
 }
 
 #pragma mark Lifecycle
@@ -705,6 +705,9 @@
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
 		NSArray *deals = [NetworkFetcher recentDealsNear60610];
+		
+		// NSArray *deals = [NetworkFetcher recentDealsNearZipcode];
+		
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;

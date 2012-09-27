@@ -481,14 +481,14 @@
 		4B53420C15FE7ABF00C7356E /* screen_gradient_only.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screen_gradient_only.jpg; sourceTree = "<group>"; };
 		4B5A365F15CDF75600552ECF /* DealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsViewController.h; sourceTree = "<group>"; };
 		4B5A366015CDF75600552ECF /* DealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsViewController.m; sourceTree = "<group>"; };
-		4B6BA4EC15C0F0890095F35E /* DealsNearMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsNearMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B6BA4EC15C0F0890095F35E /* DealsNearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsNearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6BA4F015C0F0890095F35E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4B6BA4F215C0F0890095F35E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4B6BA4F415C0F0890095F35E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4B6BA4F815C0F0890095F35E /* DealsNearMeApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DealsNearMeApp-Info.plist"; sourceTree = "<group>"; };
+		4B6BA4F815C0F0890095F35E /* DealsNearMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DealsNearMe-Info.plist"; sourceTree = "<group>"; };
 		4B6BA4FA15C0F0890095F35E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B6BA4FC15C0F0890095F35E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4B6BA4FE15C0F0890095F35E /* DealsNearMeApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DealsNearMeApp-Prefix.pch"; sourceTree = "<group>"; };
+		4B6BA4FE15C0F0890095F35E /* DealsNearMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DealsNearMe-Prefix.pch"; sourceTree = "<group>"; };
 		4B6BA4FF15C0F0890095F35E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4B6BA50015C0F0890095F35E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4B6BA50315C0F0890095F35E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -1160,7 +1160,7 @@
 		4B6BA4ED15C0F0890095F35E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B6BA4EC15C0F0890095F35E /* DealsNearMeApp.app */,
+				4B6BA4EC15C0F0890095F35E /* DealsNearMe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1313,10 +1313,10 @@
 				4B53420815FE7A0800C7356E /* starsimages */,
 				4B53420F15FE7AE300C7356E /* deprecatedicons */,
 				4BE60B5515FE842700EAD2A2 /* randomicons */,
-				4B6BA4F815C0F0890095F35E /* DealsNearMeApp-Info.plist */,
+				4B6BA4F815C0F0890095F35E /* DealsNearMe-Info.plist */,
 				4B6BA4F915C0F0890095F35E /* InfoPlist.strings */,
 				4B6BA4FC15C0F0890095F35E /* main.m */,
-				4B6BA4FE15C0F0890095F35E /* DealsNearMeApp-Prefix.pch */,
+				4B6BA4FE15C0F0890095F35E /* DealsNearMe-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1643,9 +1643,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B6BA4EB15C0F0890095F35E /* DealsNearMeApp */ = {
+		4B6BA4EB15C0F0890095F35E /* DealsNearMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B6BA51515C0F0890095F35E /* Build configuration list for PBXNativeTarget "DealsNearMeApp" */;
+			buildConfigurationList = 4B6BA51515C0F0890095F35E /* Build configuration list for PBXNativeTarget "DealsNearMe" */;
 			buildPhases = (
 				4B6BA4E815C0F0890095F35E /* Sources */,
 				4B6BA4E915C0F0890095F35E /* Frameworks */,
@@ -1655,9 +1655,9 @@
 			);
 			dependencies = (
 			);
-			name = DealsNearMeApp;
+			name = DealsNearMe;
 			productName = DealsNearMeApp;
-			productReference = 4B6BA4EC15C0F0890095F35E /* DealsNearMeApp.app */;
+			productReference = 4B6BA4EC15C0F0890095F35E /* DealsNearMe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1668,7 +1668,7 @@
 			attributes = {
 				LastUpgradeCheck = 0440;
 			};
-			buildConfigurationList = 4B6BA4E615C0F0890095F35E /* Build configuration list for PBXProject "DealsNearMeApp" */;
+			buildConfigurationList = 4B6BA4E615C0F0890095F35E /* Build configuration list for PBXProject "DealsNearMe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1680,7 +1680,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B6BA4EB15C0F0890095F35E /* DealsNearMeApp */,
+				4B6BA4EB15C0F0890095F35E /* DealsNearMe */,
 			);
 		};
 /* End PBXProject section */
@@ -2155,10 +2155,10 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
-				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
+				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMe-Prefix.pch";
+				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMe-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DealsNearMe;
 				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				SDKROOT = iphoneos;
@@ -2176,10 +2176,10 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
-				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
+				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMe-Prefix.pch";
+				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMe-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DealsNearMe;
 				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				SDKROOT = iphoneos;
@@ -2220,10 +2220,10 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMeApp-Prefix.pch";
-				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMeApp-Info.plist";
+				GCC_PREFIX_HEADER = "DealsNearMeApp/DealsNearMe-Prefix.pch";
+				INFOPLIST_FILE = "DealsNearMeApp/DealsNearMe-Info.plist";
 				OTHER_LDFLAGS = "-lsqlite3.0";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DealsNearMe;
 				PROVISIONING_PROFILE = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
 				SDKROOT = iphoneos;
@@ -2234,7 +2234,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B6BA4E615C0F0890095F35E /* Build configuration list for PBXProject "DealsNearMeApp" */ = {
+		4B6BA4E615C0F0890095F35E /* Build configuration list for PBXProject "DealsNearMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B6BA51315C0F0890095F35E /* Debug */,
@@ -2244,7 +2244,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B6BA51515C0F0890095F35E /* Build configuration list for PBXNativeTarget "DealsNearMeApp" */ = {
+		4B6BA51515C0F0890095F35E /* Build configuration list for PBXNativeTarget "DealsNearMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B6BA51615C0F0890095F35E /* Debug */,

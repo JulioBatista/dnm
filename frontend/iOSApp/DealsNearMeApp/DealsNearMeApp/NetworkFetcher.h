@@ -56,5 +56,6 @@ typedef enum {
 + (NSArray *)recentDealsNear60610_filter0_family;
 + (NSArray *)recentDealsNear60610_filter0_shopping;
 + (NSArray *)recentDealsNear60610_filter0_wellness;
++ (NSArray *) recentDealsNearZipcode;
 
 @end
