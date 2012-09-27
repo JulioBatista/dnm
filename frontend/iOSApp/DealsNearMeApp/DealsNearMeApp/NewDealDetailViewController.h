@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapKit/MapKit.h"
 #import "FacebookHelper.h"
 
-@interface NewDealDetailViewController : UIViewController<UIActionSheetDelegate, FacebookHelperPublishingDelegate>
+@interface NewDealDetailViewController : UIViewController<UIActionSheetDelegate, FacebookHelperPublishingDelegate, MKMapViewDelegate>
 - (IBAction)buttonBackTapped:(id)sender;
 
 
@@ -42,7 +43,12 @@
 @property (nonatomic, weak) UIActionSheet *actionSheet;
 
 
+@property (strong, nonatomic) IBOutlet UIButton *buttonNextButton;
+
 - (IBAction)buttonNext:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *buttonPrevButton;
+
 
 - (IBAction)buttonPrev:(id)sender;
 
@@ -51,11 +57,19 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonFavoritesButton;
 
 
+- (IBAction)buttonPhoneButtonTapped:(id)sender;
+
+
 - (IBAction)buttonShareButtonPressed:(id)sender;
 
 @property (nonatomic) BOOL canTweet;
 
 @property (nonatomic) BOOL fromFavoritesView;
+
+@property (strong, nonatomic) IBOutlet MKMapView *mapViewDetailMapView;
+
+@property (nonatomic, strong) CLGeocoder *geocoder;
+
 
 
 @end
