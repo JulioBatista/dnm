@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4B6BA4EB15C0F0890095F35E"
-               BuildableName = "DealsNearMeApp.app"
+               BuildableName = "DealsNearMe.app"
                BlueprintName = "DealsNearMe"
                ReferencedContainer = "container:DealsNearMe.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B6BA4EB15C0F0890095F35E"
-            BuildableName = "DealsNearMeApp.app"
+            BuildableName = "DealsNearMe.app"
             BlueprintName = "DealsNearMe"
             ReferencedContainer = "container:DealsNearMe.xcodeproj">
          </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B6BA4EB15C0F0890095F35E"
-            BuildableName = "DealsNearMeApp.app"
+            BuildableName = "DealsNearMe.app"
             BlueprintName = "DealsNearMe"
             ReferencedContainer = "container:DealsNearMe.xcodeproj">
          </BuildableReference>
@@ -71,7 +71,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B6BA4EB15C0F0890095F35E"
-            BuildableName = "DealsNearMeApp.app"
+            BuildableName = "DealsNearMe.app"
             BlueprintName = "DealsNearMe"
             ReferencedContainer = "container:DealsNearMe.xcodeproj">
          </BuildableReference>

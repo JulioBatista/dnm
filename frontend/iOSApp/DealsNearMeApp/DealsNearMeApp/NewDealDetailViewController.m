@@ -12,6 +12,7 @@
 #import "Twitter/Twitter.h"
 #import "NetworkFetcher.h"
 #import "FacebookHelper.h"
+#import "NetworkDealAnnotation.h"
 
 #define letOSHandleLogin FALSE
 
@@ -126,7 +127,7 @@
 	
 	[self ifFromFavoritesDisableButtons];
 	
-	
+	self.mapViewDetailMapView.delegate = self;
 	
 	[self populateMapViewDetailMapView];
 	
@@ -192,6 +193,14 @@
 	[self geocode:[onedeal objectForKey:NETWORK_DEAL_ADDRESS]];
 	
 }
+- (void) populateMapViewDetailMapView:(NSUInteger)currentDealNumber
+{
+	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:currentDealNumber];
+	
+	[self geocode:[onedeal objectForKey:NETWORK_DEAL_ADDRESS]];
+	
+	self.currentDealNum = currentDealNumber;
+}
 
 -(void) geocode:(NSString *)address
 {
@@ -245,92 +254,88 @@
 - (MKAnnotationView *) mapView:(MKMapView *)map viewForAnnotation:(id<MKAnnotation>)annotation
 {
 	NSLog(@"-----------is this being fired");
-	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:[self.dealnum integerValue]];
-	MKAnnotationView *pinView = nil;
-    if(annotation != map.userLocation)
+
+	static NSString *defaultPinID = @"mypin";
+	
+	MKAnnotationView *annotationView = (MKAnnotationView *)[map dequeueReusableAnnotationViewWithIdentifier:defaultPinID];// get a dequeued view for the annotation like a tableview
+	
+	if (annotationView == nil)
     {
-        static NSString *defaultPinID = @"mypin";
-        pinView = (MKAnnotationView *)[map dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-        
-        
-		if (pinView == nil)
-		{
-			pinView = [[MKAnnotationView alloc]
-					   initWithAnnotation:annotation reuseIdentifier:defaultPinID];
-		}
-		
-		NSString *iconFilename = @"";
-		NSString *pinViewFilename = @"";
-		
-		
-		
-		if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Bars & Clubs"])
-		{
-			iconFilename = @"map_pin_bars_30px.png";
-			pinViewFilename = @"map_pin_bars_30px.png";
-		}
-		
-		else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Travel"])
-		{
-			iconFilename = @"map_pin_travel_30px.png";
-			pinViewFilename = @"map_pin_travel_30px.png";
-		}
-		
-		else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Fun"])
-		{
-			iconFilename = @"map_pin_fun_30px.png";
-			pinViewFilename = @"map_pin_fun_30px.png";
-		}
-		else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Services"])
-		{
-			iconFilename = @"map_pin_services_30px.png";
-			pinViewFilename = @"map_pin_services_30px.png";
-		}
-		else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Dining"])
-		{
-			iconFilename = @"map_pin_dining_30px.png";
-			pinViewFilename = @"map_pin_dining_30px.png";
-		}
-		else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Family"])
-		{
-			iconFilename = @"map_pin_family_30px.png";
-			pinViewFilename = @"map_pin_family_30px.png";
-		}
-		else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Shopping"])
-		{
-			iconFilename = @"map_pin_shopping_30px.png";
-			pinViewFilename = @"map_pin_shopping_30px.png";
-		}
-		else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Wellness"])
-		{
-			iconFilename = @"map_pin_wellness_30px.png";
-			pinViewFilename = @"map_pin_wellness_30px.png";
-		}
-		
-		else
-		{
-			iconFilename = @"map_pin_fun_30px.png";
-			pinViewFilename = @"map_pin_fun_30px.png";
-		}
-		
-		iconFilename = @"default_thumb_23x23.png";
-		
-		UIImageView *leftIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:iconFilename]];
-		
-		UIImage *pinImage = [UIImage imageNamed:pinViewFilename];
-		
-		pinView.leftCalloutAccessoryView = leftIconView;
-        
-		[pinView setImage:pinImage];
-		
-		pinView.canShowCallout = YES;
-		
-		UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-		
-		
-		pinView.rightCalloutAccessoryView = rightButton;
-		
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+    
 	}
+	
+    annotationView.annotation = annotation;
+	
+	NSString *iconFilename = @"";
+	NSString *pinViewFilename = @"";
+	
+	
+
+	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
+	
+	
+	if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Bars & Clubs"])
+	{
+		iconFilename = @"map_pin_bars_30px.png";
+		pinViewFilename = @"map_pin_bars_30px.png";
+	}
+	
+	else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Travel"])
+	{
+		iconFilename = @"map_pin_travel_30px.png";
+		pinViewFilename = @"map_pin_travel_30px.png";
+	}
+	
+	else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Fun"])
+	{
+		iconFilename = @"map_pin_fun_30px.png";
+		pinViewFilename = @"map_pin_fun_30px.png";
+	}
+	else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Services"])
+	{
+		iconFilename = @"map_pin_services_30px.png";
+		pinViewFilename = @"map_pin_services_30px.png";
+	}
+	else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Dining"])
+	{
+		iconFilename = @"map_pin_dining_30px.png";
+		pinViewFilename = @"map_pin_dining_30px.png";
+	}
+	else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Family"])
+	{
+		iconFilename = @"map_pin_family_30px.png";
+		pinViewFilename = @"map_pin_family_30px.png";
+	}
+	else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Shopping"])
+	{
+		iconFilename = @"map_pin_shopping_30px.png";
+		pinViewFilename = @"map_pin_shopping_30px.png";
+	}
+	else if ([[onedeal objectForKey:@"sector"] isEqualToString:@"Wellness"])
+	{
+		iconFilename = @"map_pin_wellness_30px.png";
+		pinViewFilename = @"map_pin_wellness_30px.png";
+	}
+	
+	else
+	{
+		iconFilename = @"map_pin_fun_30px.png";
+		pinViewFilename = @"map_pin_fun_30px.png";
+	}
+	
+	iconFilename = @"default_thumb_23x23.png";
+
+	
+	
+
+
+	annotationView.canShowCallout = NO;
+	
+    [annotationView setImage:[UIImage imageNamed:pinViewFilename]];
+	
+	return annotationView;
+	 
 }
 
 #pragma mark ButtonPresses
@@ -364,6 +369,7 @@
 		
 		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
 	}
+	[self populateMapViewDetailMapView:self.currentDealNum];
 }
 
 - (IBAction)buttonPrev:(id)sender
@@ -389,6 +395,7 @@
 		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
 		
 	}
+	[self populateMapViewDetailMapView:self.currentDealNum];
 	
 }
 

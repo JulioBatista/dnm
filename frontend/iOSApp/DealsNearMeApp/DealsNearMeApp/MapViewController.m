@@ -393,6 +393,7 @@
 	[self gotoHardCodedLocation];
 	
 
+
 	
 	/* do what seeall button does */
 	
@@ -741,6 +742,16 @@
 										   delegate:nil
 								  cancelButtonTitle:@"Ok"
 								  otherButtonTitles:nil] show];
+
+			}
+			else
+			{
+				[[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%d deals found", [self.deals count]]
+											message:@"We are always looking for deals near you"
+										   delegate:nil
+								  cancelButtonTitle:@"Ok"
+								  otherButtonTitles:nil] show];
+				
 			}
 			
 		});

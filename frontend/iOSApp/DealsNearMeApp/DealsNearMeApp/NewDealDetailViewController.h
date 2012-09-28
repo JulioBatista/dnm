@@ -71,5 +71,4 @@
 @property (nonatomic, strong) CLGeocoder *geocoder;
 
 
-
 @end
