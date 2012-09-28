@@ -91,14 +91,11 @@
 	
     [mc setMessageBody:messageString isHTML:YES];
 	
-    // adding recipients
-    [mc setToRecipients:[NSArray arrayWithObjects:@"Das <das@leviait.com>", @"arunabhdas@gmail.com", nil]];
+	// adding recipients
+	[mc setToRecipients:[NSArray arrayWithObjects:@"DealsNear.Me <levibergovoy@gmail.com>", nil]];
 	
-    // adding recipients for a send copy to (arrayWithObject or arrayWithObjects)
-    [mc setCcRecipients:[NSArray arrayWithObject:@"das@leviait.com"]];
-	
-    // adding hidden recipients
-    [mc setBccRecipients:[NSArray arrayWithObject:@"fivemillivolts@gmail.com"]];
+	// adding recipients for a send copy to (arrayWithObject or arrayWithObjects)
+	// [mc setCcRecipients:[NSArray arrayWithObject:@"DealsNear.Me <meir@leviait.com>"]];
 	
     // adding image attachment
     // getting path for the image we have in the tutorial project

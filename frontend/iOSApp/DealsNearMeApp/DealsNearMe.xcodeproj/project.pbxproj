@@ -1171,7 +1171,6 @@
 		4B6BA4E115C0F0890095F35E = {
 			isa = PBXGroup;
 			children = (
-				4B8515A41606B08F0075B851 /* MessageUI.framework */,
 				4B6BF9EE15F2BA1000011BCE /* new_app_logo_114x114.png */,
 				4B6BF9EB15F2BA0900011BCE /* new_app_logo_57x57.png */,
 				4B94FDAC15F13D9800EE0DBA /* 60610.gpx */,
@@ -1200,6 +1199,7 @@
 		4B6BA4EF15C0F0890095F35E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B8515A41606B08F0075B851 /* MessageUI.framework */,
 				4B89C9B615FFAF0A00FDE9E7 /* Accounts.framework */,
 				4B81CB8215F9214B00DB7FAA /* Twitter.framework */,
 				4BB5A9FB15D052B6003E5F97 /* CoreLocation.framework */,

@@ -254,7 +254,7 @@
 - (MKAnnotationView *) mapView:(MKMapView *)map viewForAnnotation:(id<MKAnnotation>)annotation
 {
 	NSLog(@"-----------is this being fired");
-
+	
 	static NSString *defaultPinID = @"mypin";
 	
 	MKAnnotationView *annotationView = (MKAnnotationView *)[map dequeueReusableAnnotationViewWithIdentifier:defaultPinID];// get a dequeued view for the annotation like a tableview
@@ -262,7 +262,7 @@
 	if (annotationView == nil)
     {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:defaultPinID];
-    
+		
 	}
 	
     annotationView.annotation = annotation;
@@ -271,7 +271,7 @@
 	NSString *pinViewFilename = @"";
 	
 	
-
+	
 	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
 	
 	
@@ -325,17 +325,17 @@
 	}
 	
 	iconFilename = @"default_thumb_23x23.png";
-
 	
 	
-
-
+	
+	
+	
 	annotationView.canShowCallout = NO;
 	
     [annotationView setImage:[UIImage imageNamed:pinViewFilename]];
 	
 	return annotationView;
-	 
+	
 }
 
 #pragma mark ButtonPresses
@@ -608,6 +608,98 @@
 	else if ([choice isEqualToString:@"Email"])
 	{
 		NSLog(@"Email");
+		
+		// allocatind new message composer window
+		MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+		
+		// setting a delegate method to "self"
+		mc.mailComposeDelegate = self;
+		
+		// pre-populating the message subject
+		[mc setSubject:@"Have I got a deal for you"];
+		
+		
+		NSString *messageString = @"";
+		
+		self.currentDeal = [self.archivedDeals objectAtIndex:self.currentDealNum];
+		
+		messageString = [messageString stringByAppendingString:@"<p>It\'s your lucky day! Someone who cares, just sent you this deal via <a href='www.DealsNear.me:'>www.DealsNear.me</a> "];
+		
+		// messageString = [messageString stringByAppendingString:self.textFieldBusinessName.text];
+		
+		messageString = [messageString stringByAppendingString:@"</p><p> "];
+		
+		messageString = [messageString stringByAppendingString:[self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION]];
+		
+		messageString = [messageString stringByAppendingString:@"</p>To see more, visit: <a href='"];
+		
+		
+		messageString = [messageString stringByAppendingString:[self.currentDeal objectForKey:NETWORK_DEAL_BUSINESSNAME]];
+
+		messageString = [messageString stringByAppendingString:@"'>"];
+
+
+		messageString = [messageString stringByAppendingString:[self.currentDeal objectForKey:NETWORK_SHARE_URL]];
+		
+		messageString = [messageString stringByAppendingString:@"</a>"];
+						 
+		
+
+		
+		messageString = [messageString stringByAppendingString:@"<p>"];
+		
+		
+		messageString = [messageString stringByAppendingString:@"</p><p>To start finding deals, download our free app in the app store: <a href='itms://itunes.com/apps/DealsNearMe'>http://itunes.com/apps/DealsNearMe</a></p><p>Thanks,<p>The DealsNear.me Team</p><p><a href='www.Facebook.com/DealsNearMe'>www.Facebook.com/DealsNearMe</a></p>"];
+		
+		// messageString = [messageString stringByAppendingString:self.textFieldTwitterHandle.text];
+		
+		messageString = [messageString stringByAppendingString:@"</p>"];
+		
+		
+		
+		// adding content of the message as a plain text
+		// [mc setMessageBody:@"Send me a message is you like this tutorial :)" isHTML:NO];
+		
+		// adding content of the message as an HTML
+		
+		
+		
+		[mc setMessageBody:messageString isHTML:YES];
+		
+		// adding recipients
+		[mc setToRecipients:[NSArray arrayWithObjects:@"DealsNear.Me <levibergovoy@gmail.com>", nil]];
+		
+		// adding recipients for a send copy to (arrayWithObject or arrayWithObjects)
+		// [mc setCcRecipients:[NSArray arrayWithObject:@"meir@leviait.com"]];
+		
+		// adding hidden recipients
+		// [mc setBccRecipients:[NSArray arrayWithObject:@"fivemillivolts@gmail.com"]];
+		
+		// adding image attachment
+		// getting path for the image we have in the tutorial project
+		// NSString *path = [[NSBundle mainBundle] pathForResource:@"Extra_Xcode_100x100" ofType:@"png"];
+		
+		// loading content of the image into NSData
+		// NSData *imageData = [NSData dataWithContentsOfFile:path];
+		
+		// adding the attachment to he message
+		// [mc addAttachmentData:imageData mimeType:@"image/png" fileName:@"Collection"];
+		
+		// setting different than the default transition for the modal view controller
+		[mc setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+		
+		/*
+		 Modal view controllers transitions:
+		 
+		 UIModalTransitionStyleCoverVertical => pops up from the bottom, default transition
+		 UIModalTransitionStyleCrossDissolve => fade on the screen
+		 UIModalTransitionStyleFlipHorizontal => page flip
+		 */
+		
+		// displaying our modal view controller on the screen (of course animated has to be set on YES if you want to see any transition)
+		[self presentModalViewController:mc animated:YES];
+		
+		
 	}
 	
 	else
@@ -616,6 +708,41 @@
 	}
 	
 	
+}
+
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+	// switchng the result
+	switch (result) {
+		case MFMailComposeResultCancelled:
+			NSLog(@"Mail send canceled.");
+			/*
+			 Execute your code for canceled event here ...
+			 */
+			break;
+		case MFMailComposeResultSaved:
+			NSLog(@"Mail saved.");
+			/*
+			 Execute your code for email saved event here ...
+			 */
+			break;
+		case MFMailComposeResultSent:
+			NSLog(@"Mail sent.");
+			/*
+			 Execute your code for email sent event here ...
+			 */
+			break;
+		case MFMailComposeResultFailed:
+			NSLog(@"Mail send error: %@.", [error localizedDescription]);
+			/*
+			 Execute your code for email send failed event here ...
+			 */
+			break;
+		default:
+			break;
+	}
+	// hide the modal view controller
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)  facebookHelperDidPublish:(FacebookHelper *)facebookHelper

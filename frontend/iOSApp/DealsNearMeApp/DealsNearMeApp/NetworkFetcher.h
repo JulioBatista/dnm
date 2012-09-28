@@ -16,7 +16,7 @@
 #define NETWORK_DEAL_ID @"id"
 #define NETWORK_LATITUDE @"lat"
 #define NETWORK_LONGITUDE @"lng"
-
+#define NETWORK_SHARE_URL @"share_url"
 
 #define NETWORK_DEAL_DISTANCE_FROM_USERS_LATLNG @"distance_from_users_latlng_in_km"
 #define NETWORK_DEAL_TIME_ELAPSED @"time_elapsed_since_deal_was_posted_in_hours"

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MapKit/MapKit.h"
 #import "FacebookHelper.h"
+#import "MessageUI/MessageUI.h"
 
-@interface NewDealDetailViewController : UIViewController<UIActionSheetDelegate, FacebookHelperPublishingDelegate, MKMapViewDelegate>
+@interface NewDealDetailViewController : UIViewController<UIActionSheetDelegate, FacebookHelperPublishingDelegate, MKMapViewDelegate, MFMailComposeViewControllerDelegate>
 - (IBAction)buttonBackTapped:(id)sender;
 
 
