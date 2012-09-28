@@ -97,6 +97,7 @@
 	
 	NSLog(@"self.dealIndex : %d", self.dealIndex);
 	
+	
 	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:[self.dealnum integerValue]];
 	
 	
@@ -129,7 +130,7 @@
 	
 	self.mapViewDetailMapView.delegate = self;
 	
-	[self populateMapViewDetailMapView];
+	[self populateMapViewDetailMapView:self.currentDealNum];
 	
 	
 }
@@ -188,6 +189,9 @@
 
 - (void) populateMapViewDetailMapView
 {
+	
+	NSLog(@"---------------populateMapViewDetailMapView");
+	
 	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:[self.dealnum integerValue]];
 	
 	[self geocode:[onedeal objectForKey:NETWORK_DEAL_ADDRESS]];
@@ -195,6 +199,10 @@
 }
 - (void) populateMapViewDetailMapView:(NSUInteger)currentDealNumber
 {
+		NSLog(@"---------------populateMapViewDetailMapView");
+	
+	NSLog(@"-----%d", currentDealNumber);
+	
 	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:currentDealNumber];
 	
 	[self geocode:[onedeal objectForKey:NETWORK_DEAL_ADDRESS]];

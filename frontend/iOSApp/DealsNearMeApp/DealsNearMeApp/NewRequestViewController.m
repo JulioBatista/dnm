@@ -1,21 +1,18 @@
 //
-//  RequestCityViewController.m
-//  DealsNearMeApp
+//  NewRequestViewController.m
+//  DealsNearMe
 //
-//  Created by Das on 9/22/12.
+//  Created by Das on 9/28/12.
 //
 //
 
-#import "RequestCityViewController.h"
+#import "NewRequestViewController.h"
 
-@interface RequestCityViewController ()
+@interface NewRequestViewController ()
 
 @end
 
-@implementation RequestCityViewController
-@synthesize textFieldCityTextField;
-
-
+@implementation NewRequestViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,9 +31,6 @@
 
 - (void)viewDidUnload
 {
-    [self setTextFieldCityTextField:nil];
-
-
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -46,14 +40,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)buttonBackButtonPressed:(id)sender
+- (IBAction)buttonBackButtonTapped:(id)sender
 {
 	[self.navigationController popViewControllerAnimated:YES];
 }
-- (IBAction)buttonRequestButtonTapped:(id)sender
-{
-	
-	
-}
-
 @end

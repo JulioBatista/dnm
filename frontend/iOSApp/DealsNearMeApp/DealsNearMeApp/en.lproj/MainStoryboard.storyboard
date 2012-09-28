@@ -186,7 +186,6 @@
                         <outlet property="viewFilterByView" destination="yFp-kl-eRQ" id="oXc-8K-2Ek"/>
                         <segue destination="KvL-wI-8Ow" kind="push" identifier="FromMapDealDetailSegue" id="4Sc-dY-pY2"/>
                         <segue destination="CZa-pA-fh1" kind="modal" identifier="LocationPickerSegue" id="guJ-df-yqv"/>
-                        <segue destination="wfB-4I-Q1X" kind="push" identifier="FromMapToRequestSegue" id="dtg-Hf-kCC"/>
                         <segue destination="0rT-3c-k44" kind="modal" identifier="FilterPickerSegue" id="WaA-0Y-JfY"/>
                     </connections>
                 </viewController>
@@ -1545,6 +1544,97 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             </objects>
             <point key="canvasLocation" x="1321" y="1835"/>
         </scene>
+        <!--New Request View Controller-->
+        <scene sceneID="vIX-aa-FQJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="So7-IZ-3fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="jsR-n9-Yhg" customClass="NewRequestViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aVJ-wW-BFj">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="huc-ua-iuX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.01802524942" green="0.26624814079999998" blue="0.38043478260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Request City" id="2TA-qY-ssa">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="vYZ-sh-V8X">
+                                            <connections>
+                                                <action selector="buttonBackButtonTapped:" destination="jsR-n9-Yhg" id="kw1-ha-SWF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="launch_background.jpg" id="kGu-bz-3c2">
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="xwo-CA-Dab">
+                                <rect key="frame" x="101" y="146" width="179" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="qPH-Bu-vd6">
+                                <rect key="frame" x="40" y="151" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="CGG-VI-GqK">
+                                <rect key="frame" x="40" y="102" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="9tq-HH-8me">
+                                <rect key="frame" x="101" y="97" width="179" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6jD-Po-rsr">
+                                <rect key="frame" x="40" y="209" width="240" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="aviva_button_with_gradient.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonRequestButtonTapped:" destination="wfB-4I-Q1X" eventType="touchUpInside" id="Zj7-Ne-kBc"/>
+                                    <action selector="buttonSubmitButtonPressed:" destination="hRW-OT-dIp" eventType="touchUpInside" id="lNb-Er-G0K"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Request city" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="goN-En-FP4">
+                                <rect key="frame" x="110" y="219" width="101" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please add my city to DealsNear.me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="faY-LN-1BS">
+                                <rect key="frame" x="10" y="54" width="280" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KVm-Om-P5W"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1722" y="2039"/>
+        </scene>
         <!--Submit Screen View Controller-->
         <scene sceneID="uSc-2l-ZBI">
             <objects>
@@ -1659,7 +1749,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVo-zG-5Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="wfB-4I-Q1X" customClass="RequestCityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Msi-rl-C6T">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" id="mfx-lh-0jr">
@@ -1677,24 +1767,24 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="launch_background.jpg" id="yMr-Cf-ILE">
-                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="nwP-Ye-qeZ">
-                                <rect key="frame" x="57" y="100" width="50" height="21"/>
+                                <rect key="frame" x="40" y="100" width="50" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="eD1-KO-hAg">
-                                <rect key="frame" x="110" y="95" width="179" height="31"/>
+                                <rect key="frame" x="101" y="95" width="179" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DPI-Tl-VHW">
-                                <rect key="frame" x="20" y="207" width="289" height="46"/>
+                                <rect key="frame" x="40" y="207" width="240" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="aviva_button_with_gradient.png">
@@ -1705,6 +1795,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonRequestButtonTapped:" destination="wfB-4I-Q1X" eventType="touchUpInside" id="c2g-Z1-Wxt"/>
                                     <action selector="buttonSubmitButtonPressed:" destination="hRW-OT-dIp" eventType="touchUpInside" id="8Eu-dP-IKF"/>
                                 </connections>
                             </button>
@@ -1726,9 +1817,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fps-rj-ljP"/>
+                    <connections>
+                        <outlet property="buttonRequestButtonTapped" destination="DPI-Tl-VHW" id="5ar-fZ-piQ"/>
+                        <outlet property="textFieldCityTextField" destination="eD1-KO-hAg" id="vYS-dC-elw"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1725" y="1859"/>
+            <point key="canvasLocation" x="1736" y="2625"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -2109,8 +2204,8 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="568-J0-n08" kind="push" identifier="FromMoreToSettingsSegue" id="Qrj-KT-iNh"/>
                         <segue destination="hRW-OT-dIp" kind="push" identifier="FromMoreToSubmitSegue" id="B1G-OG-LtZ"/>
                         <segue destination="Jqp-sn-6uA" kind="push" identifier="FromMoreToAboutSegue" id="yT8-Af-jyl"/>
-                        <segue destination="wfB-4I-Q1X" kind="push" identifier="FromMoreToRequestSegue" id="EX2-om-sJJ"/>
                         <segue destination="La7-ln-qC7" kind="push" identifier="FromMoreToAboutTableSegue" id="ZJo-Hl-nzM"/>
+                        <segue destination="jsR-n9-Yhg" kind="push" identifier="FromMoreToNewRequestSegue" id="SzG-T6-c3P"/>
                     </connections>
                 </viewController>
             </objects>
@@ -2454,10 +2549,8 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedControlFilterButtonPressed:"/>
                 <relationship kind="action" name="segmentedControlMapListButtonPressed:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
@@ -2535,6 +2628,9 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <relationship kind="outlet" name="tableViewMoreTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="NewRequestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewRequestViewController.h"/>
+        </class>
         <class className="PreSplashViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PreSplashViewController.h"/>
             <relationships>
@@ -2546,6 +2642,8 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RequestCityViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonBackButtonPressed:"/>
+                <relationship kind="action" name="buttonRequestButtonTapped:"/>
+                <relationship kind="outlet" name="textFieldCityTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="SettingsScreenViewController" superclassName="UIViewController">
@@ -2576,7 +2674,6 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonNoThanksButtonPressed:"/>
-                <relationship kind="action" name="buttonYesPressed:"/>
             </relationships>
         </class>
         <class className="SubmitScreenViewController" superclassName="UIViewController">
@@ -2596,7 +2693,6 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dtg-Hf-kCC"/>
         <segue reference="jJF-bS-Qax"/>
         <segue reference="tMy-7Z-wft"/>
     </inferredMetricsTieBreakers>

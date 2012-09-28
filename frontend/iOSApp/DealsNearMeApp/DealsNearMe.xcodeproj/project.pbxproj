@@ -67,6 +67,7 @@
 		4B3ED56A161563460099069B /* no_thanks_let_me_in_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3ED569161563460099069B /* no_thanks_let_me_in_blue.png */; };
 		4B3ED56D1615650F0099069B /* newlogo223x124@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3ED56B1615650F0099069B /* newlogo223x124@2x.png */; };
 		4B3ED56E1615650F0099069B /* newlogo223x124.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3ED56C1615650F0099069B /* newlogo223x124.png */; };
+		4B3ED5721615F2450099069B /* NewRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ED5711615F2440099069B /* NewRequestViewController.m */; };
 		4B44262B15C61D3100E46BD9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261715C61D3100E46BD9 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B44262C15C61D3100E46BD9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261915C61D3100E46BD9 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B44262D15C61D3100E46BD9 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261B15C61D3100E46BD9 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -470,6 +471,8 @@
 		4B3ED569161563460099069B /* no_thanks_let_me_in_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_thanks_let_me_in_blue.png; sourceTree = "<group>"; };
 		4B3ED56B1615650F0099069B /* newlogo223x124@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newlogo223x124@2x.png"; sourceTree = "<group>"; };
 		4B3ED56C1615650F0099069B /* newlogo223x124.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newlogo223x124.png; sourceTree = "<group>"; };
+		4B3ED5701615F2440099069B /* NewRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRequestViewController.h; sourceTree = "<group>"; };
+		4B3ED5711615F2440099069B /* NewRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRequestViewController.m; sourceTree = "<group>"; };
 		4B44261615C61D3100E46BD9 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		4B44261715C61D3100E46BD9 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		4B44261815C61D3100E46BD9 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -954,6 +957,13 @@
 			name = aviva_deal_list_assets;
 			sourceTree = "<group>";
 		};
+		4B3ED56F1615E6A60099069B /* aviva_tab_bar_icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = aviva_tab_bar_icons;
+			sourceTree = "<group>";
+		};
 		4B44261515C61D3100E46BD9 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1280,6 +1290,8 @@
 				4B85159F1605A6030075B851 /* SubmitScreenViewController.m */,
 				4B8516CD160D740D0075B851 /* RequestCityViewController.h */,
 				4B8516CE160D740F0075B851 /* RequestCityViewController.m */,
+				4B3ED5701615F2440099069B /* NewRequestViewController.h */,
+				4B3ED5711615F2440099069B /* NewRequestViewController.m */,
 				4B8515A11605A9A00075B851 /* AboutScreenViewController.h */,
 				4B8515A21605A9A00075B851 /* AboutScreenViewController.m */,
 				4BB5A9EA15D00A8F003E5F97 /* locate_me_icon.png */,
@@ -1298,6 +1310,7 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B3ED56F1615E6A60099069B /* aviva_tab_bar_icons */,
 				4B32D2761612D8C700078019 /* aviva_deal_list_assets */,
 				4B32D2731612C77600078019 /* aviva_loginscreen_assets */,
 				4B32D2701612BB4700078019 /* aviva_nav_header_icon */,
@@ -2113,6 +2126,7 @@
 				4B8515A31605A9A00075B851 /* AboutScreenViewController.m in Sources */,
 				4B8516CF160D74110075B851 /* RequestCityViewController.m in Sources */,
 				4B8516D6160EC0460075B851 /* NewFilterPickerViewController.m in Sources */,
+				4B3ED5721615F2450099069B /* NewRequestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
