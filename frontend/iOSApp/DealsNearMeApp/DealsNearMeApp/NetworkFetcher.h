@@ -14,8 +14,8 @@
 #define NETWORK_DEAL_SECTOR @"sector"
 #define NETWORK_PLACE_NAME @"_content"
 #define NETWORK_DEAL_ID @"id"
-#define NETWORK_LATITUDE @"latitude"
-#define NETWORK_LONGITUDE @"longitude"
+#define NETWORK_LATITUDE @"lat"
+#define NETWORK_LONGITUDE @"lng"
 
 
 #define NETWORK_DEAL_DISTANCE_FROM_USERS_LATLNG @"distance_from_users_latlng_in_km"
@@ -57,5 +57,6 @@ typedef enum {
 + (NSArray *)recentDealsNear60610_filter0_shopping;
 + (NSArray *)recentDealsNear60610_filter0_wellness;
 + (NSArray *) recentDealsNearZipcode;
++ (NSArray *) recentDealsNearZip;
 
 @end

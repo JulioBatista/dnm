@@ -1432,8 +1432,8 @@
 				4BB9A12315C9FAEA009263A1 /* FlickrAPIKey.h */,
 				4BB9A12415C9FAEA009263A1 /* FlickrFetcher.h */,
 				4BB9A12515C9FAEA009263A1 /* FlickrFetcher.m */,
-				4BC5044315CCD46600E535A2 /* NetworkFetcher.m */,
 				4BC5044215CCD46600E535A2 /* NetworkFetcher.h */,
+				4BC5044315CCD46600E535A2 /* NetworkFetcher.m */,
 				4B4E0D6815FD854B00A0CF97 /* FacebookHelper.h */,
 				4B4E0D6915FD854B00A0CF97 /* FacebookHelper.m */,
 			);

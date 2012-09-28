@@ -388,7 +388,11 @@
 	
 	[self getDealsFromNetwork];
 	
+	NSLog(@"---------the number of deals is----%d", [self.deals count]);
+	
 	[self gotoHardCodedLocation];
+	
+
 	
 	/* do what seeall button does */
 	
@@ -682,6 +686,7 @@
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
 			
+
 			// spinner goes away
 			self.navigationItem.rightBarButtonItem = sender;
 			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
@@ -704,9 +709,11 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610];
+		 NSArray *deals = [NetworkFetcher recentDealsNear60610];
 		
 		// NSArray *deals = [NetworkFetcher recentDealsNearZipcode];
+		
+		// NSArray *deals = [NetworkFetcher recentDealsNearZip];
 		
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
@@ -715,6 +722,17 @@
 			/* self.navigationItem.rightBarButtonItem = sender; */
 			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
+			
+			NSLog(@"-------------the number of deals is %d", [self.deals count]);
+			
+			for (NSDictionary *deal in self.deals)
+			{
+				NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_BUSINESSNAME] );
+				
+				NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_ADDRESS]);
+				
+			}
+			
 			
 			if ([self.deals count] == 0)
 			{

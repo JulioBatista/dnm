@@ -162,6 +162,13 @@
     return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
 }
 
+
++ (NSArray *)recentDealsNearZip
+{
+    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnearzip.json"];
+    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+}
+
 + (NSString *)urlStringForPhoto:(NSDictionary *)photo format:(FlickrPhotoFormat)format
 {
 	id farm = [photo objectForKey:@"farm"];
