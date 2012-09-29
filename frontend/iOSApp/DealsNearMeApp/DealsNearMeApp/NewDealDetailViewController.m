@@ -106,9 +106,9 @@
 	
 	
 	
-
 	
-	self.textViewDealDescriptionTextView.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION]; 
+	
+	self.textViewDealDescriptionTextView.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 	
     
     
@@ -147,7 +147,7 @@
 - (void)viewDidUnload
 {
 	
-
+	
 	[self setButtonCategory:nil];
 	[self setLabelAddress:nil];
 	[self setLabelBusinessName:nil];
@@ -157,7 +157,7 @@
 	[self setButtonNextButton:nil];
 	[self setButtonPrevButton:nil];
 	[self setMapViewDetailMapView:nil];
-
+	
 	[self setTextViewDealDescriptionTextView:nil];
 	[self setTextViewDealDescriptionTextView:nil];
     [super viewDidUnload];
@@ -209,7 +209,7 @@
 }
 - (void) populateMapViewDetailMapView:(NSUInteger)currentDealNumber
 {
-		NSLog(@"---------------populateMapViewDetailMapView");
+	NSLog(@"---------------populateMapViewDetailMapView");
 	
 	NSLog(@"-----%d", currentDealNumber);
 	
@@ -379,7 +379,7 @@
 		
 		self.labelBusinessName.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
 		
-
+		
 		
 		self.textViewDealDescriptionTextView.text =  [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
@@ -388,6 +388,13 @@
 		self.labelAddress.text = [self.currentDeal objectForKey:NETWORK_DEAL_ADDRESS];
 		
 		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
+		
+		[self.buttonPrevButton setEnabled:YES];
+	}
+	else
+	{
+		[self.buttonNextButton setEnabled:NO];
+		[self.buttonPrevButton setEnabled:YES];
 	}
 	[self populateMapViewDetailMapView:self.currentDealNum];
 }
@@ -406,7 +413,7 @@
 		
 		self.labelBusinessName.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
 		
-
+		
 		
 		self.textViewDealDescriptionTextView.text =  [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
@@ -415,7 +422,12 @@
 		self.labelAddress.text = [self.currentDeal objectForKey:NETWORK_DEAL_ADDRESS];
 		
 		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
-		
+		[self.buttonNextButton setEnabled:YES];
+	}
+	else
+	{
+		[self.buttonPrevButton setEnabled:NO];
+		[self.buttonNextButton setEnabled:YES];
 	}
 	[self populateMapViewDetailMapView:self.currentDealNum];
 	
@@ -657,16 +669,16 @@
 		
 		
 		messageString = [messageString stringByAppendingString:[self.currentDeal objectForKey:NETWORK_DEAL_BUSINESSNAME]];
-
+		
 		messageString = [messageString stringByAppendingString:@"'>"];
-
-
+		
+		
 		messageString = [messageString stringByAppendingString:[self.currentDeal objectForKey:NETWORK_SHARE_URL]];
 		
 		messageString = [messageString stringByAppendingString:@"</a>"];
-						 
 		
-
+		
+		
 		
 		messageString = [messageString stringByAppendingString:@"<p>"];
 		
