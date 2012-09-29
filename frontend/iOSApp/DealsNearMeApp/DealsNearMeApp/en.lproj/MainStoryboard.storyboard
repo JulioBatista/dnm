@@ -159,7 +159,7 @@
                                 <rect key="frame" x="88" y="5" width="145" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="9 deals found" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cNH-gH-paX">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cNH-gH-paX">
                                 <rect key="frame" x="118" y="55" width="84" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -2568,7 +2568,6 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <relationship kind="outlet" name="buttonToggleScrollView" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="dealsTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="labelLocationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="scrollDividerView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
@@ -2612,7 +2611,6 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <relationship kind="outlet" name="labelAddressLine2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelBusinessName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelBusinessPhoneLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelDealDescription" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapViewDetailMapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="textViewDealDescriptionTextView" candidateClass="UITextView"/>
             </relationships>
@@ -2691,7 +2689,6 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonNoThanksButtonPressed:"/>
-                <relationship kind="action" name="buttonYesPressed:"/>
             </relationships>
         </class>
         <class className="SubmitScreenViewController" superclassName="UIViewController">

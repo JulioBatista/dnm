@@ -120,6 +120,7 @@
 - (NSArray *) mapAnnotations
 {
 	NSLog(@"------------mapAnnotations");
+	
 	NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.deals count]];
 	for (NSDictionary *deal in self.deals)
 	{
@@ -714,11 +715,11 @@
 		
 		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
 		
-		 NSArray *deals = [NetworkFetcher recentDealsNear60610];
+		// NSArray *deals = [NetworkFetcher recentDealsNear60610];
 		
 		// NSArray *deals = [NetworkFetcher recentDealsNearZipcode];
 		
-		// NSArray *deals = [NetworkFetcher recentDealsNearZip];
+		NSArray *deals = [NetworkFetcher recentDealsNearZip];
 		
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
