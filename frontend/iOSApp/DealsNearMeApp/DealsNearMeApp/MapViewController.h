@@ -24,9 +24,12 @@
 
 @property (nonatomic, strong) NSArray *annotations; // of id <MKAnnotation>
 
-@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelLocationLabel;
+
 
 - (IBAction)doLocateMeButton:(id)sender;
 

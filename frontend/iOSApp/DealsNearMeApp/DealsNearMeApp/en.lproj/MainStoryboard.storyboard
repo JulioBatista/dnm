@@ -159,11 +159,11 @@
                                 <rect key="frame" x="88" y="5" width="145" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kGO-Wi-EeK">
-                                <rect key="frame" x="116" y="55" width="89" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="9 deals found" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cNH-gH-paX">
+                                <rect key="frame" x="118" y="55" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -177,7 +177,7 @@
                         <outlet property="buttonToggle" destination="6UV-Uc-IO7" id="83S-SL-it4"/>
                         <outlet property="buttonToggleScrollView" destination="6UV-Uc-IO7" id="gGl-AC-GQv"/>
                         <outlet property="dealsTableView" destination="EPJ-pC-2js" id="25G-Ni-MAR"/>
-                        <outlet property="locationLabel" destination="kGO-Wi-EeK" id="laB-UP-9FG"/>
+                        <outlet property="labelLocationLabel" destination="cNH-gH-paX" id="dBI-03-t3I"/>
                         <outlet property="map" destination="1Sd-yk-4AT" id="z7Q-we-f4e"/>
                         <outlet property="scrollDividerView" destination="UoY-ih-1bp" id="AwH-ri-aZi"/>
                         <outlet property="scrollView" destination="Jbg-zK-dbq" id="OCv-38-TQO"/>
@@ -2556,8 +2556,10 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
+                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedControlFilterButtonPressed:"/>
                 <relationship kind="action" name="segmentedControlMapListButtonPressed:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
@@ -2565,6 +2567,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <relationship kind="outlet" name="buttonToggle" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="buttonToggleScrollView" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="dealsTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="labelLocationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="scrollDividerView" candidateClass="UIImageView"/>
@@ -2640,6 +2643,9 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewRequestViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonBackButtonTapped:"/>
+                <relationship kind="action" name="buttonRequestButtonTapped:"/>
+                <relationship kind="outlet" name="textFieldCityTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFieldStateTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="PreSplashViewController" superclassName="UIViewController">
@@ -2685,6 +2691,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonNoThanksButtonPressed:"/>
+                <relationship kind="action" name="buttonYesPressed:"/>
             </relationships>
         </class>
         <class className="SubmitScreenViewController" superclassName="UIViewController">

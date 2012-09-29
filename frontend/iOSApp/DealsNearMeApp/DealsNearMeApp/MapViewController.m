@@ -69,8 +69,9 @@
 @synthesize scrollView = _scrollView;
 @synthesize scrollDividerView = _scrollDividerView;
 @synthesize map = _map;
-@synthesize locationLabel = _locationLabel;
+
 @synthesize addressLabel = _addressLabel;
+@synthesize labelLocationLabel = _labelLocationLabel;
 @synthesize deals = _deals;
 @synthesize newdeals = _newdeals;
 @synthesize isMapVisible = _isMapVisible;
@@ -476,7 +477,7 @@
 {
 	[self setMap:nil];
 	[self setMap:nil];
-	[self setLocationLabel:nil];
+
 	[self setAddressLabel:nil];
 	[self setScrollView:nil];
 	[self setDealsTableView:nil];
@@ -502,6 +503,7 @@
 	[self setSegmentedControlFilterButton:nil];
 	[self setSegmentedControlFilterButton:nil];
 	[self setSegmentedControlMapListButton:nil];
+	[self setLabelLocationLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 	[locationManager stopUpdatingLocation];
@@ -615,6 +617,8 @@
 		NSArray *addressLines = [revMark.addressDictionary objectForKey:@"FormattedAddressLines"];
 		NSString *revAddress = [addressLines componentsJoinedByString:@"\n"];
 		/* self.addressLabel.text = [NSString stringWithFormat:@"You are at : \n%@", revAddress]; */
+		
+		self.labelLocationLabel.text = [NSString stringWithFormat:@"%@", revAddress];
 		NSLog(@"---The address is--------------%@", revAddress);
 		
 		// now turn the address to coordinates
@@ -746,12 +750,9 @@
 			}
 			else
 			{
-				[[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%d deals found", [self.deals count]]
-											message:@"We are always looking for deals near you"
-										   delegate:nil
-								  cancelButtonTitle:@"Ok"
-								  otherButtonTitles:nil] show];
 				
+				
+				self.labelLocationLabel.text = [NSString stringWithFormat:@"%d deals found", [self.deals count]];
 			}
 			
 		});
@@ -1690,6 +1691,8 @@
 	/* self.addressLabel.text = city; */
 	NSLog(@"The value of city is %@", theCity);
     
+	self.labelLocationLabel.text = [NSString stringWithFormat:@"%@", theCity];
+	
     if ([theCity isEqualToString:@"Use Current Location"])
     {
         /* below is what used to happen when you clicked the blue locateMe Button */
@@ -1730,6 +1733,7 @@
 					 NSLog(@"------------zooming to levia--------- %@", theCity);
 					 zoomLocation.latitude = 43.700934;
 					 zoomLocation.longitude= -79.426240;
+					 
 				 }
                  else if ([theCity isEqualToString:@"Chicago, IL"])
 				 {
