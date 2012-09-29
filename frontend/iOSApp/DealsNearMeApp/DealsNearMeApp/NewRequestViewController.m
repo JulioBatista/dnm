@@ -13,6 +13,8 @@
 @end
 
 @implementation NewRequestViewController
+@synthesize textFieldCityTextField;
+@synthesize textFieldStateTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +33,8 @@
 
 - (void)viewDidUnload
 {
+	[self setTextFieldCityTextField:nil];
+	[self setTextFieldStateTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -43,5 +47,9 @@
 - (IBAction)buttonBackButtonTapped:(id)sender
 {
 	[self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)buttonRequestButtonTapped:(id)sender
+{
+	
 }
 @end

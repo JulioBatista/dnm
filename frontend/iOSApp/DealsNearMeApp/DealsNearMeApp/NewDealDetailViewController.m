@@ -24,7 +24,10 @@
 @synthesize buttonPrevButton = _buttonPrevButton;
 @synthesize buttonFavoritesButton = _buttonFavoritesButton;
 
-@synthesize labelDealDescription;
+
+
+@synthesize textViewDealDescriptionTextView = _textViewDealDescriptionTextView;
+
 @synthesize dealnum = _dealnum;
 @synthesize dealIndex = _dealIndex;
 @synthesize currentDeal = _currentDeal;
@@ -102,7 +105,11 @@
 	
 	
 	
-	self.labelDealDescription.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION];
+	
+
+	
+	self.textViewDealDescriptionTextView.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION]; 
+	
     
     
     /*
@@ -140,7 +147,7 @@
 - (void)viewDidUnload
 {
 	
-	[self setLabelDealDescription:nil];
+
 	[self setButtonCategory:nil];
 	[self setLabelAddress:nil];
 	[self setLabelBusinessName:nil];
@@ -150,6 +157,9 @@
 	[self setButtonNextButton:nil];
 	[self setButtonPrevButton:nil];
 	[self setMapViewDetailMapView:nil];
+
+	[self setTextViewDealDescriptionTextView:nil];
+	[self setTextViewDealDescriptionTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -369,7 +379,9 @@
 		
 		self.labelBusinessName.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
 		
-		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
+
+		
+		self.textViewDealDescriptionTextView.text =  [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
 		[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 		
@@ -394,7 +406,9 @@
 		
 		self.labelBusinessName.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
 		
-		self.labelDealDescription.text = [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
+
+		
+		self.textViewDealDescriptionTextView.text =  [self.currentDeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
 		[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 		

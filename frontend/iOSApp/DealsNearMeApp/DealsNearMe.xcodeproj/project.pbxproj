@@ -68,6 +68,7 @@
 		4B3ED56D1615650F0099069B /* newlogo223x124@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3ED56B1615650F0099069B /* newlogo223x124@2x.png */; };
 		4B3ED56E1615650F0099069B /* newlogo223x124.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3ED56C1615650F0099069B /* newlogo223x124.png */; };
 		4B3ED5721615F2450099069B /* NewRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ED5711615F2440099069B /* NewRequestViewController.m */; };
+		4B3ED576161614D90099069B /* ico_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B3ED575161614D90099069B /* ico_more@2x.png */; };
 		4B44262B15C61D3100E46BD9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261715C61D3100E46BD9 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B44262C15C61D3100E46BD9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261915C61D3100E46BD9 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B44262D15C61D3100E46BD9 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44261B15C61D3100E46BD9 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -473,6 +474,7 @@
 		4B3ED56C1615650F0099069B /* newlogo223x124.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newlogo223x124.png; sourceTree = "<group>"; };
 		4B3ED5701615F2440099069B /* NewRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRequestViewController.h; sourceTree = "<group>"; };
 		4B3ED5711615F2440099069B /* NewRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRequestViewController.m; sourceTree = "<group>"; };
+		4B3ED575161614D90099069B /* ico_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_more@2x.png"; sourceTree = "<group>"; };
 		4B44261615C61D3100E46BD9 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		4B44261715C61D3100E46BD9 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		4B44261815C61D3100E46BD9 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -960,6 +962,8 @@
 		4B3ED56F1615E6A60099069B /* aviva_tab_bar_icons */ = {
 			isa = PBXGroup;
 			children = (
+				4B3ED575161614D90099069B /* ico_more@2x.png */,
+				4B3ED558161557AC0099069B /* ico_more.png */,
 			);
 			name = aviva_tab_bar_icons;
 			sourceTree = "<group>";
@@ -1492,7 +1496,6 @@
 				4B6BA55515C5D1830095F35E /* deals_near_me_logo_114X114.png */,
 				4B6BA55315C5D17C0095F35E /* deals_near_me_logo_57X57.png */,
 				4B6BA53615C16BF50095F35E /* dealsnearmeapp_2x.png */,
-				4B3ED558161557AC0099069B /* ico_more.png */,
 				4BC503C215CC4CA300E535A2 /* 165-glasses-3.png */,
 				4B6BA53415C16BEE0095F35E /* dealsnearmeapp.png */,
 				4B6BA50F15C0F0890095F35E /* second.png */,
@@ -2055,6 +2058,7 @@
 				4B3ED56A161563460099069B /* no_thanks_let_me_in_blue.png in Resources */,
 				4B3ED56D1615650F0099069B /* newlogo223x124@2x.png in Resources */,
 				4B3ED56E1615650F0099069B /* newlogo223x124.png in Resources */,
+				4B3ED576161614D90099069B /* ico_more@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,5 +10,12 @@
 
 @interface NewRequestViewController : UIViewController
 - (IBAction)buttonBackButtonTapped:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *textFieldCityTextField;
+
+
+@property (strong, nonatomic) IBOutlet UITextField *textFieldStateTextField;
+
+- (IBAction)buttonRequestButtonTapped:(id)sender;
+
 
 @end

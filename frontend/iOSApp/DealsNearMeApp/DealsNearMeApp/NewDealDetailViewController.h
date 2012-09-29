@@ -16,7 +16,10 @@
 
 
 
-@property (strong, nonatomic) IBOutlet UILabel *labelDealDescription;
+@property (strong, nonatomic) IBOutlet UITextView *textViewDealDescriptionTextView;
+
+
+
 
 @property (nonatomic, strong) NSNumber *dealnum;
 
