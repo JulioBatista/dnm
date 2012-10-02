@@ -37,7 +37,16 @@
 	
     NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query); 
 	
-    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+	NSError *err = nil;
+	
+    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:&err] dataUsingEncoding:NSUTF8StringEncoding];
+	
+	  if (err) NSLog(@"[%@ %@] JSON err: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), err.localizedDescription);
+	
+	NSLog(@"-------------------%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
+	
+	
+	NSLog(@"-------------------------");
     NSError *error = nil;
     NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
 	
@@ -167,7 +176,20 @@
 
 + (NSArray *)recentDealsNearZip
 {
-    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnearzipcode2.json"];
+    /* 
+	 NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnearzipcode2.json"];
+	 
+	 */
+	 
+	/*
+	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
+	*/
+	
+	NSString *request = [NSString stringWithFormat:@"http://api.dealsnear.me/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
+	
+	/*
+	NSString *request = [NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&per_page=500&license=1,2,4,7&has_geo=1&extras=original_format,tags,description,geo,date_upload,owner_name,place_url&format=json&nojsoncallback=1&api_key=07a9a5938d3fa6c7f180fb0cb003327a"];
+	*/
     return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
 }
 
