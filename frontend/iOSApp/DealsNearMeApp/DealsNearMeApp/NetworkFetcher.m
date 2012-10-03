@@ -39,9 +39,18 @@
 	
 	NSError *err = nil;
 	
-    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:&err] dataUsingEncoding:NSUTF8StringEncoding];
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
-	  if (err) NSLog(@"[%@ %@] JSON err: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), err.localizedDescription);
+	NSError *jsonError = nil;
+	
+	NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+	
+	NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath options:kNilOptions error:&jsonError ];
+	/*
+    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:&err] dataUsingEncoding:NSUTF8StringEncoding];
+	*/
+	  if (jsonError) NSLog(@"[%@ %@] JSON err: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), jsonError.localizedDescription);
 	
 	NSLog(@"-------------------%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
 	
@@ -181,16 +190,38 @@
 	 
 	 */
 	 
+	
+	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=0.5&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
+	
 	/*
-	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
-	*/
-	
 	NSString *request = [NSString stringWithFormat:@"http://api.dealsnear.me/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
-	
+	*/
+	/*
+	NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/test2.json"];
+	*/
 	/*
 	NSString *request = [NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&per_page=500&license=1,2,4,7&has_geo=1&extras=original_format,tags,description,geo,date_upload,owner_name,place_url&format=json&nojsoncallback=1&api_key=07a9a5938d3fa6c7f180fb0cb003327a"];
-	*/
+	 */
+	
+	[self writeJsonToFile:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=0.5&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
+	
+	
+	//application Documents dirctory path
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	
+	NSError *jsonError = nil;
+	
+	NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+	
+	NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath options:kNilOptions error:&jsonError ];
+	
+	// NSLog(@"====================>>%@", [jsonData description]);
+	
     return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+	
+	
+	
 }
 
 
@@ -245,6 +276,38 @@
 + (NSURL *)urlForPhoto:(NSDictionary *)photo format:(FlickrPhotoFormat)format
 {
     return [NSURL URLWithString:[self urlStringForPhoto:photo format:format]];
+}
+
++ (void)writeJsonToFile:(NSString *)stringURL
+{
+	//applications Documents dirctory path
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	
+	//live json data url
+
+	NSURL *url = [NSURL URLWithString:stringURL];
+	NSData *urlData = [NSData dataWithContentsOfURL:url];
+	
+    //attempt to download live data
+    if (urlData)
+    {
+        NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+        [urlData writeToFile:filePath atomically:YES];
+    }
+    //copy data from initial package into the applications Documents folder
+    else
+    {
+        //file to write to
+        NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
+		
+        //file to copy from
+        NSString *json = [ [NSBundle mainBundle] pathForResource:@"data" ofType:@"json" inDirectory:@"html/data" ];
+        NSData *jsonData = [NSData dataWithContentsOfFile:json options:kNilOptions error:nil];
+		
+        //write file to device
+        [jsonData writeToFile:filePath atomically:YES];
+    }
 }
 
 @end
