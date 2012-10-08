@@ -392,7 +392,7 @@
 	
 	NSLog(@"---------the number of deals is----%d", [self.deals count]);
 	
-	[self gotoHardCodedLocation];
+	/* [self gotoHardCodedLocation]; */
 	
 
 
@@ -708,6 +708,18 @@
 
 - (void) getDealsFromNetwork
 {
+	UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+	
+	[spinner setColor:[UIColor grayColor]];
+	
+	spinner.center = CGPointMake(160, 240);
+	
+	spinner.hidesWhenStopped = YES;
+	
+	[self.view addSubview:spinner];
+	
+	[spinner startAnimating];
+	
 	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
 	dispatch_async(downloadQueue, ^{
 		NSLog(@"About to fetch deals from the network");
@@ -719,8 +731,12 @@
 		
 		// NSArray *deals = [NetworkFetcher recentDealsNearZipcode];
 		
-		NSArray *deals = [NetworkFetcher recentDealsNearZip];
+		NSArray *deals = [NetworkFetcher recentDealsNearZip]; 
 		
+		/* start of JSON fetching */
+		
+		
+		/* end of JSON fetching */
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -728,6 +744,8 @@
 			/* self.navigationItem.rightBarButtonItem = sender; */
 			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
+			
+			[spinner stopAnimating];
 			
 			NSLog(@"-------------the number of deals is %d", [self.deals count]);
 			
@@ -1072,7 +1090,7 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-	
+
 	
 	[self getDealsFromNetwork];
 	

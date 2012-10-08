@@ -190,40 +190,95 @@
 	 
 	 */
 	 
-	
+	/*
 	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=0.5&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
+	*/
 	
-	/*
-	NSString *request = [NSString stringWithFormat:@"http://api.dealsnear.me/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
-	*/
-	/*
-	NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/test2.json"];
-	*/
+	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
+	
+	
+	// NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/test.json"];
+	
 	/*
 	NSString *request = [NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&per_page=500&license=1,2,4,7&has_geo=1&extras=original_format,tags,description,geo,date_upload,owner_name,place_url&format=json&nojsoncallback=1&api_key=07a9a5938d3fa6c7f180fb0cb003327a"];
 	 */
 	
-	[self writeJsonToFile:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=0.5&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
 	
-	
-	//application Documents dirctory path
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	
-	NSError *jsonError = nil;
-	
-	NSString *jsonFilePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"data.json"];
-	
-	NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath options:kNilOptions error:&jsonError ];
-	
-	// NSLog(@"====================>>%@", [jsonData description]);
-	
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
+    return [[self executeJSONFetcher:request] valueForKeyPath:@"deals.deal"];
 	
 	
 	
 }
 
++ (NSDictionary *)executeJSONFetcher:(NSString *)query
+{
+    /* query = [NSString stringWithFormat:@"%@&format=json&nojsoncallback=1&api_key=%@", query, FlickrAPIKey]; */
+    query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query);
+    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+	
+	
+    NSError *error = nil;
+    NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
+    if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
+    NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    return results;
+}
+
++ (NSDictionary *) executeJSONFetchermethod:(NSString *)query
+{
+	NSString *urlstring=@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a";
+	query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query);
+	
+	NSURL *URL = [NSURL URLWithString:urlstring];
+	
+	
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
+	
+	[request setHTTPMethod:@"POST"];
+	[request setValue:[NSString stringWithFormat:@"%d", [urlstring length]] forHTTPHeaderField:@"Content-length"];
+	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
+	[request setHTTPBody:[urlstring dataUsingEncoding:NSUTF8StringEncoding]];
+	
+    NSURLResponse *resp = nil;
+    NSError *err = nil;
+	
+    NSData *jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&err];
+	/*
+	NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+	*/
+	NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+	NSLog(@"JsonString = %@",jsonString);
+	
+	//    NSString * theString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+	//    NSLog(@"response: %@", theString);
+	
+	
+	  NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves|NSJSONReadingAllowFragments error:&err] : nil;
+	
+   // NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingAllowFragments error: &err];
+	/*
+	const unsigned char *ptr = [jsonData bytes];
+	
+	for(int i=0; i<[jsonData length]; ++i) {
+		unsigned char c = *ptr++;
+		NSLog(@"char=%c hex=%x", c, c);
+	}
+	 */
+	
+    if (!results) {
+        NSLog(@"Error parsing JSON: %@", err);
+    } else {
+        for(NSDictionary *item in results) {
+            NSLog(@" %@", item);
+            NSLog(@"---------------------------------");
+        }
+    }
+	NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    return results;
+	
+}
 
 + (NSArray *)recentDealsNearZipcode
 {
