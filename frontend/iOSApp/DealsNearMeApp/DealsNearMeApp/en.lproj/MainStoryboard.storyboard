@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="M8y-VI-1gD">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Map View Controller-->
         <scene sceneID="bPC-si-slh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GDN-vs-btl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="SpU-em-5yu" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="left" id="17V-I3-1d7">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -189,13 +187,13 @@
                         <segue destination="0rT-3c-k44" kind="modal" identifier="FilterPickerSegue" id="WaA-0Y-JfY"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDN-vs-btl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1689" y="-911"/>
         </scene>
         <!--First View Controller - First-->
         <scene sceneID="11">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
                 <viewController title="First" id="2" customClass="FirstViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -222,13 +220,13 @@
                     <navigationItem key="navigationItem" id="tgW-5W-Wt3"/>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5582" y="-624"/>
         </scene>
         <!--New Favorites View Controller-->
         <scene sceneID="ihN-AQ-PlN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LDK-3A-gnx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="1KX-d1-fGR" customClass="NewFavoritesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hGG-uN-Jdc">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -310,13 +308,13 @@
                         <segue destination="KvL-wI-8Ow" kind="push" identifier="FromFavoritesToDealDetailSegue" id="vUw-Hu-0dP"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDK-3A-gnx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3868" y="-631"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="RW2-hz-HIt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QNO-SF-2YT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="mA5-Lr-MZs" customClass="FavoritesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lez-AZ-PHg">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -381,13 +379,13 @@
                     <navigationItem key="navigationItem" id="7Uc-WD-3Ej"/>
                     <nil key="simulatedTopBarMetrics"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNO-SF-2YT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4408" y="-646"/>
         </scene>
         <!--Deals View Controller-->
         <scene sceneID="LMW-1u-XaG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0sF-rB-co6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="l2c-gA-dhF" customClass="DealsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fsA-cB-sb3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -461,13 +459,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="PoR-4W-UX0"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sF-rB-co6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="328" y="22"/>
         </scene>
         <!--Deal Detail View Controller-->
         <scene sceneID="sNe-K8-Udq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aO8-b7-sj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="f6u-iz-Qwf" customClass="DealDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D08-S0-OfJ">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -680,13 +678,13 @@
                         <outlet property="labelDealTitle" destination="i1H-01-NRZ" id="ELS-a1-NhO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aO8-b7-sj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2735" y="-896"/>
         </scene>
         <!--New Deal Detail View Controller-->
         <scene sceneID="qpg-ph-08k">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Snl-jI-1N7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="KvL-wI-8Ow" customClass="NewDealDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Ak-9X-ePi">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -782,7 +780,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Scl-Re-82q">
-                                <rect key="frame" x="109" y="52" width="120" height="30"/>
+                                <rect key="frame" x="100" y="52" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Category" backgroundImage="category_placeholder.png">
@@ -882,13 +880,13 @@
                         <outlet property="textViewDealDescriptionTextView" destination="JCV-U3-OWP" id="vMK-DR-MYX"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Snl-jI-1N7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2207" y="-339"/>
         </scene>
         <!--My Account Screen View Controller - Item-->
         <scene sceneID="rMj-ev-RPn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IuY-G3-LCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MyAccountScreenViewController" id="JPi-HN-XwI" customClass="MyAccountScreenViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="eMA-aK-cYp"/>
                     <navigationItem key="navigationItem" id="xfo-C9-kId"/>
@@ -896,13 +894,13 @@
                         <segue destination="1Qj-89-kT2" kind="modal" identifier="ShowLoginScreen" modalTransitionStyle="flipHorizontal" id="576-hH-tgr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IuY-G3-LCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1508" y="188"/>
         </scene>
         <!--My Profile Screen View Controller-->
         <scene sceneID="sLn-BF-Zww">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nmJ-z3-Gmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WR4-uh-ls0" customClass="MyProfileScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M8h-yU-iCy">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -966,13 +964,13 @@
                         <outlet property="myProfileTableView" destination="LcA-Sp-MOM" id="Jib-rG-StN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nmJ-z3-Gmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2083" y="259"/>
         </scene>
         <!--Social Login View Controller-->
         <scene sceneID="305-yi-uCb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWx-0Q-qzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="UYJ-eB-zaU" customClass="SocialLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Fr-Br-9zr">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -1106,13 +1104,13 @@
                         <segue destination="4" kind="modal" identifier="SplashScreenToTabBarControllerSegue" id="X94-Qt-p6t"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWx-0Q-qzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1059" y="518"/>
         </scene>
         <!--Login Screen View Controller-->
         <scene sceneID="foR-Xn-USN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nEu-xI-Mtj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="1Qj-89-kT2" customClass="LoginScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EPj-WO-4vc">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -1190,13 +1188,13 @@
                         <outlet property="fldUsername" destination="bNy-69-e2b" id="VOf-8P-sW6"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nEu-xI-Mtj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-517" y="610"/>
         </scene>
         <!--Table View Controller - Categories-->
         <scene sceneID="uQc-0w-1wZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hmd-oA-mHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="CategoriesViewController" id="VFh-Hv-skN" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eKk-GB-Zhx">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -1362,13 +1360,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Categories" id="kL1-1d-ahX"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmd-oA-mHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2525" y="1121"/>
         </scene>
         <!--Bars Table View Controller-->
         <scene sceneID="ssW-wn-nWO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lNx-GD-dMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="4Ks-ZO-Gge" customClass="BarsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1dX-ZS-nhJ">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -1419,13 +1417,13 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNx-GD-dMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3214" y="1276"/>
         </scene>
         <!--Settings Screen View Controller - Settings-->
         <scene sceneID="b2L-9y-AG5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8d9-og-AQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SettingsViewController" id="568-J0-n08" customClass="SettingsScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mGa-Cw-ma2">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -1489,13 +1487,13 @@
                         <outlet property="settingsTableView" destination="29d-tj-qkp" id="Qo2-GO-6EY"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8d9-og-AQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2102" y="1011"/>
         </scene>
         <!--About Screen View Controller-->
         <scene sceneID="eMx-My-t1x">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uWG-9d-I2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Jqp-sn-6uA" customClass="AboutScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yzr-eZ-3qI">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -1543,13 +1541,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                     </view>
                     <navigationItem key="navigationItem" id="N5G-zC-w2Q"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWG-9d-I2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1321" y="1835"/>
         </scene>
         <!--New Request View Controller-->
         <scene sceneID="vIX-aa-FQJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="So7-IZ-3fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jsR-n9-Yhg" customClass="NewRequestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aVJ-wW-BFj">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -1639,13 +1637,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <outlet property="textFieldStateTextField" destination="xwo-CA-Dab" id="ojY-pJ-GUd"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="So7-IZ-3fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1722" y="2039"/>
         </scene>
         <!--Submit Screen View Controller-->
         <scene sceneID="uSc-2l-ZBI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zv3-2S-goi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hRW-OT-dIp" customClass="SubmitScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E8R-51-Xy8">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -1747,13 +1745,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <outlet property="textFieldTwitterHandle" destination="Nfa-j3-KDL" id="Ftu-qD-7tk"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zv3-2S-goi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2102" y="1576"/>
         </scene>
         <!--Request City View Controller-->
         <scene sceneID="rbY-xm-pAd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VVo-zG-5Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="wfB-4I-Q1X" customClass="RequestCityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Msi-rl-C6T">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -1829,13 +1827,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <outlet property="textFieldCityTextField" destination="eD1-KO-hAg" id="vYS-dC-elw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVo-zG-5Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1736" y="2625"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
                 <tabBarController id="4" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -1850,13 +1848,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="YXa-SN-fif" kind="relationship" relationship="viewControllers" id="TaT-K8-nVg"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-363" y="-305"/>
         </scene>
         <!--Pre Splash View Controller-->
         <scene sceneID="FLH-p6-rSZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jAm-wc-JaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="3tw-FX-6Uj" customClass="PreSplashViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nc3-6m-vQc">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -1879,13 +1877,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="UYJ-eB-zaU" kind="push" identifier="PreSplashToSplashSegue" id="0MB-cX-6fV"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAm-wc-JaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1540" y="209"/>
         </scene>
         <!--Filter Picker View Controller-->
         <scene sceneID="lku-QR-b9X">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dQ0-7f-Rat" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Dyy-4v-mH3" customClass="FilterPickerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d0S-J3-J4A">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -1962,13 +1960,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <outlet property="segmentedControlRatingControl" destination="Ai0-kI-2BH" id="Oie-vh-AFd"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQ0-7f-Rat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2215" y="-2068"/>
         </scene>
         <!--Location Picker View Controller - Search by location-->
         <scene sceneID="HaE-cm-lIC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HoZ-tj-Ohe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="QGo-yv-kUL" customClass="LocationPickerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BtE-1Z-AJh">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -2019,13 +2017,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HoZ-tj-Ohe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1542" y="-1500"/>
         </scene>
         <!--New Filter Picker View Controller - Filter-->
         <scene sceneID="Ji6-hg-cbJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VDe-Gz-Vdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="uDP-PL-8EJ" customClass="NewFilterPickerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gz8-pE-ph0">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -2095,13 +2093,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <outlet property="segmentedControlRatingControl" destination="kDV-OO-8YU" id="QLT-Qi-aSW"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDe-Gz-Vdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2618" y="-1444"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="vUR-II-U8H">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uBM-i3-dUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="kag-E6-ZH9" customClass="SplashViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fwq-23-YXz">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -2153,13 +2151,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                     </view>
                     <navigationItem key="navigationItem" id="foi-gx-E87"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uBM-i3-dUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-943" y="-324"/>
         </scene>
         <!--New More View Controller-->
         <scene sceneID="9qd-Y4-yuw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uJy-go-cyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="c95-Au-zoG" customClass="NewMoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRB-d2-RIa">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -2215,13 +2213,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="jsR-n9-Yhg" kind="push" identifier="FromMoreToNewRequestSegue" id="SzG-T6-c3P"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJy-go-cyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1223" y="758"/>
         </scene>
         <!--More View Controller-->
         <scene sceneID="gtq-ze-Qg6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wyb-eO-nfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jtM-m6-ZZ5" customClass="MoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NaZ-9g-oun">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -2250,13 +2248,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <outlet property="scrollView" destination="bE5-3T-Etd" id="Dfd-q8-NCC"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyb-eO-nfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="519" y="1427"/>
         </scene>
         <!--About Screen Table View Controller-->
         <scene sceneID="RB6-7X-Gmq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8pG-V4-uhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="La7-ln-qC7" customClass="AboutScreenTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="azV-mM-fjw">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -2310,13 +2308,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                     </tableView>
                     <navigationItem key="navigationItem" id="nvp-vL-h8S"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8pG-V4-uhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944" y="1437"/>
         </scene>
         <!--Navigation Controller - Deals-->
         <scene sceneID="VCg-f9-Cae">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ygs-1b-yN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="nBA-Gd-Ee6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Deals" image="15-tags.png" id="zLp-3o-2oP"/>
                     <toolbarItems/>
@@ -2330,13 +2328,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="SpU-em-5yu" kind="relationship" relationship="rootViewController" id="bIn-7m-smM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ygs-1b-yN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1163" y="-911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RQn-tL-zDL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="736-O8-xnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="M8y-VI-1gD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -2349,13 +2347,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="3tw-FX-6Uj" kind="relationship" relationship="rootViewController" id="eXN-UF-NP1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="736-O8-xnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2066" y="209"/>
         </scene>
         <!--Navigation Controller - Location-->
         <scene sceneID="Yrd-yR-ee8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bjN-iz-AJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="CZa-pA-fh1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Location" image="07-map-marker.png" id="IZN-6m-yYZ"/>
                     <toolbarItems/>
@@ -2369,13 +2367,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="QGo-yv-kUL" kind="relationship" relationship="rootViewController" id="CmJ-WX-PMV"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjN-iz-AJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1135" y="-1500"/>
         </scene>
         <!--Navigation Controller - Favorites-->
         <scene sceneID="VB9-72-Z7y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="801-5I-4wK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="hYN-sC-SEl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="29-heart.png" id="WSX-Tk-S1P"/>
                     <toolbarItems/>
@@ -2389,13 +2387,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="1KX-d1-fGR" kind="relationship" relationship="rootViewController" id="YaI-xI-Q6d"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="801-5I-4wK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3342" y="-631"/>
         </scene>
         <!--Navigation Controller - More-->
         <scene sceneID="FJp-VQ-rqe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KgD-4E-oq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="YXa-SN-fif" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="More" image="ico_more.png" id="ilF-M2-Oic"/>
                     <toolbarItems/>
@@ -2408,13 +2406,13 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="c95-Au-zoG" kind="relationship" relationship="rootViewController" id="ZFL-up-w2c"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgD-4E-oq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="714" y="740"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hbb-w1-6cX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="61i-3l-xdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="0rT-3c-k44" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JAX-w7-5yI">
@@ -2427,6 +2425,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                         <segue destination="uDP-PL-8EJ" kind="relationship" relationship="rootViewController" id="Nvq-eu-2sT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61i-3l-xdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2092" y="-1444"/>
         </scene>
