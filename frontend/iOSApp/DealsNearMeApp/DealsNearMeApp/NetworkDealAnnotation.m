@@ -23,7 +23,7 @@
 
 -(NSString *) title
 {
-	return [self.deal objectForKey:NETWORK_DEAL_TITLE];
+	return [self.deal objectForKey:NETWORK_DEAL_BUSINESSNAME];
 }
 
 -(NSString *) subtitle
