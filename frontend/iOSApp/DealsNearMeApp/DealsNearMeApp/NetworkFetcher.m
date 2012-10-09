@@ -134,56 +134,14 @@
     return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
 }
 
-+ (NSArray *)recentDealsNear60610_filter0_bars
-{
-    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_bars.json"];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
 
-+ (NSArray *)recentDealsNear60610_filter0_travel
-{
-    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_travel.json"];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
-
-+ (NSArray *)recentDealsNear60610_filter0_fun
-{
-    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_fun.json"];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
-+ (NSArray *)recentDealsNear60610_filter0_services
-{
-    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_services.json"];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
-+ (NSArray *)recentDealsNear60610_filter0_dining
-{
-    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_dining.json"];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
-
-+ (NSArray *)recentDealsNear60610_filter0_family
-{
-    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_family.json"];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
-+ (NSArray *)recentDealsNear60610_filter0_shopping
-{
-    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_shopping.json"];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
-+ (NSArray *)recentDealsNear60610_filter0_wellness
-{
-    NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnear60610_filter0_wellness.json"];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
 + (NSArray *)recentDealsNearHome
 {
     NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnearhome.json"];
     return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
 }
 
-+ (NSArray *)recentDealsNearZip
++ (NSArray *)recentDealsNearZip:(NSString *) zipCode
 {
     /* 
 	 NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnearzipcode2.json"];
@@ -194,7 +152,17 @@
 	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=0.5&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
 	*/
 	
-	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
+	
+	
+
+	
+	
+	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=%@&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a", zipCode];
+	
+
+	
+	
+	// NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
 	
 	
 	// NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/test.json"];
@@ -280,27 +248,7 @@
 	
 }
 
-+ (NSArray *)recentDealsNearZipcode
-{
-	NSString *apiString = @"http://api.dealsnear.me/api/api.php?cmd=deal&mode=get&session_id=x&filter2=30307&filter3=2&filter4=most_recent&api_key=v8Flc@d[7Vgq0e%5Ep";
-	
-	
-    NSString *request = [NSString stringWithFormat:@"%@", apiString];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
 
-
-
-
-
-+ (NSArray *)recentDealsNearZipcode2
-{
-	NSString *apiString = @"http://81.142.254.10/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=2&filter4=most_recent&api_key=ABCD1234";
-	
-	
-    NSString *request = [NSString stringWithFormat:@"%@", apiString];
-    return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
-}
 + (NSString *)urlStringForPhoto:(NSDictionary *)photo format:(FlickrPhotoFormat)format
 {
 	id farm = [photo objectForKey:@"farm"];

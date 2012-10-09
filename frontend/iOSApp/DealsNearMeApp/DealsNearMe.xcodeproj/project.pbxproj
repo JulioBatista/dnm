@@ -86,6 +86,14 @@
 		4B53420D15FE7ABF00C7356E /* screen_gradient_logo_only.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B53420B15FE7ABF00C7356E /* screen_gradient_logo_only.png */; };
 		4B53420E15FE7ABF00C7356E /* screen_gradient_only.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B53420C15FE7ABF00C7356E /* screen_gradient_only.jpg */; };
 		4B5A366115CDF75600552ECF /* DealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5A366015CDF75600552ECF /* DealsViewController.m */; };
+		4B60710D16239DD0008A856F /* blackbutton_services.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710516239DD0008A856F /* blackbutton_services.png */; };
+		4B60710E16239DD0008A856F /* blackbutton_fun.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710616239DD0008A856F /* blackbutton_fun.png */; };
+		4B60710F16239DD0008A856F /* blackbutton_barsandclubs.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710716239DD0008A856F /* blackbutton_barsandclubs.png */; };
+		4B60711016239DD0008A856F /* blackbutton_family.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710816239DD0008A856F /* blackbutton_family.png */; };
+		4B60711116239DD0008A856F /* blackbutton_dining.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710916239DD0008A856F /* blackbutton_dining.png */; };
+		4B60711216239DD0008A856F /* blackbutton_wellness.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710A16239DD0008A856F /* blackbutton_wellness.png */; };
+		4B60711316239DD0008A856F /* black_button_travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710B16239DD0008A856F /* black_button_travel.png */; };
+		4B60711416239DD0008A856F /* black_button_shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710C16239DD0008A856F /* black_button_shopping.png */; };
 		4B6BA4F115C0F0890095F35E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F015C0F0890095F35E /* UIKit.framework */; };
 		4B6BA4F315C0F0890095F35E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F215C0F0890095F35E /* Foundation.framework */; };
 		4B6BA4F515C0F0890095F35E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F415C0F0890095F35E /* CoreGraphics.framework */; };
@@ -508,6 +516,14 @@
 		4B53420C15FE7ABF00C7356E /* screen_gradient_only.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screen_gradient_only.jpg; sourceTree = "<group>"; };
 		4B5A365F15CDF75600552ECF /* DealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsViewController.h; sourceTree = "<group>"; };
 		4B5A366015CDF75600552ECF /* DealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsViewController.m; sourceTree = "<group>"; };
+		4B60710516239DD0008A856F /* blackbutton_services.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackbutton_services.png; sourceTree = "<group>"; };
+		4B60710616239DD0008A856F /* blackbutton_fun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackbutton_fun.png; sourceTree = "<group>"; };
+		4B60710716239DD0008A856F /* blackbutton_barsandclubs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackbutton_barsandclubs.png; sourceTree = "<group>"; };
+		4B60710816239DD0008A856F /* blackbutton_family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackbutton_family.png; sourceTree = "<group>"; };
+		4B60710916239DD0008A856F /* blackbutton_dining.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackbutton_dining.png; sourceTree = "<group>"; };
+		4B60710A16239DD0008A856F /* blackbutton_wellness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackbutton_wellness.png; sourceTree = "<group>"; };
+		4B60710B16239DD0008A856F /* black_button_travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_button_travel.png; sourceTree = "<group>"; };
+		4B60710C16239DD0008A856F /* black_button_shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_button_shopping.png; sourceTree = "<group>"; };
 		4B6BA4EC15C0F0890095F35E /* DealsNearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsNearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6BA4F015C0F0890095F35E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4B6BA4F215C0F0890095F35E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1182,6 +1198,21 @@
 			name = map_pins_icons_23px;
 			sourceTree = "<group>";
 		};
+		4B60710316239D60008A856F /* aviva_deal_detail_category_button_assets */ = {
+			isa = PBXGroup;
+			children = (
+				4B60710516239DD0008A856F /* blackbutton_services.png */,
+				4B60710616239DD0008A856F /* blackbutton_fun.png */,
+				4B60710716239DD0008A856F /* blackbutton_barsandclubs.png */,
+				4B60710816239DD0008A856F /* blackbutton_family.png */,
+				4B60710916239DD0008A856F /* blackbutton_dining.png */,
+				4B60710A16239DD0008A856F /* blackbutton_wellness.png */,
+				4B60710B16239DD0008A856F /* black_button_travel.png */,
+				4B60710C16239DD0008A856F /* black_button_shopping.png */,
+			);
+			name = aviva_deal_detail_category_button_assets;
+			sourceTree = "<group>";
+		};
 		4B6BA4E115C0F0890095F35E = {
 			isa = PBXGroup;
 			children = (
@@ -1314,6 +1345,7 @@
 		4B6BA4F715C0F0890095F35E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B60710316239D60008A856F /* aviva_deal_detail_category_button_assets */,
 				4B3ED56F1615E6A60099069B /* aviva_tab_bar_icons */,
 				4B32D2761612D8C700078019 /* aviva_deal_list_assets */,
 				4B32D2731612C77600078019 /* aviva_loginscreen_assets */,
@@ -2059,6 +2091,14 @@
 				4B3ED56D1615650F0099069B /* newlogo223x124@2x.png in Resources */,
 				4B3ED56E1615650F0099069B /* newlogo223x124.png in Resources */,
 				4B3ED576161614D90099069B /* ico_more@2x.png in Resources */,
+				4B60710D16239DD0008A856F /* blackbutton_services.png in Resources */,
+				4B60710E16239DD0008A856F /* blackbutton_fun.png in Resources */,
+				4B60710F16239DD0008A856F /* blackbutton_barsandclubs.png in Resources */,
+				4B60711016239DD0008A856F /* blackbutton_family.png in Resources */,
+				4B60711116239DD0008A856F /* blackbutton_dining.png in Resources */,
+				4B60711216239DD0008A856F /* blackbutton_wellness.png in Resources */,
+				4B60711316239DD0008A856F /* black_button_travel.png in Resources */,
+				4B60711416239DD0008A856F /* black_button_shopping.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
