@@ -81,65 +81,62 @@
 	NSData *dealsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"dealsarchive"];
 	
 	self.archivedDeals = [NSKeyedUnarchiver unarchiveObjectWithData:dealsData];
-    
-	if ([self.archivedDeals count] > 0)
+    if (!self.archivedDeals)
 	{
-		NSLog(@"Archived deals were found");
+		if ([self.archivedDeals count] > 0)
+		{
+			NSLog(@"Archived deals were found");
+		}
+		
+		
+		self.currentDealNum = [self.dealnum integerValue];
+		
+		if (self.dealnum == nil)
+		{
+			self.dealnum = 0;
+			NSLog(@"dealnum was nil");
+		}
+		
+		NSLog(@"currentDealNum %d", self.currentDealNum);
+		
+		
+		NSLog(@"self.dealIndex : %d", self.dealIndex);
+		
+		
+		NSDictionary *onedeal = [self.archivedDeals objectAtIndex:[self.dealnum integerValue]];
+		
+		
+		
+		
+		
+		
+		self.textViewDealDescriptionTextView.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION];
+		
+		
+		
+		[self.buttonCategory setTitle:[onedeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
+		
+		
+		self.labelBusinessName.text = [onedeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
+		
+		self.labelAddress.text = [onedeal objectForKey:NETWORK_DEAL_ADDRESS];
+		
+		self.labelAddressLine2.text = [onedeal objectForKey:NETWORK_DEAL_ID];
+		
+		self.labelBusinessPhoneLabel.text = [onedeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
+		
+		
+		[FacebookHelper sharedInstance].publishingdelegate = self;
+		
+		
+		
+		[self ifFromFavoritesDisableButtons];
+		
+		self.mapViewDetailMapView.delegate = self;
+		
+		[self populateMapViewDetailMapView:self.currentDealNum];
+		
 	}
-	
-	self.currentDealNum = [self.dealnum integerValue];
-	
-	if (self.dealnum == nil)
-	{
-		self.dealnum = 0;
-		NSLog(@"dealnum was nil");
-	}
-	
-	NSLog(@"currentDealNum %d", self.currentDealNum);
-	
-	
-	NSLog(@"self.dealIndex : %d", self.dealIndex);
-	
-	
-	NSDictionary *onedeal = [self.archivedDeals objectAtIndex:[self.dealnum integerValue]];
-	
-	
-	
-	
-	
-	
-	self.textViewDealDescriptionTextView.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION];
-	
-    
-    
-    /*
-     self.labelDealDescription.text = [[onedeal objectForKey:NETWORK_DEAL_DEALDESCRIPTION] objectForKey:NETWORK_DEAL_CONTENT];
-     */
-	
-	[self.buttonCategory setTitle:[onedeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
-	
-	
-	self.labelBusinessName.text = [onedeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
-	
-	self.labelAddress.text = [onedeal objectForKey:NETWORK_DEAL_ADDRESS];
-	
-	self.labelAddressLine2.text = [onedeal objectForKey:NETWORK_DEAL_ID];
-	
-	self.labelBusinessPhoneLabel.text = [onedeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
-	
-	
-	/* NSLog(@"-----%@", onedeal); */
-    [FacebookHelper sharedInstance].publishingdelegate = self;
-	
-	
-	
-	[self ifFromFavoritesDisableButtons];
-	
-	self.mapViewDetailMapView.delegate = self;
-	
-	[self populateMapViewDetailMapView:self.currentDealNum];
-	
-	
 }
 
 

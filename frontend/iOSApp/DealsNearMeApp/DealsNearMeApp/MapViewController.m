@@ -98,6 +98,8 @@
 
 @synthesize theSelectedDistanceFilter = _theSelectedDistanceFilter;
 
+@synthesize mycoordinate = _mycoordinate;
+
 @synthesize newcoordinate = _newcoordinate;
 
 
@@ -110,10 +112,7 @@
 		_deals = deals;
 		[self updateMapViewMap];
 		[self.dealsTableView reloadData];
-		NSLog(@"-------------------------------------------about to archive deals");
-		NSData *dealsdata = [NSKeyedArchiver archivedDataWithRootObject:self.deals];
-		[[NSUserDefaults standardUserDefaults] setObject:dealsdata forKey:@"dealsarchive"];
-		NSLog(@"-------------------------------------------about to archive deals");
+	
 	}
 }
 
@@ -121,10 +120,13 @@
 {
 	NSLog(@"------------mapAnnotations");
 	
-	NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.deals count]];
+	NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:200];
+	if (![self.deals isEqual:[NSNull null]])
+	{
 	for (NSDictionary *deal in self.deals)
 	{
 		[annotations addObject:[NetworkDealAnnotation annotationForDeal:deal]];
+	}
 	}
 	return annotations;
 }
@@ -344,6 +346,16 @@
 
 
 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == 0)
+	{
+		[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+								 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+								 WithCategory:@"0"];
+	}
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -364,8 +376,8 @@
 	
 	[[[UIAlertView alloc] initWithTitle:@"Welcome to Deals Near Me"
 								message:@"Tap on See All to get started"
-							   delegate:nil
-					  cancelButtonTitle:@"Close"
+							   delegate:self
+					  cancelButtonTitle:@"OK"
 					  otherButtonTitles:nil] show];
 	
 	self.isMapVisible = YES;
@@ -388,23 +400,25 @@
     
     [self.map setUserTrackingMode:MKUserTrackingModeNone];
 	
-	[self getDealsFromNetwork];
+	
+	
+	
 	
 	NSLog(@"---------the number of deals is----%d", [self.deals count]);
 	
 	/* [self gotoHardCodedLocation]; */
 	
-
-
+	
+	
 	
 	/* do what seeall button does */
 	
 	
 	// Do any additional setup after loading the view.
 	
-	 locationManager = [[CLLocationManager alloc] init];
-	 locationManager.delegate = self;
-	 [locationManager startUpdatingLocation];
+	locationManager = [[CLLocationManager alloc] init];
+	locationManager.delegate = self;
+	[locationManager startUpdatingLocation];
 	
 	
 	
@@ -478,7 +492,7 @@
 {
 	[self setMap:nil];
 	[self setMap:nil];
-
+	
 	[self setAddressLabel:nil];
 	[self setScrollView:nil];
 	[self setDealsTableView:nil];
@@ -637,6 +651,9 @@
 	{
 		[self revGeocode: newLocation];
 		[self doMapStuff:newLocation];
+		
+		self.mycoordinate = newLocation.coordinate;
+		
 		NSLog(@"-----------------------didUpdateToLocation fired---------------------");
 		MKUserLocation *userLocation = self.map.userLocation;
 		MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(
@@ -692,7 +709,7 @@
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
 			
-
+			
 			// spinner goes away
 			self.navigationItem.rightBarButtonItem = sender;
 			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
@@ -706,7 +723,9 @@
 
 
 
-- (void) getDealsFromNetwork
+- (void) getDealsFromNetworkWithLatitude:(NSString *)latitude
+							AndLongitude:(NSString *)longitude
+							WithCategory:(NSString *)categoryID
 {
 	UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	
@@ -731,7 +750,9 @@
 		
 		// NSArray *deals = [NetworkFetcher recentDealsNearZipcode];
 		
-		NSArray *deals = [NetworkFetcher recentDealsNearZip]; 
+		NSArray *deals = [NetworkFetcher recentDealsNearLatitude:(NSString *)latitude
+													AndLongitude:(NSString *)longitude
+													WithCategory:(NSString *)categoryID];
 		
 		/* start of JSON fetching */
 		
@@ -740,12 +761,11 @@
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
-			// spinner goes away
-			/* self.navigationItem.rightBarButtonItem = sender; */
-			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
+			if (![self.deals isEqual:[NSNull null]])
+			{
 			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 			
-			[spinner stopAnimating];
+			
 			
 			NSLog(@"-------------the number of deals is %d", [self.deals count]);
 			
@@ -756,54 +776,42 @@
 				NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_ADDRESS]);
 				
 			}
-			
+				NSLog(@"-------------------------------------------about to archive deals");
+				NSData *dealsdata = [NSKeyedArchiver archivedDataWithRootObject:self.deals];
+				[[NSUserDefaults standardUserDefaults] setObject:dealsdata forKey:@"dealsarchive"];
+				NSLog(@"-------------------------------------------about to archive deals");
+				[spinner stopAnimating];
 			
 			if ([self.deals count] == 0)
 			{
 				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
 											message:@"Please check your network connection"
 										   delegate:nil
-								  cancelButtonTitle:@"Ok"
+								  cancelButtonTitle:@"OK"
 								  otherButtonTitles:nil] show];
-
+				
 			}
 			else
 			{
+				NSString *numdealsfound = [NSString stringWithFormat:@"%d deals found", [self.deals count]];
 				
+				[[[UIAlertView alloc] initWithTitle:numdealsfound
+											message:@"Tap on the deal to explore"
+										   delegate:nil
+								  cancelButtonTitle:@"OK"
+								  otherButtonTitles:nil] show];
 				
-				self.labelLocationLabel.text = [NSString stringWithFormat:@"%d deals found", [self.deals count]];
+										   self.labelLocationLabel.text = numdealsfound;
 			}
-			
-		});
-	});
-	dispatch_release(downloadQueue);
-	
-}
-
-- (void) getDealsFromNetwork_filter0_bars
-{
-	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
-	dispatch_async(downloadQueue, ^{
-		NSLog(@"About to fetch deals from the network");
-		/* NSArray *deals = [NetworkFetcher recentDeals]; */
-		
-		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
-		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_bars];
-		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			self.deals = deals;
-			// spinner goes away
-			/* self.navigationItem.rightBarButtonItem = sender; */
-			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
-			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-			
-			if ([self.deals count] == 0)
+				
+			}
+			else
 			{
+				[spinner stopAnimating];
 				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
-											message:@"Please check your network connection"
+											message:@"Please change your location"
 										   delegate:nil
-								  cancelButtonTitle:@"Ok"
+								  cancelButtonTitle:@"OK"
 								  otherButtonTitles:nil] show];
 			}
 			
@@ -813,232 +821,8 @@
 	
 }
 
-- (void) getDealsFromNetwork_filter0_travel
-{
-	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
-	dispatch_async(downloadQueue, ^{
-		NSLog(@"About to fetch deals from the network");
-		/* NSArray *deals = [NetworkFetcher recentDeals]; */
-		
-		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
-		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_travel];
-		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			self.deals = deals;
-			// spinner goes away
-			/* self.navigationItem.rightBarButtonItem = sender; */
-			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
-			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-			
-			if ([self.deals count] == 0)
-			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
-											message:@"Please check your network connection"
-										   delegate:nil
-								  cancelButtonTitle:@"Ok"
-								  otherButtonTitles:nil] show];
-			}
-			
-		});
-	});
-	dispatch_release(downloadQueue);
-	
-}
-- (void) getDealsFromNetwork_filter0_fun
-{
-	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
-	dispatch_async(downloadQueue, ^{
-		NSLog(@"About to fetch deals from the network");
-		/* NSArray *deals = [NetworkFetcher recentDeals]; */
-		
-		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
-		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_fun];
-		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			self.deals = deals;
-			// spinner goes away
-			/* self.navigationItem.rightBarButtonItem = sender; */
-			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
-			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-			
-			if ([self.deals count] == 0)
-			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
-											message:@"Please check your network connection"
-										   delegate:nil
-								  cancelButtonTitle:@"Ok"
-								  otherButtonTitles:nil] show];
-			}
-			
-		});
-	});
-	dispatch_release(downloadQueue);
-	
-}
-- (void) getDealsFromNetwork_filter0_services
-{
-	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
-	dispatch_async(downloadQueue, ^{
-		NSLog(@"About to fetch deals from the network");
-		/* NSArray *deals = [NetworkFetcher recentDeals]; */
-		
-		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
-		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_services];
-		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			self.deals = deals;
-			// spinner goes away
-			/* self.navigationItem.rightBarButtonItem = sender; */
-			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
-			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-			
-			if ([self.deals count] == 0)
-			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
-											message:@"Please check your network connection"
-										   delegate:nil
-								  cancelButtonTitle:@"Ok"
-								  otherButtonTitles:nil] show];
-			}
-			
-		});
-	});
-	dispatch_release(downloadQueue);
-	
-}
-- (void) getDealsFromNetwork_filter0_dining
-{
-	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
-	dispatch_async(downloadQueue, ^{
-		NSLog(@"About to fetch deals from the network");
-		/* NSArray *deals = [NetworkFetcher recentDeals]; */
-		
-		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
-		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_dining];
-		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			self.deals = deals;
-			// spinner goes away
-			/* self.navigationItem.rightBarButtonItem = sender; */
-			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
-			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-			
-			if ([self.deals count] == 0)
-			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
-											message:@"Please check your network connection"
-										   delegate:nil
-								  cancelButtonTitle:@"Ok"
-								  otherButtonTitles:nil] show];
-			}
-			
-		});
-	});
-	dispatch_release(downloadQueue);
-	
-}
 
-- (void) getDealsFromNetwork_filter0_family
-{
-	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
-	dispatch_async(downloadQueue, ^{
-		NSLog(@"About to fetch deals from the network");
-		/* NSArray *deals = [NetworkFetcher recentDeals]; */
-		
-		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
-		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_family];
-		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			self.deals = deals;
-			// spinner goes away
-			/* self.navigationItem.rightBarButtonItem = sender; */
-			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
-			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-			
-			if ([self.deals count] == 0)
-			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
-											message:@"Please check your network connection"
-										   delegate:nil
-								  cancelButtonTitle:@"Ok"
-								  otherButtonTitles:nil] show];
-			}
-			
-		});
-	});
-	dispatch_release(downloadQueue);
-	
-}
-- (void) getDealsFromNetwork_filter0_shopping
-{
-	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
-	dispatch_async(downloadQueue, ^{
-		NSLog(@"About to fetch deals from the network");
-		/* NSArray *deals = [NetworkFetcher recentDeals]; */
-		
-		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
-		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_shopping];
-		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			self.deals = deals;
-			// spinner goes away
-			/* self.navigationItem.rightBarButtonItem = sender; */
-			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
-			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-			
-			if ([self.deals count] == 0)
-			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
-											message:@"Please check your network connection"
-										   delegate:nil
-								  cancelButtonTitle:@"Ok"
-								  otherButtonTitles:nil] show];
-			}
-			
-		});
-	});
-	dispatch_release(downloadQueue);
-	
-}
 
-- (void) getDealsFromNetwork_filter0_wellness
-{
-	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
-	dispatch_async(downloadQueue, ^{
-		NSLog(@"About to fetch deals from the network");
-		/* NSArray *deals = [NetworkFetcher recentDeals]; */
-		
-		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
-		
-		NSArray *deals = [NetworkFetcher recentDealsNear60610_filter0_wellness];
-		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			self.deals = deals;
-			// spinner goes away
-			/* self.navigationItem.rightBarButtonItem = sender; */
-			/* self.locationLabel.text = [NSString stringWithFormat:@"Deals Found : %d", [deals count]]; */
-			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-			
-			if ([self.deals count] == 0)
-			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
-											message:@"Please check your network connection"
-										   delegate:nil
-								  cancelButtonTitle:@"Ok"
-								  otherButtonTitles:nil] show];
-			}
-			
-		});
-	});
-	dispatch_release(downloadQueue);
-	
-}
 
 - (void) gotoHardCodedLocation
 {
@@ -1090,12 +874,15 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-
 	
-	[self getDealsFromNetwork];
+	
+	/* [self getDealsFromNetwork]; */
 	
     /* [self gotoHardCodedLocation]; */
 	
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 WithCategory:@"0"];
 	
 	
 	
@@ -1117,7 +904,10 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetwork_filter0_bars];
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 WithCategory:@"11"];
+	
 	
 	
 	
@@ -1135,7 +925,9 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-    [self getDealsFromNetwork_filter0_travel];
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 WithCategory:@"9"];
 	
 }
 
@@ -1150,7 +942,9 @@
 	[self.button007 setSelected:NO];
 	[self.button008 setSelected:NO];
 	
-	[self getDealsFromNetwork_filter0_fun];
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 WithCategory:@"6"];
 	
 	
 }
@@ -1167,7 +961,9 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetwork_filter0_services];
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 WithCategory:@"13"];
 	
 	
 }
@@ -1184,7 +980,9 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetwork_filter0_dining];
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 WithCategory:@"12"];
 	
 	
 }
@@ -1200,7 +998,9 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-    [self getDealsFromNetwork_filter0_family];
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 WithCategory:@"10"];
 	
 	
 }
@@ -1216,7 +1016,9 @@
 	[self.button008 setSelected:YES];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetwork_filter0_shopping];
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 WithCategory:@"5"];
 	
 	
 }
@@ -1233,7 +1035,9 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:YES];
 	
-	[self getDealsFromNetwork_filter0_wellness];
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 WithCategory:@"8"];
 	
 	
 }
@@ -1432,8 +1236,14 @@
 	
     // Return the number of rows in the section.
     /* return [self.newdeals count]; */
-	
+	if (![self.deals isEqual:[NSNull null]])
+	{
 	return [self.deals count];
+	}
+	else
+	{
+		return 0;
+	}
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

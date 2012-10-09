@@ -141,9 +141,11 @@
     return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
 }
 
-+ (NSArray *)recentDealsNearZip:(NSString *) zipCode
++ (NSArray *)recentDealsNearLatitude:(NSString *)latitude
+				   AndLongitude:(NSString *)longitude
+				   WithCategory:(NSString *)categoryID
 {
-    /* 
+    /*
 	 NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnearzipcode2.json"];
 	 
 	 */
@@ -151,15 +153,20 @@
 	/*
 	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=0.5&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
 	*/
+	NSString *request;
 	
-	
-	
+	if ([categoryID isEqualToString:@"0"])
+	{
 
 	
 	
-	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=%@&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a", zipCode];
+		request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=%@,%@&filter3=15&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a", latitude, longitude];
 	
-
+	}
+	else
+	{
+		request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter0=%@&filter2=%@,%@&filter3=15&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a", categoryID, latitude, longitude];
+	}
 	
 	
 	// NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];

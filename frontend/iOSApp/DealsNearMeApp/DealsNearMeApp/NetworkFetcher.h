@@ -48,15 +48,9 @@ typedef enum {
 + (NSArray *) recentDealsNearLevia;
 + (NSArray *)recentDealsNearSpoke;
 + (NSArray *)recentDealsNear60610;
-+ (NSArray *)recentDealsNear60610_filter0_bars;
-+ (NSArray *)recentDealsNear60610_filter0_travel;
-+ (NSArray *)recentDealsNear60610_filter0_fun;
-+ (NSArray *)recentDealsNear60610_filter0_services;
-+ (NSArray *)recentDealsNear60610_filter0_dining;
-+ (NSArray *)recentDealsNear60610_filter0_family;
-+ (NSArray *)recentDealsNear60610_filter0_shopping;
-+ (NSArray *)recentDealsNear60610_filter0_wellness;
 + (NSArray *) recentDealsNearZipcode;
-+ (NSArray *) recentDealsNearZip;
++ (NSArray *)recentDealsNearLatitude:(NSString *)latitude
+						AndLongitude:(NSString *)longitude
+						WithCategory:(NSString *)categoryID;
 
 @end

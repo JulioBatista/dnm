@@ -11,13 +11,14 @@
 #import "LocationPickerViewController.h"
 #import "NewFilterPickerViewController.h"
 
-@interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource,LocationPickerViewControllerDelegate, NewFilterPickerViewController>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource,LocationPickerViewControllerDelegate, NewFilterPickerViewController, UIAlertViewDelegate>
 {
 	UITableViewController *myTableViewController;
 	UITableView *dealsTableView;
 	CLLocationManager *locationManager;
 	UIScrollView *scrollView;
 	NSTimer *fiveSecondsTimer;
+	NSTimer *threeSecondsTimer;
 }
 
 
@@ -90,7 +91,7 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlFilterButton;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlMapListButton;
 
-
+@property (nonatomic) CLLocationCoordinate2D mycoordinate;
 @property (nonatomic) CLLocationCoordinate2D newcoordinate;
 
 
