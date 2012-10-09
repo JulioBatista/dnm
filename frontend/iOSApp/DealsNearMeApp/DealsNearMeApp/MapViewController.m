@@ -881,7 +881,7 @@
     /* [self gotoHardCodedLocation]; */
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
 							 WithCategory:@"0"];
 	
 	
@@ -905,7 +905,7 @@
 	[self.button009 setSelected:NO];
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
 							 WithCategory:@"11"];
 	
 	
@@ -926,7 +926,7 @@
 	[self.button009 setSelected:NO];
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
 							 WithCategory:@"9"];
 	
 }
@@ -943,7 +943,7 @@
 	[self.button008 setSelected:NO];
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
 							 WithCategory:@"6"];
 	
 	
@@ -962,7 +962,7 @@
 	[self.button009 setSelected:NO];
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
 							 WithCategory:@"13"];
 	
 	
@@ -981,7 +981,7 @@
 	[self.button009 setSelected:NO];
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
 							 WithCategory:@"12"];
 	
 	
@@ -999,7 +999,7 @@
 	[self.button009 setSelected:NO];
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
 							 WithCategory:@"10"];
 	
 	
@@ -1017,7 +1017,7 @@
 	[self.button009 setSelected:NO];
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
 							 WithCategory:@"5"];
 	
 	
@@ -1036,7 +1036,7 @@
 	[self.button009 setSelected:YES];
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
 							 WithCategory:@"8"];
 	
 	
@@ -1285,12 +1285,12 @@
 		
 		NSDictionary *onedeal = [self.deals objectAtIndex:indexPath.row];
 		
-		cell.nameLabel.text = [onedeal objectForKey:@"title"];
+		cell.nameLabel.text = [onedeal objectForKey:NETWORK_DEAL_BUSINESSNAME];
 		
 		
 		/* cell.descriptionLabel.text = [[onedeal objectForKey:@"description"] objectForKey:@"_content"]; */
 		
-		cell.descriptionLabel.text = [onedeal objectForKey:@"description"];
+		cell.descriptionLabel.text = [onedeal objectForKey:NETWORK_DEAL_DESCRIPTION];
 		
 		
 		
