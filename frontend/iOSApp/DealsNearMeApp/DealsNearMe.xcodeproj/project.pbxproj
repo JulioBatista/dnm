@@ -94,6 +94,7 @@
 		4B60711216239DD0008A856F /* blackbutton_wellness.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710A16239DD0008A856F /* blackbutton_wellness.png */; };
 		4B60711316239DD0008A856F /* black_button_travel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710B16239DD0008A856F /* black_button_travel.png */; };
 		4B60711416239DD0008A856F /* black_button_shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B60710C16239DD0008A856F /* black_button_shopping.png */; };
+		4B607116162414A9008A856F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B607115162414A9008A856F /* Default-568h@2x.png */; };
 		4B6BA4F115C0F0890095F35E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F015C0F0890095F35E /* UIKit.framework */; };
 		4B6BA4F315C0F0890095F35E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F215C0F0890095F35E /* Foundation.framework */; };
 		4B6BA4F515C0F0890095F35E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6BA4F415C0F0890095F35E /* CoreGraphics.framework */; };
@@ -524,6 +525,7 @@
 		4B60710A16239DD0008A856F /* blackbutton_wellness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackbutton_wellness.png; sourceTree = "<group>"; };
 		4B60710B16239DD0008A856F /* black_button_travel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_button_travel.png; sourceTree = "<group>"; };
 		4B60710C16239DD0008A856F /* black_button_shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_button_shopping.png; sourceTree = "<group>"; };
+		4B607115162414A9008A856F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4B6BA4EC15C0F0890095F35E /* DealsNearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsNearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6BA4F015C0F0890095F35E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4B6BA4F215C0F0890095F35E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1216,6 +1218,7 @@
 		4B6BA4E115C0F0890095F35E = {
 			isa = PBXGroup;
 			children = (
+				4B607115162414A9008A856F /* Default-568h@2x.png */,
 				4B6BF9EE15F2BA1000011BCE /* new_app_logo_114x114.png */,
 				4B6BF9EB15F2BA0900011BCE /* new_app_logo_57x57.png */,
 				4B94FDAC15F13D9800EE0DBA /* 60610.gpx */,
@@ -2099,6 +2102,7 @@
 				4B60711216239DD0008A856F /* blackbutton_wellness.png in Resources */,
 				4B60711316239DD0008A856F /* black_button_travel.png in Resources */,
 				4B60711416239DD0008A856F /* black_button_shopping.png in Resources */,
+				4B607116162414A9008A856F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2262,7 +2266,6 @@
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = DealsNearMe;
 				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2283,7 +2286,6 @@
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = DealsNearMe;
 				PROVISIONING_PROFILE = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8A034436-0F30-443B-919D-8B23CEA0F7AF";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2295,8 +2297,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Arunabh Das (FMT7W9U89D)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: LeviaIT Corp.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: LeviaIT Corp.";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -2305,8 +2307,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "B8D45F79-C4D8-4B00-97C8-08EF86A204D7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "407D3C28-5490-4753-87FD-2853668F3579";
+				PROVISIONING_PROFILE = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "483ECB42-239F-42A8-9CB9-E65A47A1B4AF";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

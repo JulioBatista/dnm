@@ -89,7 +89,7 @@
 		
 		cell.textLabel.text = @"Phone";
 		
-		cell.detailTextLabel.text = [[UIDevice currentDevice] uniqueIdentifier];
+		cell.detailTextLabel.text = [[UIDevice currentDevice] name];
 	}
 	else if (indexPath.section == 1)
 	{

@@ -112,7 +112,7 @@
 		_deals = deals;
 		[self updateMapViewMap];
 		[self.dealsTableView reloadData];
-	
+		
 	}
 }
 
@@ -123,10 +123,10 @@
 	NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:200];
 	if (![self.deals isEqual:[NSNull null]])
 	{
-	for (NSDictionary *deal in self.deals)
-	{
-		[annotations addObject:[NetworkDealAnnotation annotationForDeal:deal]];
-	}
+		for (NSDictionary *deal in self.deals)
+		{
+			[annotations addObject:[NetworkDealAnnotation annotationForDeal:deal]];
+		}
 	}
 	return annotations;
 }
@@ -482,6 +482,7 @@
 	[self startTimer];
 	
 	
+	
 }
 - (void)categoryPressed:(UIButton*)sender
 {
@@ -615,7 +616,7 @@
 	
 	
     
-	/* [self locateMeOnMap:c];  */
+	/* [self locateMeOnMap:c]; */
     
     /* 	[self revGeocode:c]; */
 }
@@ -763,46 +764,46 @@
 			self.deals = deals;
 			if (![self.deals isEqual:[NSNull null]])
 			{
-			NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
-			
-			
-			
-			NSLog(@"-------------the number of deals is %d", [self.deals count]);
-			
-			for (NSDictionary *deal in self.deals)
-			{
-				NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_BUSINESSNAME] );
+				NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 				
-				NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_ADDRESS]);
 				
-			}
+				
+				NSLog(@"-------------the number of deals is %d", [self.deals count]);
+				
+				for (NSDictionary *deal in self.deals)
+				{
+					NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_BUSINESSNAME] );
+					
+					NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_ADDRESS]);
+					
+				}
 				NSLog(@"-------------------------------------------about to archive deals");
 				NSData *dealsdata = [NSKeyedArchiver archivedDataWithRootObject:self.deals];
 				[[NSUserDefaults standardUserDefaults] setObject:dealsdata forKey:@"dealsarchive"];
 				NSLog(@"-------------------------------------------about to archive deals");
 				[spinner stopAnimating];
-			
-			if ([self.deals count] == 0)
-			{
-				[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
-											message:@"Please check your network connection"
-										   delegate:nil
-								  cancelButtonTitle:@"OK"
-								  otherButtonTitles:nil] show];
 				
-			}
-			else
-			{
-				NSString *numdealsfound = [NSString stringWithFormat:@"%d deals found", [self.deals count]];
-				
-				[[[UIAlertView alloc] initWithTitle:numdealsfound
-											message:@"Tap on the deal to explore"
-										   delegate:nil
-								  cancelButtonTitle:@"OK"
-								  otherButtonTitles:nil] show];
-				
-										   self.labelLocationLabel.text = numdealsfound;
-			}
+				if ([self.deals count] == 0)
+				{
+					[[[UIAlertView alloc] initWithTitle:@"No Deals Found"
+												message:@"Please check your network connection"
+											   delegate:nil
+									  cancelButtonTitle:@"OK"
+									  otherButtonTitles:nil] show];
+					
+				}
+				else
+				{
+					NSString *numdealsfound = [NSString stringWithFormat:@"%d deals found", [self.deals count]];
+					
+					[[[UIAlertView alloc] initWithTitle:numdealsfound
+												message:@"Tap on the deal to explore"
+											   delegate:nil
+									  cancelButtonTitle:@"OK"
+									  otherButtonTitles:nil] show];
+					
+					self.labelLocationLabel.text = numdealsfound;
+				}
 				
 			}
 			else
@@ -1238,7 +1239,7 @@
     /* return [self.newdeals count]; */
 	if (![self.deals isEqual:[NSNull null]])
 	{
-	return [self.deals count];
+		return [self.deals count];
 	}
 	else
 	{
@@ -1837,8 +1838,34 @@
 	
 	[self.buttonToggleScrollView setEnabled:YES];
 	
+		[locationManager stopUpdatingLocation];
+	
+	
+	
 	NSLog(@"-------timer started");
 }
+- (IBAction)startShortTimer
+{
+	NSLog(@"-------timer started");
+	
+	[self.buttonToggleScrollView setEnabled:NO];
+	
+    twoSecondsTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(stopShortTimer) userInfo:nil repeats:YES];
+	
+}
+
+- (IBAction)stopShortTimer
+{
+    [twoSecondsTimer invalidate];
+	
+	[self.buttonToggleScrollView setEnabled:YES];
+	
+	[locationManager stopUpdatingLocation];
+	
+	NSLog(@"-------timer started");
+}
+
+
 
 - (void) collapseCategoryCarousel
 {

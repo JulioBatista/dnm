@@ -19,6 +19,7 @@
 	UIScrollView *scrollView;
 	NSTimer *fiveSecondsTimer;
 	NSTimer *threeSecondsTimer;
+	NSTimer *twoSecondsTimer;
 }
 
 
