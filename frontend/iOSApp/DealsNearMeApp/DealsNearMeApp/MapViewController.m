@@ -51,6 +51,8 @@
 @implementation MapViewController
 {
 	NSString *city;
+	
+
     
     
 }
@@ -97,6 +99,8 @@
 @synthesize theSelectedRatingFilter = _theSelectedRatingFilter;
 
 @synthesize theSelectedDistanceFilter = _theSelectedDistanceFilter;
+
+@synthesize theSelectedDistanceValue = _theSelectedDistanceValue;
 
 @synthesize mycoordinate = _mycoordinate;
 
@@ -329,9 +333,14 @@
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
 {
 	// NSLog(@"The mapview was dragged / moved");
-	
-	// NSLog(@"-------center latitude %f", mapView.centerCoordinate.latitude);
-	// NSLog(@"-------center longitude %f", mapView.centerCoordinate.longitude);
+	/*
+	 NSLog(@"-------center latitude %f", mapView.centerCoordinate.latitude);
+	 NSLog(@"-------center longitude %f", mapView.centerCoordinate.longitude);
+	 */
+	/* [self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", mapView.centerCoordinate.latitude]
+	 AndLongitude:[NSString stringWithFormat:@"%f", mapView.centerCoordinate.longitude]
+	 WithCategory:@"0"];
+	 */
 }
 
 #pragma mark Lifecycle
@@ -351,9 +360,13 @@
 {
 	if (buttonIndex == 0)
 	{
+		
 		[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 								 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-								 WithCategory:@"0"];
+								 WithCategory:@"0"
+								 WithDistance:self.theSelectedDistanceValue
+		 
+		 ];
 	}
 }
 - (void)viewDidLoad
@@ -422,7 +435,7 @@
 	
 	
 	
-	
+	self.theSelectedDistanceValue = 15;
 	
 	
 	
@@ -727,6 +740,7 @@
 - (void) getDealsFromNetworkWithLatitude:(NSString *)latitude
 							AndLongitude:(NSString *)longitude
 							WithCategory:(NSString *)categoryID
+							WithDistance:(NSUInteger)distance
 {
 	UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	
@@ -753,7 +767,9 @@
 		
 		NSArray *deals = [NetworkFetcher recentDealsNearLatitude:(NSString *)latitude
 													AndLongitude:(NSString *)longitude
-													WithCategory:(NSString *)categoryID];
+													WithCategory:(NSString *)categoryID
+													WithDistance:(NSUInteger)distance
+						  ];
 		
 		/* start of JSON fetching */
 		
@@ -767,14 +783,17 @@
 				NSLog(@"getDealsFromNetwork just came back with the following %d", [self.deals count]);
 				
 				
+								NSLog(@"getDealsFromNetwork the distance parameter is %d", self.theSelectedDistanceValue);
+				
+				
 				
 				NSLog(@"-------------the number of deals is %d", [self.deals count]);
 				
 				for (NSDictionary *deal in self.deals)
 				{
-					NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_BUSINESSNAME] );
+					// NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_BUSINESSNAME] );
 					
-					NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_ADDRESS]);
+					// NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_ADDRESS]);
 					
 				}
 				NSLog(@"-------------------------------------------about to archive deals");
@@ -883,7 +902,10 @@
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-							 WithCategory:@"0"];
+							 WithCategory:@"0"
+							 WithDistance:self.theSelectedDistanceValue
+	 
+	 ];
 	
 	
 	
@@ -907,7 +929,11 @@
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-							 WithCategory:@"11"];
+							 WithCategory:@"11"
+							 WithDistance:self.theSelectedDistanceValue
+	 
+	 
+	 ];
 	
 	
 	
@@ -928,7 +954,10 @@
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-							 WithCategory:@"9"];
+							 WithCategory:@"9"
+							 WithDistance:self.theSelectedDistanceValue
+	 
+	 ];
 	
 }
 
@@ -945,7 +974,10 @@
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-							 WithCategory:@"6"];
+							 WithCategory:@"6"
+							 WithDistance:self.theSelectedDistanceValue
+	 
+	 ];
 	
 	
 }
@@ -964,7 +996,10 @@
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-							 WithCategory:@"13"];
+							 WithCategory:@"13"
+							 WithDistance:self.theSelectedDistanceValue
+	 
+	 ];
 	
 	
 }
@@ -983,7 +1018,10 @@
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-							 WithCategory:@"12"];
+							 WithCategory:@"12"
+							 WithDistance:self.theSelectedDistanceValue
+	 
+	 ];
 	
 	
 }
@@ -1001,7 +1039,10 @@
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-							 WithCategory:@"10"];
+							 WithCategory:@"10"
+							 WithDistance:self.theSelectedDistanceValue
+	 
+	 ];
 	
 	
 }
@@ -1019,7 +1060,10 @@
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-							 WithCategory:@"5"];
+							 WithCategory:@"5"
+							 WithDistance:self.theSelectedDistanceValue
+	 
+	 ];
 	
 	
 }
@@ -1038,7 +1082,10 @@
 	
 	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
 							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
-							 WithCategory:@"8"];
+							 WithCategory:@"8"
+							 WithDistance:self.theSelectedDistanceValue
+	 
+	 ];
 	
 	
 }
@@ -1534,7 +1581,7 @@
         
         self.map.showsUserLocation = YES;
         
-        [self.map setUserTrackingMode:MKUserTrackingModeFollow];
+        /* [self.map setUserTrackingMode:MKUserTrackingModeFollow]; */
         
         /* above is what used to happen when you clicked the blue locateMe Button */
     }
@@ -1558,23 +1605,19 @@
 				 CLPlacemark *placemark = [placemarks objectAtIndex:0];
 				 CLLocation *location = placemark.location;
 				 
-				 if ([theCity isEqualToString:@"Toronto, ON"])
-				 {
-					 NSLog(@"------------zooming to levia--------- %@", theCity);
-					 zoomLocation.latitude = 43.700934;
-					 zoomLocation.longitude= -79.426240;
-					 
-				 }
-                 else if ([theCity isEqualToString:@"Chicago, IL"])
-				 {
-					 NSLog(@"------------zooming to 60610--------- %@", theCity);
-					 zoomLocation.latitude = 41.902837;
-					 zoomLocation.longitude= -87.635913;
-				 }
-                 
-				 else {
+			
 					 zoomLocation = location.coordinate;
-				 }
+					 
+					 NSLog(@"-------city center latitude %f", location.coordinate.latitude);
+					 NSLog(@"-------city center longitude %f", location.coordinate.longitude);
+					 
+					 [self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", location.coordinate.latitude]
+											  AndLongitude:[NSString stringWithFormat:@"%f", location.coordinate.longitude]
+											  WithCategory:@"0"
+											  WithDistance:self.theSelectedDistanceValue
+					  
+					  ];
+				 
 				 
 				 // 2
 				 MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 20 * METERS_PER_MILE, 20 * METERS_PER_MILE);
@@ -1731,6 +1774,8 @@
 			
 			[self.segmentedControlFilterButton setTitle:@"0.5 miles" forSegmentAtIndex:0];
 			
+			self.theSelectedDistanceValue = 0.5;
+			
 			
             break;
 		case 1 :
@@ -1738,12 +1783,16 @@
 			
 			[self.segmentedControlFilterButton setTitle:@"1 mile" forSegmentAtIndex:0];
 			
+			self.theSelectedDistanceValue = 1;
+			
 			break;
 			
 		case 2 :
             /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
 			
 			[self.segmentedControlFilterButton setTitle:@"5 miles" forSegmentAtIndex:0];
+			
+			self.theSelectedDistanceValue = 5;
 			
 			break;
 			
@@ -1753,17 +1802,23 @@
 			
 			[self.segmentedControlFilterButton setTitle:@"10 miles" forSegmentAtIndex:0];
 			
+			self.theSelectedDistanceValue = 10;
+			
 			break;
 		case 4 :
             /* [self.buttonFilterButton setTitle:@" Filter : Distance" forState:UIControlStateNormal]; */
 			
 			[self.segmentedControlFilterButton setTitle:@"20 miles" forSegmentAtIndex:0];
 			
+			self.theSelectedDistanceValue = 20;
+			
 			break;
 			
         default:
 			
 			[self.segmentedControlFilterButton setTitle:@"Filter" forSegmentAtIndex:0];
+			
+			self.theSelectedDistanceValue = 15;
 			
             break;
     }
@@ -1838,7 +1893,7 @@
 	
 	[self.buttonToggleScrollView setEnabled:YES];
 	
-		[locationManager stopUpdatingLocation];
+	[locationManager stopUpdatingLocation];
 	
 	
 	

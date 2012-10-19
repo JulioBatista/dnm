@@ -35,7 +35,7 @@
 	// query = [query stringByReplacingCharactersInRange:NSMakeRange(lastChar,1) withString:@""];
 	// query = [query stringByReplacingOccurrencesOfString:@"\\" withString:@""];
 	
-    NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query); 
+    NSLog(@"[%@ %@] sent %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), query);
 	
 	NSError *err = nil;
 	
@@ -48,9 +48,9 @@
 	
 	NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath options:kNilOptions error:&jsonError ];
 	/*
-    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:&err] dataUsingEncoding:NSUTF8StringEncoding];
-	*/
-	  if (jsonError) NSLog(@"[%@ %@] JSON err: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), jsonError.localizedDescription);
+	 NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:&err] dataUsingEncoding:NSUTF8StringEncoding];
+	 */
+	if (jsonError) NSLog(@"[%@ %@] JSON err: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), jsonError.localizedDescription);
 	
 	NSLog(@"-------------------%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
 	
@@ -61,7 +61,7 @@
 	
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
 	
-     NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results); 
+	// NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
     
 	return results;
 }
@@ -141,42 +141,34 @@
     return [[self executeJSONFetch:request] valueForKeyPath:@"deals.deal"];
 }
 
+
 + (NSArray *)recentDealsNearLatitude:(NSString *)latitude
-				   AndLongitude:(NSString *)longitude
-				   WithCategory:(NSString *)categoryID
+						AndLongitude:(NSString *)longitude
+						WithCategory:(NSString *)categoryID
+						WithDistance:(NSUInteger)distance
 {
     /*
 	 NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/recentdealsnearzipcode2.json"];
 	 
 	 */
-	 
+	
 	/*
-	NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=0.5&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
-	*/
+	 NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=0.5&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
+	 */
 	NSString *request;
 	
 	if ([categoryID isEqualToString:@"0"])
 	{
-
-	
-	
-		request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=%@,%@&filter3=15&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a", latitude, longitude];
-	
+		
+		
+		
+		request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=%@,%@&filter3=%d&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a", latitude, longitude, distance];
+		
 	}
 	else
 	{
-		request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter0=%@&filter2=%@,%@&filter3=15&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a", categoryID, latitude, longitude];
+		request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter0=%@&filter2=%@,%@&filter3=%d&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a", categoryID, latitude, longitude, distance];
 	}
-	
-	
-	// NSString *request = [NSString stringWithFormat:@"http://88.198.27.219/api/api.php?cmd=deal&mode=get&session_id=x&filter2=60610&filter3=1&filter4=most_recent&api_key=5e02f0a5adfa1c198fff76f4678f584a"];
-	
-	
-	// NSString *request = [NSString stringWithFormat:@"http://199.102.228.10/~deals/api/test.json"];
-	
-	/*
-	NSString *request = [NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&per_page=500&license=1,2,4,7&has_geo=1&extras=original_format,tags,description,geo,date_upload,owner_name,place_url&format=json&nojsoncallback=1&api_key=07a9a5938d3fa6c7f180fb0cb003327a"];
-	 */
 	
 	
     return [[self executeJSONFetcher:request] valueForKeyPath:@"deals.deal"];
@@ -196,7 +188,7 @@
     NSError *error = nil;
     NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-    NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+    // NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
     return results;
 }
 
@@ -221,25 +213,25 @@
 	
     NSData *jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&err];
 	/*
-	NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
-	*/
+	 NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+	 */
 	NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-	NSLog(@"JsonString = %@",jsonString);
+	// NSLog(@"JsonString = %@",jsonString);
 	
 	//    NSString * theString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
 	//    NSLog(@"response: %@", theString);
 	
 	
-	  NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves|NSJSONReadingAllowFragments error:&err] : nil;
+	NSDictionary *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves|NSJSONReadingAllowFragments error:&err] : nil;
 	
-   // NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingAllowFragments error: &err];
+	// NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingAllowFragments error: &err];
 	/*
-	const unsigned char *ptr = [jsonData bytes];
-	
-	for(int i=0; i<[jsonData length]; ++i) {
-		unsigned char c = *ptr++;
-		NSLog(@"char=%c hex=%x", c, c);
-	}
+	 const unsigned char *ptr = [jsonData bytes];
+	 
+	 for(int i=0; i<[jsonData length]; ++i) {
+	 unsigned char c = *ptr++;
+	 NSLog(@"char=%c hex=%x", c, c);
+	 }
 	 */
 	
     if (!results) {
@@ -250,7 +242,7 @@
             NSLog(@"---------------------------------");
         }
     }
-	NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
+	// NSLog(@"[%@ %@] received %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), results);
     return results;
 	
 }
@@ -295,7 +287,7 @@
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
 	//live json data url
-
+	
 	NSURL *url = [NSURL URLWithString:stringURL];
 	NSData *urlData = [NSData dataWithContentsOfURL:url];
 	

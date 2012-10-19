@@ -21,6 +21,9 @@
 @end
 
 @implementation NewDealDetailViewController
+@synthesize labelTotalViewLabel = _labelTotalViewLabel;
+@synthesize labelTimeElapsedLabel = _labelTimeElapsedLabel;
+
 @synthesize buttonPrevButton = _buttonPrevButton;
 @synthesize buttonFavoritesButton = _buttonFavoritesButton;
 
@@ -125,6 +128,12 @@
 	
 	self.labelAddressLine2.text = [onedeal objectForKey:NETWORK_DEAL_ID];
 	
+	// self.labelTimeElapsedLabel.text = [onedeal objectForKey:NETWORK_DEAL_TIME_ELAPSED];
+	
+	self.labelTimeElapsedLabel.text =[NSString stringWithFormat:@"%@ ago", [onedeal objectForKey:NETWORK_DEAL_TIME_ELAPSED]];
+	
+	self.labelTotalViewLabel.text = [NSString stringWithFormat:@"%@ views",[onedeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS]];
+	
 	self.labelBusinessPhoneLabel.text = [onedeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
 	
 	
@@ -160,6 +169,8 @@
 	
 	[self setTextViewDealDescriptionTextView:nil];
 	[self setTextViewDealDescriptionTextView:nil];
+    [self setLabelTimeElapsedLabel:nil];
+    [self setLabelTotalViewLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -387,6 +398,13 @@
 		
 		self.labelAddress.text = [self.currentDeal objectForKey:NETWORK_DEAL_ADDRESS];
 		
+		self.labelTimeElapsedLabel.text =[NSString stringWithFormat:@"%@ ago", [self.currentDeal objectForKey:NETWORK_DEAL_TIME_ELAPSED]];
+		
+		// self.labelTotalViewLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS];
+		
+			self.labelTotalViewLabel.text = [NSString stringWithFormat:@"%@ views",[self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS]];
+		
+		
 		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
 		
 		[self.buttonPrevButton setEnabled:YES];
@@ -420,6 +438,12 @@
 		[self.buttonCategory setTitle:[self.currentDeal objectForKey:NETWORK_DEAL_SECTOR] forState:UIControlStateNormal];
 		
 		self.labelAddress.text = [self.currentDeal objectForKey:NETWORK_DEAL_ADDRESS];
+		
+		self.labelTimeElapsedLabel.text =[NSString stringWithFormat:@"%@ ago", [self.currentDeal objectForKey:NETWORK_DEAL_TIME_ELAPSED]];
+		
+		// self.labelTotalViewLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS];
+		
+			self.labelTotalViewLabel.text = [NSString stringWithFormat:@"%@ views",[self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS]];
 		
 		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
 		[self.buttonNextButton setEnabled:YES];

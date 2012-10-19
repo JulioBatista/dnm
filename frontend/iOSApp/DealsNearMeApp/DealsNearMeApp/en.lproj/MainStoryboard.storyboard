@@ -773,7 +773,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="t2M-0A-fDe">
-                                <rect key="frame" x="15" y="193" width="112" height="21"/>
+                                <rect key="frame" x="15" y="193" width="156" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -876,6 +876,8 @@
                         <outlet property="labelAddressLine2" destination="xIi-Tg-BKl" id="CM7-l1-O6b"/>
                         <outlet property="labelBusinessName" destination="AD0-zR-Zio" id="eLS-HK-cVJ"/>
                         <outlet property="labelBusinessPhoneLabel" destination="Kkd-lr-Tba" id="B7t-bS-wex"/>
+                        <outlet property="labelTimeElapsedLabel" destination="t2M-0A-fDe" id="3EX-PP-N3L"/>
+                        <outlet property="labelTotalViewLabel" destination="sPZ-gk-6QX" id="d5p-gx-nPg"/>
                         <outlet property="mapViewDetailMapView" destination="SPg-aC-aZl" id="8BZ-hT-Fcm"/>
                         <outlet property="textViewDealDescriptionTextView" destination="JCV-U3-OWP" id="vMK-DR-MYX"/>
                     </connections>
@@ -2555,10 +2557,8 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonListPressed:"/>
                 <relationship kind="action" name="buttonToggleScrollViewPressed:"/>
                 <relationship kind="action" name="doLocateMeButton:"/>
-                <relationship kind="action" name="refresh:"/>
                 <relationship kind="action" name="segmentedControlFilterButtonPressed:"/>
                 <relationship kind="action" name="segmentedControlMapListButtonPressed:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
@@ -2610,6 +2610,8 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <relationship kind="outlet" name="labelAddressLine2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelBusinessName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelBusinessPhoneLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelTimeElapsedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelTotalViewLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapViewDetailMapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="textViewDealDescriptionTextView" candidateClass="UITextView"/>
             </relationships>

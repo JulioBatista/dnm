@@ -80,6 +80,8 @@
 
 @property (nonatomic) NSUInteger theSelectedDistanceFilter;
 
+@property (nonatomic) NSUInteger theSelectedDistanceValue;
+
 
 
 

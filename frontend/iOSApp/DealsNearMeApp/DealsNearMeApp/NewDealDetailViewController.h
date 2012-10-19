@@ -60,6 +60,11 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonFavoritesButton;
 
+@property (strong, nonatomic) IBOutlet UILabel *labelTimeElapsedLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelTotalViewLabel;
+
+
 
 - (IBAction)buttonPhoneButtonTapped:(id)sender;
 

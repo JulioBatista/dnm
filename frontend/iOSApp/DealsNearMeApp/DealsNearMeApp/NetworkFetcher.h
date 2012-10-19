@@ -20,6 +20,8 @@
 
 #define NETWORK_DEAL_DISTANCE_FROM_USERS_LATLNG @"distance_from_users_latlng_in_km"
 #define NETWORK_DEAL_TIME_ELAPSED @"time_elapsed_since_deal_was_posted_in_hours"
+#define NETWORK_DEAL_TOTAL_VIEWS @"totalviews"
+#define NETWORK_DEAL_RELATIVE_STAR_RATING @"relative_star_rating"
 
 #define NETWORK_DEAL_BUSINESSNAME @"business_name"
 
@@ -49,8 +51,14 @@ typedef enum {
 + (NSArray *)recentDealsNearSpoke;
 + (NSArray *)recentDealsNear60610;
 + (NSArray *) recentDealsNearZipcode;
+
+
+
 + (NSArray *)recentDealsNearLatitude:(NSString *)latitude
 						AndLongitude:(NSString *)longitude
-						WithCategory:(NSString *)categoryID;
+						WithCategory:(NSString *)categoryID
+						WithDistance:(NSUInteger)distance;
+
+;
 
 @end
