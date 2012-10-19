@@ -22,6 +22,7 @@
 #define NETWORK_DEAL_TIME_ELAPSED @"time_elapsed_since_deal_was_posted_in_hours"
 #define NETWORK_DEAL_TOTAL_VIEWS @"totalviews"
 #define NETWORK_DEAL_RELATIVE_STAR_RATING @"relative_star_rating"
+#define NETWORK_DEAL_IMAGE_URL @"image_url"
 
 #define NETWORK_DEAL_BUSINESSNAME @"business_name"
 

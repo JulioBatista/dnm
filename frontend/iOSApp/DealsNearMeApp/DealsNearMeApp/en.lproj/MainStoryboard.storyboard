@@ -872,6 +872,7 @@
                         <outlet property="buttonFavoritesButton" destination="D4m-1a-ir8" id="hwM-Sk-9xb"/>
                         <outlet property="buttonNextButton" destination="cjV-ao-xJH" id="dmU-DX-xCv"/>
                         <outlet property="buttonPrevButton" destination="OH6-xR-fE3" id="VH4-7R-Ram"/>
+                        <outlet property="imageViewBusinessImageView" destination="8hD-aO-4jI" id="WF4-ba-1jj"/>
                         <outlet property="labelAddress" destination="9Af-w5-Coc" id="GWE-YH-zUr"/>
                         <outlet property="labelAddressLine2" destination="xIi-Tg-BKl" id="CM7-l1-O6b"/>
                         <outlet property="labelBusinessName" destination="AD0-zR-Zio" id="eLS-HK-cVJ"/>
@@ -2606,6 +2607,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 <relationship kind="outlet" name="buttonFavoritesButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonNextButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonPrevButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageViewBusinessImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="labelAddress" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelAddressLine2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="labelBusinessName" candidateClass="UILabel"/>

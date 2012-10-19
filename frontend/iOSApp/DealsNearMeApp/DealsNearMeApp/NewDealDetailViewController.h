@@ -64,6 +64,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *labelTotalViewLabel;
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageViewBusinessImageView;
 
 
 - (IBAction)buttonPhoneButtonTapped:(id)sender;

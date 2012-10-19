@@ -136,7 +136,35 @@
 	
 	self.labelBusinessPhoneLabel.text = [onedeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
 	
+	UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	
+	[spinner setColor:[UIColor grayColor]];
+	
+	spinner.center = CGPointMake(160, 240);
+	
+	spinner.hidesWhenStopped = YES;
+	
+	[self.view addSubview:spinner];
+	
+	[spinner startAnimating];
+	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
+	
+	dispatch_async(downloadQueue, ^{
+		NSLog(@"About to fetch image from the network");
+		
+		UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:
+											   [NSURL URLWithString:[NSString stringWithFormat:@"http://www.dealsnear.me/dnu_images/thumbnail_images/business/%@"
+																	 ,[onedeal objectForKey:NETWORK_DEAL_IMAGE_URL]]]]];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[spinner stopAnimating];
+			if (![img isEqual:[NSNull null]])
+			{
+				self.imageViewBusinessImageView.image = img;
+			}
+		});
+	});
+	
+	dispatch_release(downloadQueue);
 	/* NSLog(@"-----%@", onedeal); */
     [FacebookHelper sharedInstance].publishingdelegate = self;
 	
@@ -171,6 +199,7 @@
 	[self setTextViewDealDescriptionTextView:nil];
     [self setLabelTimeElapsedLabel:nil];
     [self setLabelTotalViewLabel:nil];
+	[self setImageViewBusinessImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -402,10 +431,41 @@
 		
 		// self.labelTotalViewLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS];
 		
-			self.labelTotalViewLabel.text = [NSString stringWithFormat:@"%@ views",[self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS]];
+		self.labelTotalViewLabel.text = [NSString stringWithFormat:@"%@ views",[self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS]];
 		
 		
 		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
+		
+		
+		UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+		
+		[spinner setColor:[UIColor grayColor]];
+		
+		spinner.center = CGPointMake(160, 240);
+		
+		spinner.hidesWhenStopped = YES;
+		
+		[self.view addSubview:spinner];
+		
+		[spinner startAnimating];
+		dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
+		
+		dispatch_async(downloadQueue, ^{
+			NSLog(@"About to fetch image from the network");
+			
+			UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:
+												   [NSURL URLWithString:[NSString stringWithFormat:@"http://www.dealsnear.me/dnu_images/thumbnail_images/business/%@"
+																		 ,[self.currentDeal objectForKey:NETWORK_DEAL_IMAGE_URL]]]]];
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[spinner stopAnimating];
+				if (![img isEqual:[NSNull null]])
+				{
+					self.imageViewBusinessImageView.image = img;
+				}
+			});
+		});
+		
+		dispatch_release(downloadQueue);
 		
 		[self.buttonPrevButton setEnabled:YES];
 	}
@@ -443,9 +503,40 @@
 		
 		// self.labelTotalViewLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS];
 		
-			self.labelTotalViewLabel.text = [NSString stringWithFormat:@"%@ views",[self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS]];
+		self.labelTotalViewLabel.text = [NSString stringWithFormat:@"%@ views",[self.currentDeal objectForKey:NETWORK_DEAL_TOTAL_VIEWS]];
 		
 		self.labelBusinessPhoneLabel.text = [self.currentDeal objectForKey:NETWORK_DEAL_BUSINESS_PHONE];
+		
+		UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+		
+		[spinner setColor:[UIColor grayColor]];
+		
+		spinner.center = CGPointMake(160, 240);
+		
+		spinner.hidesWhenStopped = YES;
+		
+		[self.view addSubview:spinner];
+		
+		[spinner startAnimating];
+		dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
+		
+		dispatch_async(downloadQueue, ^{
+			NSLog(@"About to fetch image from the network");
+			
+			UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:
+												   [NSURL URLWithString:[NSString stringWithFormat:@"http://www.dealsnear.me/dnu_images/thumbnail_images/business/%@"
+																		 ,[self.currentDeal objectForKey:NETWORK_DEAL_IMAGE_URL]]]]];
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[spinner stopAnimating];
+				if (![img isEqual:[NSNull null]])
+				{
+					self.imageViewBusinessImageView.image = img;
+				}
+			});
+		});
+		
+		dispatch_release(downloadQueue);
+		
 		[self.buttonNextButton setEnabled:YES];
 	}
 	else
