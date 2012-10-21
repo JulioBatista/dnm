@@ -361,8 +361,10 @@
 	if (buttonIndex == 0)
 	{
 		
-		[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-								 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+		self.newcoordinate = self.mycoordinate;
+		
+		[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+								 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 								 WithCategory:@"0"
 								 WithDistance:self.theSelectedDistanceValue
 		 
@@ -668,6 +670,8 @@
 		
 		self.mycoordinate = newLocation.coordinate;
 		
+		self.newcoordinate = newLocation.coordinate;
+		
 		NSLog(@"-----------------------didUpdateToLocation fired---------------------");
 		MKUserLocation *userLocation = self.map.userLocation;
 		MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(
@@ -900,8 +904,8 @@
 	
     /* [self gotoHardCodedLocation]; */
 	
-	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 							 WithCategory:@"0"
 							 WithDistance:self.theSelectedDistanceValue
 	 
@@ -927,8 +931,8 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 							 WithCategory:@"11"
 							 WithDistance:self.theSelectedDistanceValue
 	 
@@ -952,8 +956,8 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 							 WithCategory:@"9"
 							 WithDistance:self.theSelectedDistanceValue
 	 
@@ -972,8 +976,8 @@
 	[self.button007 setSelected:NO];
 	[self.button008 setSelected:NO];
 	
-	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 							 WithCategory:@"6"
 							 WithDistance:self.theSelectedDistanceValue
 	 
@@ -994,8 +998,8 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 							 WithCategory:@"13"
 							 WithDistance:self.theSelectedDistanceValue
 	 
@@ -1016,8 +1020,8 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 							 WithCategory:@"12"
 							 WithDistance:self.theSelectedDistanceValue
 	 
@@ -1037,8 +1041,8 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 							 WithCategory:@"10"
 							 WithDistance:self.theSelectedDistanceValue
 	 
@@ -1058,8 +1062,8 @@
 	[self.button008 setSelected:YES];
 	[self.button009 setSelected:NO];
 	
-	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 							 WithCategory:@"5"
 							 WithDistance:self.theSelectedDistanceValue
 	 
@@ -1080,8 +1084,8 @@
 	[self.button008 setSelected:NO];
 	[self.button009 setSelected:YES];
 	
-	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.mycoordinate.latitude]
-							 AndLongitude:[NSString stringWithFormat:@"%f", self.mycoordinate.longitude]
+	[self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", self.newcoordinate.latitude]
+							 AndLongitude:[NSString stringWithFormat:@"%f", self.newcoordinate.longitude]
 							 WithCategory:@"8"
 							 WithDistance:self.theSelectedDistanceValue
 	 
@@ -1607,9 +1611,11 @@
 				 
 			
 					 zoomLocation = location.coordinate;
+				 
+				 self.newcoordinate = location.coordinate;
 					 
-					 NSLog(@"-------city center latitude %f", location.coordinate.latitude);
-					 NSLog(@"-------city center longitude %f", location.coordinate.longitude);
+					 NSLog(@"-------city center latitude %f", self.newcoordinate.latitude);
+					 NSLog(@"-------city center longitude %f", self.newcoordinate.longitude);
 					 
 					 [self getDealsFromNetworkWithLatitude:[NSString stringWithFormat:@"%f", location.coordinate.latitude]
 											  AndLongitude:[NSString stringWithFormat:@"%f", location.coordinate.longitude]
