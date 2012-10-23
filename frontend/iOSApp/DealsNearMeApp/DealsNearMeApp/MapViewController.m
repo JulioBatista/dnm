@@ -441,39 +441,6 @@
 	
 	
 	
-	/*
-	 [images addObject:[UIImage imageNamed:@"179-notepad-white.png"]];
-	 [images addObject:[UIImage imageNamed:@"103-map-white.png"]];
-	 [images addObject:[UIImage imageNamed:@"178-city-white.png"]];
-	 [images addObject:[UIImage imageNamed:@"236-shoppingbag-white.png"]];
-	 [images addObject:[UIImage imageNamed:@"299-ticket-white.png"]];
-	 */
-	
-	/*
-	 CGFloat scrollWidth = 0 + 0.f;
-	 NSInteger buttoncount= 1;
-	 for (UIImage *someImage in images)
-	 {
-	 CGRect frame;
-	 frame.origin.x = scrollWidth;
-	 frame.origin.y = 0;
-	 frame.size = someImage.size;
-	 
-	 
-	 UIButton *subview = [[UIButton alloc] initWithFrame:frame];
-	 
-	 [subview setImage:someImage forState:UIControlStateNormal];
-	 
-	 [subview setTag:buttoncount];
-	 
-	 [subview addTarget:self action:@selector(categoryPressed:) forControlEvents:UIControlEventTouchUpInside];
-	 [self.scrollView addSubview:subview];
-	 
-	 scrollWidth += 88.0f;
-	 buttoncount++;
-	 }
-	 */
-	
 	myTableViewController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
 	
 	myTableViewController.tableView.delegate = self;
@@ -485,6 +452,7 @@
 	NewDeal *newdeal = [[NewDeal alloc] init];
 	newdeal.dealname = @"Max Lagers";
 	newdeal.dealdescription = @"If you would like to relax and have a nice beer with friends.";
+	
 	[self.newdeals addObject:newdeal];
 	
 	newdeal = [[NewDeal alloc] init];
@@ -761,13 +729,6 @@
 	dispatch_queue_t downloadQueue = dispatch_queue_create("networkdownloader", NULL);
 	dispatch_async(downloadQueue, ^{
 		NSLog(@"About to fetch deals from the network");
-		/* NSArray *deals = [NetworkFetcher recentDeals]; */
-		
-		/* NSArray *deals = [NetworkFetcher recentDealsNearLevia]; */
-		
-		// NSArray *deals = [NetworkFetcher recentDealsNear60610];
-		
-		// NSArray *deals = [NetworkFetcher recentDealsNearZipcode];
 		
 		NSArray *deals = [NetworkFetcher recentDealsNearLatitude:(NSString *)latitude
 													AndLongitude:(NSString *)longitude
@@ -775,10 +736,9 @@
 													WithDistance:(NSUInteger)distance
 						  ];
 		
-		/* start of JSON fetching */
-		
-		
-		/* end of JSON fetching */
+		  
+			
+			
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.deals = deals;
@@ -798,6 +758,10 @@
 					// NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_BUSINESSNAME] );
 					
 					// NSLog(@"-----------------------%@", [deal objectForKey:NETWORK_DEAL_ADDRESS]);
+					
+					
+					
+					
 					
 				}
 				NSLog(@"-------------------------------------------about to archive deals");
