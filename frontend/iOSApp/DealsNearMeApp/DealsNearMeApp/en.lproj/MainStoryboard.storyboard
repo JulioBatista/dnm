@@ -2022,7 +2022,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HoZ-tj-Ohe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="-1500"/>
+            <point key="canvasLocation" x="1568" y="-1584"/>
         </scene>
         <!--New Filter Picker View Controller - Filter-->
         <scene sceneID="Ji6-hg-cbJ">
@@ -2372,7 +2372,7 @@ The website was launched in September 2010 by Levi Bergovoy and Adam Palmer. The
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjN-iz-AJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="-1500"/>
+            <point key="canvasLocation" x="1113" y="-1568"/>
         </scene>
         <!--Navigation Controller - Favorites-->
         <scene sceneID="VB9-72-Z7y">

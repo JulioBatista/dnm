@@ -51,6 +51,7 @@
 			  @"Miami, FL",
               @"New York City, NY",
               @"Philadelphia, PA",
+			  @"San Francisco, CA",
               @"Seattle, Washington",
 			  @"Toronto, ON",
               @"Washington, D.C.",
